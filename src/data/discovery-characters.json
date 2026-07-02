@@ -1,0 +1,2059 @@
+[
+  {
+    "id": "kafka",
+    "name": "Kafka",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A calm Stellaron Hunter known for psychological control, purple styling, and a major fan following.",
+    "color": "#8d5ac8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "antihero",
+        "major-story-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "purple"
+      ],
+      "primaryHairColor": "purple",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "gun",
+        "blade"
+      ],
+      "outfitColors": [
+        "purple",
+        "black",
+        "white"
+      ],
+      "primaryOutfitColor": "purple",
+      "personality": [
+        "calm",
+        "mysterious",
+        "manipulative"
+      ]
+    },
+    "hsr": {
+      "path": "Nihility",
+      "combatType": "Lightning",
+      "faction": [
+        "Stellaron Hunters"
+      ],
+      "worldOrRegion": [
+        "Unknown"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.2",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Stellaron Hunters"
+      ],
+      "fanSignals": [
+        "high-fan-art",
+        "cosplay",
+        "shipping"
+      ],
+      "storyRole": [
+        "major-antagonistic-force",
+        "mentor-like"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR character databases and official materials",
+        "confidence": "high",
+        "notes": "Gameplay fields should be verified against official profile before production."
+      },
+      {
+        "field": "global.hairColor",
+        "source": "Official art/manual coding",
+        "confidence": "medium",
+        "notes": "Visual trait coded from official design."
+      }
+    ]
+  },
+  {
+    "id": "firefly",
+    "name": "Firefly",
+    "aliases": [
+      "SAM"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Penacony-centered character tied to SAM, emotional story beats, and intense release-era fandom.",
+    "color": "#65d6c1",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "major-story-character",
+        "transformation"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "silver",
+        "teal"
+      ],
+      "primaryHairColor": "silver",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "mech",
+        "fire"
+      ],
+      "outfitColors": [
+        "teal",
+        "white",
+        "black"
+      ],
+      "primaryOutfitColor": "teal",
+      "personality": [
+        "gentle",
+        "determined",
+        "tragic"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Fire",
+      "faction": [
+        "Stellaron Hunters"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.3",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony",
+        "Stellaron Hunters"
+      ],
+      "fanSignals": [
+        "high-fan-art",
+        "shipping",
+        "cosplay"
+      ],
+      "storyRole": [
+        "major-protagonist-ally",
+        "secret-identity"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR story and character materials",
+        "confidence": "medium",
+        "notes": "Identity details are spoiler-sensitive."
+      }
+    ]
+  },
+  {
+    "id": "march-7th",
+    "name": "March 7th",
+    "aliases": [
+      "March"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A cheerful Astral Express member with pink hair, camera motifs, and evolving combat forms.",
+    "color": "#f3a4c8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "main-cast",
+        "companion"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "pink"
+      ],
+      "primaryHairColor": "pink",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "bow",
+        "ice"
+      ],
+      "outfitColors": [
+        "pink",
+        "blue",
+        "white"
+      ],
+      "primaryOutfitColor": "pink",
+      "personality": [
+        "cheerful",
+        "curious",
+        "expressive"
+      ]
+    },
+    "hsr": {
+      "path": "Preservation",
+      "combatType": "Ice",
+      "faction": [
+        "Astral Express"
+      ],
+      "worldOrRegion": [
+        "Astral Express"
+      ],
+      "rarity": 4,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Astral Express",
+        "Amnesia"
+      ],
+      "fanSignals": [
+        "mascot-like",
+        "fan-art"
+      ],
+      "storyRole": [
+        "main-companion",
+        "mystery-past"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "Official main cast materials",
+        "confidence": "high",
+        "notes": "Main Astral Express member."
+      }
+    ]
+  },
+  {
+    "id": "dan-heng",
+    "name": "Dan Heng",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A reserved Astral Express archivist with spear combat and a major Xianzhou identity arc.",
+    "color": "#2fa7a0",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "main-cast",
+        "reserved"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "black"
+      ],
+      "primaryHairColor": "black",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "spear"
+      ],
+      "outfitColors": [
+        "black",
+        "green",
+        "white"
+      ],
+      "primaryOutfitColor": "black",
+      "personality": [
+        "quiet",
+        "serious",
+        "protective"
+      ]
+    },
+    "hsr": {
+      "path": "Hunt",
+      "combatType": "Wind",
+      "faction": [
+        "Astral Express"
+      ],
+      "worldOrRegion": [
+        "Astral Express",
+        "Xianzhou"
+      ],
+      "rarity": 4,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Xianzhou"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "main-companion",
+        "hidden-past"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR gameplay profile",
+        "confidence": "high",
+        "notes": "Base Dan Heng form."
+      }
+    ]
+  },
+  {
+    "id": "imbibitor-lunae",
+    "name": "Dan Heng - Imbibitor Lunae",
+    "aliases": [
+      "Imbibitor Lunae",
+      "Dan Feng"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Dan Heng's five-star Vidyadhara form, tied to Xianzhou lore and dragon imagery.",
+    "color": "#55d6d2",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "alternate-form",
+        "major-story-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "black",
+        "teal"
+      ],
+      "primaryHairColor": "black",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "dragon",
+        "water"
+      ],
+      "outfitColors": [
+        "teal",
+        "white",
+        "black"
+      ],
+      "primaryOutfitColor": "teal",
+      "personality": [
+        "serious",
+        "burdened",
+        "reserved"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Imaginary",
+      "faction": [
+        "Astral Express",
+        "Vidyadhara"
+      ],
+      "worldOrRegion": [
+        "Xianzhou"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.3",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Xianzhou",
+        "Vidyadhara"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "fan-art"
+      ],
+      "storyRole": [
+        "alternate-form",
+        "lore-reveal"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.associatedArc",
+        "source": "HSR story materials",
+        "confidence": "medium",
+        "notes": "Spoiler-sensitive identity relationship."
+      }
+    ]
+  },
+  {
+    "id": "trailblazer",
+    "name": "Trailblazer",
+    "aliases": [
+      "Caelus",
+      "Stelle"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "The player avatar and protagonist who changes paths through story progression.",
+    "color": "#d3c4a6",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "avatar",
+        "protagonist",
+        "playable"
+      ],
+      "genderPresentation": "variable",
+      "hairColor": [
+        "gray"
+      ],
+      "primaryHairColor": "gray",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "bat",
+        "lance",
+        "hat"
+      ],
+      "outfitColors": [
+        "gray",
+        "black",
+        "gold"
+      ],
+      "primaryOutfitColor": "gray",
+      "personality": [
+        "player-shaped",
+        "curious",
+        "chaotic"
+      ]
+    },
+    "hsr": {
+      "path": "Variable",
+      "combatType": "Variable",
+      "faction": [
+        "Astral Express"
+      ],
+      "worldOrRegion": [
+        "Astral Express"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Main Story"
+      ],
+      "fanSignals": [
+        "meme-presence",
+        "self-insert"
+      ],
+      "storyRole": [
+        "player-avatar",
+        "protagonist"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.characterType",
+        "source": "Game structure",
+        "confidence": "high",
+        "notes": "Player character."
+      }
+    ]
+  },
+  {
+    "id": "jing-yuan",
+    "name": "Jing Yuan",
+    "aliases": [
+      "The Dozing General"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "The Xianzhou Luofu general known for Lightning-Lord, relaxed authority, and meme-friendly presence.",
+    "color": "#d8c17a",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "leader",
+        "major-story-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "white",
+        "silver"
+      ],
+      "primaryHairColor": "silver",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "glaive",
+        "summon"
+      ],
+      "outfitColors": [
+        "white",
+        "gold",
+        "black"
+      ],
+      "primaryOutfitColor": "white",
+      "personality": [
+        "calm",
+        "strategic",
+        "sleepy"
+      ]
+    },
+    "hsr": {
+      "path": "Erudition",
+      "combatType": "Lightning",
+      "faction": [
+        "Xianzhou Alliance",
+        "Cloud Knights"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Luofu"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Xianzhou"
+      ],
+      "fanSignals": [
+        "meme-presence",
+        "fan-art"
+      ],
+      "storyRole": [
+        "leader",
+        "general"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "Official HSR profile/reference",
+        "confidence": "medium",
+        "notes": "General of the Xianzhou Luofu."
+      }
+    ]
+  },
+  {
+    "id": "acheron",
+    "name": "Acheron",
+    "aliases": [
+      "Raiden Bosenmori Mei"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A mysterious Galaxy Ranger-like figure with purple hair, red lightning motifs, and major Penacony presence.",
+    "color": "#7d55d9",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "fantasy"
+      ],
+      "characterType": [
+        "playable",
+        "major-story-character",
+        "mysterious"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "purple"
+      ],
+      "primaryHairColor": "purple",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "katana",
+        "lightning"
+      ],
+      "outfitColors": [
+        "black",
+        "purple",
+        "red",
+        "white"
+      ],
+      "primaryOutfitColor": "black",
+      "personality": [
+        "quiet",
+        "mysterious",
+        "melancholic"
+      ]
+    },
+    "hsr": {
+      "path": "Nihility",
+      "combatType": "Lightning",
+      "faction": [
+        "Self-Annihilator",
+        "Galaxy Ranger"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.1",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony"
+      ],
+      "fanSignals": [
+        "high-fan-art",
+        "honkai-callbacks",
+        "cosplay"
+      ],
+      "storyRole": [
+        "mysterious-ally",
+        "major-lore-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.hairColor",
+        "source": "Official art/manual coding",
+        "confidence": "medium",
+        "notes": "Purple visual identity overlaps with Kafka, making this useful for ambiguity testing."
+      }
+    ]
+  },
+  {
+    "id": "sunday",
+    "name": "Sunday",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Penacony leader figure with angelic motifs, white-blue palette, and strong fan anticipation.",
+    "color": "#a9c8f5",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "leader",
+        "major-story-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "blue",
+        "gray"
+      ],
+      "primaryHairColor": "blue",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "support-magic"
+      ],
+      "outfitColors": [
+        "white",
+        "blue",
+        "gold"
+      ],
+      "primaryOutfitColor": "white",
+      "personality": [
+        "controlled",
+        "idealistic",
+        "formal"
+      ]
+    },
+    "hsr": {
+      "path": "Harmony",
+      "combatType": "Imaginary",
+      "faction": [
+        "The Family",
+        "Oak Family"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.7",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony"
+      ],
+      "fanSignals": [
+        "high-anticipation",
+        "fan-art",
+        "shipping"
+      ],
+      "storyRole": [
+        "antagonistic-leader",
+        "playable-after-story"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.releaseVersion",
+        "source": "Playable release materials",
+        "confidence": "medium",
+        "notes": "Verify exact release data before production."
+      }
+    ]
+  },
+  {
+    "id": "blade",
+    "name": "Blade",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A cursed Stellaron Hunter with dark clothing, sword combat, and Xianzhou past.",
+    "color": "#8b1e2d",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "dark-fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "antihero",
+        "major-story-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "black"
+      ],
+      "primaryHairColor": "black",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "sword"
+      ],
+      "outfitColors": [
+        "black",
+        "red",
+        "gray"
+      ],
+      "primaryOutfitColor": "black",
+      "personality": [
+        "brooding",
+        "vengeful",
+        "quiet"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Wind",
+      "faction": [
+        "Stellaron Hunters"
+      ],
+      "worldOrRegion": [
+        "Xianzhou"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.2",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Stellaron Hunters",
+        "Xianzhou"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "shipping"
+      ],
+      "storyRole": [
+        "antihero",
+        "tragic-past"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR profile/story material",
+        "confidence": "high",
+        "notes": "Stellaron Hunter."
+      }
+    ]
+  },
+  {
+    "id": "silver-wolf",
+    "name": "Silver Wolf",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A hacker Stellaron Hunter with gamer aesthetics, silver hair, and quantum gameplay identity.",
+    "color": "#9cc8ff",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "cyberpunk",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "hacker",
+        "antihero"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "silver",
+        "gray"
+      ],
+      "primaryHairColor": "silver",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "gun",
+        "hacking"
+      ],
+      "outfitColors": [
+        "gray",
+        "purple",
+        "blue",
+        "black"
+      ],
+      "primaryOutfitColor": "gray",
+      "personality": [
+        "playful",
+        "smug",
+        "gamer"
+      ]
+    },
+    "hsr": {
+      "path": "Nihility",
+      "combatType": "Quantum",
+      "faction": [
+        "Stellaron Hunters"
+      ],
+      "worldOrRegion": [
+        "Punklorde"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.1",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Stellaron Hunters"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "meme-presence"
+      ],
+      "storyRole": [
+        "hacker",
+        "supporting-antagonist"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.combatType",
+        "source": "HSR gameplay profile",
+        "confidence": "high",
+        "notes": "Quantum Nihility."
+      }
+    ]
+  },
+  {
+    "id": "seele",
+    "name": "Seele",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Belobog underworld fighter with purple hair, scythe-like combat, and Quantum identity.",
+    "color": "#7e4bd8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "rebel",
+        "story-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "purple",
+        "blue"
+      ],
+      "primaryHairColor": "purple",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "scythe"
+      ],
+      "outfitColors": [
+        "purple",
+        "black",
+        "red"
+      ],
+      "primaryOutfitColor": "purple",
+      "personality": [
+        "direct",
+        "protective",
+        "fiery"
+      ]
+    },
+    "hsr": {
+      "path": "Hunt",
+      "combatType": "Quantum",
+      "faction": [
+        "Wildfire"
+      ],
+      "worldOrRegion": [
+        "Belobog"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Belobog"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "shipping"
+      ],
+      "storyRole": [
+        "underworld-defender",
+        "major-belobog-ally"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.worldOrRegion",
+        "source": "Belobog story material",
+        "confidence": "high",
+        "notes": "Belobog/Wildfire association."
+      }
+    ]
+  },
+  {
+    "id": "bronya",
+    "name": "Bronya",
+    "aliases": [
+      "Bronya Rand"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Belobog's leader figure with military styling, silver hair, and Harmony support identity.",
+    "color": "#bfc7df",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "military"
+      ],
+      "characterType": [
+        "playable",
+        "leader",
+        "support"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "silver",
+        "gray"
+      ],
+      "primaryHairColor": "silver",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "rifle",
+        "command"
+      ],
+      "outfitColors": [
+        "blue",
+        "white",
+        "silver"
+      ],
+      "primaryOutfitColor": "blue",
+      "personality": [
+        "responsible",
+        "formal",
+        "idealistic"
+      ]
+    },
+    "hsr": {
+      "path": "Harmony",
+      "combatType": "Wind",
+      "faction": [
+        "Silvermane Guards",
+        "Belobog"
+      ],
+      "worldOrRegion": [
+        "Belobog"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Belobog"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "shipping"
+      ],
+      "storyRole": [
+        "leader",
+        "supporting-main-arc"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR gameplay profile",
+        "confidence": "high",
+        "notes": "Standard banner Harmony character."
+      }
+    ]
+  },
+  {
+    "id": "himeko",
+    "name": "Himeko",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Astral Express navigator with red hair, Erudition fire gameplay, and mentor energy.",
+    "color": "#d65440",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "mentor",
+        "main-cast"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "red"
+      ],
+      "primaryHairColor": "red",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "orbital-laser",
+        "saw"
+      ],
+      "outfitColors": [
+        "white",
+        "red",
+        "gold",
+        "black"
+      ],
+      "primaryOutfitColor": "white",
+      "personality": [
+        "mature",
+        "warm",
+        "composed"
+      ]
+    },
+    "hsr": {
+      "path": "Erudition",
+      "combatType": "Fire",
+      "faction": [
+        "Astral Express"
+      ],
+      "worldOrRegion": [
+        "Astral Express"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Astral Express"
+      ],
+      "fanSignals": [
+        "legacy-honkai",
+        "fan-art"
+      ],
+      "storyRole": [
+        "mentor",
+        "navigator"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.hairColor",
+        "source": "Official art/manual coding",
+        "confidence": "medium",
+        "notes": "Strong red hair visual anchor."
+      }
+    ]
+  },
+  {
+    "id": "welt",
+    "name": "Welt",
+    "aliases": [
+      "Welt Yang"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A calm Astral Express elder with Honkai legacy ties, cane imagery, and Imaginary Nihility gameplay.",
+    "color": "#645bb2",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "mentor",
+        "main-cast"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "brown"
+      ],
+      "primaryHairColor": "brown",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "cane",
+        "gravity"
+      ],
+      "outfitColors": [
+        "black",
+        "brown",
+        "gold"
+      ],
+      "primaryOutfitColor": "black",
+      "personality": [
+        "calm",
+        "wise",
+        "reserved"
+      ]
+    },
+    "hsr": {
+      "path": "Nihility",
+      "combatType": "Imaginary",
+      "faction": [
+        "Astral Express"
+      ],
+      "worldOrRegion": [
+        "Astral Express"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Astral Express",
+        "Honkai legacy"
+      ],
+      "fanSignals": [
+        "legacy-honkai",
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "mentor",
+        "lore-link"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.combatType",
+        "source": "HSR gameplay profile",
+        "confidence": "high",
+        "notes": "Imaginary Nihility."
+      }
+    ]
+  },
+  {
+    "id": "sparkle",
+    "name": "Sparkle",
+    "aliases": [
+      "Hanabi"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Masked Fool with theatrical mischief, red-pink styling, and chaotic Penacony involvement.",
+    "color": "#ee5f86",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "theatrical"
+      ],
+      "characterType": [
+        "playable",
+        "trickster",
+        "chaotic"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "pink",
+        "red"
+      ],
+      "primaryHairColor": "pink",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "masks",
+        "performance"
+      ],
+      "outfitColors": [
+        "red",
+        "pink",
+        "black",
+        "gold"
+      ],
+      "primaryOutfitColor": "red",
+      "personality": [
+        "chaotic",
+        "playful",
+        "deceptive"
+      ]
+    },
+    "hsr": {
+      "path": "Harmony",
+      "combatType": "Quantum",
+      "faction": [
+        "Masked Fools"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.0",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony"
+      ],
+      "fanSignals": [
+        "meme-presence",
+        "fan-art",
+        "cosplay"
+      ],
+      "storyRole": [
+        "trickster",
+        "agent-of-chaos"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR story/materials",
+        "confidence": "medium",
+        "notes": "Masked Fool identity."
+      }
+    ]
+  },
+  {
+    "id": "black-swan",
+    "name": "Black Swan",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Memokeeper with elegant purple styling, memory motifs, and Penacony story relevance.",
+    "color": "#7b5ab8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "mystical"
+      ],
+      "characterType": [
+        "playable",
+        "mysterious",
+        "story-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "purple"
+      ],
+      "primaryHairColor": "purple",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "cards",
+        "memory"
+      ],
+      "outfitColors": [
+        "purple",
+        "black",
+        "white"
+      ],
+      "primaryOutfitColor": "purple",
+      "personality": [
+        "elegant",
+        "mysterious",
+        "observant"
+      ]
+    },
+    "hsr": {
+      "path": "Nihility",
+      "combatType": "Wind",
+      "faction": [
+        "Garden of Recollection"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony",
+        "Memory"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "shipping"
+      ],
+      "storyRole": [
+        "observer",
+        "memory-guide"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.outfitColors",
+        "source": "Official art/manual coding",
+        "confidence": "medium",
+        "notes": "Purple/black/white overlaps with Kafka but different faction and weapon motifs."
+      }
+    ]
+  },
+  {
+    "id": "ruan-mei",
+    "name": "Ruan Mei",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Genius Society researcher with elegant green styling, biology motifs, and Harmony gameplay.",
+    "color": "#73b58f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "science",
+        "fantasy"
+      ],
+      "characterType": [
+        "playable",
+        "researcher",
+        "morally-ambiguous"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "brown",
+        "green"
+      ],
+      "primaryHairColor": "brown",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "instrument",
+        "science"
+      ],
+      "outfitColors": [
+        "green",
+        "white",
+        "black"
+      ],
+      "primaryOutfitColor": "green",
+      "personality": [
+        "detached",
+        "curious",
+        "elegant"
+      ]
+    },
+    "hsr": {
+      "path": "Harmony",
+      "combatType": "Ice",
+      "faction": [
+        "Genius Society"
+      ],
+      "worldOrRegion": [
+        "Herta Space Station"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.6",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Genius Society",
+        "Simulated Universe"
+      ],
+      "fanSignals": [
+        "meta-popularity",
+        "fan-art"
+      ],
+      "storyRole": [
+        "researcher",
+        "ethically-ambiguous"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR gameplay profile",
+        "confidence": "high",
+        "notes": "Harmony Ice support."
+      }
+    ]
+  },
+  {
+    "id": "aventurine",
+    "name": "Aventurine",
+    "aliases": [
+      "Kakavasha"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An IPC gambler with blond hair, casino motifs, and major Penacony story focus.",
+    "color": "#6fc3b1",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "luxury"
+      ],
+      "characterType": [
+        "playable",
+        "major-story-character",
+        "gambler"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "blond"
+      ],
+      "primaryHairColor": "blond",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "dice",
+        "coins",
+        "barrier"
+      ],
+      "outfitColors": [
+        "green",
+        "white",
+        "gold",
+        "black"
+      ],
+      "primaryOutfitColor": "green",
+      "personality": [
+        "flashy",
+        "strategic",
+        "risk-taking"
+      ]
+    },
+    "hsr": {
+      "path": "Preservation",
+      "combatType": "Imaginary",
+      "faction": [
+        "IPC",
+        "Strategic Investment Department"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.1",
+      "hasAnimatedShort": true,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony",
+        "IPC"
+      ],
+      "fanSignals": [
+        "high-fan-art",
+        "cosplay",
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "antihero",
+        "penacony-focus"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR story/materials",
+        "confidence": "high",
+        "notes": "IPC association."
+      }
+    ]
+  },
+  {
+    "id": "robin",
+    "name": "Robin",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Penacony singer with angelic motifs, blue-pink styling, and music-focused official media.",
+    "color": "#83b7ef",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "idol",
+        "fantasy"
+      ],
+      "characterType": [
+        "playable",
+        "singer",
+        "support"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "blue",
+        "pink"
+      ],
+      "primaryHairColor": "blue",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "music",
+        "song"
+      ],
+      "outfitColors": [
+        "blue",
+        "white",
+        "pink"
+      ],
+      "primaryOutfitColor": "blue",
+      "personality": [
+        "gentle",
+        "idealistic",
+        "performer"
+      ]
+    },
+    "hsr": {
+      "path": "Harmony",
+      "combatType": "Physical",
+      "faction": [
+        "The Family"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": 5,
+      "releaseVersion": "2.2",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Penacony",
+        "Music"
+      ],
+      "fanSignals": [
+        "music-video",
+        "fan-art",
+        "cosplay"
+      ],
+      "storyRole": [
+        "idol",
+        "penacony-symbol"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.characterType",
+        "source": "Official music/story materials",
+        "confidence": "medium",
+        "notes": "Singer identity central to character."
+      }
+    ]
+  },
+  {
+    "id": "fu-xuan",
+    "name": "Fu Xuan",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Xianzhou diviner with pink hair, third-eye motif, and Preservation gameplay.",
+    "color": "#e782b4",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "leader",
+        "diviner"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "pink"
+      ],
+      "primaryHairColor": "pink",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "divination",
+        "matrix"
+      ],
+      "outfitColors": [
+        "pink",
+        "purple",
+        "black",
+        "gold"
+      ],
+      "primaryOutfitColor": "pink",
+      "personality": [
+        "confident",
+        "serious",
+        "proud"
+      ]
+    },
+    "hsr": {
+      "path": "Preservation",
+      "combatType": "Quantum",
+      "faction": [
+        "Xianzhou Alliance",
+        "Divination Commission"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Luofu"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.3",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Xianzhou"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "meta-popularity"
+      ],
+      "storyRole": [
+        "commission-leader",
+        "strategist"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR gameplay profile",
+        "confidence": "high",
+        "notes": "Quantum Preservation."
+      }
+    ]
+  },
+  {
+    "id": "qingque",
+    "name": "Qingque",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A Xianzhou diviner known for mahjong-like tile gameplay and slacker charm.",
+    "color": "#4bb7b1",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "comic-relief",
+        "supporting-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "teal",
+        "green"
+      ],
+      "primaryHairColor": "teal",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "tiles",
+        "mahjong"
+      ],
+      "outfitColors": [
+        "green",
+        "black",
+        "white"
+      ],
+      "primaryOutfitColor": "green",
+      "personality": [
+        "lazy",
+        "clever",
+        "playful"
+      ]
+    },
+    "hsr": {
+      "path": "Erudition",
+      "combatType": "Quantum",
+      "faction": [
+        "Divination Commission"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Luofu"
+      ],
+      "rarity": 4,
+      "releaseVersion": "1.0",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Xianzhou"
+      ],
+      "fanSignals": [
+        "meme-presence",
+        "fan-art"
+      ],
+      "storyRole": [
+        "supporting-comic-relief",
+        "commission-worker"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.personality",
+        "source": "Story/manual coding",
+        "confidence": "medium",
+        "notes": "Useful for personality-based guessing."
+      }
+    ]
+  },
+  {
+    "id": "topaz",
+    "name": "Topaz",
+    "aliases": [
+      "Topaz and Numby"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An IPC debt specialist paired with Numby, built around follow-up attacks and corporate themes.",
+    "color": "#d85c3e",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "corporate"
+      ],
+      "characterType": [
+        "playable",
+        "corporate-agent",
+        "animal-companion"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "red",
+        "orange"
+      ],
+      "primaryHairColor": "red",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "pistol",
+        "companion"
+      ],
+      "outfitColors": [
+        "red",
+        "white",
+        "black"
+      ],
+      "primaryOutfitColor": "red",
+      "personality": [
+        "professional",
+        "pragmatic",
+        "confident"
+      ]
+    },
+    "hsr": {
+      "path": "Hunt",
+      "combatType": "Fire",
+      "faction": [
+        "IPC",
+        "Strategic Investment Department"
+      ],
+      "worldOrRegion": [
+        "Belobog",
+        "IPC"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.4",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Belobog",
+        "IPC"
+      ],
+      "fanSignals": [
+        "fan-art",
+        "numby"
+      ],
+      "storyRole": [
+        "corporate-agent",
+        "antagonistic-ally"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.characterType",
+        "source": "Official/story materials",
+        "confidence": "medium",
+        "notes": "Numby companion is a distinctive guessing trait."
+      }
+    ]
+  },
+  {
+    "id": "luocha",
+    "name": "Luocha",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "A blond traveling merchant/healer carrying a coffin, tied to Xianzhou mystery.",
+    "color": "#d8c998",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "fantasy",
+        "sci-fi"
+      ],
+      "characterType": [
+        "playable",
+        "healer",
+        "mysterious"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "blond"
+      ],
+      "primaryHairColor": "blond",
+      "brightHair": true,
+      "usesWeapon": false,
+      "weaponType": [
+        "coffin",
+        "healing"
+      ],
+      "outfitColors": [
+        "white",
+        "green",
+        "gold"
+      ],
+      "primaryOutfitColor": "white",
+      "personality": [
+        "polite",
+        "mysterious",
+        "calm"
+      ]
+    },
+    "hsr": {
+      "path": "Abundance",
+      "combatType": "Imaginary",
+      "faction": [
+        "Unknown"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Luofu"
+      ],
+      "rarity": 5,
+      "releaseVersion": "1.1",
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": true,
+      "associatedArc": [
+        "Xianzhou"
+      ],
+      "fanSignals": [
+        "honkai-callbacks",
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "mysterious-healer",
+        "coffin-bearer"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "global.weaponType",
+        "source": "Official art/story materials",
+        "confidence": "medium",
+        "notes": "Coffin is a highly distinctive trait."
+      }
+    ]
+  }
+]

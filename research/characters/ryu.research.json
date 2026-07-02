@@ -1,0 +1,141 @@
+{
+  "character": {
+    "name": "Ryu",
+    "slug": "ryu",
+    "franchise": "Street Fighter",
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "firstKnownRole": "Fighting-game protagonist/archetype",
+    "researchStatus": "batch-researched"
+  },
+  "collectionDate": "2026-06-30",
+  "sourceSearches": [
+    {
+      "purpose": "official canon and character description",
+      "queries": ["Ryu official Street Fighter 6 character profile Capcom"],
+      "selectedSources": ["https://www.streetfighter.com/6/characters/en-us/ryu.html"],
+      "confidence": "high",
+      "notes": "Use Capcom's official Street Fighter character page for current official framing."
+    },
+    {
+      "purpose": "measurable attention signal",
+      "queries": ["Wikimedia pageviews API Ryu Street Fighter article"],
+      "selectedSources": ["https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Ryu_(Street_Fighter)/monthly/2025010100/2025123100"],
+      "confidence": "high",
+      "notes": "Same pageview window as other pilot characters."
+    }
+  ],
+  "rawFindings": {
+    "identity": {
+      "canonicalName": "Ryu",
+      "aliases": [],
+      "franchise": "Street Fighter",
+      "majorGamesToTrack": ["Street Fighter", "Street Fighter II", "Street Fighter 6"],
+      "sourceConfidence": "high",
+      "notes": "Ryu is a fighting-game archetype record more than a story-heavy character record."
+    },
+    "roleAndNarrative": {
+      "primaryRoles": ["fighter", "martial artist", "series representative"],
+      "commonStoryFunctions": ["wandering warrior", "training and self-mastery", "rivalry with Ken", "struggle with dark power"],
+      "relationshipsToTrack": [
+        { "name": "Ken Masters", "relationship": "rival / friend" },
+        { "name": "Chun-Li", "relationship": "fellow iconic Street Fighter roster anchor" },
+        { "name": "Akuma", "relationship": "dark martial arts contrast" }
+      ],
+      "sourceConfidence": "medium",
+      "notes": "Story details vary by installment and need official biography citations for exact wording."
+    },
+    "visualDesign": {
+      "dominantColors": ["white", "red", "black"],
+      "clothing": ["white gi", "red headband", "martial gloves", "bare feet"],
+      "accessoriesAndMarks": ["headband", "gloves"],
+      "silhouette": "barefoot martial artist in a torn gi with red headband",
+      "designSignals": ["martial arts minimalism", "highly readable color accents", "archetypal fighting stance"],
+      "sourceConfidence": "medium",
+      "notes": "Ryu is useful for measuring archetype clarity: simple outfit, clear pose language, and long-term consistency."
+    },
+    "popularitySignals": [
+      {
+        "source": "Wikimedia Pageviews API",
+        "metricType": "monthly pageviews, English Wikipedia article 'Ryu (Street Fighter)'",
+        "period": "2025-01 through 2025-12",
+        "summary": {
+          "totalViews": 177976,
+          "averageMonthlyViews": 14831,
+          "peakMonth": "2025-12",
+          "peakViews": 42253
+        },
+        "confidence": "high",
+        "notes": "December 2025 spike should be investigated before interpretation."
+      },
+      {
+        "source": "Curated analyst baseline",
+        "metricType": "general recognition tier",
+        "value": "Iconic within fighting games / Mainstream overall",
+        "confidence": "medium",
+        "notes": "Ryu is probably one of the clearest fighting-game benchmarks, but not mascot-level in general audiences."
+      }
+    ],
+    "communityAndFanbase": {
+      "expectedSignalsToCollectLater": ["tournament presence", "roster usage", "cosplay frequency", "fighting-game community mentions", "crossover appearances"],
+      "currentConfidence": "low",
+      "notes": "Fighting-game popularity may need competitive usage and roster-history metrics, not just pageviews."
+    },
+    "analysisUsefulness": [
+      "Benchmark for fighting-game archetype design.",
+      "Good test for genre-specific popularity because general pageviews may understate competitive legacy.",
+      "Useful comparison with Chun-Li, Ken, Sub-Zero, Scorpion, and Kazuya."
+    ],
+    "dataGaps": [
+      "Need official source extraction for exact biography and current design.",
+      "Need tournament/competitive presence metrics.",
+      "Need explanation for December 2025 pageview spike."
+    ]
+  },
+  "normalizedCandidate": {
+    "name": "Ryu",
+    "slug": "ryu",
+    "aliases": [],
+    "franchise": "Street Fighter",
+    "games": ["Street Fighter", "Street Fighter II", "Street Fighter 6"],
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "role": "Fighter",
+    "popularityTier": "Iconic",
+    "summary": "A disciplined martial artist and Street Fighter's central archetype, useful as the benchmark for fighting-game character design and genre legacy.",
+    "popularitySignals": [
+      {
+        "source": "Wikimedia Pageviews API",
+        "metricType": "2025 English Wikipedia annual pageviews",
+        "value": 177976,
+        "maxValue": 765428,
+        "collectedAt": "2026-06-30",
+        "confidence": "high",
+        "notes": "Normalized against Mario's current pilot total only for temporary comparison."
+      }
+    ],
+    "visualTags": {
+      "clothing": ["white gi", "red headband", "martial gloves", "bare feet"],
+      "colors": ["#f1eee6", "#bf2429", "#222222"],
+      "accessories": ["red headband", "martial gloves"],
+      "silhouette": "barefoot martial artist in a torn gi with red headband"
+    },
+    "analysisNotes": ["Compare against Chun-Li, Ken, Sub-Zero, Scorpion, and Kazuya.", "Needs fighting-game-specific community and competitive metrics."],
+    "citations": [
+      {
+        "title": "Ryu - Street Fighter 6 official character page",
+        "url": "https://www.streetfighter.com/6/characters/en-us/ryu.html",
+        "sourceType": "official",
+        "retrievedAt": "2026-06-30",
+        "notes": "Official Capcom character page."
+      },
+      {
+        "title": "Wikimedia Pageviews API: Ryu (Street Fighter)",
+        "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Ryu_(Street_Fighter)/monthly/2025010100/2025123100",
+        "sourceType": "database",
+        "retrievedAt": "2026-06-30",
+        "notes": "Monthly English Wikipedia pageviews for 2025."
+      }
+    ]
+  }
+}

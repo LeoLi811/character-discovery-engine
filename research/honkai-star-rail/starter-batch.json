@@ -1,0 +1,55 @@
+{
+  "game": "Honkai: Star Rail",
+  "collectionDate": "2026-06-30",
+  "batchGoal": "Test one-game deep character collection before expanding to more games.",
+  "characters": [
+    {
+      "name": "Kafka",
+      "reason": "Major Stellaron Hunter with strong official trailer and fanbase signals.",
+      "researchPriority": "high",
+      "mustCollect": ["official profile", "character trailer", "story role", "fan art signal", "voice actors"]
+    },
+    {
+      "name": "Firefly",
+      "reason": "Story-heavy Penacony character with animated short and strong community activity.",
+      "researchPriority": "high",
+      "mustCollect": ["official profile", "animated short", "character trailer", "release version", "fan creation signal"]
+    },
+    {
+      "name": "Dan Heng / Imbibitor Lunae",
+      "reason": "Main cast member with alternate form, useful for identity/version handling.",
+      "researchPriority": "high",
+      "mustCollect": ["base character", "alternate form", "story arc", "official videos", "visual redesign"]
+    },
+    {
+      "name": "March 7th",
+      "reason": "Main cast member and mascot-like identity with evolving forms.",
+      "researchPriority": "medium",
+      "mustCollect": ["official profile", "story role", "visual tags", "fan creation signal"]
+    },
+    {
+      "name": "Trailblazer",
+      "reason": "Player avatar/protagonist; tests avatar-specific fields.",
+      "researchPriority": "medium",
+      "mustCollect": ["avatar variants", "paths/forms", "story role", "voice actors"]
+    },
+    {
+      "name": "Jing Yuan",
+      "reason": "Xianzhou general with gameplay, meme, and fanbase signals.",
+      "researchPriority": "medium",
+      "mustCollect": ["official profile", "character trailer", "community memes", "gameplay/meta history"]
+    },
+    {
+      "name": "Acheron",
+      "reason": "Major style/story/media character with strong trailer presence.",
+      "researchPriority": "high",
+      "mustCollect": ["official profile", "myriad celestia/trailer media", "story role", "visual motifs"]
+    },
+    {
+      "name": "Sunday",
+      "reason": "Fan-anticipated character with strong discussion before/around playability.",
+      "researchPriority": "high",
+      "mustCollect": ["official announcement", "story role", "playable release", "fan anticipation signal"]
+    }
+  ]
+}

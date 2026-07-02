@@ -1,0 +1,67 @@
+{
+  "game": "Honkai: Star Rail",
+  "runtimeStorage": "local-json",
+  "downloadedIntoRepo": [
+    "src/data/discovery-games.json",
+    "src/data/discovery-characters.json",
+    "src/data/discovery-questions.json",
+    "docs/discovery-data-sources.md"
+  ],
+  "notDownloaded": [
+    "official artwork",
+    "screenshots",
+    "video files",
+    "copyrighted promotional images"
+  ],
+  "sourceFamilies": [
+    {
+      "name": "Official HoYoverse HSR character page",
+      "url": "https://hsr.hoyoverse.com/en-us/character",
+      "use": ["canonical game source", "official character presentation"],
+      "confidence": "high",
+      "notes": "The page is JavaScript-heavy, so it is best used as a canonical URL and manually checked in browser when extracting exact character facts."
+    },
+    {
+      "name": "HoYoWiki HSR",
+      "url": "https://wiki.hoyolab.com/pc/hsr/home",
+      "use": ["path", "combat type", "rarity", "faction", "playable reference"],
+      "confidence": "high",
+      "notes": "Best source family for structured HSR fields when accessible."
+    },
+    {
+      "name": "Official Honkai: Star Rail YouTube",
+      "url": "https://www.youtube.com/@HonkaiStarRail",
+      "use": ["character trailers", "animated shorts", "Keeping Up media", "Myriad Celestia media"],
+      "confidence": "high",
+      "notes": "Use video metadata later for media reach and official media coverage."
+    },
+    {
+      "name": "Wikipedia HSR overview",
+      "url": "https://en.wikipedia.org/wiki/Honkai:_Star_Rail",
+      "use": ["general game metadata", "setting summary", "platform/release context"],
+      "confidence": "medium",
+      "notes": "Useful cross-check, not the controlling source for gameplay fields."
+    },
+    {
+      "name": "Wikipedia HSR character list",
+      "url": "https://en.wikipedia.org/wiki/List_of_Honkai:_Star_Rail_characters",
+      "use": ["world grouping", "voice actor references", "broad character context"],
+      "confidence": "medium",
+      "notes": "Useful for orientation and cross-checking."
+    },
+    {
+      "name": "Character-specific reference pages",
+      "url": "https://en.wikipedia.org/wiki/Category:Honkai:_Star_Rail_characters",
+      "use": ["story/reception summaries", "release timing", "media references"],
+      "confidence": "medium",
+      "notes": "Used when pages exist for major characters such as Kafka, Firefly, and Acheron."
+    }
+  ],
+  "collectionMethod": [
+    "Find official or structured source family for the character.",
+    "Extract stable traits such as path, combat type, faction, rarity, region, release version, and media flags.",
+    "Manually code visual traits from official presentation: hair color, outfit colors, weapon/tool, motif, personality tags.",
+    "Attach confidence and notes to any trait that is interpreted rather than directly sourced.",
+    "Store the cleaned data locally as JSON for deterministic runtime behavior."
+  ]
+}

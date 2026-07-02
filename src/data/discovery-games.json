@@ -1,0 +1,11 @@
+[
+  {
+    "id": "hsr",
+    "name": "Honkai: Star Rail",
+    "franchise": "Honkai",
+    "genre": ["turn-based-rpg", "gacha", "live-service"],
+    "sourceType": "game",
+    "visualStyle": ["anime", "sci-fi", "fantasy"],
+    "traitNamespaces": ["global", "hsr"]
+  }
+]

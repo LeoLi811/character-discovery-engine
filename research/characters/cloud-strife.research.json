@@ -1,0 +1,141 @@
+{
+  "character": {
+    "name": "Cloud Strife",
+    "slug": "cloud-strife",
+    "franchise": "Final Fantasy",
+    "publisher": "Square Enix",
+    "developer": "Square / Square Enix",
+    "firstKnownRole": "JRPG protagonist",
+    "researchStatus": "batch-researched"
+  },
+  "collectionDate": "2026-06-30",
+  "sourceSearches": [
+    {
+      "purpose": "official canon and character description",
+      "queries": ["Cloud Strife official Square Enix character profile", "Final Fantasy VII Cloud Strife official"],
+      "selectedSources": ["https://ffvii.square-enix-games.com/"],
+      "confidence": "medium",
+      "notes": "Use Square Enix franchise pages as official anchors; exact character subpage should be verified in a follow-up pass."
+    },
+    {
+      "purpose": "measurable attention signal",
+      "queries": ["Wikimedia pageviews API Cloud Strife article"],
+      "selectedSources": ["https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Cloud_Strife/monthly/2025010100/2025123100"],
+      "confidence": "high",
+      "notes": "Same pageview window as other pilot characters."
+    }
+  ],
+  "rawFindings": {
+    "identity": {
+      "canonicalName": "Cloud Strife",
+      "aliases": ["Cloud"],
+      "franchise": "Final Fantasy VII",
+      "majorGamesToTrack": ["Final Fantasy VII", "Final Fantasy VII Remake", "Final Fantasy VII Rebirth"],
+      "sourceConfidence": "medium",
+      "notes": "Cloud is better analyzed as a narrative character than as a broad mascot."
+    },
+    "roleAndNarrative": {
+      "primaryRoles": ["protagonist", "mercenary", "JRPG lead"],
+      "commonStoryFunctions": ["identity conflict", "party leader", "rivalry with Sephiroth", "connection to Tifa and Aerith"],
+      "relationshipsToTrack": [
+        { "name": "Sephiroth", "relationship": "primary antagonist / psychological rival" },
+        { "name": "Tifa Lockhart", "relationship": "childhood friend / party member" },
+        { "name": "Aerith Gainsborough", "relationship": "party member / emotional narrative link" }
+      ],
+      "sourceConfidence": "medium",
+      "notes": "Detailed story interpretation needs careful spoiler-aware sourcing later."
+    },
+    "visualDesign": {
+      "dominantColors": ["black", "navy", "steel", "blond"],
+      "clothing": ["sleeveless turtleneck", "pauldron", "combat pants", "boots", "gloves"],
+      "accessoriesAndMarks": ["Buster Sword", "spiky blond hair", "single pauldron"],
+      "silhouette": "lean swordsman with oversized sword and spiky hair",
+      "designSignals": ["weapon-driven silhouette", "asymmetrical armor", "highly recognizable hair shape"],
+      "sourceConfidence": "medium",
+      "notes": "Cloud is a strong test case for clothing, weapon silhouette, and redesign-over-time analysis."
+    },
+    "popularitySignals": [
+      {
+        "source": "Wikimedia Pageviews API",
+        "metricType": "monthly pageviews, English Wikipedia article 'Cloud Strife'",
+        "period": "2025-01 through 2025-12",
+        "summary": {
+          "totalViews": 133976,
+          "averageMonthlyViews": 11165,
+          "peakMonth": "2025-01",
+          "peakViews": 16094
+        },
+        "confidence": "high",
+        "notes": "Lower than mascots in this pilot, but narrative-character fandom may appear more strongly in community/fan art metrics."
+      },
+      {
+        "source": "Curated analyst baseline",
+        "metricType": "general recognition tier",
+        "value": "Iconic within JRPGs / Mainstream overall",
+        "confidence": "medium",
+        "notes": "Cloud is a genre icon but less universally recognized than Mario or Pikachu."
+      }
+    ],
+    "communityAndFanbase": {
+      "expectedSignalsToCollectLater": ["fan art volume", "cosplay frequency", "shipping/community discussion", "Remake/Rebirth release spikes", "Google Trends"],
+      "currentConfidence": "low",
+      "notes": "Cloud likely requires fan-content and release-window analysis to capture popularity fairly."
+    },
+    "analysisUsefulness": [
+      "Best pilot character for story and clothing analysis.",
+      "Good contrast to mascot characters because pageviews alone may understate dedicated fandom.",
+      "Useful anchor for JRPG protagonist and weapon silhouette comparisons."
+    ],
+    "dataGaps": [
+      "Need exact official character page citation.",
+      "Need release-window attention comparison around Remake/Rebirth.",
+      "Need community metrics for fanbase strength."
+    ]
+  },
+  "normalizedCandidate": {
+    "name": "Cloud Strife",
+    "slug": "cloud-strife",
+    "aliases": ["Cloud"],
+    "franchise": "Final Fantasy",
+    "games": ["Final Fantasy VII", "Final Fantasy VII Remake", "Final Fantasy VII Rebirth"],
+    "publisher": "Square Enix",
+    "developer": "Square / Square Enix",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "A defining JRPG protagonist whose spiky hair, oversized Buster Sword, and identity-focused story make him a core benchmark for narrative game characters.",
+    "popularitySignals": [
+      {
+        "source": "Wikimedia Pageviews API",
+        "metricType": "2025 English Wikipedia annual pageviews",
+        "value": 133976,
+        "maxValue": 765428,
+        "collectedAt": "2026-06-30",
+        "confidence": "high",
+        "notes": "Normalized against Mario's current pilot total only for temporary comparison."
+      }
+    ],
+    "visualTags": {
+      "clothing": ["sleeveless turtleneck", "pauldron", "combat pants", "boots", "gloves"],
+      "colors": ["#2d3442", "#c7b36a", "#7c8ea8", "#111111"],
+      "accessories": ["Buster Sword", "spiky blond hair", "single pauldron"],
+      "silhouette": "lean swordsman with oversized sword and spiky hair"
+    },
+    "analysisNotes": ["Compare against Link, Sephiroth, Sora, and 2B for weapon and JRPG visual design.", "Community metrics are likely important for fair popularity measurement."],
+    "citations": [
+      {
+        "title": "Final Fantasy VII official site - Square Enix",
+        "url": "https://ffvii.square-enix-games.com/",
+        "sourceType": "official",
+        "retrievedAt": "2026-06-30",
+        "notes": "Official franchise/game source; character-specific page should be verified later."
+      },
+      {
+        "title": "Wikimedia Pageviews API: Cloud Strife",
+        "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Cloud_Strife/monthly/2025010100/2025123100",
+        "sourceType": "database",
+        "retrievedAt": "2026-06-30",
+        "notes": "Monthly English Wikipedia pageviews for 2025."
+      }
+    ]
+  }
+}

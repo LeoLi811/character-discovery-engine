@@ -1,0 +1,15 @@
+# Wikidata starter query for character enrichment.
+# Paste into https://query.wikidata.org/ or use from a future ingestion script.
+
+SELECT ?character ?characterLabel ?franchiseLabel ?image WHERE {
+  VALUES ?character {
+    wd:Q15711870 # Mario
+    wd:Q178871   # Link
+    wd:Q9351     # Pikachu
+  }
+
+  OPTIONAL { ?character wdt:P1441 ?franchise. }
+  OPTIONAL { ?character wdt:P18 ?image. }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}

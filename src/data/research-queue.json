@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Mario",
+    "franchise": "Super Mario",
+    "priority": "high",
+    "status": "pilot-researched",
+    "neededSources": ["wikidata", "community", "google-trends"],
+    "notes": "Official and Wikimedia pageview pilot saved at research/characters/mario.research.json. Still needs verified Wikidata entity and comparable community metrics."
+  },
+  {
+    "name": "Link",
+    "franchise": "The Legend of Zelda",
+    "priority": "high",
+    "status": "seeded",
+    "neededSources": ["official", "wikidata", "pageviews"],
+    "notes": "Track alternate designs across eras later."
+  },
+  {
+    "name": "Cortana",
+    "franchise": "Halo",
+    "priority": "medium",
+    "status": "candidate",
+    "neededSources": ["official", "wikidata"],
+    "notes": "Useful companion/AI comparison record."
+  },
+  {
+    "name": "Tifa Lockhart",
+    "franchise": "Final Fantasy",
+    "priority": "high",
+    "status": "candidate",
+    "neededSources": ["official", "wikidata", "community"],
+    "notes": "Important for fanbase, clothing, and remake-era popularity analysis."
+  },
+  {
+    "name": "Aerith Gainsborough",
+    "franchise": "Final Fantasy",
+    "priority": "high",
+    "status": "candidate",
+    "neededSources": ["official", "wikidata", "community"],
+    "notes": "Useful pair with Tifa and Cloud for intra-franchise comparison."
+  },
+  {
+    "name": "Zagreus",
+    "franchise": "Hades",
+    "priority": "medium",
+    "status": "candidate",
+    "neededSources": ["official", "wikidata", "community"],
+    "notes": "Modern indie protagonist with strong style/fan signal."
+  },
+  {
+    "name": "Sans",
+    "franchise": "Undertale",
+    "priority": "medium",
+    "status": "candidate",
+    "neededSources": ["official", "wikidata", "community"],
+    "notes": "High meme/community signal; needs careful source labeling."
+  },
+  {
+    "name": "Krystal",
+    "franchise": "Star Fox",
+    "priority": "low",
+    "status": "candidate",
+    "neededSources": ["official", "wikidata", "community"],
+    "notes": "Potential fanbase outlier relative to franchise centrality."
+  },
+  {
+    "name": "Pikachu",
+    "franchise": "Pokemon",
+    "priority": "high",
+    "status": "batch-researched",
+    "neededSources": ["wikidata", "community", "media-merchandise"],
+    "notes": "Pilot batch record saved at research/characters/pikachu.research.json."
+  },
+  {
+    "name": "Cloud Strife",
+    "franchise": "Final Fantasy",
+    "priority": "high",
+    "status": "batch-researched",
+    "neededSources": ["official-character-page", "wikidata", "community"],
+    "notes": "Pilot batch record saved at research/characters/cloud-strife.research.json."
+  },
+  {
+    "name": "Ryu",
+    "franchise": "Street Fighter",
+    "priority": "high",
+    "status": "batch-researched",
+    "neededSources": ["wikidata", "competitive-community", "spike-explanation"],
+    "notes": "Pilot batch record saved at research/characters/ryu.research.json."
+  },
+  {
+    "name": "Steve",
+    "franchise": "Minecraft",
+    "priority": "high",
+    "status": "batch-researched",
+    "neededSources": ["official-character-page", "wikidata", "player-base"],
+    "notes": "Pilot batch record saved at research/characters/steve-minecraft.research.json."
+  }
+]

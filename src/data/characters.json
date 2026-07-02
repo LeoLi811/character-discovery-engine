@@ -1,0 +1,1028 @@
+[
+  {
+    "name": "Mario",
+    "slug": "mario",
+    "aliases": ["Jumpman", "Super Mario"],
+    "franchise": "Super Mario",
+    "games": ["Super Mario Bros.", "Super Mario Odyssey"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo",
+    "role": "Mascot",
+    "popularityTier": "Iconic",
+    "summary": "Nintendo's plumber mascot and one of the most recognizable figures in games.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 100, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score based on broad cultural recognition." },
+      { "source": "Wikidata presence", "metricType": "metadata depth", "value": 95, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for future Wikidata enrichment." }
+    ],
+    "visualTags": { "clothing": ["overalls", "gloves", "cap"], "colors": ["#d83a32", "#2468bf", "#f2d38b"], "accessories": ["mustache", "M emblem"], "silhouette": "short rounded mascot with cap and gloves" },
+    "analysisNotes": ["Strong benchmark for mascot recognition.", "Useful anchor for comparing platformer characters."],
+    "citations": [{ "title": "Mario - Wikidata", "url": "https://www.wikidata.org/wiki/Q15711870", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Link",
+    "slug": "link",
+    "aliases": ["Hero of Hyrule"],
+    "franchise": "The Legend of Zelda",
+    "games": ["The Legend of Zelda: Breath of the Wild", "The Legend of Zelda: Tears of the Kingdom"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo EPD",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "The recurring hero associated with exploration, puzzle solving, and Hyrule's mythology.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 96, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Wikidata presence", "metricType": "metadata depth", "value": 90, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for future automated enrichment." }
+    ],
+    "visualTags": { "clothing": ["tunic", "boots", "cloak"], "colors": ["#4f9f58", "#d8c58a", "#466c9c"], "accessories": ["sword", "shield", "pointed cap"], "silhouette": "slim adventurer with sword and shield" },
+    "analysisNotes": ["Costume has shifted across eras, useful for style evolution analysis."],
+    "citations": [{ "title": "Link - Wikidata", "url": "https://www.wikidata.org/wiki/Q178871", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Lara Croft",
+    "slug": "lara-croft",
+    "aliases": ["Tomb Raider"],
+    "franchise": "Tomb Raider",
+    "games": ["Tomb Raider", "Rise of the Tomb Raider"],
+    "publisher": "Crystal Dynamics",
+    "developer": "Core Design",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "An adventure heroine known for exploration, archaeology, and action-game reinvention.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 91, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Cross-media presence", "metricType": "adaptation signal", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder signal for film and media presence." }
+    ],
+    "visualTags": { "clothing": ["tank top", "cargo shorts", "boots"], "colors": ["#69a7a4", "#7b5b3c", "#1d1d1f"], "accessories": ["dual pistols", "backpack", "braid"], "silhouette": "athletic explorer with gear" },
+    "analysisNotes": ["Useful for gender representation and franchise reboot comparisons."],
+    "citations": [{ "title": "Lara Croft - Wikidata", "url": "https://www.wikidata.org/wiki/Q231439", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Master Chief",
+    "slug": "master-chief",
+    "aliases": ["John-117"],
+    "franchise": "Halo",
+    "games": ["Halo: Combat Evolved", "Halo Infinite"],
+    "publisher": "Xbox Game Studios",
+    "developer": "Bungie",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "The armored Spartan soldier who became the face of Xbox shooters.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 90, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Platform mascot signal", "metricType": "brand association", "value": 92, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for Xbox association." }
+    ],
+    "visualTags": { "clothing": ["power armor", "helmet", "visor"], "colors": ["#5f7744", "#d8a832", "#1b2624"], "accessories": ["assault rifle", "energy shield"], "silhouette": "large armored soldier with opaque visor" },
+    "analysisNotes": ["Strong comparison point for faceless or helmeted protagonists."],
+    "citations": [{ "title": "Master Chief - Wikidata", "url": "https://www.wikidata.org/wiki/Q187755", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Sonic the Hedgehog",
+    "slug": "sonic-the-hedgehog",
+    "aliases": ["Sonic"],
+    "franchise": "Sonic the Hedgehog",
+    "games": ["Sonic the Hedgehog", "Sonic Frontiers"],
+    "publisher": "Sega",
+    "developer": "Sonic Team",
+    "role": "Mascot",
+    "popularityTier": "Iconic",
+    "summary": "Sega's speed-focused mascot with a long-running fan community.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 94, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Cross-media presence", "metricType": "adaptation signal", "value": 93, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder signal for film and television presence." }
+    ],
+    "visualTags": { "clothing": ["gloves", "sneakers"], "colors": ["#1767c2", "#e23b38", "#f4f4e9"], "accessories": ["quills", "rings"], "silhouette": "spiky compact mascot with oversized shoes" },
+    "analysisNotes": ["High fan-creation potential and visible cross-media footprint."],
+    "citations": [{ "title": "Sonic the Hedgehog - Wikidata", "url": "https://www.wikidata.org/wiki/Q186168", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Pikachu",
+    "slug": "pikachu",
+    "aliases": ["Pika"],
+    "franchise": "Pokemon",
+    "games": ["Pokemon Yellow", "Pokemon Scarlet and Violet"],
+    "publisher": "Nintendo",
+    "developer": "Game Freak",
+    "role": "Mascot",
+    "popularityTier": "Iconic",
+    "summary": "The electric Pokemon mascot with global recognition across games, anime, and merchandise.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 99, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Cross-media presence", "metricType": "adaptation signal", "value": 100, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for franchise media footprint." }
+    ],
+    "visualTags": { "clothing": ["none"], "colors": ["#f5d735", "#d9382f", "#3d2514"], "accessories": ["tail", "cheek marks"], "silhouette": "small mascot with pointed ears and lightning tail" },
+    "analysisNotes": ["Useful top-end popularity benchmark for mascot characters."],
+    "citations": [{ "title": "Pikachu - Wikidata", "url": "https://www.wikidata.org/wiki/Q9351", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Cloud Strife",
+    "slug": "cloud-strife",
+    "aliases": ["Cloud"],
+    "franchise": "Final Fantasy",
+    "games": ["Final Fantasy VII", "Final Fantasy VII Remake"],
+    "publisher": "Square Enix",
+    "developer": "Square",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "A defining JRPG protagonist known for his oversized sword and complex identity arc.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Character design signal", "metricType": "visual recognizability", "value": 92, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder design score." }
+    ],
+    "visualTags": { "clothing": ["sleeveless turtleneck", "pauldron", "boots"], "colors": ["#2d3442", "#c7b36a", "#7c8ea8"], "accessories": ["buster sword", "spiky hair"], "silhouette": "lean swordsman with massive blade" },
+    "analysisNotes": ["Useful for comparing weapon silhouette and JRPG protagonist archetypes."],
+    "citations": [{ "title": "Cloud Strife - Wikidata", "url": "https://www.wikidata.org/wiki/Q845260", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Samus Aran",
+    "slug": "samus-aran",
+    "aliases": ["Samus"],
+    "franchise": "Metroid",
+    "games": ["Metroid", "Metroid Dread"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo R&D1",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "A bounty hunter whose armor, exploration, and reveal shaped action-adventure history.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Design legacy", "metricType": "genre influence", "value": 90, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for Metroidvania influence." }
+    ],
+    "visualTags": { "clothing": ["power suit", "helmet"], "colors": ["#d66a21", "#e4c331", "#b9272f"], "accessories": ["arm cannon", "visor"], "silhouette": "armored figure with large arm cannon" },
+    "analysisNotes": ["Good example of armor-based identity and hidden-face design."],
+    "citations": [{ "title": "Samus Aran - Wikidata", "url": "https://www.wikidata.org/wiki/Q212896", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Kratos",
+    "slug": "kratos",
+    "aliases": ["Ghost of Sparta"],
+    "franchise": "God of War",
+    "games": ["God of War", "God of War Ragnarok"],
+    "publisher": "Sony Interactive Entertainment",
+    "developer": "Santa Monica Studio",
+    "role": "Protagonist",
+    "popularityTier": "Iconic",
+    "summary": "A mythic action protagonist whose characterization evolved from rage to parenthood.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 89, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Modern franchise signal", "metricType": "critical visibility", "value": 91, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for modern award and review visibility." }
+    ],
+    "visualTags": { "clothing": ["leather armor", "war paint", "bracers"], "colors": ["#ede5d7", "#b32622", "#6d5848"], "accessories": ["axe", "chains", "beard"], "silhouette": "broad muscular figure with weapon on back" },
+    "analysisNotes": ["Strong arc for comparing rebooted character identity."],
+    "citations": [{ "title": "Kratos - Wikidata", "url": "https://www.wikidata.org/wiki/Q178865", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Geralt of Rivia",
+    "slug": "geralt-of-rivia",
+    "aliases": ["White Wolf"],
+    "franchise": "The Witcher",
+    "games": ["The Witcher 3: Wild Hunt"],
+    "publisher": "CD Projekt",
+    "developer": "CD Projekt Red",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A monster hunter whose game popularity expanded through novels and television.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 84, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Cross-media presence", "metricType": "adaptation signal", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for TV and book footprint." }
+    ],
+    "visualTags": { "clothing": ["leather armor", "medallion", "boots"], "colors": ["#c7c7bd", "#3c3b36", "#7a6046"], "accessories": ["two swords", "white hair", "scar"], "silhouette": "weathered swordsman with twin blades" },
+    "analysisNotes": ["Good for comparing game-first versus book-first character origins."],
+    "citations": [{ "title": "Geralt of Rivia - Wikidata", "url": "https://www.wikidata.org/wiki/Q25580", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Aloy",
+    "slug": "aloy",
+    "aliases": [],
+    "franchise": "Horizon",
+    "games": ["Horizon Zero Dawn", "Horizon Forbidden West"],
+    "publisher": "Sony Interactive Entertainment",
+    "developer": "Guerrilla Games",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A machine hunter whose design blends tribal materials and science-fiction tools.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 76, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Modern franchise signal", "metricType": "platform visibility", "value": 78, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder for PlayStation franchise visibility." }
+    ],
+    "visualTags": { "clothing": ["layered armor", "braids", "furs"], "colors": ["#c75b32", "#4c7e8f", "#d7b27a"], "accessories": ["bow", "focus device", "spear"], "silhouette": "agile archer with braided hair and tech earpiece" },
+    "analysisNotes": ["Useful for clothing/material tagging because design mixes eras."],
+    "citations": [{ "title": "Aloy - Wikidata", "url": "https://www.wikidata.org/wiki/Q22241750", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Mega Man",
+    "slug": "mega-man",
+    "aliases": ["Rockman"],
+    "franchise": "Mega Man",
+    "games": ["Mega Man", "Mega Man 11"],
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A blue robot hero known for platforming, boss powers, and arm-cannon design.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 78, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Design legacy", "metricType": "visual recognizability", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder design score." }
+    ],
+    "visualTags": { "clothing": ["helmet", "bodysuit", "boots"], "colors": ["#1888d8", "#7cc5f6", "#132e73"], "accessories": ["arm cannon"], "silhouette": "compact robot with rounded helmet and arm cannon" },
+    "analysisNotes": ["Strong signal for color ownership and silhouette consistency."],
+    "citations": [{ "title": "Mega Man - Wikidata", "url": "https://www.wikidata.org/wiki/Q668093", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Pac-Man",
+    "slug": "pac-man",
+    "aliases": ["Puck Man"],
+    "franchise": "Pac-Man",
+    "games": ["Pac-Man", "Pac-Man Championship Edition"],
+    "publisher": "Bandai Namco Entertainment",
+    "developer": "Namco",
+    "role": "Mascot",
+    "popularityTier": "Iconic",
+    "summary": "An arcade mascot whose simple shape became one of gaming's most durable symbols.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 96, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Arcade legacy", "metricType": "historical visibility", "value": 98, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder arcade-history signal." }
+    ],
+    "visualTags": { "clothing": ["none"], "colors": ["#f4d43d", "#111111", "#ffffff"], "accessories": ["mouth wedge"], "silhouette": "round yellow disk with missing wedge" },
+    "analysisNotes": ["Minimal design makes a useful contrast to gear-heavy characters."],
+    "citations": [{ "title": "Pac-Man - Wikidata", "url": "https://www.wikidata.org/wiki/Q192152", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Donkey Kong",
+    "slug": "donkey-kong",
+    "aliases": ["DK"],
+    "franchise": "Donkey Kong",
+    "games": ["Donkey Kong", "Donkey Kong Country"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo",
+    "role": "Mascot",
+    "popularityTier": "Iconic",
+    "summary": "A Nintendo arcade veteran and platforming mascot with a recognizable tie-and-build silhouette.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 87, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Arcade legacy", "metricType": "historical visibility", "value": 90, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder legacy signal." }
+    ],
+    "visualTags": { "clothing": ["tie"], "colors": ["#6f3f1e", "#c3242f", "#f0c08b"], "accessories": ["DK tie"], "silhouette": "large broad mascot with long arms" },
+    "analysisNotes": ["Useful for mascot lineage from arcade to console."],
+    "citations": [{ "title": "Donkey Kong - Wikidata", "url": "https://www.wikidata.org/wiki/Q668687", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Princess Zelda",
+    "slug": "princess-zelda",
+    "aliases": ["Zelda"],
+    "franchise": "The Legend of Zelda",
+    "games": ["The Legend of Zelda", "The Legend of Zelda: Tears of the Kingdom"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo EPD",
+    "role": "Royalty",
+    "popularityTier": "Mainstream",
+    "summary": "A recurring royal, scholar, and wielder of wisdom across the Zelda franchise.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Franchise centrality", "metricType": "narrative importance", "value": 91, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder narrative score." }
+    ],
+    "visualTags": { "clothing": ["gown", "jewelry", "cloak"], "colors": ["#d8c58f", "#e9d4e8", "#6f8fd4"], "accessories": ["tiara", "triforce motif"], "silhouette": "regal figure with long dress and ornate details" },
+    "analysisNotes": ["Good case for role changes across franchise entries."],
+    "citations": [{ "title": "Princess Zelda - Wikidata", "url": "https://www.wikidata.org/wiki/Q186217", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Bowser",
+    "slug": "bowser",
+    "aliases": ["King Koopa"],
+    "franchise": "Super Mario",
+    "games": ["Super Mario Bros.", "Super Mario 64"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo",
+    "role": "Antagonist",
+    "popularityTier": "Iconic",
+    "summary": "Mario's recurring rival and one of gaming's clearest villain mascots.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Franchise centrality", "metricType": "recurrence", "value": 95, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder recurrence signal." }
+    ],
+    "visualTags": { "clothing": ["spiked cuffs"], "colors": ["#d89b2a", "#2f8a3d", "#b82920"], "accessories": ["shell", "horns", "spikes"], "silhouette": "large spiked turtle-dragon villain" },
+    "analysisNotes": ["Strong antagonist benchmark with mascot-level recognition."],
+    "citations": [{ "title": "Bowser - Wikidata", "url": "https://www.wikidata.org/wiki/Q380266", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Princess Peach",
+    "slug": "princess-peach",
+    "aliases": ["Peach"],
+    "franchise": "Super Mario",
+    "games": ["Super Mario Bros.", "Super Princess Peach"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo",
+    "role": "Royalty",
+    "popularityTier": "Mainstream",
+    "summary": "The Mushroom Kingdom princess and a recurring playable character across Mario spin-offs.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 83, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Franchise centrality", "metricType": "recurrence", "value": 92, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder recurrence signal." }
+    ],
+    "visualTags": { "clothing": ["gown", "gloves", "heels"], "colors": ["#f2a6c8", "#f7d35d", "#4c9fdb"], "accessories": ["crown", "earrings"], "silhouette": "princess figure with full dress and crown" },
+    "analysisNotes": ["Useful for tracking role expansion from objective to playable lead."],
+    "citations": [{ "title": "Princess Peach - Wikidata", "url": "https://www.wikidata.org/wiki/Q721873", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Yoshi",
+    "slug": "yoshi",
+    "aliases": [],
+    "franchise": "Yoshi",
+    "games": ["Super Mario World", "Yoshi's Island"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo",
+    "role": "Companion",
+    "popularityTier": "Mainstream",
+    "summary": "A friendly dinosaur companion who became a platforming lead in his own series.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Spin-off signal", "metricType": "series ownership", "value": 84, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder spin-off signal." }
+    ],
+    "visualTags": { "clothing": ["boots", "saddle"], "colors": ["#56a64d", "#f3f1d2", "#d73430"], "accessories": ["eggs", "long tongue"], "silhouette": "round dinosaur mascot with saddle" },
+    "analysisNotes": ["Useful for companion-to-lead progression."],
+    "citations": [{ "title": "Yoshi - Wikidata", "url": "https://www.wikidata.org/wiki/Q83827", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Kirby",
+    "slug": "kirby",
+    "aliases": [],
+    "franchise": "Kirby",
+    "games": ["Kirby's Dream Land", "Kirby and the Forgotten Land"],
+    "publisher": "Nintendo",
+    "developer": "HAL Laboratory",
+    "role": "Mascot",
+    "popularityTier": "Mainstream",
+    "summary": "A round pink hero known for copying abilities and approachable platforming.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 84, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Design signal", "metricType": "visual simplicity", "value": 94, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder design score." }
+    ],
+    "visualTags": { "clothing": ["none"], "colors": ["#ef8fb7", "#d23b5d", "#3d5fd0"], "accessories": ["copy hats", "star"], "silhouette": "small round mascot with stubby limbs" },
+    "analysisNotes": ["Good contrast between minimal body shape and many ability costumes."],
+    "citations": [{ "title": "Kirby - Wikidata", "url": "https://www.wikidata.org/wiki/Q650686", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Solid Snake",
+    "slug": "solid-snake",
+    "aliases": ["Snake"],
+    "franchise": "Metal Gear",
+    "games": ["Metal Gear Solid", "Metal Gear Solid 4"],
+    "publisher": "Konami",
+    "developer": "Konami",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A stealth-action soldier associated with tactical infiltration and cinematic game storytelling.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 79, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "stealth legacy", "value": 90, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["sneaking suit", "bandana", "boots"], "colors": ["#3f5149", "#1c2424", "#a6a09a"], "accessories": ["headband", "radio", "weapons"], "silhouette": "tactical soldier with bandana and gear" },
+    "analysisNotes": ["Useful for analyzing military clothing and stealth archetypes."],
+    "citations": [{ "title": "Solid Snake - Wikidata", "url": "https://www.wikidata.org/wiki/Q842022", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Ryu",
+    "slug": "ryu",
+    "aliases": [],
+    "franchise": "Street Fighter",
+    "games": ["Street Fighter", "Street Fighter II"],
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "role": "Fighter",
+    "popularityTier": "Iconic",
+    "summary": "A disciplined martial artist and one of fighting games' defining archetypes.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "fighting-game legacy", "value": 96, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["gi", "headband", "gloves"], "colors": ["#f1eee6", "#bf2429", "#222222"], "accessories": ["red headband", "martial gloves"], "silhouette": "barefoot martial artist in torn gi" },
+    "analysisNotes": ["Good baseline for fighting-game main-character design."],
+    "citations": [{ "title": "Ryu - Wikidata", "url": "https://www.wikidata.org/wiki/Q200710", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Chun-Li",
+    "slug": "chun-li",
+    "aliases": [],
+    "franchise": "Street Fighter",
+    "games": ["Street Fighter II", "Street Fighter 6"],
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "role": "Fighter",
+    "popularityTier": "Iconic",
+    "summary": "A landmark fighting-game character known for speed, kicks, and a highly recognizable outfit.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 85, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "fighting-game legacy", "value": 95, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["qipao", "spiked bracelets", "boots"], "colors": ["#255ac9", "#f1d67a", "#ffffff"], "accessories": ["hair buns", "bracelets"], "silhouette": "martial artist with hair buns and flared dress" },
+    "analysisNotes": ["Key record for studying recognizable costume silhouettes."],
+    "citations": [{ "title": "Chun-Li - Wikidata", "url": "https://www.wikidata.org/wiki/Q466646", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Sub-Zero",
+    "slug": "sub-zero",
+    "aliases": ["Kuai Liang", "Bi-Han"],
+    "franchise": "Mortal Kombat",
+    "games": ["Mortal Kombat", "Mortal Kombat 11"],
+    "publisher": "Warner Bros. Games",
+    "developer": "NetherRealm Studios",
+    "role": "Fighter",
+    "popularityTier": "Mainstream",
+    "summary": "A cryomancer ninja whose blue mask and ice powers make him a fighting-game staple.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 80, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "fighting-game legacy", "value": 87, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["ninja armor", "mask", "bracers"], "colors": ["#1f73c9", "#171a1d", "#d8eef8"], "accessories": ["ice effects", "mask"], "silhouette": "masked fighter in blue ninja armor" },
+    "analysisNotes": ["Useful for color-coded rival/fighter design comparisons."],
+    "citations": [{ "title": "Sub-Zero - Wikidata", "url": "https://www.wikidata.org/wiki/Q1125206", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Scorpion",
+    "slug": "scorpion",
+    "aliases": ["Hanzo Hasashi"],
+    "franchise": "Mortal Kombat",
+    "games": ["Mortal Kombat", "Mortal Kombat X"],
+    "publisher": "Warner Bros. Games",
+    "developer": "NetherRealm Studios",
+    "role": "Fighter",
+    "popularityTier": "Mainstream",
+    "summary": "A yellow-clad specter ninja known for his spear attack and rivalry with Sub-Zero.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 81, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "fighting-game legacy", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["ninja armor", "mask", "hood"], "colors": ["#d8a11e", "#171311", "#f18a2a"], "accessories": ["spear", "fire"], "silhouette": "masked yellow ninja with chained spear" },
+    "analysisNotes": ["Pair with Sub-Zero for palette-coded rivalry analysis."],
+    "citations": [{ "title": "Scorpion - Wikidata", "url": "https://www.wikidata.org/wiki/Q728918", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Jill Valentine",
+    "slug": "jill-valentine",
+    "aliases": [],
+    "franchise": "Resident Evil",
+    "games": ["Resident Evil", "Resident Evil 3"],
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A survival-horror lead associated with tactical gear, resilience, and zombie outbreaks.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 74, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "survival-horror legacy", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["beret", "tactical vest", "boots"], "colors": ["#4969aa", "#141719", "#c7bca5"], "accessories": ["sidearm", "lockpick"], "silhouette": "tactical survivor with beret and gear" },
+    "analysisNotes": ["Good survival-horror protagonist comparison record."],
+    "citations": [{ "title": "Jill Valentine - Wikidata", "url": "https://www.wikidata.org/wiki/Q235162", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Leon S. Kennedy",
+    "slug": "leon-s-kennedy",
+    "aliases": ["Leon Kennedy"],
+    "franchise": "Resident Evil",
+    "games": ["Resident Evil 2", "Resident Evil 4"],
+    "publisher": "Capcom",
+    "developer": "Capcom",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A survival-horror hero whose look ranges from rookie cop to agent in leather jacket.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 78, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Modern franchise signal", "metricType": "remake visibility", "value": 85, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder remake visibility score." }
+    ],
+    "visualTags": { "clothing": ["jacket", "tactical gear", "boots"], "colors": ["#3e2f25", "#2a3037", "#c6b08a"], "accessories": ["handgun", "side-part hair"], "silhouette": "agent with jacket and tactical stance" },
+    "analysisNotes": ["Useful for tracking redesigns across remakes."],
+    "citations": [{ "title": "Leon S. Kennedy - Wikidata", "url": "https://www.wikidata.org/wiki/Q385752", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Doom Slayer",
+    "slug": "doom-slayer",
+    "aliases": ["Doomguy"],
+    "franchise": "Doom",
+    "games": ["Doom", "Doom Eternal"],
+    "publisher": "Bethesda Softworks",
+    "developer": "id Software",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A silent shooter protagonist defined by armor, aggression, and demon-slaying momentum.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 79, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "shooter legacy", "value": 92, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["praetor suit", "helmet", "boots"], "colors": ["#566b3c", "#7d472c", "#d5762b"], "accessories": ["shotgun", "visor"], "silhouette": "bulky armored fighter with helmet and weapons" },
+    "analysisNotes": ["Good comparison point for armored shooter protagonists."],
+    "citations": [{ "title": "Doomguy - Wikidata", "url": "https://www.wikidata.org/wiki/Q3034474", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Gordon Freeman",
+    "slug": "gordon-freeman",
+    "aliases": [],
+    "franchise": "Half-Life",
+    "games": ["Half-Life", "Half-Life 2"],
+    "publisher": "Valve",
+    "developer": "Valve",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A silent scientist protagonist recognized by the HEV suit, glasses, and crowbar.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 76, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "shooter legacy", "value": 89, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["HEV suit", "glasses"], "colors": ["#e9792d", "#353b40", "#f0b35d"], "accessories": ["crowbar", "goatee"], "silhouette": "scientist in orange suit with crowbar" },
+    "analysisNotes": ["Useful for silent protagonist and object-association analysis."],
+    "citations": [{ "title": "Gordon Freeman - Wikidata", "url": "https://www.wikidata.org/wiki/Q191585", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Commander Shepard",
+    "slug": "commander-shepard",
+    "aliases": ["Shepard"],
+    "franchise": "Mass Effect",
+    "games": ["Mass Effect", "Mass Effect 3"],
+    "publisher": "Electronic Arts",
+    "developer": "BioWare",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A customizable sci-fi commander central to BioWare's choice-driven space opera.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 72, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "RPG influence", "metricType": "choice-driven legacy", "value": 84, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder RPG influence score." }
+    ],
+    "visualTags": { "clothing": ["N7 armor", "space suit"], "colors": ["#20272d", "#c9ced2", "#b51f26"], "accessories": ["N7 stripe", "omni-tool"], "silhouette": "armored sci-fi commander" },
+    "analysisNotes": ["Customizable identity means popularity and visual data need variant handling later."],
+    "citations": [{ "title": "Commander Shepard - Wikidata", "url": "https://www.wikidata.org/wiki/Q5155651", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Ezio Auditore",
+    "slug": "ezio-auditore",
+    "aliases": ["Ezio"],
+    "franchise": "Assassin's Creed",
+    "games": ["Assassin's Creed II", "Assassin's Creed Brotherhood"],
+    "publisher": "Ubisoft",
+    "developer": "Ubisoft Montreal",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A charismatic assassin whose hooded robes became central to the franchise's identity.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 77, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Franchise centrality", "metricType": "series identity", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder franchise score." }
+    ],
+    "visualTags": { "clothing": ["hooded robes", "cape", "boots"], "colors": ["#ece7dc", "#8b1f25", "#3b342d"], "accessories": ["hidden blade", "hood"], "silhouette": "hooded assassin with layered robes" },
+    "analysisNotes": ["Excellent for clothing silhouette and franchise uniform analysis."],
+    "citations": [{ "title": "Ezio Auditore da Firenze - Wikidata", "url": "https://www.wikidata.org/wiki/Q725178", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Nathan Drake",
+    "slug": "nathan-drake",
+    "aliases": ["Nate"],
+    "franchise": "Uncharted",
+    "games": ["Uncharted: Drake's Fortune", "Uncharted 4"],
+    "publisher": "Sony Interactive Entertainment",
+    "developer": "Naughty Dog",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A treasure-hunting adventure hero shaped by cinematic action and casual explorer clothing.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 75, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Platform signal", "metricType": "PlayStation association", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder platform signal." }
+    ],
+    "visualTags": { "clothing": ["henley shirt", "jeans", "holster"], "colors": ["#6f786e", "#2e4f77", "#7b5c3f"], "accessories": ["ring necklace", "pistol holster"], "silhouette": "casual adventurer with rolled sleeves" },
+    "analysisNotes": ["Useful contrast to fantasy adventurer designs."],
+    "citations": [{ "title": "Nathan Drake - Wikidata", "url": "https://www.wikidata.org/wiki/Q1955031", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Joel Miller",
+    "slug": "joel-miller",
+    "aliases": ["Joel"],
+    "franchise": "The Last of Us",
+    "games": ["The Last of Us", "The Last of Us Part II"],
+    "publisher": "Sony Interactive Entertainment",
+    "developer": "Naughty Dog",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A post-apocalyptic survivor whose popularity is tied to narrative performance and moral ambiguity.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 73, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Cross-media presence", "metricType": "adaptation signal", "value": 84, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder TV adaptation signal." }
+    ],
+    "visualTags": { "clothing": ["plaid shirt", "jacket", "backpack"], "colors": ["#4f6b5d", "#6b4432", "#2d2f2d"], "accessories": ["backpack", "revolver"], "silhouette": "rugged survivor with backpack" },
+    "analysisNotes": ["Good narrative-first popularity comparison."],
+    "citations": [{ "title": "Joel - Wikidata", "url": "https://www.wikidata.org/wiki/Q16247562", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Ellie Williams",
+    "slug": "ellie-williams",
+    "aliases": ["Ellie"],
+    "franchise": "The Last of Us",
+    "games": ["The Last of Us", "The Last of Us Part II"],
+    "publisher": "Sony Interactive Entertainment",
+    "developer": "Naughty Dog",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A survivor protagonist whose character arc became central to modern narrative games.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 76, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Cross-media presence", "metricType": "adaptation signal", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder TV adaptation signal." }
+    ],
+    "visualTags": { "clothing": ["hoodie", "jacket", "backpack"], "colors": ["#8b4a3a", "#2e5d55", "#3a3936"], "accessories": ["switchblade", "tattoo", "guitar"], "silhouette": "young survivor with backpack and layered clothes" },
+    "analysisNotes": ["Useful for analyzing coming-of-age arcs and grounded clothing."],
+    "citations": [{ "title": "Ellie - Wikidata", "url": "https://www.wikidata.org/wiki/Q16247569", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Arthur Morgan",
+    "slug": "arthur-morgan",
+    "aliases": [],
+    "franchise": "Red Dead Redemption",
+    "games": ["Red Dead Redemption 2"],
+    "publisher": "Rockstar Games",
+    "developer": "Rockstar Studios",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A Western outlaw protagonist praised for character writing and period-authentic clothing.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 74, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Narrative acclaim", "metricType": "critical visibility", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder narrative visibility score." }
+    ],
+    "visualTags": { "clothing": ["cowboy hat", "coat", "boots"], "colors": ["#8b5b35", "#1f2930", "#c7a56d"], "accessories": ["revolver", "satchel", "hat"], "silhouette": "cowboy outlaw with hat and long coat" },
+    "analysisNotes": ["Good for period clothing and narrative popularity comparison."],
+    "citations": [{ "title": "Arthur Morgan - Wikidata", "url": "https://www.wikidata.org/wiki/Q60831212", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Sora",
+    "slug": "sora",
+    "aliases": [],
+    "franchise": "Kingdom Hearts",
+    "games": ["Kingdom Hearts", "Kingdom Hearts III"],
+    "publisher": "Square Enix",
+    "developer": "Square Enix",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A crossover RPG hero known for the Keyblade and expressive oversized fantasy streetwear.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 73, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Crossover signal", "metricType": "cross-franchise visibility", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder crossover score." }
+    ],
+    "visualTags": { "clothing": ["oversized shorts", "jacket", "gloves"], "colors": ["#111111", "#d43d35", "#f1cf4b"], "accessories": ["Keyblade", "necklace", "large shoes"], "silhouette": "spiky-haired hero with oversized shoes and key weapon" },
+    "analysisNotes": ["Useful for crossover-driven fanbase analysis."],
+    "citations": [{ "title": "Sora - Wikidata", "url": "https://www.wikidata.org/wiki/Q756915", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Joker",
+    "slug": "joker-persona-5",
+    "aliases": ["Ren Amamiya", "Akira Kurusu"],
+    "franchise": "Persona",
+    "games": ["Persona 5", "Persona 5 Royal"],
+    "publisher": "Atlus",
+    "developer": "P-Studio",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A stylish Phantom Thief protagonist with strong visual branding and modern JRPG fandom.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 71, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Style signal", "metricType": "visual recognizability", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder style score." }
+    ],
+    "visualTags": { "clothing": ["long coat", "mask", "gloves"], "colors": ["#0f0f12", "#c81e2b", "#f5f1e6"], "accessories": ["mask", "dagger", "glasses"], "silhouette": "slim masked thief in long coat" },
+    "analysisNotes": ["Good record for fashion-forward modern JRPG design."],
+    "citations": [{ "title": "Joker - Wikidata", "url": "https://www.wikidata.org/wiki/Q29048944", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Bayonetta",
+    "slug": "bayonetta",
+    "aliases": ["Cereza"],
+    "franchise": "Bayonetta",
+    "games": ["Bayonetta", "Bayonetta 3"],
+    "publisher": "Nintendo",
+    "developer": "PlatinumGames",
+    "role": "Protagonist",
+    "popularityTier": "Cult",
+    "summary": "A stylish action heroine whose fashion, glasses, and hair-based magic define her brand.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 68, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Style signal", "metricType": "visual recognizability", "value": 89, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder style score." }
+    ],
+    "visualTags": { "clothing": ["bodysuit", "heels", "glasses"], "colors": ["#111113", "#d5b66a", "#6a2c75"], "accessories": ["guns", "glasses", "hair magic"], "silhouette": "tall witch with long limbs and ornate hair" },
+    "analysisNotes": ["Strong case for fashion and animation identity."],
+    "citations": [{ "title": "Bayonetta - Wikidata", "url": "https://www.wikidata.org/wiki/Q813530", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "2B",
+    "slug": "2b",
+    "aliases": ["YoRHa No.2 Type B"],
+    "franchise": "Nier",
+    "games": ["Nier: Automata"],
+    "publisher": "Square Enix",
+    "developer": "PlatinumGames",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "An android soldier whose gothic uniform and blindfold became a modern character-design icon.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 72, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Style signal", "metricType": "visual recognizability", "value": 91, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder style score." }
+    ],
+    "visualTags": { "clothing": ["gothic dress", "blindfold", "boots"], "colors": ["#141416", "#d9d4c8", "#7d7b82"], "accessories": ["sword", "pod", "blindfold"], "silhouette": "android in black dress with visor and sword" },
+    "analysisNotes": ["Important for fan art, cosplay, and clothing-tag analysis later."],
+    "citations": [{ "title": "2B - Wikidata", "url": "https://www.wikidata.org/wiki/Q27910792", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Tracer",
+    "slug": "tracer",
+    "aliases": ["Lena Oxton"],
+    "franchise": "Overwatch",
+    "games": ["Overwatch", "Overwatch 2"],
+    "publisher": "Blizzard Entertainment",
+    "developer": "Blizzard Entertainment",
+    "role": "Hero",
+    "popularityTier": "Mainstream",
+    "summary": "A fast, upbeat hero whose goggles and chronal accelerator made her the face of Overwatch.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 77, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Esports/live-service signal", "metricType": "brand visibility", "value": 83, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder live-service visibility score." }
+    ],
+    "visualTags": { "clothing": ["flight jacket", "leggings", "goggles"], "colors": ["#e97c25", "#5f4538", "#55b7d9"], "accessories": ["chronal accelerator", "pulse pistols", "goggles"], "silhouette": "small speedy hero with goggles and chest device" },
+    "analysisNotes": ["Good live-service mascot and hero-shooter comparison point."],
+    "citations": [{ "title": "Tracer - Wikidata", "url": "https://www.wikidata.org/wiki/Q24032941", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "D.Va",
+    "slug": "dva",
+    "aliases": ["Hana Song"],
+    "franchise": "Overwatch",
+    "games": ["Overwatch", "Overwatch 2"],
+    "publisher": "Blizzard Entertainment",
+    "developer": "Blizzard Entertainment",
+    "role": "Hero",
+    "popularityTier": "Mainstream",
+    "summary": "A pro-gamer mech pilot with strong fan recognition across esports and hero-shooter culture.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 75, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Fanbase signal", "metricType": "community visibility", "value": 84, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder fan/community signal." }
+    ],
+    "visualTags": { "clothing": ["pilot suit", "headset", "mech armor"], "colors": ["#f29ac1", "#58c7d7", "#1d2a40"], "accessories": ["mech", "headset", "face marks"], "silhouette": "pilot paired with rounded pink mech" },
+    "analysisNotes": ["Later analysis should separate pilot popularity from mech visual identity."],
+    "citations": [{ "title": "D.Va - Wikidata", "url": "https://www.wikidata.org/wiki/Q28646530", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Steve",
+    "slug": "steve-minecraft",
+    "aliases": ["Minecraft Steve"],
+    "franchise": "Minecraft",
+    "games": ["Minecraft"],
+    "publisher": "Xbox Game Studios",
+    "developer": "Mojang Studios",
+    "role": "Avatar",
+    "popularityTier": "Iconic",
+    "summary": "Minecraft's default player avatar, recognizable through blocky proportions and simple clothing.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Player-base signal", "metricType": "game reach", "value": 98, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder based on Minecraft's broad reach." }
+    ],
+    "visualTags": { "clothing": ["t-shirt", "jeans"], "colors": ["#54bfc4", "#343b8d", "#8b5a36"], "accessories": ["pickaxe", "blocky body"], "silhouette": "block-shaped avatar with square head" },
+    "analysisNotes": ["Good avatar versus authored-character comparison case."],
+    "citations": [{ "title": "Steve - Wikidata", "url": "https://www.wikidata.org/wiki/Q7613010", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Crash Bandicoot",
+    "slug": "crash-bandicoot",
+    "aliases": ["Crash"],
+    "franchise": "Crash Bandicoot",
+    "games": ["Crash Bandicoot", "Crash Bandicoot 4"],
+    "publisher": "Activision",
+    "developer": "Naughty Dog",
+    "role": "Mascot",
+    "popularityTier": "Mainstream",
+    "summary": "A 1990s platform mascot known for expressive animation, jeans, and orange fur.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 76, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Platform mascot signal", "metricType": "historical visibility", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder mascot score." }
+    ],
+    "visualTags": { "clothing": ["jeans", "sneakers", "gloves"], "colors": ["#df6f24", "#2369b3", "#f2d2a0"], "accessories": ["spiky hair", "fingerless gloves"], "silhouette": " lanky orange mascot with big shoes" },
+    "analysisNotes": ["Useful for comparing 1990s console mascot strategies."],
+    "citations": [{ "title": "Crash Bandicoot - Wikidata", "url": "https://www.wikidata.org/wiki/Q518798", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Spyro",
+    "slug": "spyro",
+    "aliases": [],
+    "franchise": "Spyro",
+    "games": ["Spyro the Dragon", "Spyro Reignited Trilogy"],
+    "publisher": "Activision",
+    "developer": "Insomniac Games",
+    "role": "Mascot",
+    "popularityTier": "Mainstream",
+    "summary": "A purple dragon platform mascot associated with collecting, gliding, and playful fantasy worlds.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 70, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Platform mascot signal", "metricType": "historical visibility", "value": 78, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder mascot score." }
+    ],
+    "visualTags": { "clothing": ["none"], "colors": ["#7b4ec8", "#f0c24e", "#e57932"], "accessories": ["horns", "wings", "tail"], "silhouette": "small purple dragon with horns and wings" },
+    "analysisNotes": ["Useful for non-human mascot comparison."],
+    "citations": [{ "title": "Spyro - Wikidata", "url": "https://www.wikidata.org/wiki/Q220458", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Fox McCloud",
+    "slug": "fox-mccloud",
+    "aliases": ["Fox"],
+    "franchise": "Star Fox",
+    "games": ["Star Fox", "Star Fox 64"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo EAD",
+    "role": "Protagonist",
+    "popularityTier": "Cult",
+    "summary": "A pilot hero whose sci-fi uniform and animal design anchor the Star Fox series.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 65, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Nintendo roster signal", "metricType": "crossover visibility", "value": 76, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder crossover score." }
+    ],
+    "visualTags": { "clothing": ["pilot jacket", "headset", "boots"], "colors": ["#d36b32", "#efefdf", "#4d6a50"], "accessories": ["blaster", "headset", "Arwing"], "silhouette": "fox pilot with headset and jacket" },
+    "analysisNotes": ["Good for anthropomorphic hero and crossover analysis."],
+    "citations": [{ "title": "Fox McCloud - Wikidata", "url": "https://www.wikidata.org/wiki/Q1459554", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Tom Nook",
+    "slug": "tom-nook",
+    "aliases": [],
+    "franchise": "Animal Crossing",
+    "games": ["Animal Crossing", "Animal Crossing: New Horizons"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo EAD",
+    "role": "Merchant",
+    "popularityTier": "Mainstream",
+    "summary": "A shopkeeper and town organizer whose role made him central to Animal Crossing culture.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 70, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Community signal", "metricType": "meme visibility", "value": 80, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder community/meme signal." }
+    ],
+    "visualTags": { "clothing": ["sweater vest", "apron", "business shirt"], "colors": ["#8a6b4e", "#5ca86b", "#e8dbbd"], "accessories": ["leaf logo", "shop counter"], "silhouette": "round shopkeeper with tail and vest" },
+    "analysisNotes": ["Interesting non-combat popularity case."],
+    "citations": [{ "title": "Tom Nook - Wikidata", "url": "https://www.wikidata.org/wiki/Q7818278", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Isabelle",
+    "slug": "isabelle",
+    "aliases": ["Shizue"],
+    "franchise": "Animal Crossing",
+    "games": ["Animal Crossing: New Leaf", "Animal Crossing: New Horizons"],
+    "publisher": "Nintendo",
+    "developer": "Nintendo EAD",
+    "role": "Assistant",
+    "popularityTier": "Mainstream",
+    "summary": "A cheerful municipal assistant who became a breakout Animal Crossing mascot.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 72, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Crossover signal", "metricType": "roster visibility", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder crossover score." }
+    ],
+    "visualTags": { "clothing": ["cardigan", "skirt", "hair tie"], "colors": ["#f2d36a", "#5bb27b", "#f7f0d8"], "accessories": ["bells", "clipboard"], "silhouette": "small assistant with tied-up ears and cardigan" },
+    "analysisNotes": ["Good for studying breakout supporting characters."],
+    "citations": [{ "title": "Isabelle - Wikidata", "url": "https://www.wikidata.org/wiki/Q60899620", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Sephiroth",
+    "slug": "sephiroth",
+    "aliases": [],
+    "franchise": "Final Fantasy",
+    "games": ["Final Fantasy VII", "Final Fantasy VII Remake"],
+    "publisher": "Square Enix",
+    "developer": "Square",
+    "role": "Antagonist",
+    "popularityTier": "Iconic",
+    "summary": "A silver-haired villain whose long sword, coat, and theme made him a JRPG icon.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Villain legacy", "metricType": "antagonist visibility", "value": 92, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder villain score." }
+    ],
+    "visualTags": { "clothing": ["black coat", "pauldrons", "boots"], "colors": ["#0f1015", "#c7cbd0", "#6b7078"], "accessories": ["Masamune", "silver hair"], "silhouette": "tall villain with very long sword and hair" },
+    "analysisNotes": ["Strong antagonist and weapon-silhouette benchmark."],
+    "citations": [{ "title": "Sephiroth - Wikidata", "url": "https://www.wikidata.org/wiki/Q832252", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "GLaDOS",
+    "slug": "glados",
+    "aliases": ["Genetic Lifeform and Disk Operating System"],
+    "franchise": "Portal",
+    "games": ["Portal", "Portal 2"],
+    "publisher": "Valve",
+    "developer": "Valve",
+    "role": "Antagonist",
+    "popularityTier": "Mainstream",
+    "summary": "An AI antagonist known for dry humor, test chambers, and a distinctive suspended machine form.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 73, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Writing signal", "metricType": "dialogue visibility", "value": 88, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder writing recognition score." }
+    ],
+    "visualTags": { "clothing": ["machine body"], "colors": ["#d8d8cf", "#262a2c", "#f0a13a"], "accessories": ["optic", "ceiling rig"], "silhouette": "hanging robotic AI core" },
+    "analysisNotes": ["Important non-humanoid antagonist case."],
+    "citations": [{ "title": "GLaDOS - Wikidata", "url": "https://www.wikidata.org/wiki/Q736836", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Chell",
+    "slug": "chell",
+    "aliases": [],
+    "franchise": "Portal",
+    "games": ["Portal", "Portal 2"],
+    "publisher": "Valve",
+    "developer": "Valve",
+    "role": "Protagonist",
+    "popularityTier": "Cult",
+    "summary": "A silent test subject associated with the portal gun and Aperture test-chamber jumpsuit.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 64, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Object association", "metricType": "portal-gun identity", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder object-association score." }
+    ],
+    "visualTags": { "clothing": ["jumpsuit", "tank top", "long fall boots"], "colors": ["#ef7d22", "#f6f0df", "#2d3035"], "accessories": ["portal gun", "long fall boots"], "silhouette": "test subject with portal gun and spring boots" },
+    "analysisNotes": ["Useful silent protagonist and object-driven recognition record."],
+    "citations": [{ "title": "Chell - Wikidata", "url": "https://www.wikidata.org/wiki/Q548604", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Agent 47",
+    "slug": "agent-47",
+    "aliases": ["47"],
+    "franchise": "Hitman",
+    "games": ["Hitman: Codename 47", "Hitman 3"],
+    "publisher": "IO Interactive",
+    "developer": "IO Interactive",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A stealth assassin recognized by a black suit, red tie, barcode, and controlled demeanor.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 72, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Design signal", "metricType": "visual recognizability", "value": 86, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder design score." }
+    ],
+    "visualTags": { "clothing": ["black suit", "red tie", "gloves"], "colors": ["#111111", "#b51d24", "#f2f2ee"], "accessories": ["barcode", "silenced pistol"], "silhouette": "bald assassin in suit and red tie" },
+    "analysisNotes": ["Excellent minimalist clothing identity record."],
+    "citations": [{ "title": "Agent 47 - Wikidata", "url": "https://www.wikidata.org/wiki/Q422560", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Raiden",
+    "slug": "raiden-mortal-kombat",
+    "aliases": ["Lord Raiden"],
+    "franchise": "Mortal Kombat",
+    "games": ["Mortal Kombat", "Mortal Kombat 11"],
+    "publisher": "Warner Bros. Games",
+    "developer": "NetherRealm Studios",
+    "role": "Fighter",
+    "popularityTier": "Mainstream",
+    "summary": "A thunder god fighter recognized by his conical hat, lightning powers, and white-blue palette.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 73, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "fighting-game legacy", "value": 82, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["robes", "conical hat", "sash"], "colors": ["#ebe8dc", "#72b8ff", "#2d343f"], "accessories": ["lightning", "hat"], "silhouette": "robed fighter with wide hat and lightning" },
+    "analysisNotes": ["Good for mythological fighter archetype comparison."],
+    "citations": [{ "title": "Raiden - Wikidata", "url": "https://www.wikidata.org/wiki/Q728925", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Kazuya Mishima",
+    "slug": "kazuya-mishima",
+    "aliases": ["Kazuya"],
+    "franchise": "Tekken",
+    "games": ["Tekken", "Tekken 8"],
+    "publisher": "Bandai Namco Entertainment",
+    "developer": "Bandai Namco Studios",
+    "role": "Fighter",
+    "popularityTier": "Mainstream",
+    "summary": "A central Tekken fighter whose visual identity mixes martial arts, formal wear, and devil imagery.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 69, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "fighting-game legacy", "value": 80, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder genre score." }
+    ],
+    "visualTags": { "clothing": ["martial pants", "gloves", "suit"], "colors": ["#2a2a2f", "#7c2f35", "#d9d9d6"], "accessories": ["devil form", "scar", "gloves"], "silhouette": "muscular fighter with sharp hairline and gloves" },
+    "analysisNotes": ["Useful for rival-family and alternate-form analysis."],
+    "citations": [{ "title": "Kazuya Mishima - Wikidata", "url": "https://www.wikidata.org/wiki/Q957973", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Sam Fisher",
+    "slug": "sam-fisher",
+    "aliases": [],
+    "franchise": "Tom Clancy's Splinter Cell",
+    "games": ["Tom Clancy's Splinter Cell", "Splinter Cell: Blacklist"],
+    "publisher": "Ubisoft",
+    "developer": "Ubisoft Montreal",
+    "role": "Protagonist",
+    "popularityTier": "Cult",
+    "summary": "A stealth operative recognized by tri-lens night-vision goggles and tactical infiltration gear.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 62, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Genre influence", "metricType": "stealth legacy", "value": 78, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder stealth score." }
+    ],
+    "visualTags": { "clothing": ["tactical suit", "goggles", "boots"], "colors": ["#171d1c", "#69d36f", "#353f45"], "accessories": ["tri-lens goggles", "pistol"], "silhouette": "stealth operative with glowing three-lens goggles" },
+    "analysisNotes": ["Object/icon association is stronger than facial recognition here."],
+    "citations": [{ "title": "Sam Fisher - Wikidata", "url": "https://www.wikidata.org/wiki/Q1349133", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  },
+  {
+    "name": "Cuphead",
+    "slug": "cuphead",
+    "aliases": [],
+    "franchise": "Cuphead",
+    "games": ["Cuphead"],
+    "publisher": "Studio MDHR",
+    "developer": "Studio MDHR",
+    "role": "Protagonist",
+    "popularityTier": "Mainstream",
+    "summary": "A rubber-hose cartoon hero whose cup head and vintage animation style stand apart visually.",
+    "popularitySignals": [
+      { "source": "Curated baseline", "metricType": "recognition", "value": 70, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "medium", "notes": "Manual V1 score." },
+      { "source": "Style signal", "metricType": "visual distinctiveness", "value": 90, "maxValue": 100, "collectedAt": "2026-06-30", "confidence": "low", "notes": "Placeholder style score." }
+    ],
+    "visualTags": { "clothing": ["shorts", "gloves", "shoes"], "colors": ["#f4f0dc", "#d0302b", "#111111"], "accessories": ["straw", "cup head"], "silhouette": "rubber-hose figure with cup for a head" },
+    "analysisNotes": ["Strong candidate for animation-style clustering."],
+    "citations": [{ "title": "Cuphead - Wikidata", "url": "https://www.wikidata.org/wiki/Q28003767", "sourceType": "encyclopedia", "retrievedAt": "2026-06-30", "notes": "Canonical entity reference." }]
+  }
+]

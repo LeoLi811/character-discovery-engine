@@ -1,0 +1,17 @@
+.env*
+.vercel
+
+node_modules
+.next
+out
+dist
+build
+
+*.log
+.next-dev*.log
+
+*.tsbuildinfo
+.pnpm-store
+
+.DS_Store
+Thumbs.db

@@ -1,0 +1,140 @@
+{
+  "character": {
+    "name": "Steve",
+    "slug": "steve-minecraft",
+    "franchise": "Minecraft",
+    "publisher": "Xbox Game Studios",
+    "developer": "Mojang Studios",
+    "firstKnownRole": "Default player avatar",
+    "researchStatus": "batch-researched"
+  },
+  "collectionDate": "2026-06-30",
+  "sourceSearches": [
+    {
+      "purpose": "official canon and character description",
+      "queries": ["Minecraft Steve official character profile", "Minecraft official Steve character"],
+      "selectedSources": ["https://www.minecraft.net/"],
+      "confidence": "medium",
+      "notes": "Use Minecraft official pages as the source family; exact Steve-specific official page needs verification."
+    },
+    {
+      "purpose": "measurable attention signal",
+      "queries": ["Wikimedia pageviews API Steve Minecraft article"],
+      "selectedSources": ["https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Steve_(Minecraft)/monthly/2025010100/2025123100"],
+      "confidence": "high",
+      "notes": "Same pageview window as other pilot characters."
+    }
+  ],
+  "rawFindings": {
+    "identity": {
+      "canonicalName": "Steve",
+      "aliases": ["Minecraft Steve"],
+      "franchise": "Minecraft",
+      "majorGamesToTrack": ["Minecraft", "Minecraft Dungeons", "Super Smash Bros. Ultimate"],
+      "sourceConfidence": "medium",
+      "notes": "Steve is an avatar/default skin, so identity analysis differs from authored narrative characters."
+    },
+    "roleAndNarrative": {
+      "primaryRoles": ["avatar", "player character", "sandbox representative"],
+      "commonStoryFunctions": ["player embodiment", "survival/crafting identity", "franchise symbol in crossovers"],
+      "relationshipsToTrack": [
+        { "name": "Alex", "relationship": "alternate/default avatar counterpart" },
+        { "name": "Creeper", "relationship": "iconic franchise creature/opposition" }
+      ],
+      "sourceConfidence": "medium",
+      "notes": "Story/personality fields are intentionally thin because Steve functions mostly as a player avatar."
+    },
+    "visualDesign": {
+      "dominantColors": ["cyan", "blue", "brown", "tan"],
+      "clothing": ["cyan shirt", "blue pants", "gray shoes"],
+      "accessoriesAndMarks": ["blocky body", "pickaxe association", "square head"],
+      "silhouette": "block-shaped avatar with square head and rectangular limbs",
+      "designSignals": ["extreme geometric simplicity", "avatar identity", "high game-world visual consistency"],
+      "sourceConfidence": "medium",
+      "notes": "Steve is a great test for avatar characters where silhouette and game style matter more than personality."
+    },
+    "popularitySignals": [
+      {
+        "source": "Wikimedia Pageviews API",
+        "metricType": "monthly pageviews, English Wikipedia article 'Steve (Minecraft)'",
+        "period": "2025-01 through 2025-12",
+        "summary": {
+          "totalViews": 546212,
+          "averageMonthlyViews": 45518,
+          "peakMonth": "2025-04",
+          "peakViews": 202327
+        },
+        "confidence": "high",
+        "notes": "April 2025 spike is large and needs explanation before conclusions."
+      },
+      {
+        "source": "Curated analyst baseline",
+        "metricType": "general recognition tier",
+        "value": "Iconic as an avatar / Mainstream as a character",
+        "confidence": "medium",
+        "notes": "Steve's recognizability is tied heavily to Minecraft's player base and block style."
+      }
+    ],
+    "communityAndFanbase": {
+      "expectedSignalsToCollectLater": ["Minecraft player base context", "skin usage", "meme/community mentions", "crossover attention", "Google Trends"],
+      "currentConfidence": "low",
+      "notes": "Avatar characters need different metrics from authored protagonists: player adoption and game reach matter more."
+    },
+    "analysisUsefulness": [
+      "Best pilot character for avatar/player-character type.",
+      "Strong contrast to Mario and Pikachu because Steve has little fixed personality or narrative arc.",
+      "Useful for testing whether visual/game-reach data can stand in for story data."
+    ],
+    "dataGaps": [
+      "Need exact official Steve/Alex source citation.",
+      "Need explanation for April 2025 pageview spike.",
+      "Need player-base/game-reach metrics."
+    ]
+  },
+  "normalizedCandidate": {
+    "name": "Steve",
+    "slug": "steve-minecraft",
+    "aliases": ["Minecraft Steve"],
+    "franchise": "Minecraft",
+    "games": ["Minecraft", "Minecraft Dungeons", "Super Smash Bros. Ultimate"],
+    "publisher": "Xbox Game Studios",
+    "developer": "Mojang Studios",
+    "role": "Avatar",
+    "popularityTier": "Iconic",
+    "summary": "Minecraft's default player avatar, recognized less through story and more through blocky proportions, simple clothing, and the huge reach of Minecraft itself.",
+    "popularitySignals": [
+      {
+        "source": "Wikimedia Pageviews API",
+        "metricType": "2025 English Wikipedia annual pageviews",
+        "value": 546212,
+        "maxValue": 765428,
+        "collectedAt": "2026-06-30",
+        "confidence": "high",
+        "notes": "Normalized against Mario's current pilot total only for temporary comparison."
+      }
+    ],
+    "visualTags": {
+      "clothing": ["cyan shirt", "blue pants", "gray shoes"],
+      "colors": ["#54bfc4", "#343b8d", "#8b5a36", "#c28f68"],
+      "accessories": ["blocky body", "pickaxe association", "square head"],
+      "silhouette": "block-shaped avatar with square head and rectangular limbs"
+    },
+    "analysisNotes": ["Use Steve to test avatar-specific fields.", "Story/personality fields should be nullable or low-weighted for avatar records."],
+    "citations": [
+      {
+        "title": "Minecraft official site",
+        "url": "https://www.minecraft.net/",
+        "sourceType": "official",
+        "retrievedAt": "2026-06-30",
+        "notes": "Official Minecraft source family; Steve-specific source should be verified later."
+      },
+      {
+        "title": "Wikimedia Pageviews API: Steve (Minecraft)",
+        "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Steve_(Minecraft)/monthly/2025010100/2025123100",
+        "sourceType": "database",
+        "retrievedAt": "2026-06-30",
+        "notes": "Monthly English Wikipedia pageviews for 2025."
+      }
+    ]
+  }
+}

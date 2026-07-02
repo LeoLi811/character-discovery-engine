@@ -1,0 +1,87 @@
+{
+  "character": {
+    "name": "",
+    "aliases": [],
+    "game": "Honkai: Star Rail",
+    "faction": "",
+    "worldOrRegion": "",
+    "playableStatus": "",
+    "releaseVersion": "",
+    "rarity": "",
+    "path": "",
+    "combatType": "",
+    "researchStatus": "draft"
+  },
+  "officialMedia": [
+    {
+      "title": "",
+      "mediaType": "",
+      "url": "",
+      "publishedAt": "",
+      "officialChannel": "",
+      "focusedCharacters": [],
+      "metrics": {
+        "views": null,
+        "likes": null,
+        "comments": null,
+        "collectedAt": ""
+      },
+      "notes": ""
+    }
+  ],
+  "storyAndRole": {
+    "shortSummary": "",
+    "majorStoryArcs": [],
+    "relationships": [],
+    "narrativeImportance": "",
+    "spoilerLevel": ""
+  },
+  "gameplay": {
+    "teamRole": "",
+    "signatureLightCone": "",
+    "metaNotes": [],
+    "sourceConfidence": ""
+  },
+  "visualDesign": {
+    "dominantColors": [],
+    "clothing": [],
+    "accessories": [],
+    "weaponOrTool": "",
+    "motifs": [],
+    "silhouette": "",
+    "designNotes": []
+  },
+  "fanCreation": [
+    {
+      "source": "",
+      "queryOrTag": "",
+      "signalType": "",
+      "value": null,
+      "qualitativeLevel": "",
+      "collectedAt": "",
+      "confidence": "",
+      "notes": ""
+    }
+  ],
+  "popularitySignals": [
+    {
+      "source": "",
+      "metricType": "",
+      "value": null,
+      "maxValue": null,
+      "collectedAt": "",
+      "confidence": "",
+      "notes": ""
+    }
+  ],
+  "citations": [
+    {
+      "title": "",
+      "url": "",
+      "sourceType": "",
+      "retrievedAt": "",
+      "notes": ""
+    }
+  ],
+  "dataGaps": []
+}
