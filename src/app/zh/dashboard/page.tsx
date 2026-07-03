@@ -1,4 +1,4 @@
-import { DashboardContent } from "@/app/dashboard/page";
+import { DashboardContent } from "@/components/DashboardContent";
 
 export default function ChineseDashboardPage() {
   return <DashboardContent locale="zh" />;
