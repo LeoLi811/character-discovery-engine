@@ -574,7 +574,7 @@
     "developer": "HoYoverse",
     "role": "Antihero",
     "popularityTier": "Mainstream",
-    "summary": "A cursed Stellaron Hunter with dark clothing, sword combat, and Xianzhou past.",
+    "summary": "A cursed Stellaron Hunter with dark clothing, sword combat, Xianzhou history, and later Planarcadia story relevance.",
     "popularitySignals": [
       {
         "source": "Curated V1 popularity proxy",
@@ -603,7 +603,8 @@
     },
     "analysisNotes": [
       "Guessing traits: Destruction, Wind, 5-star.",
-      "Primary visual traits: black hair, black outfit."
+      "Primary visual traits: black hair, black outfit.",
+      "Newer Planarcadia story summaries connect Blade to Yao Guang's Phantasmoon Games plotline."
     ],
     "citations": [
       {
@@ -4925,7 +4926,7 @@
     "developer": "HoYoverse",
     "role": "Major story character",
     "popularityTier": "Emerging",
-    "summary": "A Planarcadia figure described as an arbitrator who makes the Trailblazer a Supplicant in the Phantasmoon Games.",
+    "summary": "A Planarcadia arbitrator who makes the Trailblazer a Supplicant in the Phantasmoon Games; voice cast is source-backed, but gameplay traits are still unknown.",
     "popularitySignals": [
       {
         "source": "Curated V1 popularity proxy",
@@ -4952,7 +4953,8 @@
     },
     "analysisNotes": [
       "Guessing traits need research.",
-      "Visual traits need official-art review."
+      "Visual traits need official-art review.",
+      "Story role and voice-cast listing are source-backed."
     ],
     "citations": [
       {
@@ -4960,7 +4962,7 @@
         "url": "https://en.wikipedia.org/wiki/List_of_Honkai:_Star_Rail_characters",
         "sourceType": "encyclopedia",
         "retrievedAt": "2026-07-03",
-        "notes": "Used for Planarcadia story role and identity context."
+        "notes": "Used for Planarcadia story role, voice-cast listing, and identity context."
       }
     ]
   },
@@ -4978,7 +4980,7 @@
     "developer": "HoYoverse",
     "role": "Major story character",
     "popularityTier": "Emerging",
-    "summary": "A Planarcadia detective associated with the Galaxy Rangers and the Ashen Detective Agency.",
+    "summary": "La Mancha, also known as Ashveil, is an eccentric Planarcadia detective, director of the Ashen Detective Agency, and leader of the Galaxy Rangers.",
     "popularitySignals": [
       {
         "source": "Curated V1 popularity proxy",
@@ -5005,7 +5007,8 @@
     },
     "analysisNotes": [
       "Guessing traits need research.",
-      "Visual traits need official-art review."
+      "Visual traits need official-art review.",
+      "La Mancha alias, agency director role, and Galaxy Rangers leadership are source-backed."
     ],
     "citations": [
       {
@@ -5013,7 +5016,7 @@
         "url": "https://en.wikipedia.org/wiki/List_of_Honkai:_Star_Rail_characters",
         "sourceType": "encyclopedia",
         "retrievedAt": "2026-07-03",
-        "notes": "Used for Galaxy Rangers and Planarcadia detective context."
+        "notes": "Used for La Mancha alias, Galaxy Rangers leadership, and Planarcadia detective context."
       }
     ]
   },
@@ -5136,7 +5139,7 @@
     "developer": "HoYoverse",
     "role": "Major story character",
     "popularityTier": "Emerging",
-    "summary": "Constance, also known as The Dahlia, is tied to the Ever-Flame Mansion and later Cremators/Memokeeper story context.",
+    "summary": "Constance, also known as The Dahlia, was part of the Ever-Flame Mansion and later operates as a Memokeeper from The Cremators.",
     "popularitySignals": [
       {
         "source": "Curated V1 popularity proxy",
@@ -5163,7 +5166,8 @@
     },
     "analysisNotes": [
       "Guessing traits need research.",
-      "Visual traits need official-art review."
+      "Visual traits need official-art review.",
+      "Ever-Flame Mansion background and Cremators/Memokeeper affiliation are source-backed."
     ],
     "citations": [
       {
@@ -5171,7 +5175,7 @@
         "url": "https://en.wikipedia.org/wiki/List_of_Honkai:_Star_Rail_characters",
         "sourceType": "encyclopedia",
         "retrievedAt": "2026-07-03",
-        "notes": "Used for Constance/The Dahlia identity and faction context."
+        "notes": "Used for Constance/The Dahlia identity, Ever-Flame Mansion background, and Cremators affiliation."
       }
     ]
   },
@@ -5249,7 +5253,7 @@
     "developer": "HoYoverse",
     "role": "Research placeholder",
     "popularityTier": "Emerging",
-    "summary": "Requested HSR entry with no reliable exact-match source found yet; stored as a research placeholder instead of invented data.",
+    "summary": "Requested HSR entry with no reliable exact-match source found yet; it may be a Blade-related label, but the exact name remains unverified.",
     "popularitySignals": [
       {
         "source": "Curated research placeholder",
@@ -5276,7 +5280,7 @@
       "silhouette": "needs_research / needs_research"
     },
     "analysisNotes": [
-      "Exact public source not found in targeted search.",
+      "Exact public source not found in targeted searches for Mortenax Blade or Mortenax.",
       "All gameplay and visual traits need verification before analysis."
     ],
     "citations": [
@@ -5285,7 +5289,7 @@
         "url": "https://hsr.hoyoverse.com/en-us/character",
         "sourceType": "curated",
         "retrievedAt": "2026-07-03",
-        "notes": "Placeholder citation only; exact Mortenax Blade record needs source verification."
+        "notes": "Placeholder citation only; exact Mortenax Blade record needs source verification and spelling confirmation."
       }
     ]
   },
@@ -5303,7 +5307,7 @@
     "developer": "HoYoverse",
     "role": "Research placeholder",
     "popularityTier": "Emerging",
-    "summary": "Requested Silver Wolf variant with no reliable exact-match source found yet; stored as a research placeholder.",
+    "summary": "Requested Silver Wolf variant with no reliable exact-match source found yet; related current story/promo material mentions Silver Wolf, but not this exact LV.999 label.",
     "popularitySignals": [
       {
         "source": "Curated research placeholder",
@@ -5333,7 +5337,7 @@
     },
     "analysisNotes": [
       "Exact LV.999 source not found in targeted search.",
-      "Base Silver Wolf traits are not assumed as gameplay traits for this variant."
+      "Base Silver Wolf and promo appearances are not assumed as gameplay traits for this variant."
     ],
     "citations": [
       {

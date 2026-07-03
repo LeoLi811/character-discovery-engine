@@ -21,9 +21,11 @@ const MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE = 2;
 const GAME_CONFIDENCE_THRESHOLD = 0.68;
 const GUESS_CONFIDENCE_THRESHOLD = 0.74;
 const MAX_QUESTIONS = 18;
-const POSITIVE_ANSWERS = new Set<AnswerValue>(["yes", "probably"]);
 const CONFIDENT_ANSWERS = new Set<AnswerValue>(["yes", "probably", "probably_not", "no"]);
-const POSITIVE_ANSWER_RESOLVES_TRAIT_PATHS = new Set([
+const NEGATIVE_ANSWERS = new Set<AnswerValue>(["probably_not", "no"]);
+
+// These fields can only have one primary answer for a character.
+const EXCLUSIVE_TRAIT_PATHS = new Set([
   "global.game",
   "global.genderPresentation",
   "global.primaryHairColor",
@@ -188,7 +190,11 @@ function isQuestionRedundant(
       return true;
     }
 
-    return POSITIVE_ANSWER_RESOLVES_TRAIT_PATHS.has(question.traitPath) && POSITIVE_ANSWERS.has(answer.answer);
+    if (!EXCLUSIVE_TRAIT_PATHS.has(question.traitPath)) {
+      return false;
+    }
+
+    return CONFIDENT_ANSWERS.has(answer.answer);
   });
 }
 

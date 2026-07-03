@@ -832,7 +832,8 @@
         "Stellaron Hunters"
       ],
       "worldOrRegion": [
-        "Xianzhou"
+        "Xianzhou",
+        "Planarcadia"
       ],
       "rarity": 5,
       "releaseVersion": "1.2",
@@ -840,7 +841,8 @@
       "hasCharacterTrailer": true,
       "associatedArc": [
         "Stellaron Hunters",
-        "Xianzhou"
+        "Xianzhou",
+        "Phantasmoon Games"
       ],
       "fanSignals": [
         "fan-art",
@@ -857,6 +859,12 @@
         "source": "HSR profile/story material",
         "confidence": "high",
         "notes": "Stellaron Hunter."
+      },
+      {
+        "field": "hsr.associatedArc",
+        "source": "HSR Planarcadia story summary",
+        "confidence": "medium",
+        "notes": "Later story summaries connect Blade to Yao Guang's Planarcadia/Phantasmoon Games plotline."
       }
     ]
   },
@@ -6866,7 +6874,7 @@
     "aliases": [],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "A Planarcadia figure described as an arbitrator who makes the Trailblazer a Supplicant in the Phantasmoon Games.",
+    "summary": "A Planarcadia arbitrator who makes the Trailblazer a Supplicant in the Phantasmoon Games; voice cast is source-backed, but gameplay traits are still unknown.",
     "color": "#9a8fc9",
     "global": {
       "game": "Honkai: Star Rail",
@@ -6933,7 +6941,7 @@
         "field": "hsr.associatedArc",
         "source": "HSR Planarcadia story summary",
         "confidence": "medium",
-        "notes": "Story presence is source-backed; playable status and gameplay traits still need research."
+        "notes": "Story presence, arbitrator role, and voice-cast listing are source-backed; playable status and gameplay traits still need research."
       }
     ]
   },
@@ -6945,7 +6953,7 @@
     ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "A Planarcadia detective associated with the Galaxy Rangers and the Ashen Detective Agency.",
+    "summary": "La Mancha, also known as Ashveil, is an eccentric Planarcadia detective, director of the Ashen Detective Agency, and leader of the Galaxy Rangers.",
     "color": "#4a5668",
     "global": {
       "game": "Honkai: Star Rail",
@@ -7006,7 +7014,8 @@
       ],
       "storyRole": [
         "detective",
-        "galaxy-ranger"
+        "galaxy-ranger",
+        "agency-director"
       ]
     },
     "evidence": [
@@ -7014,7 +7023,7 @@
         "field": "hsr.faction",
         "source": "HSR character-list summary",
         "confidence": "medium",
-        "notes": "Story identity and faction are source-backed; gameplay data still needs official confirmation."
+        "notes": "Story identity, La Mancha alias, agency director role, and Galaxy Rangers leadership are source-backed; gameplay data still needs official confirmation."
       }
     ]
   },
@@ -7193,7 +7202,7 @@
     ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "Constance, also known as The Dahlia, is tied to the Ever-Flame Mansion and later Cremators/Memokeeper story context.",
+    "summary": "Constance, also known as The Dahlia, was part of the Ever-Flame Mansion and later operates as a Memokeeper from The Cremators.",
     "color": "#8e3150",
     "global": {
       "game": "Honkai: Star Rail",
@@ -7256,7 +7265,8 @@
       ],
       "storyRole": [
         "memokeeper",
-        "ever-flame-mansion"
+        "ever-flame-mansion",
+        "cremator"
       ]
     },
     "evidence": [
@@ -7264,7 +7274,7 @@
         "field": "hsr.faction",
         "source": "HSR character-list summary",
         "confidence": "medium",
-        "notes": "Story identity is source-backed; playable status and gameplay traits still need research."
+        "notes": "Constance/The Dahlia identity, Ever-Flame Mansion background, and Cremators/Memokeeper affiliation are source-backed; playable status and gameplay traits still need research."
       }
     ]
   },
@@ -7361,7 +7371,7 @@
     "aliases": [],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "Requested HSR entry with no reliable exact-match source found yet; stored as a research placeholder instead of invented data.",
+    "summary": "Requested HSR entry with no reliable exact-match source found yet; it may be a Blade-related label, but the exact name remains unverified.",
     "color": "#6b7280",
     "global": {
       "game": "Honkai: Star Rail",
@@ -7425,7 +7435,7 @@
         "field": "id",
         "source": "User-requested research queue",
         "confidence": "low",
-        "notes": "Exact-match public source not found in targeted search; record should be verified before relying on it."
+        "notes": "Exact-match public source not found in targeted searches for Mortenax Blade or Mortenax; verify spelling or source before relying on it."
       }
     ]
   },
@@ -7437,7 +7447,7 @@
     ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "Requested Silver Wolf variant with no reliable exact-match source found yet; stored as a research placeholder.",
+    "summary": "Requested Silver Wolf variant with no reliable exact-match source found yet; related current story/promo material mentions Silver Wolf, but not this exact LV.999 label.",
     "color": "#8b8fc7",
     "global": {
       "game": "Honkai: Star Rail",
@@ -7512,7 +7522,7 @@
         "field": "id",
         "source": "User-requested research queue",
         "confidence": "low",
-        "notes": "Exact LV.999 variant source not found in targeted search; base Silver Wolf traits are not assumed as gameplay traits for this variant."
+        "notes": "Exact LV.999 variant source not found in targeted search; base Silver Wolf and promo appearances are not assumed as gameplay traits for this variant."
       }
     ]
   }
