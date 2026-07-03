@@ -47,6 +47,13 @@ Avoid large JSON reads unless required.
 - Do not add dependencies without approval.
 - Do not change `package.json`, config, or routing unless required.
 
+## Deployment Rules
+
+- Do not run `git push` unless explicitly asked.
+- Do not deploy to Vercel unless explicitly asked.
+- Do not create preview or production deployments unless explicitly asked.
+- Local changes and commits are allowed only when requested.
+- After changes, summarize the diff and wait for user approval.
 ## Default Done Summary
 
 When finished, report only:
