@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { BrainCircuit, Check, RotateCcw, Sparkles, X } from "lucide-react";
+import characterImages from "@/data/character-images.json";
 import type {
   AnswerRecord,
   AnswerValue,
@@ -15,6 +16,15 @@ import {
   getSimilarCharacters,
   traitMatches
 } from "@/lib/discovery-engine";
+
+type CharacterImageRecord = {
+  imageUrl: string | null;
+  alt: string;
+  source: string;
+  licenseNote: string;
+};
+
+const characterImageMap = characterImages as Record<string, CharacterImageRecord>;
 
 const answerOptions: { value: AnswerValue; label: string }[] = [
   { value: "yes", label: "Yes" },
@@ -182,9 +192,11 @@ function ResultView({
     const matches = traitMatches(result, question);
     return matches && ["yes", "probably"].includes(answer.answer);
   });
+  const image = characterImageMap[result.id];
 
   return (
     <div className="result-view">
+      <CharacterReveal result={result} confidence={confidence} image={image} />
       <p className="eyebrow">Final guess</p>
       <h1>{result.name}</h1>
       <p>{result.summary}</p>
@@ -235,4 +247,163 @@ function ResultView({
       </div>
     </div>
   );
+}
+
+function CharacterReveal({
+  result,
+  confidence,
+  image
+}: {
+  result: DiscoveryCharacter;
+  confidence: number;
+  image?: CharacterImageRecord;
+}) {
+  const path = getTraitText(result.hsr.path);
+  const combatType = getTraitText(result.hsr.combatType);
+  const hairColor = getTraitText(result.global.primaryHairColor);
+  const outfitColor = getTraitText(result.global.primaryOutfitColor);
+  const faction = getTraitText(result.hsr.faction);
+  const initials = result.name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+  const hasImage = Boolean(image?.imageUrl);
+
+  return (
+    <figure
+      style={{
+        position: "relative",
+        display: "grid",
+        minHeight: 340,
+        margin: 0,
+        overflow: "hidden",
+        border: `1px solid ${result.color}`,
+        borderRadius: 8,
+        background: `linear-gradient(135deg, ${result.color} 0%, #171b20 54%, #0d0f12 100%)`
+      }}
+    >
+      {hasImage ? (
+        <img
+          src={image?.imageUrl ?? ""}
+          alt={image?.alt ?? `${result.name} character artwork`}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover"
+          }}
+        />
+      ) : (
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 58px), repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 58px)"
+          }}
+        />
+      )}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(90deg, rgba(8,10,12,0.72), rgba(8,10,12,0.2) 55%, rgba(8,10,12,0.72))"
+        }}
+      />
+      <div style={{ position: "relative", display: "grid", gap: 8, alignSelf: "start", width: "min(440px, 70%)", padding: 28 }}>
+        <p className="eyebrow">Character reveal</p>
+        <strong style={{ color: "#fff8ec", fontSize: "clamp(36px, 7vw, 72px)", lineHeight: 0.9 }}>{result.name}</strong>
+        <span style={{ color: "rgba(244, 241, 234, 0.78)", fontFamily: "var(--font-geist-mono)", fontSize: 12, textTransform: "uppercase" }}>
+          {faction}
+        </span>
+      </div>
+      {!hasImage ? (
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            right: "clamp(18px, 6vw, 72px)",
+            top: "50%",
+            display: "grid",
+            width: "clamp(132px, 28vw, 240px)",
+            aspectRatio: "1",
+            placeItems: "center",
+            border: "1px solid rgba(255,255,255,0.42)",
+            borderRadius: "50%",
+            background: "rgba(0,0,0,0.3)",
+            boxShadow: "0 28px 80px rgba(0,0,0,0.34)",
+            transform: "translateY(-50%)"
+          }}
+        >
+          <span style={{ color: "#fff8ec", fontFamily: "var(--font-geist-mono)", fontSize: "clamp(44px, 10vw, 92px)", fontWeight: 900 }}>
+            {initials}
+          </span>
+        </div>
+      ) : null}
+      <div
+        aria-label={`${result.name} key traits`}
+        style={{
+          position: "relative",
+          alignSelf: "end",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 8,
+          maxWidth: "min(680px, calc(100% - 120px))",
+          padding: 28,
+          paddingRight: 120
+        }}
+      >
+        {[path, combatType, `${hairColor} hair`, `${outfitColor} outfit`].map((trait) => (
+          <span
+            key={trait}
+            style={{
+              minHeight: 30,
+              border: "1px solid rgba(255,255,255,0.2)",
+              borderRadius: 8,
+              background: "rgba(6,8,10,0.52)",
+              color: "#fff8ec",
+              padding: "6px 10px",
+              fontSize: 12
+            }}
+          >
+            {trait}
+          </span>
+        ))}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          right: 28,
+          bottom: 28,
+          display: "grid",
+          minWidth: 86,
+          border: "1px solid rgba(255,255,255,0.2)",
+          borderRadius: 8,
+          background: "rgba(6,8,10,0.52)",
+          padding: "10px 12px",
+          textAlign: "right"
+        }}
+      >
+        <strong style={{ color: "var(--accent)", fontSize: 26, lineHeight: 1 }}>{Math.round(confidence * 100)}%</strong>
+        <span style={{ color: "rgba(244, 241, 234, 0.72)", fontSize: 11, textTransform: "uppercase" }}>match</span>
+      </div>
+      <figcaption className="muted" style={{ position: "absolute", left: 28, bottom: 8, fontSize: 11 }}>
+        {hasImage ? image?.licenseNote : "Generated placeholder. Add approved imageUrl metadata to replace it."}
+      </figcaption>
+    </figure>
+  );
+}
+
+function getTraitText(value: unknown) {
+  if (Array.isArray(value)) {
+    return value.length > 0 ? String(value[0]) : "Unknown";
+  }
+  if (value === null || value === undefined) {
+    return "Unknown";
+  }
+  return String(value);
 }
