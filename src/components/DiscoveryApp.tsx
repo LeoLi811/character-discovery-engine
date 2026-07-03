@@ -276,26 +276,50 @@ function CharacterReveal({
       style={{
         position: "relative",
         display: "grid",
-        minHeight: 340,
-        margin: 0,
-        overflow: "hidden",
-        border: `1px solid ${result.color}`,
-        borderRadius: 8,
-        background: `linear-gradient(135deg, ${result.color} 0%, #171b20 54%, #0d0f12 100%)`
+        minHeight: "clamp(500px, 70vh, 760px)",
+        margin: "0 -18px",
+        overflow: "visible",
+        isolation: "isolate",
+        border: "none",
+        background: `radial-gradient(circle at 50% 46%, ${result.color} 0%, rgba(23, 27, 32, 0.62) 36%, rgba(13, 15, 18, 0) 72%)`
       }}
     >
       {hasImage ? (
-        <img
-          src={image?.imageUrl ?? ""}
-          alt={image?.alt ?? `${result.name} character artwork`}
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover"
-          }}
-        />
+        <>
+          <img
+            aria-hidden="true"
+            src={image?.imageUrl ?? ""}
+            alt=""
+            style={{
+              position: "absolute",
+              inset: "-28px",
+              width: "100%",
+              height: "100%",
+              filter: "blur(18px)",
+              objectFit: "cover",
+              opacity: 0.22,
+              transform: "scale(1.1)",
+              zIndex: -2
+            }}
+          />
+          <img
+            src={image?.imageUrl ?? ""}
+            alt={image?.alt ?? `${result.name} character artwork`}
+            style={{
+              position: "absolute",
+              inset: 0,
+              boxSizing: "border-box",
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              objectPosition: "center center",
+              padding: "8px clamp(10px, 4vw, 38px) 72px",
+              filter: "drop-shadow(0 34px 52px rgba(0,0,0,0.58))",
+              transform: "scale(1.05)",
+              zIndex: -1
+            }}
+          />
+        </>
       ) : (
         <div
           aria-hidden="true"
@@ -310,11 +334,13 @@ function CharacterReveal({
       <div
         style={{
           position: "absolute",
-          inset: 0,
-          background: "linear-gradient(90deg, rgba(8,10,12,0.72), rgba(8,10,12,0.2) 55%, rgba(8,10,12,0.72))"
+          inset: "-20px 0 0",
+          background:
+            "linear-gradient(180deg, rgba(8,10,12,0.58), rgba(8,10,12,0.1) 32%, rgba(8,10,12,0.18) 68%, rgba(8,10,12,0.74))",
+          zIndex: 0
         }}
       />
-      <div style={{ position: "relative", display: "grid", gap: 8, alignSelf: "start", width: "min(440px, 70%)", padding: 28 }}>
+      <div style={{ position: "relative", zIndex: 1, display: "grid", gap: 8, alignSelf: "start", width: "min(420px, 62%)", padding: "22px 28px" }}>
         <p className="eyebrow">Character reveal</p>
         <strong style={{ color: "#fff8ec", fontSize: "clamp(36px, 7vw, 72px)", lineHeight: 0.9 }}>{result.name}</strong>
         <span style={{ color: "rgba(244, 241, 234, 0.78)", fontFamily: "var(--font-geist-mono)", fontSize: 12, textTransform: "uppercase" }}>
@@ -348,13 +374,15 @@ function CharacterReveal({
         aria-label={`${result.name} key traits`}
         style={{
           position: "relative",
+          zIndex: 1,
           alignSelf: "end",
           display: "flex",
           flexWrap: "wrap",
+          justifyContent: "center",
           gap: 8,
-          maxWidth: "min(680px, calc(100% - 120px))",
-          padding: 28,
-          paddingRight: 120
+          maxWidth: "min(720px, calc(100% - 180px))",
+          margin: "0 auto",
+          padding: "0 24px 22px"
         }}
       >
         {[path, combatType, `${hairColor} hair`, `${outfitColor} outfit`].map((trait) => (
@@ -378,7 +406,8 @@ function CharacterReveal({
         style={{
           position: "absolute",
           right: 28,
-          bottom: 28,
+          top: 24,
+          zIndex: 1,
           display: "grid",
           minWidth: 86,
           border: "1px solid rgba(255,255,255,0.2)",
@@ -391,9 +420,6 @@ function CharacterReveal({
         <strong style={{ color: "var(--accent)", fontSize: 26, lineHeight: 1 }}>{Math.round(confidence * 100)}%</strong>
         <span style={{ color: "rgba(244, 241, 234, 0.72)", fontSize: 11, textTransform: "uppercase" }}>match</span>
       </div>
-      <figcaption className="muted" style={{ position: "absolute", left: 28, bottom: 8, fontSize: 11 }}>
-        {hasImage ? image?.licenseNote : "Generated placeholder. Add approved imageUrl metadata to replace it."}
-      </figcaption>
     </figure>
   );
 }
