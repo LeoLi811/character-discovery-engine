@@ -7525,5 +7525,4640 @@
         "notes": "Exact LV.999 variant source not found in targeted search; base Silver Wolf and promo appearances are not assumed as gameplay traits for this variant."
       }
     ]
+  },
+  {
+    "id": "pom-pom",
+    "name": "Pom-Pom",
+    "aliases": [
+      "Pom Pom"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Mascot-like conductor of the Astral Express and a recurring support NPC for the Nameless.",
+    "color": "#d64c42",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "mascot",
+        "major-story-character"
+      ],
+      "genderPresentation": "nonhuman",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "red",
+        "black",
+        "white"
+      ],
+      "primaryOutfitColor": "red",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Astral Express"
+      ],
+      "worldOrRegion": [
+        "Astral Express"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "conductor",
+        "astral-express-mascot"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "conductor",
+        "mascot"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "elio",
+    "name": "Elio",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Mysterious leader of the Stellaron Hunters, known for scripts and future-oriented plans.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "authority"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Stellaron Hunters"
+      ],
+      "worldOrRegion": [
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Stellaron Hunters"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "leader",
+        "scriptwriter"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "cocolia",
+    "name": "Cocolia",
+    "aliases": [
+      "Cocolia Rand"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Former Supreme Guardian of Belobog and main antagonist of the Jarilo-VI arc.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character",
+        "antagonist",
+        "leader"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "blonde"
+      ],
+      "primaryHairColor": "blonde",
+      "brightHair": true,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "white",
+        "blue",
+        "gold"
+      ],
+      "primaryOutfitColor": "white",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Belobog",
+        "Silvermane Guards"
+      ],
+      "worldOrRegion": [
+        "Jarilo-VI",
+        "Belobog"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Jarilo-VI",
+        "Stellaron Crisis"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "supreme-guardian",
+        "main-antagonist"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "svarog",
+    "name": "Svarog",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Autonomous robot leader of the vagrant camp in the Underworld and Clara's protector.",
+    "color": "#7b8794",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character",
+        "robot",
+        "leader"
+      ],
+      "genderPresentation": "robot",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "mechanical-body"
+      ],
+      "outfitColors": [
+        "gray",
+        "red",
+        "black"
+      ],
+      "primaryOutfitColor": "gray",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Robots",
+        "Underworld"
+      ],
+      "worldOrRegion": [
+        "Jarilo-VI",
+        "Robot Settlement"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Jarilo-VI",
+        "Underworld"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "robot-leader",
+        "protector"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "oleg",
+    "name": "Oleg",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Wildfire leader and major Belobog Underworld NPC.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "gray"
+      ],
+      "primaryHairColor": "gray",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "authority"
+      ],
+      "outfitColors": [
+        "brown",
+        "gray"
+      ],
+      "primaryOutfitColor": "brown",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Wildfire"
+      ],
+      "worldOrRegion": [
+        "Jarilo-VI",
+        "Underworld"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Jarilo-VI",
+        "Wildfire"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "wildfire-leader",
+        "underworld-resistance"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "mikhail-watchmaker",
+    "name": "Mikhail / The Watchmaker",
+    "aliases": [
+      "Mikhail Char Legwork",
+      "The Watchmaker"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Former Nameless and legendary Watchmaker behind Penacony's invitation and legacy.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "major-story-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Nameless",
+        "Penacony"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Watchmaker Legacy"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "watchmaker",
+        "former-nameless"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "clockie",
+    "name": "Clockie",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Dreamscape mascot and cartoon figure tied to Penacony and Mikhail's legacy.",
+    "color": "#d64c42",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "mascot",
+        "lore-character"
+      ],
+      "genderPresentation": "nonhuman",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "yellow",
+        "blue",
+        "white"
+      ],
+      "primaryOutfitColor": "yellow",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Penacony"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Clockie Studios",
+        "Penacony"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "dreamscape-mascot",
+        "cartoon-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "siobhan",
+    "name": "Siobhan",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Penacony bartender NPC associated with Dreamjolt Hostelry and emotional side stories.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Dreamjolt Hostelry"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "bartender",
+        "side-story-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "cocona",
+    "name": "Cocona",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Penacony NPC whose side story explores emotional pressure and dream-world despair.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Penacony"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "side-story-character",
+        "emotional-story"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "gopher-wood",
+    "name": "Gopher Wood",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Dreammaster of the Oak Family and major Penacony lore antagonist figure.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "antagonist",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "authority"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "The Family",
+        "Oak Family"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Order"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "dreammaster",
+        "oak-family-leader"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "micah",
+    "name": "Micah",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Penacony NPC connected to Dreamflux Reef and the Watchmaker legacy.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Dreamflux Reef"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Dreamflux Reef"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "dreamflux-reef-guide",
+        "watchmaker-legacy"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "dormancy",
+    "name": "Dormancy",
+    "aliases": [
+      "Something Unto Death"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Memetic entity known as Something Unto Death, central to Penacony's death mystery.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "antagonist"
+      ],
+      "genderPresentation": "nonhuman",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "black",
+        "purple"
+      ],
+      "primaryOutfitColor": "black",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Penacony",
+        "Memory Zone Meme"
+      ],
+      "worldOrRegion": [
+        "Penacony",
+        "Dreamscape"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Death Mystery"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "memory-zone-meme",
+        "death-entity"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "lygus-lycurgus",
+    "name": "Lygus / Lycurgus",
+    "aliases": [
+      "Lycurgus",
+      "Lygus"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Apparent administrator of Amphoreus and a vessel tied to Zandar One Kuwabara.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "antagonist",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Genius Society"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Exomyth"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-administrator",
+        "zandar-vessel"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "zandar-one-kuwabara",
+    "name": "Zandar One Kuwabara",
+    "aliases": [
+      "Zandar"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Founder and member #1 of the Genius Society, creator of Nous, and key Amphoreus lore figure.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "researcher",
+        "antagonist"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Genius Society"
+      ],
+      "worldOrRegion": [
+        "Amphoreus",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Genius Society",
+        "Amphoreus"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "genius-society-founder",
+        "creator-of-nous"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "baiheng",
+    "name": "Baiheng",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Deceased Foxian member of the High-Cloud Quintet whose fate shaped Dan Feng and Yingxing's tragedy.",
+    "color": "#4b9db2",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "High-Cloud Quintet",
+        "Xianzhou Alliance"
+      ],
+      "worldOrRegion": [
+        "Xianzhou"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "High-Cloud Quintet"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "high-cloud-quintet",
+        "tragic-past"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "dan-feng-lore",
+    "name": "Dan Feng",
+    "aliases": [
+      "Imbibitor Lunae",
+      "High Elder Dan Feng"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Former Vidyadhara High Elder and past identity connected to Dan Heng's Xianzhou arc.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "black"
+      ],
+      "primaryHairColor": "black",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "teal",
+        "white",
+        "black"
+      ],
+      "primaryOutfitColor": "teal",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Vidyadhara",
+        "High-Cloud Quintet"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Luofu"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Vidyadhara",
+        "High-Cloud Quintet"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "vidyadhara-high-elder",
+        "past-life"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "shuhu",
+    "name": "Shuhu",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Emanator of Abundance whose remains and influence are central to Xianzhou and High-Cloud Quintet lore.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Abundance",
+      "combatType": "Non-playable",
+      "faction": [
+        "Abundance",
+        "Denizens of Abundance"
+      ],
+      "worldOrRegion": [
+        "Xianzhou"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "High-Cloud Quintet",
+        "Abundance War"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "emanator-of-abundance",
+        "xianzhou-threat"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "hoolay",
+    "name": "Hoolay",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Borisin warhead and antagonist involved in Xianzhou Wardance-era conflict.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "antagonist",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Borisin"
+      ],
+      "worldOrRegion": [
+        "Xianzhou"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Wardance",
+        "Borisin Crisis"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "borisin-warhead",
+        "xianzhou-antagonist"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "qingni",
+    "name": "Qingni",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Yukong's daughter and Xianzhou NPC tied to family and Sky-Faring Commission stories.",
+    "color": "#4b9db2",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "major-story-character"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Xianzhou Alliance",
+        "Sky-Faring Commission"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Luofu"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Xianzhou",
+        "Yukong Companion Mission"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "family-story-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "huaiyan",
+    "name": "Huaiyan",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Arbiter-General of the Xianzhou Zhuming and Yunli's adoptive grandfather.",
+    "color": "#4b9db2",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "gray"
+      ],
+      "primaryHairColor": "gray",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "authority"
+      ],
+      "outfitColors": [
+        "blue",
+        "gray"
+      ],
+      "primaryOutfitColor": "blue",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Xianzhou Alliance",
+        "Xianzhou Zhuming"
+      ],
+      "worldOrRegion": [
+        "Xianzhou Zhuming"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Xianzhou",
+        "Wardance"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "arbiter-general",
+        "zhuming-general"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "yingxing",
+    "name": "Yingxing",
+    "aliases": [
+      "Blade former identity"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Former craftsman of the High-Cloud Quintet and past identity of Blade.",
+    "color": "#4b9db2",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "black"
+      ],
+      "primaryHairColor": "black",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "black",
+        "red",
+        "gray"
+      ],
+      "primaryOutfitColor": "black",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "High-Cloud Quintet",
+        "Xianzhou Alliance"
+      ],
+      "worldOrRegion": [
+        "Xianzhou"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "High-Cloud Quintet"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "craftsman",
+        "blade-past-identity"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "screwllum-npc",
+    "name": "Screwllum",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Mechanical member of the Genius Society and ruler of Planet Screwllum, recurring as a major researcher NPC.",
+    "color": "#7b8794",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "robot",
+        "researcher",
+        "leader"
+      ],
+      "genderPresentation": "robot",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "mechanical-body"
+      ],
+      "outfitColors": [
+        "silver",
+        "blue",
+        "black"
+      ],
+      "primaryOutfitColor": "silver",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Genius Society",
+        "Planet Screwllum"
+      ],
+      "worldOrRegion": [
+        "Planet Screwllum",
+        "Herta Space Station"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Genius Society",
+        "Simulated Universe"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "genius-society-member",
+        "robot-aristocrat"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "stephen-lloyd",
+    "name": "Stephen Lloyd",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Member #84 of the Genius Society and co-creator connected to Simulated Universe research.",
+    "color": "#6f84c9",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "researcher"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Genius Society"
+      ],
+      "worldOrRegion": [
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Genius Society",
+        "Simulated Universe"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "genius-society-member",
+        "researcher"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "polka-kakamond",
+    "name": "Polka Kakamond",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Infamous Genius Society member known as the Lord of Silence and for assassinating other geniuses.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "researcher",
+        "antagonist"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Genius Society"
+      ],
+      "worldOrRegion": [
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Genius Society"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-of-silence",
+        "genius-society-member"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "leonard",
+    "name": "Leonard",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Herta Space Station researcher NPC associated with Curio and research side content.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "researcher"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Herta Space Station"
+      ],
+      "worldOrRegion": [
+        "Herta Space Station"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Herta Space Station"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "researcher"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "chadwick",
+    "name": "Chadwick",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Scientist NPC tied to Penacony memory stories and IPC-related weapon research consequences.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "researcher"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "gray"
+      ],
+      "primaryHairColor": "gray",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Intelligentsia Guild",
+        "needs_research"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Memory Story"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "researcher",
+        "memory-story-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "lesley-dean",
+    "name": "Lesley Dean",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Penacony celebrity NPC remembered through dream and memory side content.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Penacony"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Memory Story"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "celebrity",
+        "memory-story-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "tizocic-ii",
+    "name": "Tizocic II",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "NPC from Penacony side content involving imperial identity and dream-memory storytelling.",
+    "color": "#6b7280",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader"
+      ],
+      "genderPresentation": "female",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Penacony"
+      ],
+      "worldOrRegion": [
+        "Penacony"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Penacony",
+        "Memory Story"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "empress",
+        "memory-story-character"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "skott",
+    "name": "Skott",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "IPC-associated NPC known for recurring conflict and comic antagonist roles.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "antagonist"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Interastral Peace Corporation"
+      ],
+      "worldOrRegion": [
+        "Jarilo-VI",
+        "Xianzhou"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "IPC Side Story"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "ipc-antagonist",
+        "comic-relief"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "oswaldo-schneider",
+    "name": "Oswaldo Schneider",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "High-ranking IPC figure associated with the Marketing Development Department and Boothill/Aventurine lore.",
+    "color": "#7f3b43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader",
+        "antagonist"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "story-threat"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Interastral Peace Corporation"
+      ],
+      "worldOrRegion": [
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "IPC",
+        "Marketing Development Department"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "ipc-executive",
+        "strategic-investment-department-rival"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "diamond",
+    "name": "Diamond",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Leader of the IPC Strategic Investment Department and one of the Ten Stonehearts.",
+    "color": "#b89b45",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader",
+        "emanator"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "authority"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Preservation",
+      "combatType": "Non-playable",
+      "faction": [
+        "Interastral Peace Corporation",
+        "Ten Stonehearts"
+      ],
+      "worldOrRegion": [
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "IPC",
+        "Ten Stonehearts"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "ten-stonehearts-leader",
+        "emanator-of-preservation"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "opal",
+    "name": "Opal",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Member of the IPC Ten Stonehearts and bearer of the Opal cornerstone.",
+    "color": "#b89b45",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "leader"
+      ],
+      "genderPresentation": "male",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Interastral Peace Corporation",
+        "Ten Stonehearts"
+      ],
+      "worldOrRegion": [
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "IPC",
+        "Ten Stonehearts"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "ten-stoneheart"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "pearl",
+    "name": "Pearl",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "IPC executive and Intellitron member of the Ten Stonehearts involved in later Planarcadia/Oroboros plotlines.",
+    "color": "#7b8794",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "robot",
+        "leader"
+      ],
+      "genderPresentation": "robot",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "mechanical-body"
+      ],
+      "outfitColors": [
+        "white",
+        "gold",
+        "blue"
+      ],
+      "primaryOutfitColor": "white",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Interastral Peace Corporation",
+        "Ten Stonehearts"
+      ],
+      "worldOrRegion": [
+        "Planarcadia",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "IPC",
+        "Ten Stonehearts",
+        "Oroboros"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "ten-stoneheart",
+        "intellitron",
+        "ipc-executive"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR character/lore reference",
+        "confidence": "medium",
+        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "phantylia",
+    "name": "Phantylia",
+    "aliases": [
+      "Phantylia the Undying"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Heliobus Lord Ravager and Emanator of Destruction who infiltrated the Xianzhou Luofu as Tingyun.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "heliobus",
+        "xianzhou-antagonist"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "medium",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "irontomb",
+    "name": "Irontomb",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Lord Ravager incubated within Amphoreus as part of a plot to threaten Nous.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "amphoreus",
+        "incubated-lord-ravager"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "medium",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "zephyro",
+    "name": "Zephyro",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Lord Ravager of the Antimatter Legion referenced in Destruction lore.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "lord-ravager"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "low",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "celenova",
+    "name": "Celenova",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Lord Ravager of the Antimatter Legion referenced in Destruction lore.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "lord-ravager"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "low",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "asat-pramad",
+    "name": "Asat Pramad",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Lord Ravager of the Antimatter Legion referenced in Destruction lore.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "lord-ravager"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "low",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "luxbane",
+    "name": "Luxbane",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Lord Ravager of the Antimatter Legion referenced in Destruction lore.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "lord-ravager"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "low",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "archforger",
+    "name": "Archforger",
+    "aliases": [],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Lord Ravager of the Antimatter Legion referenced in Destruction lore.",
+    "color": "#b2463f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-horror"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "emanator",
+        "antagonist"
+      ],
+      "genderPresentation": "needs_research",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": true,
+      "weaponType": [
+        "destruction",
+        "needs_research"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "destructive",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Lord Ravagers"
+      ],
+      "worldOrRegion": [
+        "Cosmos",
+        "needs_research"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Antimatter Legion",
+        "Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion"
+      ],
+      "storyRole": [
+        "lord-ravager",
+        "emanator-of-destruction",
+        "lord-ravager"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.faction",
+        "source": "HSR Lord Ravager lore reference",
+        "confidence": "low",
+        "notes": "Lord Ravager / Antimatter Legion lore reference; verify detailed story traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "nanook",
+    "name": "Nanook",
+    "aliases": [
+      "Nanook the Destruction"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Destruction and central cosmic antagonist behind the Antimatter Legion.",
+    "color": "#b84a3a",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Destruction",
+      "combatType": "Non-playable",
+      "faction": [
+        "Antimatter Legion",
+        "Path of Destruction"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Destruction"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-destruction"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "lan",
+    "name": "Lan",
+    "aliases": [
+      "Lan the Hunt"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of the Hunt worshiped by the Xianzhou Alliance in its war against Abundance.",
+    "color": "#2f8cc8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Hunt",
+      "combatType": "Non-playable",
+      "faction": [
+        "Xianzhou Alliance",
+        "Path of the Hunt"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Hunt"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-hunt"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "yaoshi",
+    "name": "Yaoshi",
+    "aliases": [
+      "Yaoshi the Abundance"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Abundance associated with immortality, healing, and Xianzhou conflict.",
+    "color": "#65b66f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Abundance",
+      "combatType": "Non-playable",
+      "faction": [
+        "Denizens of Abundance",
+        "Path of Abundance"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Abundance"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-abundance"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "qlipoth",
+    "name": "Qlipoth",
+    "aliases": [
+      "Qlipoth the Preservation"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Preservation associated with walls, protection, and the IPC's worship.",
+    "color": "#c6a24a",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Preservation",
+      "combatType": "Non-playable",
+      "faction": [
+        "Interastral Peace Corporation",
+        "Path of Preservation"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Preservation"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-preservation"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "nous",
+    "name": "Nous",
+    "aliases": [
+      "Nous the Erudition"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Erudition, superintelligence associated with knowledge and the Genius Society.",
+    "color": "#7c8fd6",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Erudition",
+      "combatType": "Non-playable",
+      "faction": [
+        "Genius Society",
+        "Path of Erudition"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Erudition"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-erudition"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "aha",
+    "name": "Aha",
+    "aliases": [
+      "Aha the Elation"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Elation associated with joy, chaos, performance, and the Masked Fools.",
+    "color": "#e05a9d",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Elation",
+      "combatType": "Non-playable",
+      "faction": [
+        "Masked Fools",
+        "Path of Elation"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Elation"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-elation"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "ix",
+    "name": "IX",
+    "aliases": [
+      "IX the Nihility"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Nihility associated with nothingness and existential emptiness.",
+    "color": "#5a4f80",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Nihility",
+      "combatType": "Non-playable",
+      "faction": [
+        "Self-Annihilators",
+        "Path of Nihility"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Nihility"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-nihility"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "fuli",
+    "name": "Fuli",
+    "aliases": [
+      "Fuli the Remembrance"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Remembrance associated with memory, recollection, and the Garden of Recollection.",
+    "color": "#9bb7df",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Remembrance",
+      "combatType": "Non-playable",
+      "faction": [
+        "Garden of Recollection",
+        "Path of Remembrance"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Remembrance"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-remembrance"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "xipe",
+    "name": "Xipe",
+    "aliases": [
+      "Xipe the Harmony"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Harmony associated with unity and The Family.",
+    "color": "#d99dce",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Harmony",
+      "combatType": "Non-playable",
+      "faction": [
+        "The Family",
+        "Path of Harmony"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Harmony"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-harmony"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "akivili",
+    "name": "Akivili",
+    "aliases": [
+      "Akivili the Trailblaze"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Missing Aeon of Trailblaze followed by the Nameless and Astral Express.",
+    "color": "#d9ad61",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Trailblaze",
+      "combatType": "Non-playable",
+      "faction": [
+        "Nameless",
+        "Astral Express",
+        "Path of Trailblaze"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Trailblaze"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-trailblaze"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "oroboros",
+    "name": "Oroboros",
+    "aliases": [
+      "Oroboros the Voracity"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Voracity whose corpse and legacy are referenced in later cosmic lore.",
+    "color": "#815a43",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Voracity",
+      "combatType": "Non-playable",
+      "faction": [
+        "Path of Voracity"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Voracity"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-voracity"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "long-aeon",
+    "name": "Long",
+    "aliases": [
+      "Long the Permanence"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Deceased Aeon of Permanence tied to Vidyadhara and dragon inheritance lore.",
+    "color": "#55a7a7",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Permanence",
+      "combatType": "Non-playable",
+      "faction": [
+        "Vidyadhara",
+        "Path of Permanence"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Permanence"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-permanence"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "terminus",
+    "name": "Terminus",
+    "aliases": [
+      "Terminus the Finality"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Finality associated with endings and time-bending cosmic lore.",
+    "color": "#44475f",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Finality",
+      "combatType": "Non-playable",
+      "faction": [
+        "Path of Finality"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Finality"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-finality"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "tayzzyronth",
+    "name": "Tayzzyronth",
+    "aliases": [
+      "Tayzzyronth the Propagation"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Deceased Aeon of Propagation tied to the Swarm Disaster.",
+    "color": "#7d6b3b",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Propagation",
+      "combatType": "Non-playable",
+      "faction": [
+        "Swarm",
+        "Path of Propagation"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Propagation"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-propagation"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "idrila",
+    "name": "Idrila",
+    "aliases": [
+      "Idrila the Beauty"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Missing Aeon of Beauty worshiped by the Knights of Beauty.",
+    "color": "#d686b8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Beauty",
+      "combatType": "Non-playable",
+      "faction": [
+        "Knights of Beauty",
+        "Path of Beauty"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Beauty"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-beauty"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "mythus",
+    "name": "Mythus",
+    "aliases": [
+      "Mythus the Enigmata"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Enigmata associated with obscured truth, fiction, and mystery.",
+    "color": "#6f6b9e",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Enigmata",
+      "combatType": "Non-playable",
+      "faction": [
+        "History Fictionologists",
+        "Path of Enigmata"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Enigmata"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-enigmata"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "hooh",
+    "name": "HooH",
+    "aliases": [
+      "HooH the Equilibrium"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "Aeon of Equilibrium associated with balance and cosmic arbitration.",
+    "color": "#9a9a9a",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "cosmic-entity"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "aeon",
+        "cosmic-entity"
+      ],
+      "genderPresentation": "cosmic-entity",
+      "hairColor": [
+        "none"
+      ],
+      "primaryHairColor": "none",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "cosmic",
+        "needs_research"
+      ],
+      "primaryOutfitColor": "cosmic",
+      "personality": [
+        "cosmic",
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Equilibrium",
+      "combatType": "Non-playable",
+      "faction": [
+        "Arbitrators",
+        "Path of Equilibrium"
+      ],
+      "worldOrRegion": [
+        "Cosmos"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Aeons",
+        "Path of Equilibrium"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "cosmology-discussion"
+      ],
+      "storyRole": [
+        "aeon",
+        "aeon-of-equilibrium"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "hsr.path",
+        "source": "HSR Aeon and Path lore reference",
+        "confidence": "medium",
+        "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
   }
 ]
