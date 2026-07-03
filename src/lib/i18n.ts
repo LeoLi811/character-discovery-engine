@@ -1,0 +1,647 @@
+import zhCharacterTranslations from "@/data/character-translations.zh.json";
+import type { DiscoveryCharacter, DiscoveryQuestion } from "@/lib/discovery-types";
+import type { Character } from "@/lib/types";
+
+export type Locale = "en" | "zh";
+
+type CharacterTranslation = {
+  name?: string;
+  summary?: string;
+  role?: string;
+};
+
+const characterTranslations = zhCharacterTranslations as Record<string, CharacterTranslation>;
+
+export const supportedLocales: Locale[] = ["en", "zh"];
+
+export const uiText = {
+  en: {
+    brandTitle: "Character Discovery",
+    brandSubtitle: "Explainable guessing engine",
+    nav: {
+      guess: "Guess",
+      analytics: "Analytics",
+      data: "Data",
+      method: "Method"
+    },
+    languageName: "English",
+    switchLanguage: "中文",
+    discovery: {
+      heroEyebrow: "Honkai: Star Rail first, multi-game ready",
+      heroTitle: "Think of a character. The engine will ask, narrow, and explain.",
+      heroBody:
+        "This is an adaptive character discovery system: broad questions identify the likely game, then HSR-specific traits narrow the final guess.",
+      start: "Start guessing",
+      characters: "Characters",
+      questions: "Questions",
+      mode: "Mode",
+      explainable: "Explainable",
+      question: "Question",
+      resetSession: "Reset session",
+      generalQuestion: "General question",
+      hsrQuestion: "HSR-specific question",
+      liveCandidates: "Live candidates",
+      likelyGame: "Likely game",
+      broadQuestions: "Still asking broad questions.",
+      confidence: "confidence",
+      finalGuess: "Final guess",
+      estimatedConfidence: "estimated confidence",
+      why: "Why this guess?",
+      noPositiveMatches: "The engine used penalties and candidate gaps more than direct positive matches.",
+      similarCharacters: "Similar characters",
+      wrong: "Was it wrong?",
+      feedbackHelp: "For V1 this stays in the browser as text you can use to improve the dataset later.",
+      feedbackPlaceholder: "Who was it, and which answer felt wrong or missing?",
+      playAgain: "Play again",
+      clearFeedback: "Clear feedback",
+      reveal: "Character reveal",
+      match: "match",
+      hair: "hair",
+      outfit: "outfit",
+      unknown: "Unknown",
+      artworkAlt: "character artwork"
+    },
+    answers: {
+      yes: "Yes",
+      probably: "Probably",
+      not_sure: "Not sure",
+      probably_not: "Probably not",
+      no: "No"
+    },
+    catalog: {
+      filters: "Filters",
+      search: "Search",
+      searchPlaceholder: "Name, franchise, clothing...",
+      franchise: "Franchise",
+      game: "Game",
+      role: "Role",
+      popularity: "Popularity",
+      styleTag: "Style tag",
+      all: "All",
+      clearFilters: "Clear filters",
+      matching: "matching character records",
+      openRecord: "Open record",
+      popularityScore: "Popularity score"
+    },
+    compare: {
+      title: "Compare character records.",
+      body:
+        "Select up to four characters and compare their current catalog fields. This view is intentionally simple in V1 so later analysis can add richer metrics without changing the browsing flow.",
+      select: "Select 2-4 characters",
+      slot: "Slot",
+      score: "Score",
+      role: "Role",
+      tier: "Tier",
+      games: "Games",
+      clothing: "Clothing",
+      accessories: "Accessories"
+    },
+    detail: {
+      aliases: "Aliases",
+      noneListed: "None listed",
+      role: "Role",
+      popularityTier: "Popularity tier",
+      publisher: "Publisher",
+      developer: "Developer",
+      games: "Games",
+      silhouette: "Silhouette",
+      clothing: "Clothing",
+      accessories: "Accessories",
+      popularityScore: "Popularity score",
+      popularitySignals: "Popularity signals",
+      source: "Source",
+      metric: "Metric",
+      value: "Value",
+      confidence: "Confidence",
+      notes: "Notes",
+      analysisNotes: "Analysis notes",
+      sources: "Sources",
+      notFoundTitle: "Character not found"
+    },
+    dashboard: {
+      title: "Catalog summary dashboard.",
+      body:
+        "These are descriptive counts and transparent V1 scores, not final popularity rankings. The goal is to expose what the dataset currently contains and where it can grow.",
+      characters: "Characters",
+      franchises: "Franchises",
+      citations: "Source citations",
+      averageScore: "Avg. score",
+      topScores: "Top V1 popularity scores",
+      readiness: "Data readiness notes",
+      readinessBody:
+        "The catalog already stores popularity signals independently from the computed score. Later phases can add pageviews, search trends, social metrics, fan works, sales context, or survey data without rewriting the character records.",
+      viewMethod: "View method",
+      roles: "Roles represented",
+      franchiseGroups: "Largest franchise groups"
+    },
+    analytics: {
+      title: "Engine analytics.",
+      body:
+        "These diagnostics show why the project is more than a game: questions are measurable, traits can be audited, and ambiguity can be improved with better data.",
+      characters: "Characters",
+      questions: "Questions",
+      globalQuestions: "Global questions",
+      hsrQuestions: "HSR questions",
+      usefulSplits: "Most useful split questions",
+      ambiguity: "Ambiguity watchlist",
+      question: "Question",
+      scope: "Scope",
+      matches: "Matches",
+      split: "Split"
+    },
+    methodology: {
+      title: "Methodology and data limits.",
+      body:
+        "This project is designed like an analysis system, even though V1 is primarily a catalog. Every record keeps source evidence and leaves room for richer comparison work later.",
+      knownGaps: "Known gaps",
+      area: "Area",
+      current: "Current V1 handling",
+      future: "Future improvement"
+    }
+  },
+  zh: {
+    brandTitle: "角色发现引擎",
+    brandSubtitle: "可解释的猜角色系统",
+    nav: {
+      guess: "猜角色",
+      analytics: "分析",
+      data: "数据",
+      method: "方法"
+    },
+    languageName: "中文",
+    switchLanguage: "English",
+    discovery: {
+      heroEyebrow: "先从《崩坏：星穹铁道》开始，未来支持多游戏",
+      heroTitle: "想一个角色。系统会提问、缩小范围，并解释答案。",
+      heroBody: "这是一个自适应角色发现系统：先用通用问题判断游戏，再用星穹铁道专属特征缩小到最终猜测。",
+      start: "开始猜测",
+      characters: "角色",
+      questions: "问题",
+      mode: "模式",
+      explainable: "可解释",
+      question: "问题",
+      resetSession: "重置本轮",
+      generalQuestion: "通用问题",
+      hsrQuestion: "星铁专属问题",
+      liveCandidates: "实时候选",
+      likelyGame: "可能游戏",
+      broadQuestions: "仍在询问通用问题。",
+      confidence: "置信度",
+      finalGuess: "最终猜测",
+      estimatedConfidence: "估计置信度",
+      why: "为什么这样猜？",
+      noPositiveMatches: "这次主要依靠排除项和候选差距，而不是直接正向匹配。",
+      similarCharacters: "相似角色",
+      wrong: "猜错了吗？",
+      feedbackHelp: "V1 中这段反馈只保存在浏览器里，可用于之后改进数据集。",
+      feedbackPlaceholder: "实际角色是谁？哪个回答感觉不对或缺失？",
+      playAgain: "再玩一次",
+      clearFeedback: "清空反馈",
+      reveal: "角色揭晓",
+      match: "匹配",
+      hair: "头发",
+      outfit: "服装",
+      unknown: "未知",
+      artworkAlt: "角色图"
+    },
+    answers: {
+      yes: "是",
+      probably: "大概是",
+      not_sure: "不确定",
+      probably_not: "大概不是",
+      no: "不是"
+    },
+    catalog: {
+      filters: "筛选",
+      search: "搜索",
+      searchPlaceholder: "名称、系列、服装...",
+      franchise: "系列",
+      game: "游戏",
+      role: "定位",
+      popularity: "热度",
+      styleTag: "风格标签",
+      all: "全部",
+      clearFilters: "清空筛选",
+      matching: "条匹配角色记录",
+      openRecord: "打开记录",
+      popularityScore: "热度分数"
+    },
+    compare: {
+      title: "比较角色记录。",
+      body: "选择最多四个角色，比较当前目录字段。V1 保持简单，之后可以在不改变浏览流程的情况下加入更丰富的分析指标。",
+      select: "选择 2-4 个角色",
+      slot: "位置",
+      score: "分数",
+      role: "定位",
+      tier: "热度层级",
+      games: "游戏",
+      clothing: "服装",
+      accessories: "配饰"
+    },
+    detail: {
+      aliases: "别名",
+      noneListed: "暂无",
+      role: "定位",
+      popularityTier: "热度层级",
+      publisher: "发行商",
+      developer: "开发商",
+      games: "游戏",
+      silhouette: "轮廓",
+      clothing: "服装",
+      accessories: "配饰",
+      popularityScore: "热度分数",
+      popularitySignals: "热度信号",
+      source: "来源",
+      metric: "指标",
+      value: "数值",
+      confidence: "可信度",
+      notes: "备注",
+      analysisNotes: "分析备注",
+      sources: "来源",
+      notFoundTitle: "未找到角色"
+    },
+    dashboard: {
+      title: "目录概览仪表盘。",
+      body: "这些是描述性统计和透明的 V1 分数，不是最终热度排名。目标是展示当前数据集包含什么，以及之后可以如何扩展。",
+      characters: "角色",
+      franchises: "系列",
+      citations: "来源引用",
+      averageScore: "平均分",
+      topScores: "V1 热度分数最高",
+      readiness: "数据准备度备注",
+      readinessBody:
+        "目录已经把热度信号和计算分数分开存储。后续可以加入浏览量、搜索趋势、社群指标、同人创作、销量背景或问卷数据，而不用重写角色记录。",
+      viewMethod: "查看方法",
+      roles: "角色定位分布",
+      franchiseGroups: "最大系列分组"
+    },
+    analytics: {
+      title: "引擎分析。",
+      body: "这些诊断展示了项目不只是小游戏：问题可以度量，特征可以审计，模糊点可以通过更好的数据继续改进。",
+      characters: "角色",
+      questions: "问题",
+      globalQuestions: "通用问题",
+      hsrQuestions: "星铁问题",
+      usefulSplits: "最有用的分流问题",
+      ambiguity: "模糊特征观察表",
+      question: "问题",
+      scope: "范围",
+      matches: "匹配",
+      split: "分流度"
+    },
+    methodology: {
+      title: "方法论与数据限制。",
+      body: "这个项目按分析系统设计，虽然 V1 主要还是角色目录。每条记录都保留来源证据，也为之后更深入的比较留下空间。",
+      knownGaps: "已知缺口",
+      area: "领域",
+      current: "当前 V1 处理方式",
+      future: "未来改进"
+    }
+  }
+} as const;
+
+const termTranslations: Record<string, string> = {
+  "Honkai: Star Rail": "崩坏：星穹铁道",
+  global: "通用",
+  "game:hsr": "星铁",
+  "purple hair": "紫色头发",
+  "animated short": "动画短片",
+  Honkai: "崩坏",
+  "Main cast": "主角团",
+  "Playable character": "可玩角色",
+  "Playable alternate form": "可玩变体",
+  "Player avatar": "玩家主角",
+  "Major story character": "主要剧情角色",
+  "Collaboration character": "联动角色",
+  "Research placeholder": "待研究记录",
+  "Xianzhou general": "仙舟将军",
+  Iconic: "标志级",
+  Mainstream: "主流",
+  Cult: "小众高认知",
+  Emerging: "新兴",
+  high: "高",
+  medium: "中",
+  low: "低",
+  official: "官方",
+  encyclopedia: "百科",
+  database: "数据库",
+  curated: "人工整理",
+  Nihility: "虚无",
+  Harmony: "同谐",
+  Destruction: "毁灭",
+  Hunt: "巡猎",
+  Preservation: "存护",
+  Erudition: "智识",
+  Abundance: "丰饶",
+  Remembrance: "记忆",
+  Elation: "欢愉",
+  Lightning: "雷",
+  Quantum: "量子",
+  Imaginary: "虚数",
+  Fire: "火",
+  Ice: "冰",
+  Wind: "风",
+  Physical: "物理",
+  Variable: "可变",
+  "needs_research": "待研究",
+  playable: "可玩",
+  "main-cast": "主角团",
+  companion: "伙伴",
+  avatar: "玩家主角",
+  protagonist: "主角",
+  antihero: "反英雄",
+  hacker: "黑客",
+  "alternate-form": "变体形态",
+  "major-story-character": "主要剧情角色",
+  "path-variant": "命途变体",
+  "turn-based-rpg": "回合制 RPG",
+  gacha: "抽卡",
+  "live-service": "长期运营",
+  anime: "二次元",
+  "sci-fi": "科幻",
+  fantasy: "幻想",
+  cyberpunk: "赛博朋克",
+  collaboration: "联动",
+  female: "女性",
+  male: "男性",
+  variable: "可选",
+  pink: "粉色",
+  purple: "紫色",
+  blue: "蓝色",
+  white: "白色",
+  silver: "银色",
+  gray: "灰色",
+  black: "黑色",
+  blond: "金色",
+  blonde: "金色",
+  red: "红色",
+  orange: "橙色",
+  green: "绿色",
+  gold: "金色",
+  teal: "青绿色",
+  sword: "剑",
+  blade: "刀剑",
+  gun: "枪",
+  bow: "弓",
+  spear: "长枪",
+  lance: "骑枪",
+  ice: "冰",
+  fire: "火",
+  hacking: "黑客",
+  memosprite: "忆灵",
+  "Stellaron Hunters": "星核猎手",
+  "Astral Express": "开拓列车",
+  "Xianzhou Alliance": "仙舟联盟",
+  Xianzhou: "仙舟",
+  Penacony: "匹诺康尼",
+  Belobog: "贝洛伯格",
+  Amphoreus: "翁法罗斯",
+  "Chrysos Heirs": "黄金裔",
+  "Galaxy Rangers": "巡海游侠",
+  "Masked Fools": "假面愚者",
+  "Genius Society": "天才俱乐部",
+  IPC: "星际和平公司",
+  "Herta Space Station": "黑塔空间站",
+  "The Family": "家族",
+  "Silvermane Guards": "银鬃铁卫",
+  "Ten-Lords Commission": "十王司",
+  "Alchemy Commission": "丹鼎司",
+  "Cloud Knights": "云骑军",
+  "Knights of Beauty": "纯美骑士",
+  "The Cremators": "焚化工",
+  "Ever-Flame Mansion": "永火官邸",
+  "Ashen Detective Agency": "灰烬侦探社",
+  "Xianzhou Yaoqing": "仙舟曜青",
+  "Xianzhou Yuque": "仙舟玉阙",
+  "Planarcadia": "普兰纳卡迪亚",
+  "Fate/stay night collaboration": "Fate/stay night 联动",
+  "Collaboration Event": "联动活动",
+  "Main Story": "主线剧情",
+  Music: "音乐",
+  "music": "音乐",
+  song: "歌声",
+  singer: "歌手",
+  support: "辅助",
+  performer: "表演者",
+  idol: "偶像",
+  healer: "治疗者",
+  researcher: "研究者",
+  leader: "领导者",
+  "chrysos-heir": "黄金裔",
+  "xianzhou-general": "仙舟将军",
+  "guest-character": "客串角色",
+  "collaboration-character": "联动角色",
+  "masked-fool": "假面愚者",
+  "research-placeholder": "待研究记录",
+  "gentle": "温柔",
+  "idealistic": "理想主义",
+  "calm": "冷静",
+  "mysterious": "神秘",
+  "cheerful": "开朗",
+  "quiet": "寡言",
+  "serious": "严肃",
+  "playful": "爱玩",
+  "reserved": "内敛",
+  "protective": "保护欲强",
+  "brooding": "阴郁",
+  "vengeful": "复仇心",
+  "fan-art": "同人创作",
+  "cosplay": "Cosplay",
+  "music-video": "音乐视频",
+  "meme-presence": "梗图传播",
+  "lore-discussion": "剧情讨论",
+  "team-building-discussion": "配队讨论",
+  "shipping": "CP 讨论"
+};
+
+const questionTranslations: Record<string, string> = {
+  "global-gacha": "这个角色来自抽卡或长期运营游戏吗？",
+  "global-hsr": "这个角色来自《崩坏：星穹铁道》吗？",
+  "global-anime": "这个角色是二次元/动画风格吗？",
+  "global-playable": "这个角色可以游玩吗？",
+  "global-main-cast": "这个角色属于主角旅行团队吗？",
+  "global-avatar": "这个角色基本上是玩家主角吗？",
+  "global-leader": "这个角色有领导者或权威身份吗？",
+  "global-antihero": "这个角色像反英雄或道德灰色角色吗？",
+  "global-mysterious": "这个角色神秘、难以读懂吗？",
+  "global-calm": "这个角色通常冷静沉着吗？",
+  "global-cheerful": "这个角色开朗或很有表现力吗？",
+  "global-female": "这个角色呈现为女性吗？",
+  "global-male": "这个角色呈现为男性吗？",
+  "global-variable-gender": "这个角色可以选择多个主角版本吗？",
+  "global-bright-hair": "这个角色有鲜艳或不常见的发色吗？",
+  "global-purple-hair": "这个角色的主要发色是紫色吗？",
+  "global-pink-hair": "这个角色的主要发色是粉色吗？",
+  "global-blue-hair": "这个角色的主要发色是蓝色吗？",
+  "global-white-hair": "这个角色的主要发色是白色或银色吗？",
+  "global-black-hair": "这个角色的主要发色是黑色吗？",
+  "global-blond-hair": "这个角色的主要发色是金色吗？",
+  "global-red-hair": "这个角色的主要发色是红色或橙色吗？",
+  "global-uses-weapon": "这个角色明显使用武器或战斗工具吗？",
+  "global-gun": "这个角色使用枪吗？",
+  "global-sword": "这个角色使用剑或刀吗？",
+  "global-magic-tool": "这个角色的战斗更像魔法、音乐、卡牌或辅助效果吗？",
+  "global-purple-outfit": "紫色是这个角色服装的主色吗？",
+  "global-red-outfit": "红色是这个角色服装的主色吗？",
+  "global-green-outfit": "绿色是这个角色服装的主色吗？",
+  "global-white-outfit": "白色是这个角色服装的主色吗？",
+  "hsr-stellaron-hunter": "这个角色是星核猎手吗？",
+  "hsr-astral-express": "这个角色属于开拓列车吗？",
+  "hsr-xianzhou": "这个角色和仙舟联系很强吗？",
+  "hsr-penacony": "这个角色和匹诺康尼联系很强吗？",
+  "hsr-belobog": "这个角色和贝洛伯格有关吗？",
+  "hsr-herta-space-station": "这个角色和黑塔空间站联系很强吗？",
+  "hsr-ipc": "这个角色和星际和平公司有关吗？",
+  "hsr-family": "这个角色和匹诺康尼的家族有关吗？",
+  "hsr-genius": "这个角色和天才俱乐部有关吗？",
+  "hsr-nihility": "这个角色的命途是虚无吗？",
+  "hsr-harmony": "这个角色的命途是同谐吗？",
+  "hsr-destruction": "这个角色的命途是毁灭吗？",
+  "hsr-hunt": "这个角色的命途是巡猎吗？",
+  "hsr-preservation": "这个角色的命途是存护吗？",
+  "hsr-erudition": "这个角色的命途是智识吗？",
+  "hsr-abundance": "这个角色的命途是丰饶吗？",
+  "hsr-remembrance": "这个角色的命途是记忆吗？",
+  "hsr-elation": "这个角色的命途是欢愉吗？",
+  "hsr-lightning": "这个角色的属性是雷吗？",
+  "hsr-quantum": "这个角色的属性是量子吗？",
+  "hsr-imaginary": "这个角色的属性是虚数吗？",
+  "hsr-fire": "这个角色的属性是火吗？",
+  "hsr-ice": "这个角色的属性是冰吗？",
+  "hsr-wind": "这个角色的属性是风吗？",
+  "hsr-physical": "这个角色的属性是物理吗？",
+  "hsr-five-star": "这个角色是五星吗？",
+  "hsr-four-star": "这个角色是四星吗？",
+  "hsr-animated-short": "这个角色有官方动画短片或动画式内容吗？",
+  "hsr-character-trailer": "这个角色有官方角色预告吗？",
+  "hsr-alt-form": "这个角色是另一个角色的变体形态吗？",
+  "hsr-mech": "这个角色和机甲或装甲形态有关吗？",
+  "hsr-dragon": "这个角色有龙相关意象吗？",
+  "hsr-robot-companion": "这个角色有机器人伙伴或自动机保护者吗？",
+  "hsr-music": "音乐或歌唱是这个角色的核心特征吗？",
+  "hsr-coffin": "棺柩是这个角色最明显的意象之一吗？",
+  "hsr-gambler": "这个角色有赌博、骰子或赌场意象吗？",
+  "hsr-hacker": "这个角色是黑客或游戏玩家风格吗？",
+  "hsr-singer": "这个角色以歌手或表演者身份著称吗？",
+  "hsr-researcher": "这个角色是科学家或研究者吗？",
+  "hsr-healer": "这个角色主要是治疗者吗？",
+  "hsr-animal-companion": "这个角色有具名的动物型伙伴吗？",
+  "hsr-meme": "这个角色在粉丝圈特别有梗吗？",
+  "hsr-high-fan-art": "这个角色的同人图活跃度看起来很高吗？",
+  "hsr-shipping": "这个角色的 CP 或关系讨论很多吗？",
+  "hsr-meta": "这个角色特别以强度或玩法价值闻名吗？",
+  "hsr-mentor": "这个角色像导师或年长引导者吗？",
+  "hsr-silvermane": "这个角色和银鬃铁卫有关吗？",
+  "hsr-knights-beauty": "这个角色和纯美骑士有关吗？",
+  "hsr-ten-lords": "这个角色和十王司有关吗？",
+  "hsr-alchemy": "这个角色和丹鼎司有关吗？",
+  "hsr-amphoreus": "这个角色和翁法罗斯联系很强吗？",
+  "hsr-chrysos-heir": "这个角色是黄金裔之一吗？",
+  "hsr-yaoqing": "这个角色和仙舟曜青联系很强吗？",
+  "hsr-cloud-knights": "这个角色和云骑军有关吗？",
+  "hsr-foxian": "这个角色是狐人吗？",
+  "hsr-galaxy-ranger": "这个角色是巡海游侠吗？",
+  "hsr-thief": "盗贼或诡计意象是这个角色的核心吗？",
+  "hsr-mechanical-arm": "这个角色有机械臂或改造身体吗？",
+  "hsr-summon": "这个角色依赖召唤物或类似忆灵的实体吗？"
+};
+
+export function isLocale(value: string): value is Locale {
+  return supportedLocales.includes(value as Locale);
+}
+
+export function getLocalePrefix(locale: Locale) {
+  return locale === "zh" ? "/zh" : "";
+}
+
+export function localizedPath(path: string, locale: Locale) {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${getLocalePrefix(locale)}${normalized === "/" && locale === "zh" ? "" : normalized}`;
+}
+
+export function withoutLocalePrefix(pathname: string) {
+  if (pathname === "/zh") {
+    return "/";
+  }
+  if (pathname.startsWith("/zh/")) {
+    return pathname.slice(3);
+  }
+  return pathname;
+}
+
+export function getLocaleFromPath(pathname: string): Locale {
+  return pathname === "/zh" || pathname.startsWith("/zh/") ? "zh" : "en";
+}
+
+export function getCharacterTranslation(idOrSlug: string, locale: Locale) {
+  return locale === "zh" ? characterTranslations[idOrSlug] : undefined;
+}
+
+export function translateCharacter(character: Character, locale: Locale): Character {
+  if (locale === "en") {
+    return character;
+  }
+  const translation = getCharacterTranslation(character.slug, locale);
+  return {
+    ...character,
+    name: translation?.name ?? character.name,
+    franchise: translateTerm(character.franchise, locale),
+    summary: translation?.summary ?? character.summary,
+    role: translation?.role ?? translateTerm(character.role, locale),
+    popularityTier: translateTerm(character.popularityTier, locale) as Character["popularityTier"],
+    games: character.games.map((game) => translateTerm(game, locale)),
+    visualTags: {
+      ...character.visualTags,
+      clothing: character.visualTags.clothing.map((tag) => translateTerm(tag, locale)),
+      accessories: character.visualTags.accessories.map((tag) => translateTerm(tag, locale)),
+      silhouette: translateSilhouette(character.visualTags.silhouette, locale)
+    }
+  };
+}
+
+export function translateDiscoveryCharacter(character: DiscoveryCharacter, locale: Locale): DiscoveryCharacter {
+  if (locale === "en") {
+    return character;
+  }
+  const translation = getCharacterTranslation(character.id, locale);
+  return {
+    ...character,
+    name: translation?.name ?? character.name,
+    summary: translation?.summary ?? character.summary
+  };
+}
+
+export function translateTerm(value: unknown, locale: Locale): string {
+  if (Array.isArray(value)) {
+    return value.map((item) => translateTerm(item, locale)).join(", ");
+  }
+  if (value === null || value === undefined) {
+    return uiText[locale].discovery.unknown;
+  }
+  const text = String(value);
+  if (locale === "en") {
+    return text;
+  }
+  return termTranslations[text] ?? text;
+}
+
+export function translateQuestion(question: DiscoveryQuestion, locale: Locale) {
+  if (locale === "en") {
+    return question.text;
+  }
+  return questionTranslations[question.id] ?? question.text;
+}
+
+export function translateAnswer(answer: string, locale: Locale) {
+  return uiText[locale].answers[answer as keyof typeof uiText.en.answers] ?? answer;
+}
+
+export function translateSilhouette(value: string, locale: Locale) {
+  if (locale === "en") {
+    return value;
+  }
+  return value
+    .split("/")
+    .map((part) => translateTerm(part.trim(), locale))
+    .join(" / ");
+}

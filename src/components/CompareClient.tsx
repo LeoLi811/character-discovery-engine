@@ -4,10 +4,12 @@ import { useMemo, useState } from "react";
 import { GitCompareArrows } from "lucide-react";
 import type { Character } from "@/lib/types";
 import { getPopularityScore } from "@/lib/characters";
+import { translateCharacter, uiText, type Locale } from "@/lib/i18n";
 
-export function CompareClient({ characters }: { characters: Character[] }) {
+export function CompareClient({ characters, locale = "en" }: { characters: Character[]; locale?: Locale }) {
   const defaultSlugs = characters.slice(0, 4).map((character) => character.slug);
   const [selectedSlugs, setSelectedSlugs] = useState(defaultSlugs);
+  const text = uiText[locale].compare;
 
   const selectedCharacters = useMemo(
     () => selectedSlugs.map((slug) => characters.find((character) => character.slug === slug)).filter(Boolean) as Character[],
@@ -22,16 +24,16 @@ export function CompareClient({ characters }: { characters: Character[] }) {
     <section>
       <div className="panel">
         <h2>
-          <GitCompareArrows size={18} aria-hidden="true" /> Select 2-4 characters
+          <GitCompareArrows size={18} aria-hidden="true" /> {text.select}
         </h2>
         <div className="compare-picker">
           {selectedSlugs.map((slug, index) => (
             <div className="field" key={`${slug}-${index}`}>
-              <label htmlFor={`compare-${index}`}>Slot {index + 1}</label>
+              <label htmlFor={`compare-${index}`}>{text.slot} {index + 1}</label>
               <select id={`compare-${index}`} value={slug} onChange={(event) => setSlot(index, event.target.value)}>
                 {characters.map((character) => (
                   <option value={character.slug} key={character.slug}>
-                    {character.name}
+                    {translateCharacter(character, locale).name}
                   </option>
                 ))}
               </select>
@@ -41,38 +43,41 @@ export function CompareClient({ characters }: { characters: Character[] }) {
       </div>
 
       <div className="compare-grid">
-        {selectedCharacters.map((character) => (
+        {selectedCharacters.map((character) => {
+          const translated = translateCharacter(character, locale);
+          return (
           <article className="panel" key={character.slug}>
-            <p className="meta">{character.franchise}</p>
-            <h2>{character.name}</h2>
+            <p className="meta">{translated.franchise}</p>
+            <h2>{translated.name}</h2>
             <dl className="info-list">
               <div>
-                <dt>Score</dt>
+                <dt>{text.score}</dt>
                 <dd>{getPopularityScore(character)} / 100</dd>
               </div>
               <div>
-                <dt>Role</dt>
-                <dd>{character.role}</dd>
+                <dt>{text.role}</dt>
+                <dd>{translated.role}</dd>
               </div>
               <div>
-                <dt>Tier</dt>
-                <dd>{character.popularityTier}</dd>
+                <dt>{text.tier}</dt>
+                <dd>{translated.popularityTier}</dd>
               </div>
               <div>
-                <dt>Games</dt>
-                <dd>{character.games.join(", ")}</dd>
+                <dt>{text.games}</dt>
+                <dd>{translated.games.join(", ")}</dd>
               </div>
               <div>
-                <dt>Clothing</dt>
-                <dd>{character.visualTags.clothing.join(", ")}</dd>
+                <dt>{text.clothing}</dt>
+                <dd>{translated.visualTags.clothing.join(", ")}</dd>
               </div>
               <div>
-                <dt>Accessories</dt>
-                <dd>{character.visualTags.accessories.join(", ")}</dd>
+                <dt>{text.accessories}</dt>
+                <dd>{translated.visualTags.accessories.join(", ")}</dd>
               </div>
             </dl>
           </article>
-        ))}
+        );
+        })}
       </div>
     </section>
   );

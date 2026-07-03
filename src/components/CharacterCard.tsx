@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { ArrowRight, Database } from "lucide-react";
 import { getCharacterColors, getInitials, getPopularityScore } from "@/lib/characters";
+import { localizedPath, translateCharacter, uiText, type Locale } from "@/lib/i18n";
 import type { Character } from "@/lib/types";
 
-export function CharacterCard({ character }: { character: Character }) {
+export function CharacterCard({ character, locale = "en" }: { character: Character; locale?: Locale }) {
   const score = getPopularityScore(character);
   const colors = getCharacterColors(character);
+  const translated = translateCharacter(character, locale);
+  const text = uiText[locale].catalog;
 
   return (
     <article className="character-card">
@@ -19,33 +22,33 @@ export function CharacterCard({ character }: { character: Character }) {
         }
       >
         <span className="sigil" aria-hidden="true">
-          {getInitials(character.name)}
+          {getInitials(translated.name)}
         </span>
       </div>
       <div className="card-body">
         <div>
-          <p className="meta">{character.franchise}</p>
-          <h2>{character.name}</h2>
+          <p className="meta">{translated.franchise}</p>
+          <h2>{translated.name}</h2>
         </div>
-        <p className="muted">{character.summary}</p>
+        <p className="muted">{translated.summary}</p>
         <div className="pill-row">
-          <span className="pill">{character.role}</span>
-          <span className="pill">{character.popularityTier}</span>
-          {character.visualTags.clothing.slice(0, 2).map((tag) => (
+          <span className="pill">{translated.role}</span>
+          <span className="pill">{translated.popularityTier}</span>
+          {translated.visualTags.clothing.slice(0, 2).map((tag) => (
             <span className="pill" key={tag}>
               {tag}
             </span>
           ))}
         </div>
-        <div className="score" aria-label={`Popularity score ${score} out of 100`}>
+        <div className="score" aria-label={`${text.popularityScore} ${score} / 100`}>
           <Database size={16} aria-hidden="true" />
           <div className="score-bar">
             <span className="score-fill" style={{ width: `${score}%` }} />
           </div>
           <strong>{score}</strong>
         </div>
-        <Link className="text-button" href={`/characters/${character.slug}`}>
-          Open record <ArrowRight size={16} aria-hidden="true" />
+        <Link className="text-button" href={localizedPath(`/characters/${character.slug}`, locale)}>
+          {text.openRecord} <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
     </article>

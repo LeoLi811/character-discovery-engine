@@ -11,11 +11,18 @@ import type {
   GameRecord
 } from "@/lib/discovery-types";
 import {
-  getAnswerLabel,
   getDiscoveryState,
   getSimilarCharacters,
   traitMatches
 } from "@/lib/discovery-engine";
+import {
+  translateAnswer,
+  translateDiscoveryCharacter,
+  translateQuestion,
+  translateTerm,
+  uiText,
+  type Locale
+} from "@/lib/i18n";
 
 type CharacterImageRecord = {
   imageUrl: string | null;
@@ -26,22 +33,18 @@ type CharacterImageRecord = {
 
 const characterImageMap = characterImages as Record<string, CharacterImageRecord>;
 
-const answerOptions: { value: AnswerValue; label: string }[] = [
-  { value: "yes", label: "Yes" },
-  { value: "probably", label: "Probably" },
-  { value: "not_sure", label: "Not sure" },
-  { value: "probably_not", label: "Probably not" },
-  { value: "no", label: "No" }
-];
+const answerOptions: AnswerValue[] = ["yes", "probably", "not_sure", "probably_not", "no"];
 
 export function DiscoveryApp({
   characters,
   questions,
-  games
+  games,
+  locale = "en"
 }: {
   characters: DiscoveryCharacter[];
   questions: DiscoveryQuestion[];
   games: GameRecord[];
+  locale?: Locale;
 }) {
   const [started, setStarted] = useState(false);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
@@ -52,6 +55,7 @@ export function DiscoveryApp({
   const shouldShowResult = state.shouldGuess || !state.nextQuestion;
   const result = top?.character;
   const similar = result ? getSimilarCharacters(result, characters) : [];
+  const text = uiText[locale].discovery;
 
   function answerQuestion(answer: AnswerValue) {
     if (!state.nextQuestion) {
@@ -70,14 +74,11 @@ export function DiscoveryApp({
     return (
       <section className="discovery-hero">
         <div className="hero-copy">
-          <p className="eyebrow">Honkai: Star Rail first, multi-game ready</p>
-          <h1>Think of a character. The engine will ask, narrow, and explain.</h1>
-          <p>
-            This is an adaptive character discovery system: broad questions identify the likely
-            game, then HSR-specific traits narrow the final guess.
-          </p>
+          <p className="eyebrow">{text.heroEyebrow}</p>
+          <h1>{text.heroTitle}</h1>
+          <p>{text.heroBody}</p>
           <button className="primary-button" type="button" onClick={() => setStarted(true)}>
-            <BrainCircuit size={18} aria-hidden="true" /> Start guessing
+            <BrainCircuit size={18} aria-hidden="true" /> {text.start}
           </button>
         </div>
         <div className="engine-card">
@@ -86,16 +87,16 @@ export function DiscoveryApp({
           </div>
           <dl className="mini-stats">
             <div>
-              <dt>Characters</dt>
+              <dt>{text.characters}</dt>
               <dd>{characters.length}</dd>
             </div>
             <div>
-              <dt>Questions</dt>
+              <dt>{text.questions}</dt>
               <dd>{questions.length}</dd>
             </div>
             <div>
-              <dt>Mode</dt>
-              <dd>Explainable</dd>
+              <dt>{text.mode}</dt>
+              <dd>{text.explainable}</dd>
             </div>
           </dl>
         </div>
@@ -107,8 +108,8 @@ export function DiscoveryApp({
     <section className="guess-layout">
       <div className="question-panel panel">
         <div className="session-bar">
-          <span>Question {state.questionCount + (shouldShowResult ? 0 : 1)}</span>
-          <button className="icon-button" type="button" onClick={reset} aria-label="Reset session">
+          <span>{text.question} {state.questionCount + (shouldShowResult ? 0 : 1)}</span>
+          <button className="icon-button" type="button" onClick={reset} aria-label={text.resetSession}>
             <RotateCcw size={17} aria-hidden="true" />
           </button>
         </div>
@@ -123,15 +124,16 @@ export function DiscoveryApp({
             feedback={feedback}
             setFeedback={setFeedback}
             reset={reset}
+            locale={locale}
           />
         ) : (
           <>
-            <p className="eyebrow">{state.nextQuestion?.scope === "global" ? "General question" : "HSR-specific question"}</p>
-            <h1>{state.nextQuestion?.text}</h1>
+            <p className="eyebrow">{state.nextQuestion?.scope === "global" ? text.generalQuestion : text.hsrQuestion}</p>
+            <h1>{state.nextQuestion ? translateQuestion(state.nextQuestion, locale) : ""}</h1>
             <div className="answer-grid">
               {answerOptions.map((option) => (
-                <button type="button" className="answer-button" key={option.value} onClick={() => answerQuestion(option.value)}>
-                  {option.label}
+                <button type="button" className="answer-button" key={option} onClick={() => answerQuestion(option)}>
+                  {translateAnswer(option, locale)}
                 </button>
               ))}
             </div>
@@ -140,17 +142,17 @@ export function DiscoveryApp({
       </div>
 
       <aside className="panel">
-        <h2>Live candidates</h2>
+        <h2>{text.liveCandidates}</h2>
         <p className="muted">
-          {likelyGame ? `Likely game: ${likelyGame.name}` : "Still asking broad questions."}
+          {likelyGame ? `${text.likelyGame}: ${translateTerm(likelyGame.name, locale)}` : text.broadQuestions}
         </p>
         <div className="candidate-list">
           {state.scores.slice(0, 6).map((score) => (
             <div className="candidate-row" key={score.character.id}>
               <span className="avatar-dot" style={{ background: score.character.color }} />
               <div>
-                <strong>{score.character.name}</strong>
-                <small>{Math.round(score.confidence * 100)}% confidence</small>
+                <strong>{translateDiscoveryCharacter(score.character, locale).name}</strong>
+                <small>{Math.round(score.confidence * 100)}% {text.confidence}</small>
               </div>
               <div className="score-bar">
                 <span className="score-fill" style={{ width: `${Math.max(score.confidence * 100, 4)}%` }} />
@@ -171,7 +173,8 @@ function ResultView({
   similar,
   feedback,
   setFeedback,
-  reset
+  reset,
+  locale
 }: {
   result: DiscoveryCharacter;
   confidence: number;
@@ -181,7 +184,10 @@ function ResultView({
   feedback: string;
   setFeedback: (value: string) => void;
   reset: () => void;
+  locale: Locale;
 }) {
+  const text = uiText[locale].discovery;
+  const translatedResult = translateDiscoveryCharacter(result, locale);
   const answeredQuestions = answers
     .map((answer) => {
       const question = questions.find((candidate) => candidate.id === answer.questionId);
@@ -196,53 +202,53 @@ function ResultView({
 
   return (
     <div className="result-view">
-      <CharacterReveal result={result} confidence={confidence} image={image} />
-      <p className="eyebrow">Final guess</p>
-      <h1>{result.name}</h1>
-      <p>{result.summary}</p>
+      <CharacterReveal result={result} confidence={confidence} image={image} locale={locale} />
+      <p className="eyebrow">{text.finalGuess}</p>
+      <h1>{translatedResult.name}</h1>
+      <p>{translatedResult.summary}</p>
       <div className="result-confidence">
         <strong>{Math.round(confidence * 100)}%</strong>
-        <span>estimated confidence</span>
+        <span>{text.estimatedConfidence}</span>
       </div>
 
-      <h2>Why this guess?</h2>
+      <h2>{text.why}</h2>
       <div className="explain-list">
         {positiveMatches.slice(0, 6).map(({ question, answer }) => (
           <div className="explain-row" key={question.id}>
             <Check size={16} aria-hidden="true" />
             <span>
-              {question.text} <strong>{getAnswerLabel(answer.answer)}</strong>
+              {translateQuestion(question, locale)} <strong>{translateAnswer(answer.answer, locale)}</strong>
             </span>
           </div>
         ))}
-        {positiveMatches.length === 0 ? <p className="muted">The engine used penalties and candidate gaps more than direct positive matches.</p> : null}
+        {positiveMatches.length === 0 ? <p className="muted">{text.noPositiveMatches}</p> : null}
       </div>
 
-      <h2>Similar characters</h2>
+      <h2>{text.similarCharacters}</h2>
       <div className="pill-row">
         {similar.map((character) => (
           <span className="pill" key={character.id}>
-            {character.name}
+            {translateDiscoveryCharacter(character, locale).name}
           </span>
         ))}
       </div>
 
       <div className="feedback-box">
-        <h2>Was it wrong?</h2>
-        <p className="muted">For V1 this stays in the browser as text you can use to improve the dataset later.</p>
+        <h2>{text.wrong}</h2>
+        <p className="muted">{text.feedbackHelp}</p>
         <textarea
           value={feedback}
           onChange={(event) => setFeedback(event.target.value)}
-          placeholder="Who was it, and which answer felt wrong or missing?"
+          placeholder={text.feedbackPlaceholder}
         />
       </div>
 
       <div className="result-actions">
         <button className="primary-button" type="button" onClick={reset}>
-          <RotateCcw size={17} aria-hidden="true" /> Play again
+          <RotateCcw size={17} aria-hidden="true" /> {text.playAgain}
         </button>
         <button className="text-button" type="button" onClick={() => setFeedback("")}>
-          <X size={16} aria-hidden="true" /> Clear feedback
+          <X size={16} aria-hidden="true" /> {text.clearFeedback}
         </button>
       </div>
     </div>
@@ -252,18 +258,22 @@ function ResultView({
 function CharacterReveal({
   result,
   confidence,
-  image
+  image,
+  locale
 }: {
   result: DiscoveryCharacter;
   confidence: number;
   image?: CharacterImageRecord;
+  locale: Locale;
 }) {
-  const path = getTraitText(result.hsr.path);
-  const combatType = getTraitText(result.hsr.combatType);
-  const hairColor = getTraitText(result.global.primaryHairColor);
-  const outfitColor = getTraitText(result.global.primaryOutfitColor);
-  const faction = getTraitText(result.hsr.faction);
-  const initials = result.name
+  const text = uiText[locale].discovery;
+  const translatedResult = translateDiscoveryCharacter(result, locale);
+  const path = translateTraitText(result.hsr.path, locale);
+  const combatType = translateTraitText(result.hsr.combatType, locale);
+  const hairColor = translateTraitText(result.global.primaryHairColor, locale);
+  const outfitColor = translateTraitText(result.global.primaryOutfitColor, locale);
+  const faction = translateTraitText(result.hsr.faction, locale);
+  const initials = translatedResult.name
     .split(/\s+/)
     .map((part) => part[0])
     .join("")
@@ -304,7 +314,7 @@ function CharacterReveal({
           />
           <img
             src={image?.imageUrl ?? ""}
-            alt={image?.alt ?? `${result.name} character artwork`}
+            alt={image?.alt ?? `${translatedResult.name} ${text.artworkAlt}`}
             style={{
               position: "absolute",
               inset: 0,
@@ -341,8 +351,8 @@ function CharacterReveal({
         }}
       />
       <div style={{ position: "relative", zIndex: 1, display: "grid", gap: 8, alignSelf: "start", width: "min(420px, 62%)", padding: "22px 28px" }}>
-        <p className="eyebrow">Character reveal</p>
-        <strong style={{ color: "#fff8ec", fontSize: "clamp(36px, 7vw, 72px)", lineHeight: 0.9 }}>{result.name}</strong>
+        <p className="eyebrow">{text.reveal}</p>
+        <strong style={{ color: "#fff8ec", fontSize: "clamp(36px, 7vw, 72px)", lineHeight: 0.9 }}>{translatedResult.name}</strong>
         <span style={{ color: "rgba(244, 241, 234, 0.78)", fontFamily: "var(--font-geist-mono)", fontSize: 12, textTransform: "uppercase" }}>
           {faction}
         </span>
@@ -371,7 +381,7 @@ function CharacterReveal({
         </div>
       ) : null}
       <div
-        aria-label={`${result.name} key traits`}
+        aria-label={`${translatedResult.name} key traits`}
         style={{
           position: "relative",
           zIndex: 1,
@@ -385,7 +395,7 @@ function CharacterReveal({
           padding: "0 24px 22px"
         }}
       >
-        {[path, combatType, `${hairColor} hair`, `${outfitColor} outfit`].map((trait) => (
+        {[path, combatType, `${hairColor} ${text.hair}`, `${outfitColor} ${text.outfit}`].map((trait) => (
           <span
             key={trait}
             style={{
@@ -418,18 +428,18 @@ function CharacterReveal({
         }}
       >
         <strong style={{ color: "var(--accent)", fontSize: 26, lineHeight: 1 }}>{Math.round(confidence * 100)}%</strong>
-        <span style={{ color: "rgba(244, 241, 234, 0.72)", fontSize: 11, textTransform: "uppercase" }}>match</span>
+        <span style={{ color: "rgba(244, 241, 234, 0.72)", fontSize: 11, textTransform: "uppercase" }}>{text.match}</span>
       </div>
     </figure>
   );
 }
 
-function getTraitText(value: unknown) {
+function translateTraitText(value: unknown, locale: Locale) {
   if (Array.isArray(value)) {
-    return value.length > 0 ? String(value[0]) : "Unknown";
+    return value.length > 0 ? translateTerm(value[0], locale) : uiText[locale].discovery.unknown;
   }
   if (value === null || value === undefined) {
-    return "Unknown";
+    return uiText[locale].discovery.unknown;
   }
-  return String(value);
+  return translateTerm(value, locale);
 }

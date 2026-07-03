@@ -2,8 +2,8 @@ import { discoveryCharacters, discoveryQuestions } from "@/lib/discovery-data";
 import { traitMatches } from "@/lib/discovery-engine";
 import { translateQuestion, translateTerm, uiText } from "@/lib/i18n";
 
-export default function AnalyticsPage() {
-  const text = uiText.en.analytics;
+export default function ChineseAnalyticsPage() {
+  const text = uiText.zh.analytics;
   const questionStats = discoveryQuestions
     .map((question) => {
       const matches = discoveryCharacters.filter((character) => traitMatches(character, question)).length;
@@ -44,8 +44,8 @@ export default function AnalyticsPage() {
               <tbody>
                 {questionStats.slice(0, 14).map(({ question, matches, split }) => (
                   <tr key={question.id}>
-                    <td>{translateQuestion(question, "en")}</td>
-                    <td>{question.scope}</td>
+                    <td>{translateQuestion(question, "zh")}</td>
+                    <td>{translateTerm(question.scope, "zh")}</td>
                     <td>
                       {matches}/{discoveryCharacters.length}
                     </td>
@@ -62,7 +62,7 @@ export default function AnalyticsPage() {
             {ambiguousTraits.map((item) => (
               <div className="bar-item" key={item.label}>
                 <div className="bar-label">
-                  <span>{translateTerm(item.label, "en")}</span>
+                  <span>{translateTerm(item.label, "zh")}</span>
                   <span>{item.count}</span>
                 </div>
                 <div className="score-bar">

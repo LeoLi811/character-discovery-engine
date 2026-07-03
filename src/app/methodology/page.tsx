@@ -1,4 +1,5 @@
 import { Database, FileSearch, Scale, WandSparkles } from "lucide-react";
+import { uiText } from "@/lib/i18n";
 
 const steps = [
   {
@@ -24,15 +25,14 @@ const steps = [
 ];
 
 export default function MethodologyPage() {
+  const text = uiText.en.methodology;
+
   return (
     <div className="page-shell">
       <section className="page-title">
         <div>
-          <h1>Methodology and data limits.</h1>
-          <p>
-            This project is designed like an analysis system, even though V1 is primarily a catalog.
-            Every record keeps source evidence and leaves room for richer comparison work later.
-          </p>
+          <h1>{text.title}</h1>
+          <p>{text.body}</p>
         </div>
       </section>
       <section className="method-grid">
@@ -48,14 +48,14 @@ export default function MethodologyPage() {
         })}
       </section>
       <section className="panel" style={{ marginTop: 16 }}>
-        <h2>Known gaps</h2>
+        <h2>{text.knownGaps}</h2>
         <div className="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Area</th>
-                <th>Current V1 handling</th>
-                <th>Future improvement</th>
+                <th>{text.area}</th>
+                <th>{text.current}</th>
+                <th>{text.future}</th>
               </tr>
             </thead>
             <tbody>

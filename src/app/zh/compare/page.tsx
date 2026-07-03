@@ -2,8 +2,8 @@ import { CompareClient } from "@/components/CompareClient";
 import { characters } from "@/lib/characters";
 import { uiText } from "@/lib/i18n";
 
-export default function ComparePage() {
-  const text = uiText.en.compare;
+export default function ChineseComparePage() {
+  const text = uiText.zh.compare;
 
   return (
     <div className="page-shell">
@@ -13,7 +13,7 @@ export default function ComparePage() {
           <p>{text.body}</p>
         </div>
       </section>
-      <CompareClient characters={characters} />
+      <CompareClient characters={characters} locale="zh" />
     </div>
   );
 }
