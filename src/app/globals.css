@@ -340,6 +340,11 @@ select {
   padding: 10px;
 }
 
+.feedback-box {
+  display: grid;
+  gap: 12px;
+}
+
 .feedback-box textarea {
   width: 100%;
   min-height: 92px;
@@ -349,6 +354,65 @@ select {
   background: #101113;
   color: var(--text);
   padding: 10px;
+}
+
+.feedback-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feedback-suggestions .text-button {
+  min-height: 34px;
+}
+
+.feedback-suggestions .text-button span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.feedback-saved {
+  display: flex;
+  gap: 10px;
+  border: 1px solid rgba(101, 212, 139, 0.32);
+  border-radius: var(--radius);
+  background: rgba(101, 212, 139, 0.08);
+  padding: 12px;
+}
+
+.feedback-improvements {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.form-error {
+  margin: 0;
+  color: var(--danger);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.compact-stat {
+  min-width: 170px;
+}
+
+.feedback-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.correction-analytics {
+  margin-top: 16px;
 }
 
 .page-title {
@@ -639,6 +703,7 @@ th {
   .catalog-layout,
   .detail-grid,
   .dashboard-grid,
+  .feedback-analytics-grid,
   .method-grid {
     grid-template-columns: 1fr;
   }
@@ -669,6 +734,10 @@ th {
   .answer-grid,
   .mini-stats {
     grid-template-columns: 1fr;
+  }
+
+  .panel-heading {
+    flex-direction: column;
   }
 
   .info-list div {

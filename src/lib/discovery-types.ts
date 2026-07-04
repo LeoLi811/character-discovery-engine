@@ -51,6 +51,35 @@ export type AnswerRecord = {
   answer: AnswerValue;
 };
 
+export type CorrectionSuggestion =
+  | {
+      type: "answer_mismatch";
+      questionId: string;
+    }
+  | {
+      type: "missing_question";
+      questionId: string;
+    }
+  | {
+      type: "confused_pair";
+      guessedCharacterId: string;
+      correctCharacterId: string;
+    };
+
+export type CorrectionFeedbackRecord = {
+  id: string;
+  createdAt: string;
+  guessedCharacterId: string;
+  correctCharacterId: string;
+  answers: AnswerRecord[];
+  topCandidates: {
+    characterId: string;
+    confidence: number;
+  }[];
+  notes: string;
+  suggestions: CorrectionSuggestion[];
+};
+
 export type CharacterScore = {
   character: DiscoveryCharacter;
   score: number;

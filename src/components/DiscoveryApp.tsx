@@ -6,10 +6,19 @@ import characterImages from "@/data/games/hsr/character-images.json";
 import type {
   AnswerRecord,
   AnswerValue,
+  CharacterScore,
+  CorrectionFeedbackRecord,
+  CorrectionSuggestion,
   DiscoveryCharacter,
   DiscoveryQuestion,
   GameRecord
 } from "@/lib/discovery-types";
+import {
+  buildCorrectionSuggestions,
+  getCharacterNameSuggestions,
+  resolveCharacterId,
+  saveCorrectionFeedback
+} from "@/lib/corrections";
 import {
   getDiscoveryState,
   getSimilarCharacters,
@@ -49,7 +58,6 @@ export function DiscoveryApp({
 }) {
   const [started, setStarted] = useState(false);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
-  const [feedback, setFeedback] = useState("");
   const state = useMemo(() => getDiscoveryState(characters, questions, answers), [answers, characters, questions]);
   const top = state.scores[0];
   const likelyGame = games.find((game) => game.id === state.likelyGameId);
@@ -68,7 +76,6 @@ export function DiscoveryApp({
   function reset() {
     setStarted(false);
     setAnswers([]);
-    setFeedback("");
   }
 
   if (!started) {
@@ -121,9 +128,9 @@ export function DiscoveryApp({
             confidence={top.confidence}
             answers={answers}
             questions={questions}
+            characters={characters}
+            topCandidates={state.scores.slice(0, 6)}
             similar={similar.map((item) => item.character)}
-            feedback={feedback}
-            setFeedback={setFeedback}
             reset={reset}
             locale={locale}
           />
@@ -171,9 +178,9 @@ function ResultView({
   confidence,
   answers,
   questions,
+  characters,
+  topCandidates,
   similar,
-  feedback,
-  setFeedback,
   reset,
   locale
 }: {
@@ -181,14 +188,27 @@ function ResultView({
   confidence: number;
   answers: AnswerRecord[];
   questions: DiscoveryQuestion[];
+  characters: DiscoveryCharacter[];
+  topCandidates: CharacterScore[];
   similar: DiscoveryCharacter[];
-  feedback: string;
-  setFeedback: (value: string) => void;
   reset: () => void;
   locale: Locale;
 }) {
   const text = uiText[locale].discovery;
+  const [correctInput, setCorrectInput] = useState("");
+  const [notes, setNotes] = useState("");
+  const [savedRecord, setSavedRecord] = useState<CorrectionFeedbackRecord | null>(null);
+  const [feedbackError, setFeedbackError] = useState("");
   const translatedResult = translateDiscoveryCharacter(result, locale);
+  const resolvedCorrectId = useMemo(
+    () => resolveCharacterId(correctInput, characters),
+    [characters, correctInput]
+  );
+  const selectedCorrectCharacter = characters.find((character) => character.id === resolvedCorrectId);
+  const nameSuggestions = useMemo(
+    () => getCharacterNameSuggestions(correctInput, characters),
+    [characters, correctInput]
+  );
   const answeredQuestions = answers
     .map((answer) => {
       const question = questions.find((candidate) => candidate.id === answer.questionId);
@@ -200,6 +220,38 @@ function ResultView({
     return matches && ["yes", "probably"].includes(answer.answer);
   });
   const image = characterImageMap[result.id];
+
+  function submitCorrection() {
+    if (!resolvedCorrectId || !selectedCorrectCharacter) {
+      setFeedbackError(text.feedbackChooseExisting);
+      return;
+    }
+    if (resolvedCorrectId === result.id) {
+      setFeedbackError(text.feedbackSameCharacter);
+      return;
+    }
+
+    const suggestions = buildCorrectionSuggestions({
+      guessedCharacter: result,
+      correctCharacter: selectedCorrectCharacter,
+      answers,
+      questions
+    });
+    const record = saveCorrectionFeedback({
+      guessedCharacterId: result.id,
+      correctCharacterId: resolvedCorrectId,
+      answers,
+      topCandidates: topCandidates.map((candidate) => ({
+        characterId: candidate.character.id,
+        confidence: candidate.confidence
+      })),
+      notes: notes.trim(),
+      suggestions
+    });
+
+    setSavedRecord(record);
+    setFeedbackError("");
+  }
 
   return (
     <div className="result-view">
@@ -237,23 +289,137 @@ function ResultView({
       <div className="feedback-box">
         <h2>{text.wrong}</h2>
         <p className="muted">{text.feedbackHelp}</p>
-        <textarea
-          value={feedback}
-          onChange={(event) => setFeedback(event.target.value)}
-          placeholder={text.feedbackPlaceholder}
-        />
+        <div className="field">
+          <label htmlFor="correct-character">{text.correctCharacter}</label>
+          <input
+            id="correct-character"
+            value={correctInput}
+            onChange={(event) => {
+              setCorrectInput(event.target.value);
+              setSavedRecord(null);
+              setFeedbackError("");
+            }}
+            placeholder={text.correctCharacterPlaceholder}
+          />
+        </div>
+        {correctInput ? (
+          <div className="feedback-suggestions">
+            {nameSuggestions.map(({ character, matchedLabel }) => (
+              <button
+                className="text-button"
+                type="button"
+                key={character.id}
+                onClick={() => {
+                  setCorrectInput(translateDiscoveryCharacter(character, locale).name);
+                  setSavedRecord(null);
+                  setFeedbackError("");
+                }}
+              >
+                {translateDiscoveryCharacter(character, locale).name}
+                <span>{matchedLabel}</span>
+              </button>
+            ))}
+          </div>
+        ) : null}
+        <div className="field">
+          <label htmlFor="correction-note">{text.feedbackNote}</label>
+          <textarea
+            id="correction-note"
+            value={notes}
+            onChange={(event) => {
+              setNotes(event.target.value);
+              setSavedRecord(null);
+            }}
+            placeholder={text.feedbackPlaceholder}
+          />
+        </div>
+        {selectedCorrectCharacter ? (
+          <p className="muted">
+            {text.feedbackResolved}: <strong>{translateDiscoveryCharacter(selectedCorrectCharacter, locale).name}</strong>
+          </p>
+        ) : null}
+        {feedbackError ? <p className="form-error">{feedbackError}</p> : null}
+        {savedRecord ? (
+          <div className="feedback-saved">
+            <Check size={16} aria-hidden="true" />
+            <div>
+              <strong>{text.feedbackSaved}</strong>
+              <CorrectionSuggestionList suggestions={savedRecord.suggestions} questions={questions} characters={characters} locale={locale} />
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <div className="result-actions">
+        <button className="primary-button" type="button" onClick={submitCorrection}>
+          <Check size={17} aria-hidden="true" /> {text.submitFeedback}
+        </button>
         <button className="primary-button" type="button" onClick={reset}>
           <RotateCcw size={17} aria-hidden="true" /> {text.playAgain}
         </button>
-        <button className="text-button" type="button" onClick={() => setFeedback("")}>
+        <button className="text-button" type="button" onClick={() => {
+          setCorrectInput("");
+          setNotes("");
+          setSavedRecord(null);
+          setFeedbackError("");
+        }}>
           <X size={16} aria-hidden="true" /> {text.clearFeedback}
         </button>
       </div>
     </div>
   );
+}
+
+function CorrectionSuggestionList({
+  suggestions,
+  questions,
+  characters,
+  locale
+}: {
+  suggestions: CorrectionSuggestion[];
+  questions: DiscoveryQuestion[];
+  characters: DiscoveryCharacter[];
+  locale: Locale;
+}) {
+  const text = uiText[locale].discovery;
+
+  return (
+    <ul className="feedback-improvements">
+      {suggestions.map((suggestion, index) => (
+        <li key={`${suggestion.type}-${index}`}>
+          {renderCorrectionSuggestion(suggestion, questions, characters, locale, text)}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function renderCorrectionSuggestion(
+  suggestion: CorrectionSuggestion,
+  questions: DiscoveryQuestion[],
+  characters: DiscoveryCharacter[],
+  locale: Locale,
+  text: {
+    suggestionConfusedPair: string;
+    suggestionAnswerMismatch: string;
+    suggestionMissingQuestion: string;
+  }
+) {
+  if (suggestion.type === "confused_pair") {
+    const guessed = characters.find((character) => character.id === suggestion.guessedCharacterId);
+    const correct = characters.find((character) => character.id === suggestion.correctCharacterId);
+    const guessedName = guessed ? translateDiscoveryCharacter(guessed, locale).name : suggestion.guessedCharacterId;
+    const correctName = correct ? translateDiscoveryCharacter(correct, locale).name : suggestion.correctCharacterId;
+    return `${text.suggestionConfusedPair}: ${guessedName} -> ${correctName}`;
+  }
+
+  const question = questions.find((candidate) => candidate.id === suggestion.questionId);
+  const questionText = question ? translateQuestion(question, locale) : suggestion.questionId;
+  if (suggestion.type === "answer_mismatch") {
+    return `${text.suggestionAnswerMismatch}: ${questionText}`;
+  }
+
+  return `${text.suggestionMissingQuestion}: ${questionText}`;
 }
 
 function CharacterReveal({

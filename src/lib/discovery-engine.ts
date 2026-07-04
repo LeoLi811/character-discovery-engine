@@ -25,9 +25,59 @@ const CONFIDENT_ANSWERS = new Set<AnswerValue>(["yes", "probably", "probably_not
 const POSITIVE_ANSWERS = new Set<AnswerValue>(["yes", "probably"]);
 
 const QUESTION_GROUPS: Record<string, string> = {
+  "global-playable": "playability",
+  "global-npc": "playability",
+  "hsr-non-playable-combat": "playability",
+  "global-female": "gender",
+  "global-male": "gender",
+  "global-variable-gender": "gender",
+  "global-bright-hair": "hair-color",
+  "global-purple-hair": "hair-color",
+  "global-pink-hair": "hair-color",
+  "global-blue-hair": "hair-color",
+  "global-white-hair": "hair-color",
+  "global-black-hair": "hair-color",
+  "global-blond-hair": "hair-color",
+  "global-red-hair": "hair-color",
+  "global-purple-outfit": "outfit-color",
+  "global-red-outfit": "outfit-color",
+  "global-green-outfit": "outfit-color",
+  "global-white-outfit": "outfit-color",
+  "global-uses-weapon": "weapon-style",
+  "global-gun": "weapon-style",
+  "global-sword": "weapon-style",
+  "global-magic-tool": "weapon-style",
+  "hsr-mech": "weapon-style",
+  "hsr-dragon": "weapon-style",
+  "hsr-robot-companion": "weapon-style",
+  "hsr-music": "weapon-style",
+  "hsr-coffin": "weapon-style",
+  "hsr-mechanical-arm": "weapon-style",
+  "hsr-summon": "weapon-style",
+  "global-mysterious": "personality",
+  "global-calm": "personality",
+  "global-cheerful": "personality",
+  "global-main-cast": "broad-role",
+  "global-avatar": "broad-role",
+  "global-leader": "broad-role",
+  "global-antihero": "broad-role",
+  "hsr-alt-form": "broad-role",
+  "hsr-mascot": "broad-role",
+  "hsr-robot-character": "broad-role",
+  "hsr-lore-character": "broad-role",
+  "hsr-major-story-character": "broad-role",
+  "hsr-antagonist": "broad-role",
+  "hsr-mentor": "broad-role",
+  "hsr-healer": "broad-role",
+  "hsr-singer": "broad-role",
+  "hsr-hacker": "broad-role",
+  "hsr-gambler": "broad-role",
+  "hsr-thief": "broad-role",
+  "hsr-foxian": "broad-role",
+  "hsr-animal-companion": "broad-role",
   "hsr-genius": "genius-society",
   "hsr-genius-society-member": "genius-society",
-  "hsr-researcher": "research-identity",
+  "hsr-researcher": "genius-society",
   "hsr-ipc": "ipc",
   "hsr-ipc-full": "ipc",
   "hsr-ipc-executive": "ipc",
@@ -39,18 +89,65 @@ const QUESTION_GROUPS: Record<string, string> = {
   "hsr-emanator": "emanator",
   "hsr-aeon": "aeon",
   "hsr-cosmic-entity": "aeon",
-  "hsr-lore-character": "npc-lore",
-  "global-npc": "npc-lore",
-  "hsr-non-playable-combat": "npc-playability",
-  "global-playable": "npc-playability",
+  "hsr-nihility": "hsr-path",
+  "hsr-harmony": "hsr-path",
+  "hsr-destruction": "hsr-path",
+  "hsr-hunt": "hsr-path",
+  "hsr-preservation": "hsr-path",
+  "hsr-erudition": "hsr-path",
+  "hsr-abundance": "hsr-path",
+  "hsr-remembrance": "hsr-path",
+  "hsr-elation": "hsr-path",
+  "hsr-trailblaze-path": "hsr-path",
+  "hsr-voracity-path": "hsr-path",
+  "hsr-permanence-path": "hsr-path",
+  "hsr-finality-path": "hsr-path",
+  "hsr-propagation-path": "hsr-path",
+  "hsr-beauty-path": "hsr-path",
+  "hsr-enigmata-path": "hsr-path",
+  "hsr-equilibrium-path": "hsr-path",
+  "hsr-lightning": "combat-type",
+  "hsr-quantum": "combat-type",
+  "hsr-imaginary": "combat-type",
+  "hsr-fire": "combat-type",
+  "hsr-ice": "combat-type",
+  "hsr-wind": "combat-type",
+  "hsr-physical": "combat-type",
+  "hsr-five-star": "rarity",
+  "hsr-four-star": "rarity",
+  "hsr-animated-short": "media",
+  "hsr-character-trailer": "media",
+  "hsr-meme": "fan-signal",
+  "hsr-high-fan-art": "fan-signal",
+  "hsr-shipping": "fan-signal",
+  "hsr-meta": "fan-signal",
   "hsr-amphoreus": "story-region",
   "hsr-cosmos-region": "story-region",
   "hsr-penacony": "story-region",
   "hsr-penacony-faction": "story-region",
   "hsr-xianzhou": "story-region",
   "hsr-xianzhou-alliance": "story-region",
-  "hsr-belobog": "story-region"
+  "hsr-belobog": "story-region",
+  "hsr-herta-space-station": "story-region",
+  "hsr-yaoqing": "story-region",
+  "hsr-stellaron-hunter": "faction",
+  "hsr-astral-express": "faction",
+  "hsr-silvermane": "faction",
+  "hsr-knights-beauty": "faction",
+  "hsr-ten-lords": "faction",
+  "hsr-alchemy": "faction",
+  "hsr-family": "faction",
+  "hsr-chrysos-heir": "faction",
+  "hsr-cloud-knights": "faction",
+  "hsr-galaxy-ranger": "galaxy-ranger",
+  "hsr-galaxy-rangers": "galaxy-ranger",
+  "hsr-high-cloud-quintet": "faction",
+  "hsr-memory-story-character": "penacony-lore",
+  "hsr-watchmaker-legacy": "penacony-lore",
+  "hsr-heliobus": "specific-lore"
 };
+
+const QUESTION_GROUP_COOLDOWN = 2;
 
 // These fields can only have one primary answer for a character.
 const EXCLUSIVE_TRAIT_PATHS = new Set([
@@ -215,6 +312,10 @@ function isQuestionRedundant(
     return true;
   }
 
+  if (isQuestionGroupRecentlyAsked(question, answers, questionMap)) {
+    return true;
+  }
+
   return answers.some((answer) => {
     const previousQuestion = questionMap.get(answer.questionId);
     if (!previousQuestion || previousQuestion.traitPath !== question.traitPath) {
@@ -230,6 +331,22 @@ function isQuestionRedundant(
     }
 
     return POSITIVE_ANSWERS.has(answer.answer);
+  });
+}
+
+function isQuestionGroupRecentlyAsked(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const group = QUESTION_GROUPS[question.id];
+  if (!group) {
+    return false;
+  }
+
+  return answers.slice(-QUESTION_GROUP_COOLDOWN).some((answer) => {
+    const previousQuestion = questionMap.get(answer.questionId);
+    return previousQuestion ? QUESTION_GROUPS[previousQuestion.id] === group : false;
   });
 }
 

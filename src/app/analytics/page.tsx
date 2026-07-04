@@ -1,6 +1,7 @@
 import { discoveryCharacters, discoveryQuestions } from "@/lib/discovery-data";
 import { traitMatches } from "@/lib/discovery-engine";
 import { translateQuestion, translateTerm, uiText } from "@/lib/i18n";
+import { CorrectionAnalyticsPanel } from "@/components/CorrectionAnalyticsPanel";
 
 export default function AnalyticsPage() {
   const text = uiText.en.analytics;
@@ -73,6 +74,7 @@ export default function AnalyticsPage() {
           </div>
         </div>
       </section>
+      <CorrectionAnalyticsPanel characters={discoveryCharacters} locale="en" />
     </div>
   );
 }

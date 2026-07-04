@@ -1,6 +1,7 @@
 import { discoveryCharacters, discoveryQuestions } from "@/lib/discovery-data";
 import { traitMatches } from "@/lib/discovery-engine";
 import { translateQuestion, translateTerm, uiText } from "@/lib/i18n";
+import { CorrectionAnalyticsPanel } from "@/components/CorrectionAnalyticsPanel";
 
 export default function ChineseAnalyticsPage() {
   const text = uiText.zh.analytics;
@@ -73,6 +74,7 @@ export default function ChineseAnalyticsPage() {
           </div>
         </div>
       </section>
+      <CorrectionAnalyticsPanel characters={discoveryCharacters} locale="zh" />
     </div>
   );
 }
