@@ -6871,10 +6871,12 @@
   {
     "id": "evanescia",
     "name": "Evanescia",
-    "aliases": [],
+    "aliases": [
+      "绯英"
+    ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "A Planarcadia arbitrator who makes the Trailblazer a Supplicant in the Phantasmoon Games; voice cast is source-backed, but gameplay traits are still unknown.",
+    "summary": "A playable Physical Elation character tied to Planarcadia, Phantasmoon, and Emanator of Abundance lore.",
     "color": "#9a8fc9",
     "global": {
       "game": "Honkai: Star Rail",
@@ -6889,10 +6891,11 @@
         "sci-fi"
       ],
       "characterType": [
+        "playable",
         "major-story-character",
-        "needs_research"
+        "emanator"
       ],
-      "genderPresentation": "needs_research",
+      "genderPresentation": "female",
       "hairColor": [
         "needs_research"
       ],
@@ -6912,28 +6915,36 @@
       ]
     },
     "hsr": {
-      "path": "needs_research",
-      "combatType": "needs_research",
+      "path": "Elation",
+      "combatType": "Physical",
       "faction": [
         "Planarcadia"
       ],
       "worldOrRegion": [
         "Planarcadia"
       ],
-      "rarity": null,
-      "releaseVersion": "needs_research",
+      "rarity": 5,
+      "releaseVersion": "4.2",
       "hasAnimatedShort": false,
       "hasCharacterTrailer": false,
       "associatedArc": [
         "Phantasmoon Games",
-        "Planarcadia"
+        "Planarcadia",
+        "Abundance",
+        "Panarch Elwood",
+        "Crimson Moon"
       ],
       "fanSignals": [
         "lore-discussion"
       ],
       "storyRole": [
         "arbitrator",
-        "supplicant-maker"
+        "supplicant-maker",
+        "imagenae",
+        "emanator",
+        "emanator-of-abundance",
+        "panarch-elwood-related",
+        "crimson-moon-related"
       ]
     },
     "evidence": [
@@ -6941,7 +6952,13 @@
         "field": "hsr.associatedArc",
         "source": "HSR Planarcadia story summary",
         "confidence": "medium",
-        "notes": "Story presence, arbitrator role, and voice-cast listing are source-backed; playable status and gameplay traits still need research."
+        "notes": "Story presence, arbitrator role, and voice-cast listing are source-backed."
+      },
+      {
+        "field": "hsr.path",
+        "source": "Honkai: Star Rail Wiki / Fandom Evanescia page",
+        "confidence": "medium",
+        "notes": "Fandom lists Evanescia as a 5-star Physical Elation playable character released in Version 4.2, with Imagenae species and Abundance Emanator lore; verify against official source before production."
       }
     ]
   },
@@ -6949,11 +6966,12 @@
     "id": "ashveil",
     "name": "Ashveil",
     "aliases": [
-      "La Mancha"
+      "La Mancha",
+      "拉曼查"
     ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "La Mancha, also known as Ashveil, is an eccentric Planarcadia detective, director of the Ashen Detective Agency, and leader of the Galaxy Rangers.",
+    "summary": "La Mancha, also known as Ashveil, is a playable Lightning Hunt detective tied to Planarcadia, Kronstadt, the Galaxy Rangers, and Voracity lore.",
     "color": "#4a5668",
     "global": {
       "game": "Honkai: Star Rail",
@@ -6969,8 +6987,9 @@
         "detective"
       ],
       "characterType": [
+        "playable",
         "major-story-character",
-        "needs_research"
+        "detective"
       ],
       "genderPresentation": "male",
       "hairColor": [
@@ -6992,22 +7011,26 @@
       ]
     },
     "hsr": {
-      "path": "needs_research",
-      "combatType": "needs_research",
+      "path": "Hunt",
+      "combatType": "Lightning",
       "faction": [
         "Galaxy Rangers",
-        "Ashen Detective Agency"
-      ],
-      "worldOrRegion": [
+        "Ashen Detective Agency",
         "Planarcadia"
       ],
-      "rarity": null,
-      "releaseVersion": "needs_research",
+      "worldOrRegion": [
+        "Planarcadia",
+        "Kronstadt"
+      ],
+      "rarity": 5,
+      "releaseVersion": "4.1",
       "hasAnimatedShort": false,
       "hasCharacterTrailer": false,
       "associatedArc": [
         "Planarcadia",
-        "Phantasmoon Games"
+        "Phantasmoon Games",
+        "Voracity",
+        "Oroboros"
       ],
       "fanSignals": [
         "lore-discussion"
@@ -7015,7 +7038,9 @@
       "storyRole": [
         "detective",
         "galaxy-ranger",
-        "agency-director"
+        "agency-director",
+        "voracity-related",
+        "oroboros-fragment-right-arm"
       ]
     },
     "evidence": [
@@ -7023,7 +7048,13 @@
         "field": "hsr.faction",
         "source": "HSR character-list summary",
         "confidence": "medium",
-        "notes": "Story identity, La Mancha alias, agency director role, and Galaxy Rangers leadership are source-backed; gameplay data still needs official confirmation."
+        "notes": "Story identity, La Mancha alias, agency director role, and Galaxy Rangers leadership are source-backed."
+      },
+      {
+        "field": "hsr.path",
+        "source": "Honkai: Star Rail Wiki / Fandom Ashveil page",
+        "confidence": "medium",
+        "notes": "Fandom lists Ashveil as a 5-star Lightning Hunt playable character with Galaxy Rangers, Planarcadia, Ashen Detective Agency, Kronstadt, and Voracity/Oroboros lore; playable release is tracked as Version 4.1 from change history."
       }
     ]
   },
@@ -7198,11 +7229,12 @@
     "id": "the-dahlia",
     "name": "The Dahlia",
     "aliases": [
-      "Constance"
+      "Constance",
+      "康士坦丝"
     ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "Constance, also known as The Dahlia, was part of the Ever-Flame Mansion and later operates as a Memokeeper from The Cremators.",
+    "summary": "Constance, also known as The Dahlia, is a playable Fire Nihility Memetic Entity tied to The Cremators, the Annihilation Gang, and Remembrance lore.",
     "color": "#8e3150",
     "global": {
       "game": "Honkai: Star Rail",
@@ -7218,8 +7250,9 @@
         "gothic"
       ],
       "characterType": [
+        "playable",
         "major-story-character",
-        "needs_research"
+        "memetic-entity"
       ],
       "genderPresentation": "female",
       "hairColor": [
@@ -7242,31 +7275,39 @@
       ]
     },
     "hsr": {
-      "path": "needs_research",
-      "combatType": "needs_research",
+      "path": "Nihility",
+      "combatType": "Fire",
       "faction": [
         "Ever-Flame Mansion",
-        "The Cremators"
+        "The Cremators",
+        "Annihilation Gang",
+        "Garden of Recollection"
       ],
       "worldOrRegion": [
         "Penacony",
-        "needs_research"
+        "Cosmos"
       ],
-      "rarity": null,
-      "releaseVersion": "needs_research",
+      "rarity": 5,
+      "releaseVersion": "3.8",
       "hasAnimatedShort": false,
       "hasCharacterTrailer": false,
       "associatedArc": [
         "Ever-Flame Mansion",
-        "Cremators"
+        "Cremators",
+        "Destruction",
+        "Remembrance"
       ],
       "fanSignals": [
         "lore-discussion"
       ],
       "storyRole": [
+        "memory-story-character",
+        "memetic-entity",
         "memokeeper",
         "ever-flame-mansion",
-        "cremator"
+        "cremator",
+        "destruction-related",
+        "remembrance-related"
       ]
     },
     "evidence": [
@@ -7274,7 +7315,13 @@
         "field": "hsr.faction",
         "source": "HSR character-list summary",
         "confidence": "medium",
-        "notes": "Constance/The Dahlia identity, Ever-Flame Mansion background, and Cremators/Memokeeper affiliation are source-backed; playable status and gameplay traits still need research."
+        "notes": "Constance/The Dahlia identity, Ever-Flame Mansion background, and Cremators/Memokeeper affiliation are source-backed."
+      },
+      {
+        "field": "hsr.path",
+        "source": "Honkai: Star Rail Wiki / Fandom The Dahlia page",
+        "confidence": "medium",
+        "notes": "Fandom lists The Dahlia as a 5-star Fire Nihility playable character, Memetic Entity, The Cremators member, Annihilation Gang/Ever-Flame Mansion affiliate, and former Garden of Recollection member; Annihilation Gang is not modeled as Antimatter Legion."
       }
     ]
   },
@@ -7368,10 +7415,17 @@
   {
     "id": "mortenax-blade",
     "name": "Mortenax Blade",
-    "aliases": [],
+    "aliases": [
+      "Blade Mortenax",
+      "Yingxing",
+      "应星",
+      "刃",
+      "Blade",
+      "千冶•刃"
+    ],
     "gameId": "hsr",
     "franchise": "Honkai",
-    "summary": "Requested HSR entry with no reliable exact-match source found yet; it may be a Blade-related label, but the exact name remains unverified.",
+    "summary": "A playable Fire Nihility Blade-related identity tied to Yingxing, the Stellaron Hunters, High-Cloud Quintet, Finality, and Abundance lore.",
     "color": "#6b7280",
     "global": {
       "game": "Honkai: Star Rail",
@@ -7386,9 +7440,11 @@
         "sci-fi"
       ],
       "characterType": [
-        "needs_research"
+        "playable",
+        "alternate-form",
+        "major-story-character"
       ],
-      "genderPresentation": "needs_research",
+      "genderPresentation": "male",
       "hairColor": [
         "needs_research"
       ],
@@ -7396,8 +7452,8 @@
       "brightHair": false,
       "usesWeapon": true,
       "weaponType": [
-        "blade",
-        "needs_research"
+        "sword",
+        "blade"
       ],
       "outfitColors": [
         "needs_research"
@@ -7408,34 +7464,50 @@
       ]
     },
     "hsr": {
-      "path": "needs_research",
-      "combatType": "needs_research",
+      "path": "Nihility",
+      "combatType": "Fire",
       "faction": [
-        "needs_research"
+        "Stellaron Hunters",
+        "High-Cloud Quintet"
       ],
       "worldOrRegion": [
-        "needs_research"
+        "Xianzhou"
       ],
-      "rarity": null,
-      "releaseVersion": "needs_research",
+      "rarity": 5,
+      "releaseVersion": "4.3",
       "hasAnimatedShort": false,
       "hasCharacterTrailer": false,
       "associatedArc": [
-        "needs_research"
+        "Stellaron Hunters",
+        "High-Cloud Quintet",
+        "Finality",
+        "Abundance"
       ],
       "fanSignals": [
-        "needs_research"
+        "lore-discussion",
+        "alternate-form-discussion"
       ],
       "storyRole": [
-        "research-placeholder"
+        "alternate-form",
+        "long-life-species",
+        "former-short-life-species",
+        "yingxing-identity",
+        "finality-related",
+        "abundance-connection"
       ]
     },
     "evidence": [
       {
         "field": "id",
         "source": "User-requested research queue",
-        "confidence": "low",
-        "notes": "Exact-match public source not found in targeted searches for Mortenax Blade or Mortenax; verify spelling or source before relying on it."
+        "confidence": "medium",
+        "notes": "User confirmed Mortenax Blade as the English canonical name and 千冶•刃 as the Simplified Chinese canonical display name; Blade Mortenax is preserved only as an alias."
+      },
+      {
+        "field": "hsr.path",
+        "source": "Honkai: Star Rail Wiki / Fandom Mortenax Blade page",
+        "confidence": "medium",
+        "notes": "Fandom lists Mortenax Blade as a 5-star Fire Nihility playable character released in Version 4.3, additional name Yingxing, Long-Life Species formerly Short-Life Species, Stellaron Hunters, and former High-Cloud Quintet; Finality and Abundance are kept as lore associations, not combat Path values."
       }
     ]
   },

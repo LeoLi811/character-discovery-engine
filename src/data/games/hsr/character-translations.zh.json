@@ -85,7 +85,7 @@
     "role": "可玩角色"
   },
   "sparxie": {
-    "name": "Sparxie",
+    "name": "火花",
     "summary": "花火在普兰纳卡迪亚相关设定中的另一种身份，目前以欢愉和火属性作为待确认标签。",
     "role": "可玩变体"
   },
@@ -110,19 +110,19 @@
     "role": "可玩角色"
   },
   "evanescia": {
-    "name": "Evanescia",
-    "summary": "普兰纳卡迪亚相关仲裁者角色，剧情身份有来源支持，但战斗资料仍需研究。",
-    "role": "主要剧情角色"
+    "name": "绯英",
+    "summary": "和二相乐园、幻月、绯月、Panarch Elwood 及丰饶令使设定相关的五星物理欢愉可玩角色。",
+    "role": "可玩角色"
   },
   "ashveil": {
-    "name": "Ashveil",
-    "summary": "又名 La Mancha，和巡海游侠、灰烬侦探社及普兰纳卡迪亚剧情相关。",
-    "role": "主要剧情角色"
+    "name": "不死途",
+    "summary": "又名 La Mancha / 拉曼查，和巡海游侠、灰烬侦探社、二相乐园、Kronstadt 及贪饕/Ouroboros 剧情相关。",
+    "role": "可玩角色"
   },
   "the-dahlia": {
     "name": "大丽花",
-    "summary": "Constance 的称号之一，和永火官邸、焚化工及忆者设定相关。",
-    "role": "主要剧情角色"
+    "summary": "康士坦丝的称号之一，是和焚化工、泯灭帮、永火官邸、忆庭及记忆/毁灭剧情相关的五星火属性虚无角色。",
+    "role": "可玩角色"
   },
   "yao-guang": {
     "name": "爻光",
@@ -130,9 +130,9 @@
     "role": "仙舟将军"
   },
   "mortenax-blade": {
-    "name": "Mortenax Blade",
-    "summary": "用户请求加入的记录，目前没有找到可靠精确来源，可能需要确认拼写或出处。",
-    "role": "待研究记录"
+    "name": "千冶•刃",
+    "summary": "和应星、刃、星核猎手、云上五骁、终末及丰饶身体设定相关的五星火属性虚无可玩角色。",
+    "role": "可玩角色"
   },
   "jing-yuan": {
     "name": "景元",

@@ -20,6 +20,7 @@ const ANSWER_MULTIPLIER: Record<AnswerValue, number> = {
 const MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE = 2;
 const GAME_CONFIDENCE_THRESHOLD = 0.68;
 const GUESS_CONFIDENCE_THRESHOLD = 0.74;
+const MIN_QUESTIONS_BEFORE_GUESS = 8;
 const MAX_QUESTIONS = 18;
 const CONFIDENT_ANSWERS = new Set<AnswerValue>(["yes", "probably", "probably_not", "no"]);
 const POSITIVE_ANSWERS = new Set<AnswerValue>(["yes", "probably"]);
@@ -31,10 +32,11 @@ const QUESTION_GROUPS: Record<string, string> = {
   "global-female": "gender",
   "global-male": "gender",
   "global-variable-gender": "gender",
-  "global-bright-hair": "hair-color",
+  "global-bright-hair": "hair-brightness",
   "global-purple-hair": "hair-color",
   "global-pink-hair": "hair-color",
   "global-blue-hair": "hair-color",
+  "global-teal-hair": "hair-color",
   "global-white-hair": "hair-color",
   "global-black-hair": "hair-color",
   "global-blond-hair": "hair-color",
@@ -42,6 +44,7 @@ const QUESTION_GROUPS: Record<string, string> = {
   "global-purple-outfit": "outfit-color",
   "global-red-outfit": "outfit-color",
   "global-green-outfit": "outfit-color",
+  "global-teal-outfit": "outfit-color",
   "global-white-outfit": "outfit-color",
   "global-uses-weapon": "weapon-style",
   "global-gun": "weapon-style",
@@ -392,6 +395,12 @@ function getQuestionContextMultiplier(
   answers: AnswerRecord[],
   questionMap: Map<string, DiscoveryQuestion>
 ) {
+  const answeredCategories = new Set(
+    answers
+      .map((answer) => questionMap.get(answer.questionId)?.category)
+      .filter(Boolean)
+  );
+  const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
   const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
   const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
   const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
@@ -405,14 +414,40 @@ function getQuestionContextMultiplier(
   );
   const geniusLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Genius Society", true);
   const loreMode = npcLikely || nonPlayableLikely;
+  let multiplier = 1;
+
+  if (answers.length >= 3 && !answeredCategories.has("visual") && question.category === "visual") {
+    multiplier *= 2.2;
+  }
+
+  if (answers.length >= 4 && !answeredCategories.has("gameplay") && question.category === "gameplay") {
+    multiplier *= 1.8;
+  }
+
+  if (answers.length >= 4 && !answeredCategories.has("story") && question.category === "story") {
+    multiplier *= 1.5;
+  }
+
+  if (
+    playableLikely &&
+    !loreMode &&
+    (question.id === "hsr-aeon" ||
+      question.id === "hsr-cosmic-entity" ||
+      question.id === "hsr-lord-ravager" ||
+      question.id === "hsr-antimatter-legion" ||
+      question.id === "hsr-incubated-lord-ravager" ||
+      question.id === "hsr-lore-character")
+  ) {
+    return 0.12;
+  }
 
   if (!loreMode) {
-    return 1;
+    return multiplier;
   }
 
   if (aeonLikely) {
     if (question.traitPath === "hsr.path") {
-      return 4;
+      return multiplier * 4;
     }
 
     if (
@@ -427,7 +462,7 @@ function getQuestionContextMultiplier(
 
   if (lordRavagerLikely) {
     if (question.traitPath === "hsr.storyRole" || question.traitPath === "hsr.worldOrRegion") {
-      return 2.1;
+      return multiplier * 2.1;
     }
 
     if (question.traitPath === "global.characterType" || question.traitPath === "hsr.rarity") {
@@ -441,11 +476,11 @@ function getQuestionContextMultiplier(
       question.id === "hsr-ten-stoneheart-role" ||
       question.id === "hsr-ipc-executive")
   ) {
-    return 2.4;
+    return multiplier * 2.4;
   }
 
   if (geniusLikely && question.id === "hsr-amphoreus") {
-    return 3.2;
+    return multiplier * 3.2;
   }
 
   if (geniusLikely && question.id === "hsr-researcher") {
@@ -461,15 +496,15 @@ function getQuestionContextMultiplier(
   }
 
   if (question.traitPath === "global.brightHair" || question.traitPath === "global.primaryHairColor") {
-    return 0.18;
+    return multiplier * 0.18;
   }
 
   if (question.traitPath === "global.primaryOutfitColor") {
-    return 0.22;
+    return multiplier * 0.22;
   }
 
   if (question.traitPath === "global.genderPresentation") {
-    return 0.35;
+    return multiplier * 0.35;
   }
 
   if (
@@ -491,7 +526,7 @@ function getQuestionContextMultiplier(
     question.id === "hsr-robot-character" ||
     question.id === "hsr-galaxy-rangers"
   ) {
-    return 2.1;
+    return multiplier * 2.1;
   }
 
   if (
@@ -500,14 +535,14 @@ function getQuestionContextMultiplier(
     question.traitPath === "hsr.storyRole" ||
     question.traitPath === "hsr.worldOrRegion"
   ) {
-    return 1.35;
+    return multiplier * 1.35;
   }
 
   if (question.traitPath === "hsr.path") {
-    return 1.15;
+    return multiplier * 1.15;
   }
 
-  return 1;
+  return multiplier;
 }
 
 function hasAnswerForExpectedValue(
@@ -538,8 +573,19 @@ export function getDiscoveryState(
   const top = scores[0];
   const runnerUp = scores[1];
   const confidenceGap = top && runnerUp ? top.confidence - runnerUp.confidence : 1;
+  const answeredQuestionMap = new Map(questions.map((question) => [question.id, question]));
+  const answeredCategories = new Set(
+    answers
+      .map((answer) => answeredQuestionMap.get(answer.questionId)?.category)
+      .filter(Boolean)
+  );
+  const hasEnoughQuestionDepth =
+    answers.length >= MIN_QUESTIONS_BEFORE_GUESS &&
+    answeredCategories.has("identity") &&
+    answeredCategories.has("story") &&
+    answeredCategories.has("visual");
   const shouldGuess =
-    answers.length >= 4 &&
+    hasEnoughQuestionDepth &&
     (top.confidence >= GUESS_CONFIDENCE_THRESHOLD || confidenceGap >= 0.32 || answers.length >= MAX_QUESTIONS);
 
   return {

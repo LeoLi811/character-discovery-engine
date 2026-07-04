@@ -162,6 +162,15 @@
     "weight": 1.1
   },
   {
+    "id": "global-teal-hair",
+    "text": "Is the character's main hair color teal or green-blue?",
+    "scope": "global",
+    "traitPath": "global.primaryHairColor",
+    "expectedValue": "teal",
+    "category": "visual",
+    "weight": 1.1
+  },
+  {
     "id": "global-white-hair",
     "text": "Is the character's main hair color white or silver?",
     "scope": "global",
@@ -257,6 +266,15 @@
     "scope": "global",
     "traitPath": "global.primaryOutfitColor",
     "expectedValue": "green",
+    "category": "visual",
+    "weight": 1
+  },
+  {
+    "id": "global-teal-outfit",
+    "text": "Is teal or green-blue the character's main outfit color?",
+    "scope": "global",
+    "traitPath": "global.primaryOutfitColor",
+    "expectedValue": "teal",
     "category": "visual",
     "weight": 1
   },
