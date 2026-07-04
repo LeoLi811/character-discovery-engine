@@ -24,6 +24,34 @@ const MAX_QUESTIONS = 18;
 const CONFIDENT_ANSWERS = new Set<AnswerValue>(["yes", "probably", "probably_not", "no"]);
 const POSITIVE_ANSWERS = new Set<AnswerValue>(["yes", "probably"]);
 
+const QUESTION_GROUPS: Record<string, string> = {
+  "hsr-genius": "genius-society",
+  "hsr-genius-society-member": "genius-society",
+  "hsr-researcher": "research-identity",
+  "hsr-ipc": "ipc",
+  "hsr-ipc-full": "ipc",
+  "hsr-ipc-executive": "ipc",
+  "hsr-ten-stonehearts": "ipc-stonehearts",
+  "hsr-ten-stoneheart-role": "ipc-stonehearts",
+  "hsr-lord-ravager": "lord-ravager",
+  "hsr-incubated-lord-ravager": "lord-ravager",
+  "hsr-antimatter-legion": "antimatter-legion",
+  "hsr-emanator": "emanator",
+  "hsr-aeon": "aeon",
+  "hsr-cosmic-entity": "aeon",
+  "hsr-lore-character": "npc-lore",
+  "global-npc": "npc-lore",
+  "hsr-non-playable-combat": "npc-playability",
+  "global-playable": "npc-playability",
+  "hsr-amphoreus": "story-region",
+  "hsr-cosmos-region": "story-region",
+  "hsr-penacony": "story-region",
+  "hsr-penacony-faction": "story-region",
+  "hsr-xianzhou": "story-region",
+  "hsr-xianzhou-alliance": "story-region",
+  "hsr-belobog": "story-region"
+};
+
 // These fields can only have one primary answer for a character.
 const EXCLUSIVE_TRAIT_PATHS = new Set([
   "global.game",
@@ -183,6 +211,10 @@ function isQuestionRedundant(
   answers: AnswerRecord[],
   questionMap: Map<string, DiscoveryQuestion>
 ) {
+  if (isQuestionGroupSatisfied(question, answers, questionMap)) {
+    return true;
+  }
+
   return answers.some((answer) => {
     const previousQuestion = questionMap.get(answer.questionId);
     if (!previousQuestion || previousQuestion.traitPath !== question.traitPath) {
@@ -198,6 +230,26 @@ function isQuestionRedundant(
     }
 
     return POSITIVE_ANSWERS.has(answer.answer);
+  });
+}
+
+function isQuestionGroupSatisfied(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const group = QUESTION_GROUPS[question.id];
+  if (!group) {
+    return false;
+  }
+
+  return answers.some((answer) => {
+    if (!POSITIVE_ANSWERS.has(answer.answer)) {
+      return false;
+    }
+
+    const previousQuestion = questionMap.get(answer.questionId);
+    return previousQuestion ? QUESTION_GROUPS[previousQuestion.id] === group : false;
   });
 }
 
@@ -275,8 +327,16 @@ function getQuestionContextMultiplier(
     return 2.4;
   }
 
-  if (geniusLikely && (question.id === "hsr-genius-society-member" || question.id === "hsr-researcher")) {
-    return 2.2;
+  if (geniusLikely && question.id === "hsr-amphoreus") {
+    return 3.2;
+  }
+
+  if (geniusLikely && question.id === "hsr-researcher") {
+    return 0;
+  }
+
+  if (geniusLikely && question.id === "hsr-genius-society-member") {
+    return 0;
   }
 
   if (question.traitPath === "hsr.rarity") {
@@ -299,6 +359,7 @@ function getQuestionContextMultiplier(
     question.id === "hsr-aeon" ||
     question.id === "hsr-lord-ravager" ||
     question.id === "hsr-antimatter-legion" ||
+    question.id === "hsr-amphoreus" ||
     question.id === "hsr-ipc-full" ||
     question.id === "hsr-ten-stonehearts" ||
     question.id === "hsr-genius" ||
