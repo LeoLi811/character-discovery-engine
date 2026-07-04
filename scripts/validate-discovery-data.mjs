@@ -4,9 +4,9 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const characters = readJson("src/data/discovery-characters.json");
-const games = readJson("src/data/discovery-games.json");
-const questions = readJson("src/data/discovery-questions.json");
+const characters = readJson("src/data/games/hsr/discovery-characters.json");
+const games = readJson("src/data/games/hsr/discovery-games.json");
+const questions = readJson("src/data/games/hsr/discovery-questions.json");
 const errors = [];
 const warnings = [];
 const gameIds = new Set(games.map((game) => game.id));

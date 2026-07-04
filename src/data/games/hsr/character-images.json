@@ -1,13 +1,13 @@
 {
   "acheron": {
-    "imageUrl": "/character-images/acheron.png",
+    "imageUrl": "/character-images/hsr/acheron.png",
     "alt": "Acheron character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/78/Character_Acheron_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240327021325",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "aglaea": {
-    "imageUrl": "/character-images/aglaea.png",
+    "imageUrl": "/character-images/hsr/aglaea.png",
     "alt": "Aglaea character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/81/Character_Aglaea_Splash_Art.png/revision/latest?cb=20250117063425",
@@ -30,14 +30,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/akivili.png before publishing."
   },
   "anaxa": {
-    "imageUrl": "/character-images/anaxa.png",
+    "imageUrl": "/character-images/hsr/anaxa.png",
     "alt": "Anaxa character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/73/Character_Anaxa_Splash_Art.png/revision/latest?cb=20250409035048",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "archer": {
-    "imageUrl": "/character-images/archer.png",
+    "imageUrl": "/character-images/hsr/archer.png",
     "alt": "Archer character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Archer",
@@ -53,14 +53,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/archforger.png before publishing."
   },
   "argenti": {
-    "imageUrl": "/character-images/argenti.png",
+    "imageUrl": "/character-images/hsr/argenti.png",
     "alt": "Argenti character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/90/Character_Argenti_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20231206232011",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "arlan": {
-    "imageUrl": "/character-images/arlan.png",
+    "imageUrl": "/character-images/hsr/arlan.png",
     "alt": "Arlan character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/5b/Character_Arlan_Splash_Art.png/revision/latest?cb=20230216231038",
@@ -75,7 +75,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/asat-pramad.png before publishing."
   },
   "ashveil": {
-    "imageUrl": "/character-images/ashveil.png",
+    "imageUrl": "/character-images/hsr/ashveil.png",
     "alt": "Ashveil character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Ashveil",
@@ -83,14 +83,14 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "asta": {
-    "imageUrl": "/character-images/asta.png",
+    "imageUrl": "/character-images/hsr/asta.png",
     "alt": "Asta character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/bd/Character_Asta_Splash_Art.png/revision/latest?cb=20230216231122",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "aventurine": {
-    "imageUrl": "/character-images/aventurine.png",
+    "imageUrl": "/character-images/hsr/aventurine.png",
     "alt": "Aventurine character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/a9/Character_Aventurine_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240327104723",
@@ -105,42 +105,42 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/baiheng.png before publishing."
   },
   "bailu": {
-    "imageUrl": "/character-images/bailu.png",
+    "imageUrl": "/character-images/hsr/bailu.png",
     "alt": "Bailu character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/e9/Character_Bailu_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230210120736",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "black-swan": {
-    "imageUrl": "/character-images/black-swan.png",
+    "imageUrl": "/character-images/hsr/black-swan.png",
     "alt": "Black Swan character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/f/fd/Character_Black_Swan_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240220023547",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "blade": {
-    "imageUrl": "/character-images/blade.png",
+    "imageUrl": "/character-images/hsr/blade.png",
     "alt": "Blade character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/1/16/Character_Blade_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230501004859",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "boothill": {
-    "imageUrl": "/character-images/boothill.png",
+    "imageUrl": "/character-images/hsr/boothill.png",
     "alt": "Boothill character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/bb/Character_Boothill_Splash_Art.png/revision/latest?cb=20240624231026",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "bronya": {
-    "imageUrl": "/character-images/bronya.png",
+    "imageUrl": "/character-images/hsr/bronya.png",
     "alt": "Bronya character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/7c/Character_Bronya_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240121130128",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "castorice": {
-    "imageUrl": "/character-images/castorice.png",
+    "imageUrl": "/character-images/hsr/castorice.png",
     "alt": "Castorice character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/94/Character_Castorice_Splash_Art.png/revision/latest?cb=20250409035111",
@@ -155,7 +155,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/celenova.png before publishing."
   },
   "cerydra": {
-    "imageUrl": "/character-images/cerydra.png",
+    "imageUrl": "/character-images/hsr/cerydra.png",
     "alt": "Cerydra character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Cerydra",
@@ -171,14 +171,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/chadwick.png before publishing."
   },
   "cipher": {
-    "imageUrl": "/character-images/cipher.png",
+    "imageUrl": "/character-images/hsr/cipher.png",
     "alt": "Cipher character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/0/0d/Character_Cipher_Splash_Art.png/revision/latest?cb=20250725220236",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "clara": {
-    "imageUrl": "/character-images/clara.png",
+    "imageUrl": "/character-images/hsr/clara.png",
     "alt": "Clara character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c2/Character_Clara_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230216231958",
@@ -209,7 +209,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/cocona.png before publishing."
   },
   "cyrene": {
-    "imageUrl": "/character-images/cyrene.png",
+    "imageUrl": "/character-images/hsr/cyrene.png",
     "alt": "Cyrene character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Cyrene",
@@ -225,14 +225,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/dan-feng-lore.png before publishing."
   },
   "dan-heng": {
-    "imageUrl": "/character-images/dan-heng.png",
+    "imageUrl": "/character-images/hsr/dan-heng.png",
     "alt": "Dan Heng character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/e5/Character_Dan_Heng_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090149",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "dan-heng-permansor-terrae": {
-    "imageUrl": "/character-images/dan-heng-permansor-terrae.png",
+    "imageUrl": "/character-images/hsr/dan-heng-permansor-terrae.png",
     "alt": "Dan Heng Permansor Terrae character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Dan_Heng_•_Permansor_Terrae",
@@ -256,7 +256,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/dormancy.png before publishing."
   },
   "dr-ratio": {
-    "imageUrl": "/character-images/dr-ratio.png",
+    "imageUrl": "/character-images/hsr/dr-ratio.png",
     "alt": "Dr. Ratio character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/56/Character_Dr._Ratio_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20231227132629",
@@ -271,7 +271,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/elio.png before publishing."
   },
   "evanescia": {
-    "imageUrl": "/character-images/evanescia.png",
+    "imageUrl": "/character-images/hsr/evanescia.png",
     "alt": "Evanescia character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Evanescia",
@@ -279,7 +279,7 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "evernight": {
-    "imageUrl": "/character-images/evernight.png",
+    "imageUrl": "/character-images/hsr/evernight.png",
     "alt": "Evernight character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Evernight",
@@ -287,28 +287,28 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "feixiao": {
-    "imageUrl": "/character-images/feixiao.png",
+    "imageUrl": "/character-images/hsr/feixiao.png",
     "alt": "Feixiao character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/61/Character_Feixiao_Splash_Art.png/revision/latest?cb=20241007220552",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "firefly": {
-    "imageUrl": "/character-images/firefly.png",
+    "imageUrl": "/character-images/hsr/firefly.png",
     "alt": "Firefly character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/38/Character_Firefly_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20241007220547",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "fu-xuan": {
-    "imageUrl": "/character-images/fu-xuan.png",
+    "imageUrl": "/character-images/hsr/fu-xuan.png",
     "alt": "Fu Xuan character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/3e/Character_Fu_Xuan_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230928224921",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "fugue": {
-    "imageUrl": "/character-images/fugue.png",
+    "imageUrl": "/character-images/hsr/fugue.png",
     "alt": "Fugue character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/4c/Character_Fugue_Splash_Art.png/revision/latest?cb=20241122125941",
@@ -323,14 +323,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/fuli.png before publishing."
   },
   "gallagher": {
-    "imageUrl": "/character-images/gallagher.png",
+    "imageUrl": "/character-images/hsr/gallagher.png",
     "alt": "Gallagher character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/2/2d/Character_Gallagher_Splash_Art.png/revision/latest?cb=20240327022011",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "gepard": {
-    "imageUrl": "/character-images/gepard.png",
+    "imageUrl": "/character-images/hsr/gepard.png",
     "alt": "Gepard character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/96/Character_Gepard_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230216232354",
@@ -345,28 +345,28 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/gopher-wood.png before publishing."
   },
   "guinaifen": {
-    "imageUrl": "/character-images/guinaifen.png",
+    "imageUrl": "/character-images/hsr/guinaifen.png",
     "alt": "Guinaifen character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/33/Character_Guinaifen_Splash_Art.png/revision/latest?cb=20231030040741",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "hanya": {
-    "imageUrl": "/character-images/hanya.png",
+    "imageUrl": "/character-images/hsr/hanya.png",
     "alt": "Hanya character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/e8/Character_Hanya_Splash_Art.png/revision/latest?cb=20231206232120",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "herta": {
-    "imageUrl": "/character-images/herta.png",
+    "imageUrl": "/character-images/hsr/herta.png",
     "alt": "Herta character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8c/Character_Herta_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230216231220",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "himeko": {
-    "imageUrl": "/character-images/himeko.png",
+    "imageUrl": "/character-images/hsr/himeko.png",
     "alt": "Himeko character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8e/Character_Himeko_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090036",
@@ -381,7 +381,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/hooh.png before publishing."
   },
   "hook": {
-    "imageUrl": "/character-images/hook.png",
+    "imageUrl": "/character-images/hsr/hook.png",
     "alt": "Hook character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/ec/Character_Hook_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090126",
@@ -404,21 +404,21 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/huaiyan.png before publishing."
   },
   "huohuo": {
-    "imageUrl": "/character-images/huohuo.png",
+    "imageUrl": "/character-images/hsr/huohuo.png",
     "alt": "Huohuo character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/82/Character_Huohuo_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20250604025217",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "hyacine": {
-    "imageUrl": "/character-images/hyacine.png",
+    "imageUrl": "/character-images/hsr/hyacine.png",
     "alt": "Hyacine character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/7d/Character_Hyacine_Splash_Art.png/revision/latest?cb=20250521031729",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "hysilens": {
-    "imageUrl": "/character-images/hysilens.png",
+    "imageUrl": "/character-images/hsr/hysilens.png",
     "alt": "Hysilens character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Hysilens",
@@ -434,7 +434,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/idrila.png before publishing."
   },
   "imbibitor-lunae": {
-    "imageUrl": "/character-images/imbibitor-lunae.png",
+    "imageUrl": "/character-images/hsr/imbibitor-lunae.png",
     "alt": "Dan Heng • Imbibitor Lunae character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/2/2c/Character_Dan_Heng_%E2%80%A2_Imbibitor_Lunae_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230818234313",
@@ -457,35 +457,35 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/ix.png before publishing."
   },
   "jade": {
-    "imageUrl": "/character-images/jade.png",
+    "imageUrl": "/character-images/hsr/jade.png",
     "alt": "Jade character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/6d/Character_Jade_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240706170539",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "jiaoqiu": {
-    "imageUrl": "/character-images/jiaoqiu.png",
+    "imageUrl": "/character-images/hsr/jiaoqiu.png",
     "alt": "Jiaoqiu character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/be/Character_Jiaoqiu_Splash_Art.png/revision/latest?cb=20240911023034",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "jing-yuan": {
-    "imageUrl": "/character-images/jing-yuan.png",
+    "imageUrl": "/character-images/hsr/jing-yuan.png",
     "alt": "Jing Yuan character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/48/Character_Jing_Yuan_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230210115809",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "jingliu": {
-    "imageUrl": "/character-images/jingliu.png",
+    "imageUrl": "/character-images/hsr/jingliu.png",
     "alt": "Jingliu character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/97/Character_Jingliu_Splash_Art.png/revision/latest?cb=20240525000314",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "kafka": {
-    "imageUrl": "/character-images/kafka.png",
+    "imageUrl": "/character-images/hsr/kafka.png",
     "alt": "Kafka character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/95/Character_Kafka_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230809042240",
@@ -516,7 +516,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/lesley-dean.png before publishing."
   },
   "lingsha": {
-    "imageUrl": "/character-images/lingsha.png",
+    "imageUrl": "/character-images/hsr/lingsha.png",
     "alt": "Lingsha character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c1/Character_Lingsha_Splash_Art.png/revision/latest?cb=20241120224130",
@@ -531,14 +531,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/long-aeon.png before publishing."
   },
   "luka": {
-    "imageUrl": "/character-images/luka.png",
+    "imageUrl": "/character-images/hsr/luka.png",
     "alt": "Luka character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/51/Character_Luka_Splash_Art.png/revision/latest?cb=20230809042157",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "luocha": {
-    "imageUrl": "/character-images/luocha.png",
+    "imageUrl": "/character-images/hsr/luocha.png",
     "alt": "Luocha character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/a5/Character_Luocha_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230628091054",
@@ -561,21 +561,21 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/lygus-lycurgus.png before publishing."
   },
   "lynx": {
-    "imageUrl": "/character-images/lynx.png",
+    "imageUrl": "/character-images/hsr/lynx.png",
     "alt": "Lynx character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/3c/Character_Lynx_Splash_Art.png/revision/latest?cb=20230719101506",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "march-7th": {
-    "imageUrl": "/character-images/march-7th.png",
+    "imageUrl": "/character-images/hsr/march-7th.png",
     "alt": "March 7th character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c7/Character_March_7th_%28Preservation%29_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090156",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "march-7th-evernight": {
-    "imageUrl": "/character-images/march-7th-evernight.png",
+    "imageUrl": "/character-images/hsr/march-7th-evernight.png",
     "alt": "March 7th Evernight character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Evernight",
@@ -583,7 +583,7 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "march-7th-hunt": {
-    "imageUrl": "/character-images/march-7th-hunt.png",
+    "imageUrl": "/character-images/hsr/march-7th-hunt.png",
     "alt": "March 7th The Hunt character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/March_7th/The_Hunt",
@@ -607,14 +607,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/mikhail-watchmaker.png before publishing."
   },
   "misha": {
-    "imageUrl": "/character-images/misha.png",
+    "imageUrl": "/character-images/hsr/misha.png",
     "alt": "Misha character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/5c/Character_Misha_Splash_Art.png/revision/latest?cb=20240206022717",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "mortenax-blade": {
-    "imageUrl": "/character-images/mortenax-blade.png",
+    "imageUrl": "/character-images/hsr/mortenax-blade.png",
     "alt": "Mortenax Blade character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Mortenax_Blade",
@@ -622,14 +622,14 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "moze": {
-    "imageUrl": "/character-images/moze.png",
+    "imageUrl": "/character-images/hsr/moze.png",
     "alt": "Moze character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/81/Character_Moze_Splash_Art.png/revision/latest?cb=20240910181952",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "mydei": {
-    "imageUrl": "/character-images/mydei.png",
+    "imageUrl": "/character-images/hsr/mydei.png",
     "alt": "Mydei character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/67/Character_Mydei_Splash_Art.png/revision/latest?cb=20250725220512",
@@ -652,7 +652,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/nanook.png before publishing."
   },
   "natasha": {
-    "imageUrl": "/character-images/natasha.png",
+    "imageUrl": "/character-images/hsr/natasha.png",
     "alt": "Natasha character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/7e/Character_Natasha_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240525042421",
@@ -707,14 +707,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/pearl.png before publishing."
   },
   "pela": {
-    "imageUrl": "/character-images/pela.png",
+    "imageUrl": "/character-images/hsr/pela.png",
     "alt": "Pela character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c9/Character_Pela_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090100",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "phainon": {
-    "imageUrl": "/character-images/phainon.png",
+    "imageUrl": "/character-images/hsr/phainon.png",
     "alt": "Phainon character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Phainon",
@@ -754,7 +754,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/qingni.png before publishing."
   },
   "qingque": {
-    "imageUrl": "/character-images/qingque.png",
+    "imageUrl": "/character-images/hsr/qingque.png",
     "alt": "Qingque character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d1/Character_Qingque_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230210115335",
@@ -769,28 +769,28 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/qlipoth.png before publishing."
   },
   "rappa": {
-    "imageUrl": "/character-images/rappa.png",
+    "imageUrl": "/character-images/hsr/rappa.png",
     "alt": "Rappa character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/1/1c/Character_Rappa_Splash_Art.png/revision/latest?cb=20241120154734",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "robin": {
-    "imageUrl": "/character-images/robin.png",
+    "imageUrl": "/character-images/hsr/robin.png",
     "alt": "Robin character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/92/Character_Robin_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240508021256",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "ruan-mei": {
-    "imageUrl": "/character-images/ruan-mei.png",
+    "imageUrl": "/character-images/hsr/ruan-mei.png",
     "alt": "Ruan Mei character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d5/Character_Ruan_Mei_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20231227021137",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "saber": {
-    "imageUrl": "/character-images/saber.png",
+    "imageUrl": "/character-images/hsr/saber.png",
     "alt": "Saber character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Saber",
@@ -798,7 +798,7 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "sampo": {
-    "imageUrl": "/character-images/sampo.png",
+    "imageUrl": "/character-images/hsr/sampo.png",
     "alt": "Sampo character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/65/Character_Sampo_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090046",
@@ -813,14 +813,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/screwllum-npc.png before publishing."
   },
   "seele": {
-    "imageUrl": "/character-images/seele.png",
+    "imageUrl": "/character-images/hsr/seele.png",
     "alt": "Seele character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/58/Character_Seele_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240121123334",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "serval": {
-    "imageUrl": "/character-images/serval.png",
+    "imageUrl": "/character-images/hsr/serval.png",
     "alt": "Serval character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8a/Character_Serval_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090108",
@@ -835,14 +835,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/shuhu.png before publishing."
   },
   "silver-wolf": {
-    "imageUrl": "/character-images/silver-wolf.png",
+    "imageUrl": "/character-images/hsr/silver-wolf.png",
     "alt": "Silver Wolf character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/60/Character_Silver_Wolf_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230216230911",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "silver-wolf-lv-999": {
-    "imageUrl": "/character-images/silver-wolf-lv-999.png",
+    "imageUrl": "/character-images/hsr/silver-wolf-lv-999.png",
     "alt": "Silver Wolf LV.999 character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Silver_Wolf_LV.999",
@@ -866,14 +866,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/skott.png before publishing."
   },
   "sparkle": {
-    "imageUrl": "/character-images/sparkle.png",
+    "imageUrl": "/character-images/hsr/sparkle.png",
     "alt": "Sparkle character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/99/Character_Sparkle_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20240327022635",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "sparxie": {
-    "imageUrl": "/character-images/sparxie.png",
+    "imageUrl": "/character-images/hsr/sparxie.png",
     "alt": "Sparxie character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Sparxie/Media",
@@ -889,14 +889,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/stephen-lloyd.png before publishing."
   },
   "sunday": {
-    "imageUrl": "/character-images/sunday.png",
+    "imageUrl": "/character-images/hsr/sunday.png",
     "alt": "Sunday character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/2/21/Character_Sunday_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20241224161538",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "sushang": {
-    "imageUrl": "/character-images/sushang.png",
+    "imageUrl": "/character-images/hsr/sushang.png",
     "alt": "Sushang character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/72/Character_Sushang_Splash_Art.png/revision/latest?cb=20230210115023",
@@ -927,7 +927,7 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/terminus.png before publishing."
   },
   "the-dahlia": {
-    "imageUrl": "/character-images/the-dahlia.png",
+    "imageUrl": "/character-images/hsr/the-dahlia.png",
     "alt": "The Dahlia character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/The_Dahlia",
@@ -935,14 +935,14 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "the-herta": {
-    "imageUrl": "/character-images/the-herta.png",
+    "imageUrl": "/character-images/hsr/the-herta.png",
     "alt": "The Herta character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/42/Character_The_Herta_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20250121214107",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "tingyun": {
-    "imageUrl": "/character-images/tingyun.png",
+    "imageUrl": "/character-images/hsr/tingyun.png",
     "alt": "Tingyun character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/5b/Character_Tingyun_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230210115502",
@@ -957,21 +957,21 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/tizocic-ii.png before publishing."
   },
   "topaz": {
-    "imageUrl": "/character-images/topaz.png",
+    "imageUrl": "/character-images/hsr/topaz.png",
     "alt": "Topaz & Numby character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/9d/Character_Topaz_and_Numby_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20231030040101",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "trailblazer": {
-    "imageUrl": "/character-images/trailblazer.png",
+    "imageUrl": "/character-images/hsr/trailblazer.png",
     "alt": "Trailblazer character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/6f/Character_Trailblazer_%28F%29_Destruction_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230501005741",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "trailblazer-destruction": {
-    "imageUrl": "/character-images/trailblazer-destruction.png",
+    "imageUrl": "/character-images/hsr/trailblazer-destruction.png",
     "alt": "Trailblazer Destruction character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Trailblazer/Destruction",
@@ -979,7 +979,7 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "trailblazer-harmony": {
-    "imageUrl": "/character-images/trailblazer-harmony.png",
+    "imageUrl": "/character-images/hsr/trailblazer-harmony.png",
     "alt": "Trailblazer Harmony character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Trailblazer/Harmony",
@@ -987,7 +987,7 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "trailblazer-preservation": {
-    "imageUrl": "/character-images/trailblazer-preservation.png",
+    "imageUrl": "/character-images/hsr/trailblazer-preservation.png",
     "alt": "Trailblazer Preservation character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Trailblazer/Preservation",
@@ -995,7 +995,7 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "trailblazer-remembrance": {
-    "imageUrl": "/character-images/trailblazer-remembrance.png",
+    "imageUrl": "/character-images/hsr/trailblazer-remembrance.png",
     "alt": "Trailblazer Remembrance character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Trailblazer/Remembrance",
@@ -1003,14 +1003,14 @@
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "tribbie": {
-    "imageUrl": "/character-images/tribbie.png",
+    "imageUrl": "/character-images/hsr/tribbie.png",
     "alt": "Tribbie character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/eb/Character_Tribbie_Splash_Art.png/revision/latest?cb=20250309185506",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "welt": {
-    "imageUrl": "/character-images/welt.png",
+    "imageUrl": "/character-images/hsr/welt.png",
     "alt": "Welt character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/1/11/Character_Welt_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230525090017",
@@ -1025,21 +1025,21 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/xipe.png before publishing."
   },
   "xueyi": {
-    "imageUrl": "/character-images/xueyi.png",
+    "imageUrl": "/character-images/hsr/xueyi.png",
     "alt": "Xueyi character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/bc/Character_Xueyi_Splash_Art.png/revision/latest?cb=20231227045314",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "yanqing": {
-    "imageUrl": "/character-images/yanqing.png",
+    "imageUrl": "/character-images/hsr/yanqing.png",
     "alt": "Yanqing character splash artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/6d/Character_Yanqing_Splash_Art.png/revision/latest/scale-to-width-down/1000?cb=20230210121516",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "yao-guang": {
-    "imageUrl": "/character-images/yao-guang.png",
+    "imageUrl": "/character-images/hsr/yao-guang.png",
     "alt": "Yao Guang character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Yao_Guang",
@@ -1063,14 +1063,14 @@
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/yingxing.png before publishing."
   },
   "yukong": {
-    "imageUrl": "/character-images/yukong.png",
+    "imageUrl": "/character-images/hsr/yukong.png",
     "alt": "Yukong character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/0/04/Character_Yukong_Splash_Art.png/revision/latest?cb=20230628090836",
     "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
   },
   "yunli": {
-    "imageUrl": "/character-images/yunli.png",
+    "imageUrl": "/character-images/hsr/yunli.png",
     "alt": "Yunli character artwork",
     "source": "Honkai: Star Rail Wiki / Fandom",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/72/Character_Yunli_Splash_Art.png/revision/latest?cb=20241007221656",

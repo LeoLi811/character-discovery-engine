@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BrainCircuit, Check, RotateCcw, Sparkles, X } from "lucide-react";
-import characterImages from "@/data/character-images.json";
+import characterImages from "@/data/games/hsr/character-images.json";
 import type {
   AnswerRecord,
   AnswerValue,
@@ -28,6 +28,7 @@ type CharacterImageRecord = {
   imageUrl: string | null;
   alt: string;
   source: string;
+  sourceUrl?: string;
   licenseNote: string;
 };
 
@@ -273,13 +274,29 @@ function CharacterReveal({
   const hairColor = translateTraitText(result.global.primaryHairColor, locale);
   const outfitColor = translateTraitText(result.global.primaryOutfitColor, locale);
   const faction = translateTraitText(result.hsr.faction, locale);
+  const [imageMode, setImageMode] = useState<"local" | "source" | "none">("local");
+  const fallbackImageUrl = image?.sourceUrl && image.sourceUrl !== image.imageUrl ? image.sourceUrl : "";
+  const imageSrc = imageMode === "source" ? fallbackImageUrl : image?.imageUrl ?? fallbackImageUrl;
   const initials = translatedResult.name
     .split(/\s+/)
     .map((part) => part[0])
     .join("")
     .slice(0, 2)
     .toUpperCase();
-  const hasImage = Boolean(image?.imageUrl);
+  const hasImage = imageMode !== "none" && Boolean(imageSrc);
+
+  useEffect(() => {
+    setImageMode("local");
+  }, [image?.imageUrl, image?.sourceUrl]);
+
+  function handleImageError() {
+    setImageMode((current) => {
+      if (current === "local" && fallbackImageUrl) {
+        return "source";
+      }
+      return "none";
+    });
+  }
 
   return (
     <figure
@@ -298,8 +315,9 @@ function CharacterReveal({
         <>
           <img
             aria-hidden="true"
-            src={image?.imageUrl ?? ""}
+            src={imageSrc}
             alt=""
+            onError={handleImageError}
             style={{
               position: "absolute",
               inset: "-28px",
@@ -313,8 +331,9 @@ function CharacterReveal({
             }}
           />
           <img
-            src={image?.imageUrl ?? ""}
+            src={imageSrc}
             alt={image?.alt ?? `${translatedResult.name} ${text.artworkAlt}`}
+            onError={handleImageError}
             style={{
               position: "absolute",
               inset: 0,

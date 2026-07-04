@@ -774,6 +774,15 @@
     "weight": 1.4
   },
   {
+    "id": "hsr-galaxy-rangers",
+    "text": "Are they associated with the Galaxy Rangers?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "Galaxy Rangers",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
     "id": "hsr-thief",
     "text": "Are thief or trickster motifs central to them?",
     "scope": "game:hsr",
@@ -799,5 +808,302 @@
     "expectedValue": "summon",
     "category": "gameplay",
     "weight": 1.3
+  },
+  {
+    "id": "global-npc",
+    "text": "Are they an NPC or lore-only character rather than a playable unit?",
+    "scope": "global",
+    "traitPath": "global.characterType",
+    "expectedValue": "npc",
+    "category": "identity",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-non-playable-combat",
+    "text": "Are they non-playable in combat?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.combatType",
+    "expectedValue": "Non-playable",
+    "category": "identity",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-aeon",
+    "text": "Are they an Aeon?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "aeon",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-cosmic-entity",
+    "text": "Are they a cosmic entity rather than a regular person?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "cosmic-entity",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-lord-ravager",
+    "text": "Are they a Lord Ravager?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "lord-ravager",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-antimatter-legion",
+    "text": "Are they associated with the Antimatter Legion?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "Antimatter Legion",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-emanator",
+    "text": "Are they an Emanator?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "emanator",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-mascot",
+    "text": "Are they a mascot-like character?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "mascot",
+    "category": "identity",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-robot-character",
+    "text": "Are they a robot or mechanical being?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "robot",
+    "category": "identity",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-lore-character",
+    "text": "Are they mainly important through lore or backstory?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "lore-character",
+    "category": "story",
+    "weight": 1.2
+  },
+  {
+    "id": "hsr-major-story-character",
+    "text": "Are they a major story character?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "major-story-character",
+    "category": "story",
+    "weight": 1.3
+  },
+  {
+    "id": "hsr-antagonist",
+    "text": "Are they an antagonist?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "antagonist",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-ipc-full",
+    "text": "Are they associated with the Interastral Peace Corporation?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "Interastral Peace Corporation",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-ten-stonehearts",
+    "text": "Are they one of the Ten Stonehearts?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "Ten Stonehearts",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-high-cloud-quintet",
+    "text": "Are they connected to the High-Cloud Quintet?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "High-Cloud Quintet",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-xianzhou-alliance",
+    "text": "Are they associated with the Xianzhou Alliance?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "Xianzhou Alliance",
+    "category": "story",
+    "weight": 1.3
+  },
+  {
+    "id": "hsr-penacony-faction",
+    "text": "Are they associated with Penacony as a faction or society?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.faction",
+    "expectedValue": "Penacony",
+    "category": "story",
+    "weight": 1.2
+  },
+  {
+    "id": "hsr-cosmos-region",
+    "text": "Are they mostly a cosmic-scale lore figure?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.worldOrRegion",
+    "expectedValue": "Cosmos",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-genius-society-member",
+    "text": "Are they a Genius Society member?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "genius-society-member",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-ipc-executive",
+    "text": "Are they an IPC executive or high-ranking corporate figure?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "ipc-executive",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-ten-stoneheart-role",
+    "text": "Are they a Ten Stoneheart by role?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "ten-stoneheart",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-memory-story-character",
+    "text": "Are they tied to Penacony memory stories?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "memory-story-character",
+    "category": "story",
+    "weight": 1.3
+  },
+  {
+    "id": "hsr-watchmaker-legacy",
+    "text": "Are they connected to the Watchmaker's legacy?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "watchmaker-legacy",
+    "category": "story",
+    "weight": 1.3
+  },
+  {
+    "id": "hsr-heliobus",
+    "text": "Are they connected to heliobi lore?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "heliobus",
+    "category": "story",
+    "weight": 1.3
+  },
+  {
+    "id": "hsr-incubated-lord-ravager",
+    "text": "Are they described as an incubated Lord Ravager?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "incubated-lord-ravager",
+    "category": "story",
+    "weight": 1.3
+  },
+  {
+    "id": "hsr-trailblaze-path",
+    "text": "Are they tied to the Path of Trailblaze?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Trailblaze",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-voracity-path",
+    "text": "Are they tied to the Path of Voracity?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Voracity",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-permanence-path",
+    "text": "Are they tied to the Path of Permanence?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Permanence",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-finality-path",
+    "text": "Are they tied to the Path of Finality?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Finality",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-propagation-path",
+    "text": "Are they tied to the Path of Propagation?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Propagation",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-beauty-path",
+    "text": "Are they tied to the Path of Beauty?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Beauty",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-enigmata-path",
+    "text": "Are they tied to the Path of Enigmata?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Enigmata",
+    "category": "story",
+    "weight": 1.4
+  },
+  {
+    "id": "hsr-equilibrium-path",
+    "text": "Are they tied to the Path of Equilibrium?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.path",
+    "expectedValue": "Equilibrium",
+    "category": "story",
+    "weight": 1.4
   }
 ]

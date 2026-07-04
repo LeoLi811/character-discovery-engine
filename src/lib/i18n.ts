@@ -1,4 +1,4 @@
-import zhCharacterTranslations from "@/data/character-translations.zh.json";
+import zhCharacterTranslations from "@/data/games/hsr/character-translations.zh.json";
 import type { DiscoveryCharacter, DiscoveryQuestion } from "@/lib/discovery-types";
 import type { Character } from "@/lib/types";
 

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const charactersPath = path.join(root, "src", "data", "characters.json");
+const charactersPath = path.join(root, "src", "data", "games", "hsr", "characters.json");
 
 const allowedTiers = new Set(["Iconic", "Mainstream", "Cult", "Emerging"]);
 const allowedConfidence = new Set(["high", "medium", "low"]);

@@ -22,7 +22,7 @@ const GAME_CONFIDENCE_THRESHOLD = 0.68;
 const GUESS_CONFIDENCE_THRESHOLD = 0.74;
 const MAX_QUESTIONS = 18;
 const CONFIDENT_ANSWERS = new Set<AnswerValue>(["yes", "probably", "probably_not", "no"]);
-const NEGATIVE_ANSWERS = new Set<AnswerValue>(["probably_not", "no"]);
+const POSITIVE_ANSWERS = new Set<AnswerValue>(["yes", "probably"]);
 
 // These fields can only have one primary answer for a character.
 const EXCLUSIVE_TRAIT_PATHS = new Set([
@@ -145,7 +145,10 @@ export function getNextQuestion(
   }).length;
   const likelyGameId = getLikelyGameId(scores);
   const allowGameQuestions = likelyGameId !== null && globalAnswerCount >= MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE;
-  const candidatePool = scores.slice(0, Math.min(10, scores.length)).map((score) => score.character);
+  const topWindow = scores.slice(0, Math.min(16, scores.length));
+  const lastTopScore = topWindow[topWindow.length - 1];
+  const confidenceSpread = topWindow[0] && lastTopScore ? topWindow[0].confidence - lastTopScore.confidence : 0;
+  const candidatePool = answers.length < 2 || confidenceSpread < 0.01 ? characters : topWindow.map((score) => score.character);
 
   const eligibleQuestions = questions.filter((question) => {
     if (answeredIds.has(question.id)) {
@@ -167,7 +170,7 @@ export function getNextQuestion(
   const rankedQuestions = eligibleQuestions
     .map((question) => ({
       question,
-      usefulness: getQuestionUsefulness(candidatePool.length > 1 ? candidatePool : characters, question)
+      usefulness: getQuestionUsefulness(candidatePool, question) * getQuestionContextMultiplier(question, answers, questionMap)
     }))
     .filter((item) => item.usefulness > 0)
     .sort((a, b) => b.usefulness - a.usefulness);
@@ -194,7 +197,7 @@ function isQuestionRedundant(
       return false;
     }
 
-    return CONFIDENT_ANSWERS.has(answer.answer);
+    return POSITIVE_ANSWERS.has(answer.answer);
   });
 }
 
@@ -213,6 +216,137 @@ function getQuestionUsefulness(characters: DiscoveryCharacter[], question: Disco
   const scopeBoost = question.scope === "global" ? 0.08 : 0;
 
   return question.weight * (0.35 + splitScore) + scopeBoost;
+}
+
+function getQuestionContextMultiplier(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+  const ipcLikely = hasAnswerForExpectedValue(
+    answers,
+    questionMap,
+    "hsr.faction",
+    "Interastral Peace Corporation",
+    true
+  );
+  const geniusLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Genius Society", true);
+  const loreMode = npcLikely || nonPlayableLikely;
+
+  if (!loreMode) {
+    return 1;
+  }
+
+  if (aeonLikely) {
+    if (question.traitPath === "hsr.path") {
+      return 4;
+    }
+
+    if (
+      question.traitPath === "global.characterType" ||
+      question.traitPath === "global.genderPresentation" ||
+      question.traitPath === "hsr.rarity" ||
+      question.traitPath === "hsr.worldOrRegion"
+    ) {
+      return 0;
+    }
+  }
+
+  if (lordRavagerLikely) {
+    if (question.traitPath === "hsr.storyRole" || question.traitPath === "hsr.worldOrRegion") {
+      return 2.1;
+    }
+
+    if (question.traitPath === "global.characterType" || question.traitPath === "hsr.rarity") {
+      return 0;
+    }
+  }
+
+  if (
+    ipcLikely &&
+    (question.id === "hsr-ten-stonehearts" ||
+      question.id === "hsr-ten-stoneheart-role" ||
+      question.id === "hsr-ipc-executive")
+  ) {
+    return 2.4;
+  }
+
+  if (geniusLikely && (question.id === "hsr-genius-society-member" || question.id === "hsr-researcher")) {
+    return 2.2;
+  }
+
+  if (question.traitPath === "hsr.rarity") {
+    return 0;
+  }
+
+  if (question.traitPath === "global.brightHair" || question.traitPath === "global.primaryHairColor") {
+    return 0.18;
+  }
+
+  if (question.traitPath === "global.primaryOutfitColor") {
+    return 0.22;
+  }
+
+  if (question.traitPath === "global.genderPresentation") {
+    return 0.35;
+  }
+
+  if (
+    question.id === "hsr-aeon" ||
+    question.id === "hsr-lord-ravager" ||
+    question.id === "hsr-antimatter-legion" ||
+    question.id === "hsr-ipc-full" ||
+    question.id === "hsr-ten-stonehearts" ||
+    question.id === "hsr-genius" ||
+    question.id === "hsr-genius-society-member" ||
+    question.id === "hsr-ipc-executive" ||
+    question.id === "hsr-high-cloud-quintet" ||
+    question.id === "hsr-memory-story-character" ||
+    question.id === "hsr-watchmaker-legacy" ||
+    question.id === "hsr-heliobus" ||
+    question.id === "hsr-incubated-lord-ravager" ||
+    question.id === "hsr-mascot" ||
+    question.id === "hsr-robot-character" ||
+    question.id === "hsr-galaxy-rangers"
+  ) {
+    return 2.1;
+  }
+
+  if (
+    question.traitPath === "global.characterType" ||
+    question.traitPath === "hsr.faction" ||
+    question.traitPath === "hsr.storyRole" ||
+    question.traitPath === "hsr.worldOrRegion"
+  ) {
+    return 1.35;
+  }
+
+  if (question.traitPath === "hsr.path") {
+    return 1.15;
+  }
+
+  return 1;
+}
+
+function hasAnswerForExpectedValue(
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  traitPath: string,
+  expectedValue: DiscoveryQuestion["expectedValue"],
+  positive: boolean
+) {
+  return answers.some((answer) => {
+    const question = questionMap.get(answer.questionId);
+    if (!question || question.traitPath !== traitPath || question.expectedValue !== expectedValue) {
+      return false;
+    }
+
+    return positive ? POSITIVE_ANSWERS.has(answer.answer) : answer.answer === "no" || answer.answer === "probably_not";
+  });
 }
 
 export function getDiscoveryState(

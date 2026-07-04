@@ -42,3 +42,27 @@ Source file: `src/data/characters.json`
 | `sourceType` | enum | yes | `official`, `encyclopedia`, `database`, or `curated`. |
 | `retrievedAt` | date string | yes | `YYYY-MM-DD`. |
 | `notes` | string | yes | Why this source matters. |
+
+## Future Game-Scoped Data Structure
+
+Target layout, not yet migrated:
+
+```text
+src/data/games/<game-id>/
+  characters.json
+  images.json
+  i18n/
+    en.json
+    zh-CN.json
+    ja.json
+
+research/games/<game-id>/<character-id>.research.json
+public/character-images/<game-id>/<character-id>.png
+```
+
+- `characters.json` stores language-neutral facts only: stable `id`, game/franchise fields, gameplay traits, factions, roles, citations, and confidence.
+- `images.json` stores image metadata only: `imageUrl`, `alt`, `source`, and `licenseNote`, keyed by stable character id.
+- `i18n/*.json` stores display text only: localized names, aliases, summaries, labels, and notes keyed by stable character id.
+- Research notes live in `research/games/<game-id>/` and should keep source-by-source uncertainty separate from publishable facts.
+- Binary images belong in `public/character-images/<game-id>/`, never inside JSON data files.
+- Use stable ids such as `kafka`, `firefly`, and `jing-yuan`. Missing translations should fall back to English.

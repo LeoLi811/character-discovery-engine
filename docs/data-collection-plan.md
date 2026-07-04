@@ -41,6 +41,18 @@ Use separate signals instead of one hidden score:
 - Store copyrighted artwork references only as cited source URLs or licensed asset metadata. Do not download copyrighted artwork into the repo.
 - Record gaps as `analysisNotes` so later analysis knows what is missing.
 
+## Game-Scoped Collection Workflow
+
+Future batches should be organized by game before expanding cross-game analysis:
+
+- Store neutral character facts in `src/data/games/<game-id>/characters.json`.
+- Store display text in `src/data/games/<game-id>/i18n/<locale>.json`, keyed by stable character id.
+- Store image references and licensing notes in `src/data/games/<game-id>/images.json`; keep binary images under `public/character-images/<game-id>/`.
+- Store source notes and unresolved questions in `research/games/<game-id>/<character-id>.research.json`.
+- Keep English as the fallback when a locale is missing.
+
+Do not put all languages into character fact files, and do not store image binaries inside JSON.
+
 ## Batch Strategy
 
 Start with 50-75 characters across several categories:

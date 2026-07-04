@@ -41,6 +41,14 @@ Avoid large JSON reads unless required.
 - Do not rename schema fields without approval.
 - Do not reformat whole files unless asked.
 
+## Future Data Layout
+
+- Target structure is `src/data/games/<game-id>/` with separate `characters.json`, `images.json`, and `i18n/*.json` files.
+- Do not migrate current data into the game-scoped layout unless explicitly requested.
+- Keep language-neutral facts out of translation files, and keep translated display text out of fact files.
+- Do not store binary images in JSON; image files belong under `public/character-images/<game-id>/`.
+- Research notes should eventually live under `research/games/<game-id>/<character-id>.research.json`.
+
 ## Website Rules
 
 - Do not build UI unless explicitly requested.
@@ -62,3 +70,25 @@ When finished, report only:
 - Files changed
 - Short summary
 - Remaining issues
+
+## Translation and Localization Rules
+
+When adding or modifying translations, follow these rules strictly.
+
+### Core principle
+
+Do not replace the original English content. Keep English as the source data, and add translations as separate localized fields.
+
+Preferred structure:
+
+```json
+{
+  "name": "Kafka",
+  "summary": "A calm Stellaron Hunter known for psychological control, purple styling, and a major fan following.",
+  "localized": {
+    "zh-CN": {
+      "name": "卡芙卡",
+      "summary": "一位冷静的星核猎手，以心理控制、紫色造型和高人气著称。"
+    }
+  }
+}

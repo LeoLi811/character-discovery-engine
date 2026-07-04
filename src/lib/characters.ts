@@ -1,4 +1,4 @@
-import charactersData from "@/data/characters.json";
+import charactersData from "@/data/games/hsr/characters.json";
 import type { Character, PopularityTier } from "@/lib/types";
 
 export const characters = charactersData as Character[];
