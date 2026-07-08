@@ -14,6 +14,7 @@ export type DiscoveryCharacter = {
   franchise: string;
   summary: string;
   color: string;
+  discoveryEligible?: boolean;
   global: TraitGroup;
   hsr: TraitGroup;
   evidence: EvidenceRecord[];

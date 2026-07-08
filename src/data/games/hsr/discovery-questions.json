@@ -310,7 +310,7 @@
     "text": "Are they strongly connected to the Xianzhou?",
     "scope": "game:hsr",
     "traitPath": "hsr.worldOrRegion",
-    "expectedValue": "Xianzhou Luofu",
+    "expectedValue": "Xianzhou",
     "category": "story",
     "weight": 1.3
   },
@@ -889,6 +889,114 @@
     "expectedValue": "emanator",
     "category": "story",
     "weight": 1.6
+  },
+  {
+    "id": "hsr-lord-ravager-nihility",
+    "text": "Is this Lord Ravager associated with Nihility, IX, or Self-Annihilator rumors?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "nihility-target",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-lord-ravager-erasure",
+    "text": "Is this Lord Ravager known for absolute erasure or painless annihilation?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "absolute-erasure",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-lord-ravager-harmony",
+    "text": "Is this Lord Ravager associated with destroying Harmony?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "harmony-destroyer",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-lord-ravager-voidranger",
+    "text": "Is this Lord Ravager known for commanding Voidrangers or starship campaigns?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "voidranger-commander",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-lord-ravager-elation",
+    "text": "Is this Lord Ravager associated with destroying Elation or cruel jokes?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "elation-destroyer",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-lord-ravager-strategist",
+    "text": "Is this Lord Ravager more of a distant strategist than a frontline destroyer?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "distant-orchestrator",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-lord-ravager-sun-devourer",
+    "text": "Is this Lord Ravager known as the Sun Devourer?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "sun-devourer",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-lord-ravager-leviathan",
+    "text": "Is this Lord Ravager connected to Leviathan or cosmic-scale stellar extinction lore?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "leviathan-rumor",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-lord-ravager-forger",
+    "text": "Is this Lord Ravager associated with forging, heat, or weapons of extinction?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "forger",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-lord-ravager-legion-architect",
+    "text": "Is this Lord Ravager believed to be the architect of the Antimatter Legion?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "legion-architect",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-lord-ravager-anti-nous",
+    "text": "Is this Lord Ravager tied to a plot against Nous or Erudition?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "anti-nous",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-lord-ravager-scepter",
+    "text": "Is this Lord Ravager connected to Amphoreus' Scepter or simulation system?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "scepter-born",
+    "category": "story",
+    "weight": 1.7
   },
   {
     "id": "hsr-mascot",

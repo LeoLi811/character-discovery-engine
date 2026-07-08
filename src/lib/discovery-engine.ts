@@ -230,6 +230,11 @@ const AEON_YES_SUPPRESSED_TRAIT_PATHS = new Set([
 ]);
 
 const AEON_YES_SUPPRESSED_IDS = new Set(["global-playable", "global-npc"]);
+const AEON_YES_SUPPRESSED_STORY_IDS = new Set([
+  "hsr-lord-ravager",
+  "hsr-incubated-lord-ravager",
+  "hsr-antimatter-legion"
+]);
 
 const LORD_RAVAGER_ALLOWED_IDS = new Set([
   "hsr-lord-ravager",
@@ -245,6 +250,12 @@ const LORE_PRIORITY_IDS = new Set([
   "hsr-lord-ravager",
   "hsr-antimatter-legion",
   "hsr-emanator",
+  "hsr-belobog",
+  "hsr-penacony",
+  "hsr-xianzhou",
+  "hsr-amphoreus",
+  "hsr-ipc",
+  "hsr-cosmos-region",
   "hsr-lore-character",
   "hsr-major-story-character",
   "hsr-antagonist",
@@ -259,6 +270,69 @@ const LORE_PRIORITY_IDS = new Set([
   "hsr-memory-story-character",
   "hsr-watchmaker-legacy",
   "hsr-incubated-lord-ravager"
+]);
+
+const NPC_LORE_LATE_ONLY_IDS = new Set([
+  "global-leader",
+  "global-antihero",
+  "global-mysterious",
+  "global-calm",
+  "global-cheerful",
+  "hsr-major-story-character",
+  "hsr-antagonist"
+]);
+
+const NPC_LORE_STRUCTURAL_IDS = new Set([
+  "global-playable",
+  "global-npc",
+  "hsr-non-playable-combat",
+  "hsr-aeon",
+  "hsr-cosmic-entity",
+  "hsr-lord-ravager",
+  "hsr-emanator",
+  "hsr-antimatter-legion",
+  "hsr-incubated-lord-ravager",
+  "hsr-lord-ravager-nihility",
+  "hsr-lord-ravager-erasure",
+  "hsr-lord-ravager-harmony",
+  "hsr-lord-ravager-voidranger",
+  "hsr-lord-ravager-elation",
+  "hsr-lord-ravager-strategist",
+  "hsr-lord-ravager-sun-devourer",
+  "hsr-lord-ravager-leviathan",
+  "hsr-lord-ravager-forger",
+  "hsr-lord-ravager-legion-architect",
+  "hsr-lord-ravager-anti-nous",
+  "hsr-lord-ravager-scepter",
+  "hsr-robot-character",
+  "hsr-mascot",
+  "hsr-lore-character",
+  "hsr-belobog",
+  "hsr-penacony",
+  "hsr-xianzhou",
+  "hsr-amphoreus",
+  "hsr-herta-space-station",
+  "hsr-cosmos-region",
+  "hsr-ipc",
+  "hsr-ipc-full",
+  "hsr-ipc-executive",
+  "hsr-ten-stonehearts",
+  "hsr-ten-stoneheart-role",
+  "hsr-genius",
+  "hsr-genius-society-member",
+  "hsr-stellaron-hunter",
+  "hsr-astral-express",
+  "hsr-family",
+  "hsr-silvermane",
+  "hsr-cloud-knights",
+  "hsr-high-cloud-quintet",
+  "hsr-ten-lords",
+  "hsr-alchemy",
+  "hsr-foxian",
+  "hsr-heliobus",
+  "hsr-memory-story-character",
+  "hsr-watchmaker-legacy",
+  "hsr-galaxy-rangers"
 ]);
 
 // These fields can only have one primary answer for a character.
@@ -302,8 +376,13 @@ export function scoreCharacters(
   questions: DiscoveryQuestion[],
   answers: AnswerRecord[]
 ): CharacterScore[] {
+  const candidateCharacters = getDiscoveryEligibleCharacters(characters);
+  if (candidateCharacters.length === 0) {
+    return [];
+  }
+
   const questionMap = new Map(questions.map((question) => [question.id, question]));
-  const rawScores = characters.map((character) => {
+  const rawScores = candidateCharacters.map((character) => {
     const matched: MatchedTrait[] = [];
     const contradicted: MatchedTrait[] = [];
 
@@ -349,7 +428,7 @@ export function scoreCharacters(
   return shiftedScores
     .map(({ shifted, ...item }) => ({
       ...item,
-      confidence: total > 0 ? shifted / total : 1 / characters.length
+      confidence: total > 0 ? shifted / total : 1 / candidateCharacters.length
     }))
     .sort((a, b) => b.confidence - a.confidence);
 }
@@ -374,12 +453,17 @@ export function getNextQuestion(
   answers: AnswerRecord[],
   scores: CharacterScore[]
 ) {
-  const topWindow = scores.slice(0, Math.min(16, scores.length));
+  const discoveryCandidates = getDiscoveryEligibleCharacters(characters);
+  const questionMap = new Map(questions.map((question) => [question.id, question]));
+  const activeCandidatePool = getActiveCandidatePool(discoveryCandidates, questionMap, answers);
+  const activeCandidateIds = new Set(activeCandidatePool.map((character) => character.id));
+  const activeScores = scores.filter((score) => activeCandidateIds.has(score.character.id));
+  const topWindow = activeScores.slice(0, Math.min(16, activeScores.length));
   const lastTopScore = topWindow[topWindow.length - 1];
   const confidenceSpread = topWindow[0] && lastTopScore ? topWindow[0].confidence - lastTopScore.confidence : 0;
-  const candidatePool = answers.length < 2 || confidenceSpread < 0.01 ? characters : topWindow.map((score) => score.character);
-  const eligibleQuestions = getEligibleQuestions(questions, answers, scores);
-  const questionMap = new Map(questions.map((question) => [question.id, question]));
+  const candidatePool =
+    answers.length < 2 || confidenceSpread < 0.01 ? activeCandidatePool : topWindow.map((score) => score.character);
+  const eligibleQuestions = getEligibleQuestions(questions, answers, scores, candidatePool);
 
   if (eligibleQuestions.length === 0) {
     return null;
@@ -390,10 +474,196 @@ export function getNextQuestion(
       question,
       usefulness: getQuestionUsefulness(candidatePool, question) * getQuestionContextMultiplier(question, answers, questionMap)
     }))
-    .filter((item) => item.usefulness > 0)
+    .filter((item) => item.usefulness > 0);
   const phaseQuestions = getHighestPriorityPhaseQuestions(rankedQuestions, answers, questionMap);
 
   return phaseQuestions.sort((a, b) => b.usefulness - a.usefulness)[0]?.question ?? null;
+}
+
+function getActiveCandidatePool(
+  characters: DiscoveryCharacter[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  answers: AnswerRecord[]
+) {
+  let activeCandidates = characters;
+
+  const applyFilter = (predicate: (character: DiscoveryCharacter) => boolean) => {
+    const filtered = activeCandidates.filter(predicate);
+    if (filtered.length > 0) {
+      activeCandidates = filtered;
+    }
+  };
+
+  const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
+  const playableUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", false);
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const npcUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", false);
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+  const maleLikely = hasAnswerForExpectedValue(answers, questionMap, "global.genderPresentation", "male", true);
+  const femaleLikely = hasAnswerForExpectedValue(answers, questionMap, "global.genderPresentation", "female", true);
+
+  if (aeonLikely) {
+    applyFilter(isAeonCandidate);
+  } else if (lordRavagerLikely) {
+    applyFilter(isLordRavagerCandidate);
+  } else {
+    if (playableLikely) {
+      applyFilter(
+        (character) =>
+          isPlayableCandidate(character) &&
+          !isNpcCandidate(character) &&
+          !isAeonCandidate(character) &&
+          !isLordRavagerCandidate(character) &&
+          !isCosmicEntityCandidate(character) &&
+          (!isNonPlayableCombatCandidate(character) || isPlayableCandidate(character))
+      );
+    } else if (playableUnlikely) {
+      applyFilter((character) => !isPurePlayableCandidate(character));
+    }
+
+    if (npcLikely) {
+      applyFilter(isNpcBranchCandidate);
+    } else if (npcUnlikely) {
+      applyFilter(
+        (character) =>
+          !isNpcCandidate(character) &&
+          !isAeonCandidate(character) &&
+          !isLordRavagerCandidate(character) &&
+          !isNonPlayableCombatCandidate(character)
+      );
+    }
+  }
+
+  if (maleLikely) {
+    applyFilter((character) => characterHasTraitValue(character, "global.genderPresentation", "male"));
+  } else if (femaleLikely) {
+    applyFilter((character) => characterHasTraitValue(character, "global.genderPresentation", "female"));
+  }
+
+  for (const answer of answers) {
+    if (!CONFIDENT_ANSWERS.has(answer.answer)) {
+      continue;
+    }
+
+    const question = questionMap.get(answer.questionId);
+    if (!question || !shouldApplyAnswerAsCandidateFilter(question)) {
+      continue;
+    }
+
+    applyFilter((character) => {
+      const matchesAnswer = characterHasTraitValue(character, question.traitPath, question.expectedValue);
+
+      if (POSITIVE_ANSWERS.has(answer.answer) && matchesAnswer) {
+        return true;
+      }
+
+      if (NEGATIVE_ANSWERS.has(answer.answer)) {
+        return !matchesAnswer;
+      }
+
+      return (
+        !playableLikely &&
+        !aeonLikely &&
+        !lordRavagerLikely &&
+        (question.traitPath === "hsr.path" || question.traitPath === "hsr.combatType") &&
+        isLoreBranchCandidate(character) &&
+        (hasVariableTraitValue(character, question.traitPath) || isNonPlayableCombatCandidate(character))
+      );
+    });
+  }
+
+  return activeCandidates;
+}
+
+function getDiscoveryEligibleCharacters(characters: DiscoveryCharacter[]) {
+  return characters.filter(isDiscoveryEligibleCharacter);
+}
+
+function isDiscoveryEligibleCharacter(character: DiscoveryCharacter) {
+  return isPlayableCandidate(character) || character.discoveryEligible !== false;
+}
+
+function shouldApplyAnswerAsCandidateFilter(question: DiscoveryQuestion) {
+  if (question.id === "global-playable" || question.id === "global-npc") {
+    return false;
+  }
+
+  return (
+    question.traitPath === "global.characterType" ||
+    question.traitPath === "global.genderPresentation" ||
+    question.traitPath === "hsr.faction" ||
+    question.traitPath === "hsr.worldOrRegion" ||
+    question.traitPath === "hsr.storyRole" ||
+    question.traitPath === "hsr.path" ||
+    question.traitPath === "hsr.combatType" ||
+    question.traitPath === "hsr.rarity" ||
+    isFinalLayerQuestion(question)
+  );
+}
+
+function characterHasTraitValue(
+  character: DiscoveryCharacter,
+  traitPath: string,
+  expectedValue: DiscoveryQuestion["expectedValue"]
+) {
+  const value = getTraitValue(character, traitPath);
+  return Array.isArray(value) ? value.includes(expectedValue as never) : value === expectedValue;
+}
+
+function hasVariableTraitValue(character: DiscoveryCharacter, traitPath: string) {
+  return (
+    characterHasTraitValue(character, traitPath, "variable") ||
+    characterHasTraitValue(character, traitPath, "Variable") ||
+    characterHasTraitValue(character, traitPath, "needs_research")
+  );
+}
+
+function isPlayableCandidate(character: DiscoveryCharacter) {
+  return characterHasTraitValue(character, "global.characterType", "playable");
+}
+
+function isNpcCandidate(character: DiscoveryCharacter) {
+  return characterHasTraitValue(character, "global.characterType", "npc");
+}
+
+function isAeonCandidate(character: DiscoveryCharacter) {
+  return characterHasTraitValue(character, "global.characterType", "aeon");
+}
+
+function isLordRavagerCandidate(character: DiscoveryCharacter) {
+  return characterHasTraitValue(character, "hsr.storyRole", "lord-ravager");
+}
+
+function isCosmicEntityCandidate(character: DiscoveryCharacter) {
+  return characterHasTraitValue(character, "global.characterType", "cosmic-entity");
+}
+
+function isNonPlayableCombatCandidate(character: DiscoveryCharacter) {
+  return characterHasTraitValue(character, "hsr.combatType", "Non-playable");
+}
+
+function isLoreBranchCandidate(character: DiscoveryCharacter) {
+  return (
+    isNpcBranchCandidate(character) ||
+    (!isPlayableCandidate(character) &&
+      (characterHasTraitValue(character, "global.characterType", "lore-character") ||
+        characterHasTraitValue(character, "global.characterType", "major-story-character")))
+  );
+}
+
+function isNpcBranchCandidate(character: DiscoveryCharacter) {
+  return (
+    isNpcCandidate(character) ||
+    isAeonCandidate(character) ||
+    isLordRavagerCandidate(character) ||
+    isCosmicEntityCandidate(character) ||
+    isNonPlayableCombatCandidate(character)
+  );
+}
+
+function isPurePlayableCandidate(character: DiscoveryCharacter) {
+  return isPlayableCandidate(character) && !isLoreBranchCandidate(character);
 }
 
 function getHighestPriorityPhaseQuestions(
@@ -407,11 +677,14 @@ function getHighestPriorityPhaseQuestions(
 
   const rankedByPhase = questionItems.map((item) => ({
     ...item,
-    phase: getQuestionPhase(item.question, answers, questionMap)
+    phase: getQuestionPhase(item.question, answers, questionMap),
+    phaseRank: getQuestionPhaseRank(item.question, answers, questionMap)
   }));
   const earliestPhase = Math.min(...rankedByPhase.map((item) => item.phase));
+  const phaseQuestions = rankedByPhase.filter((item) => item.phase === earliestPhase);
+  const bestPhaseRank = Math.min(...phaseQuestions.map((item) => item.phaseRank));
 
-  return rankedByPhase.filter((item) => item.phase === earliestPhase);
+  return phaseQuestions.filter((item) => item.phaseRank === bestPhaseRank);
 }
 
 function getQuestionPhase(
@@ -422,6 +695,8 @@ function getQuestionPhase(
   const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
   const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
   const chrysosHeirLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Chrysos Heirs", true);
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
 
   if (aeonLikely && question.traitPath === "hsr.path") {
     return 2;
@@ -446,6 +721,10 @@ function getQuestionPhase(
 
   if (isScopeBranchQuestion(question)) {
     return 1;
+  }
+
+  if ((npcLikely || nonPlayableLikely) && isStructuralNpcLoreQuestion(question)) {
+    return 2;
   }
 
   if (isBroadAffiliationQuestion(question)) {
@@ -486,6 +765,121 @@ function isGameplayOrRoleQuestion(question: DiscoveryQuestion) {
   return question.traitPath === "hsr.path" || question.traitPath === "hsr.combatType" || question.traitPath === "hsr.rarity" || question.traitPath === "hsr.storyRole";
 }
 
+function getQuestionPhaseRank(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
+  const npcUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", false);
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+
+  if (aeonLikely) {
+    if (question.traitPath === "hsr.path") {
+      return 0;
+    }
+    return 5;
+  }
+
+  if (lordRavagerLikely) {
+    const lordRavagerOrder = ["hsr-antimatter-legion", "hsr-incubated-lord-ravager", "hsr-destruction"];
+    const orderIndex = lordRavagerOrder.indexOf(question.id);
+    if (orderIndex !== -1) {
+      return orderIndex;
+    }
+    if (question.traitPath === "hsr.storyRole" || question.traitPath === "hsr.faction") {
+      return 3;
+    }
+    return 5;
+  }
+
+  if (playableLikely || npcUnlikely) {
+    const playableBranchOrder = [
+      "hsr-chrysos-heir",
+      "hsr-amphoreus",
+      "hsr-astral-express",
+      "hsr-stellaron-hunter",
+      "hsr-ipc",
+      "hsr-xianzhou",
+      "hsr-belobog",
+      "hsr-penacony",
+      "hsr-genius",
+      "hsr-genius-society-member",
+      "hsr-herta-space-station",
+      "hsr-cosmos-region"
+    ];
+    const orderIndex = playableBranchOrder.indexOf(question.id);
+    if (orderIndex !== -1) {
+      return orderIndex;
+    }
+  }
+
+  if (npcLikely || nonPlayableLikely) {
+    const loreBranchOrder = [
+      "hsr-aeon",
+      "hsr-cosmic-entity",
+      "hsr-lord-ravager",
+      "hsr-antimatter-legion",
+      "hsr-emanator",
+      "hsr-robot-character",
+      "hsr-mascot",
+      "hsr-lore-character",
+      "hsr-belobog",
+      "hsr-penacony",
+      "hsr-xianzhou",
+      "hsr-amphoreus",
+      "hsr-herta-space-station",
+      "hsr-ipc",
+      "hsr-ipc-full",
+      "hsr-ten-stonehearts",
+      "hsr-genius",
+      "hsr-genius-society-member",
+      "hsr-cosmos-region",
+      "hsr-incubated-lord-ravager",
+      "hsr-lord-ravager-nihility",
+      "hsr-lord-ravager-erasure",
+      "hsr-lord-ravager-harmony",
+      "hsr-lord-ravager-voidranger",
+      "hsr-lord-ravager-elation",
+      "hsr-lord-ravager-strategist",
+      "hsr-lord-ravager-sun-devourer",
+      "hsr-lord-ravager-leviathan",
+      "hsr-lord-ravager-forger",
+      "hsr-lord-ravager-legion-architect",
+      "hsr-lord-ravager-anti-nous",
+      "hsr-lord-ravager-scepter"
+    ];
+    const orderIndex = loreBranchOrder.indexOf(question.id);
+    if (orderIndex !== -1) {
+      return orderIndex;
+    }
+    if (isStructuralNpcLoreQuestion(question)) {
+      return loreBranchOrder.length;
+    }
+  }
+
+  if (MEANINGFUL_BRANCH_QUESTION_IDS.has(question.id)) {
+    return 0;
+  }
+
+  if (isBroadAffiliationQuestion(question)) {
+    return 1;
+  }
+
+  if (isGameplayOrRoleQuestion(question)) {
+    return 2;
+  }
+
+  if (isFinalLayerQuestion(question)) {
+    return 4;
+  }
+
+  return 3;
+}
+
 function isFinalLayerQuestion(question: DiscoveryQuestion) {
   return (
     question.traitPath === "global.primaryHairColor" ||
@@ -502,7 +896,8 @@ function isFinalLayerQuestion(question: DiscoveryQuestion) {
 function getEligibleQuestions(
   questions: DiscoveryQuestion[],
   answers: AnswerRecord[],
-  scores: CharacterScore[]
+  scores: CharacterScore[],
+  candidatePool: DiscoveryCharacter[] = scores.map((score) => score.character)
 ) {
   const answeredIds = new Set(answers.map((answer) => answer.questionId));
   const questionMap = new Map(questions.map((question) => [question.id, question]));
@@ -511,9 +906,13 @@ function getEligibleQuestions(
     return question?.scope === "global";
   }).length;
   const likelyGameId = getLikelyGameId(scores);
-  const allowGameQuestions = likelyGameId !== null && globalAnswerCount >= MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE;
+  const hasBranchContext = hasMeaningfulBranchContext(answers, questionMap);
+  const npcLoreBranch = isNpcLoreQuestionBranch(answers, questionMap, candidatePool);
+  const allowGameQuestions =
+    likelyGameId !== null &&
+    (globalAnswerCount >= MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE || hasBranchContext || npcLoreBranch);
 
-  return questions.filter((question) => {
+  const eligibleQuestions = questions.filter((question) => {
     if (answeredIds.has(question.id)) {
       return false;
     }
@@ -528,6 +927,77 @@ function getEligibleQuestions(
     }
     return allowGameQuestions && question.scope === `game:${likelyGameId}`;
   });
+
+  return applyNpcLoreQuestionGate(eligibleQuestions, answers, questionMap, candidatePool);
+}
+
+function applyNpcLoreQuestionGate(
+  questions: DiscoveryQuestion[],
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  candidatePool: DiscoveryCharacter[]
+) {
+  if (!isNpcLoreQuestionBranch(answers, questionMap, candidatePool)) {
+    return questions;
+  }
+
+  const hasStructuralQuestion = questions.some(
+    (question) => isStructuralNpcLoreQuestion(question) && getQuestionUsefulness(candidatePool, question) > 0
+  );
+  const lateTiebreakerStage = isLateTiebreakerStage(answers, candidatePool);
+
+  return questions.filter((question) => {
+    if (!isNpcLoreLateOnlyQuestion(question)) {
+      return true;
+    }
+
+    if (hasStructuralQuestion) {
+      return false;
+    }
+
+    return lateTiebreakerStage && getQuestionUsefulness(candidatePool, question) > 0;
+  });
+}
+
+function isNpcLoreQuestionBranch(
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  candidatePool: DiscoveryCharacter[]
+) {
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
+
+  if (npcLikely || nonPlayableLikely) {
+    return true;
+  }
+
+  if (candidatePool.length === 0) {
+    return false;
+  }
+
+  const npcLikeCount = candidatePool.filter(isNpcBranchCandidate).length;
+  return npcLikeCount / candidatePool.length >= 0.65;
+}
+
+function isLateTiebreakerStage(answers: AnswerRecord[], candidatePool: DiscoveryCharacter[]) {
+  return answers.length >= MIN_QUESTIONS_BEFORE_GUESS || candidatePool.length <= AMBIGUITY_TOP_CANDIDATE_COUNT;
+}
+
+function isNpcLoreLateOnlyQuestion(question: DiscoveryQuestion) {
+  return (
+    NPC_LORE_LATE_ONLY_IDS.has(question.id) ||
+    question.traitPath === "global.genderPresentation" ||
+    isFinalLayerQuestion(question)
+  );
+}
+
+function isStructuralNpcLoreQuestion(question: DiscoveryQuestion) {
+  return (
+    NPC_LORE_STRUCTURAL_IDS.has(question.id) ||
+    question.traitPath === "hsr.faction" ||
+    question.traitPath === "hsr.worldOrRegion" ||
+    (question.traitPath === "hsr.storyRole" && !NPC_LORE_LATE_ONLY_IDS.has(question.id))
+  );
 }
 
 function getViableCandidates(
@@ -576,7 +1046,7 @@ function getAmbiguitySeparatorQuestion(
   const topCandidates = scores
     .slice(0, Math.min(AMBIGUITY_TOP_CANDIDATE_COUNT, scores.length))
     .map((score) => score.character);
-  const eligibleQuestions = getEligibleQuestions(questions, answers, scores);
+  const eligibleQuestions = getEligibleQuestions(questions, answers, scores, topCandidates);
   const questionMap = new Map(questions.map((question) => [question.id, question]));
 
   const separatorQuestions = eligibleQuestions
@@ -630,13 +1100,17 @@ function getSeparatorTraitPriority(
   const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
   const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
   const chrysosHeirLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Chrysos Heirs", true);
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
   const priority = aeonLikely
     ? ["hsr.path", "hsr.faction", "hsr.storyRole", "hsr.worldOrRegion", "global.personality"]
     : lordRavagerLikely
       ? ["hsr.storyRole", "hsr.faction", "hsr.path", "hsr.worldOrRegion", "hsr.combatType"]
       : chrysosHeirLikely
         ? ["hsr.worldOrRegion", "hsr.faction", "hsr.path", "hsr.combatType", "global.primaryHairColor", "global.weaponType", "global.primaryOutfitColor", "global.personality"]
-        : SEPARATOR_TRAIT_PRIORITY;
+        : npcLikely || nonPlayableLikely
+          ? ["global.characterType", "hsr.storyRole", "hsr.faction", "hsr.worldOrRegion", "hsr.path", "hsr.combatType", "global.weaponType", "global.personality"]
+          : SEPARATOR_TRAIT_PRIORITY;
 
   return priority.indexOf(question.traitPath);
 }
@@ -679,9 +1153,14 @@ function isQuestionHardSuppressed(
   const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
   const playableUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", false);
   const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const npcUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", false);
   const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
   const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
   const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+
+  if (npcUnlikely && question.id === "global-playable") {
+    return true;
+  }
 
   if (playableLikely && PLAYABLE_YES_SUPPRESSED_IDS.has(question.id)) {
     return true;
@@ -743,7 +1222,11 @@ function isNormalPlayableCombatQuestion(question: DiscoveryQuestion) {
 }
 
 function isAeonSuppressedQuestion(question: DiscoveryQuestion) {
-  return AEON_YES_SUPPRESSED_IDS.has(question.id) || AEON_YES_SUPPRESSED_TRAIT_PATHS.has(question.traitPath);
+  return (
+    AEON_YES_SUPPRESSED_IDS.has(question.id) ||
+    AEON_YES_SUPPRESSED_STORY_IDS.has(question.id) ||
+    AEON_YES_SUPPRESSED_TRAIT_PATHS.has(question.traitPath)
+  );
 }
 
 function isLordRavagerSuppressedQuestion(question: DiscoveryQuestion) {
@@ -753,8 +1236,14 @@ function isLordRavagerSuppressedQuestion(question: DiscoveryQuestion) {
 
   return (
     question.id === "global-playable" ||
+    question.id === "hsr-aeon" ||
+    question.id === "hsr-cosmic-entity" ||
     question.traitPath === "hsr.rarity" ||
     question.traitPath === "global.genderPresentation" ||
+    question.traitPath === "global.brightHair" ||
+    question.traitPath === "global.primaryHairColor" ||
+    question.traitPath === "global.primaryOutfitColor" ||
+    question.traitPath === "global.outfitColors" ||
     QUESTION_GROUPS[question.id] === "broad-role"
   );
 }
@@ -1061,10 +1550,12 @@ export function getDiscoveryState(
   questions: DiscoveryQuestion[],
   answers: AnswerRecord[]
 ): DiscoveryState {
+  const discoveryCandidates = getDiscoveryEligibleCharacters(characters);
   const questionMap = new Map(questions.map((question) => [question.id, question]));
-  const viableCandidates = getViableCandidates(characters, questionMap, answers);
+  const activeCandidatePool = getActiveCandidatePool(discoveryCandidates, questionMap, answers);
+  const viableCandidates = getViableCandidates(activeCandidatePool, questionMap, answers);
   const deterministicCandidate = viableCandidates.length === 1 ? viableCandidates[0] : null;
-  const scoredCandidates = scoreCharacters(characters, questions, answers);
+  const scoredCandidates = scoreCharacters(activeCandidatePool, questions, answers);
   const scores = deterministicCandidate
     ? prioritizeResolvedCandidate(scoredCandidates, deterministicCandidate)
     : scoredCandidates;
@@ -1087,16 +1578,24 @@ export function getDiscoveryState(
     hasEnoughQuestionDepth &&
     top.confidence >= NORMAL_GUESS_CONFIDENCE_THRESHOLD &&
     confidenceGap >= NORMAL_GUESS_GAP_THRESHOLD;
+  const rankedQuestion = deterministicCandidate ? null : getNextQuestion(activeCandidatePool, questions, answers, scores);
   const usefulSeparator =
     deterministicCandidate || !top || !runnerUp ? null : getAmbiguitySeparatorQuestion(questions, answers, scores);
   const ambiguitySeparator =
     !usefulSeparator || !top || !runnerUp || !shouldRunAmbiguityGuard(answers, questionMap, top, runnerUp, hasConfidentNormalGuess)
       ? null
       : usefulSeparator;
+  const useAmbiguitySeparator =
+    !deterministicCandidate &&
+    ambiguitySeparator !== null &&
+    shouldUseAmbiguitySeparator(ambiguitySeparator, rankedQuestion, answers, questionMap);
   const nextQuestion = deterministicCandidate
     ? null
-    : ambiguitySeparator ?? getNextQuestion(characters, questions, answers, scores);
-  const shouldGuess = deterministicCandidate !== null || (usefulSeparator === null && hasConfidentNormalGuess);
+    : useAmbiguitySeparator
+      ? ambiguitySeparator
+      : rankedQuestion;
+  const shouldGuess =
+    deterministicCandidate !== null || (nextQuestion === null && usefulSeparator === null && hasConfidentNormalGuess);
 
   return {
     scores,
@@ -1105,6 +1604,52 @@ export function getDiscoveryState(
     shouldGuess,
     questionCount: answers.length
   };
+}
+
+function shouldUseAmbiguitySeparator(
+  ambiguitySeparator: DiscoveryQuestion,
+  rankedQuestion: DiscoveryQuestion | null,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  if (!rankedQuestion) {
+    return true;
+  }
+
+  if (getQuestionPhase(rankedQuestion, answers, questionMap) <= 1) {
+    return false;
+  }
+
+  if (isCoreBranchQuestion(rankedQuestion, answers, questionMap)) {
+    return false;
+  }
+
+  return getQuestionPhase(ambiguitySeparator, answers, questionMap) <= getQuestionPhase(rankedQuestion, answers, questionMap);
+}
+
+function isCoreBranchQuestion(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
+  const npcUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", false);
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+
+  if (aeonLikely) {
+    return question.traitPath === "hsr.path";
+  }
+
+  if (lordRavagerLikely) {
+    return (
+      question.id === "hsr-antimatter-legion" ||
+      question.id === "hsr-incubated-lord-ravager" ||
+      question.id === "hsr-destruction"
+    );
+  }
+
+  return (playableLikely || npcUnlikely) && (question.id === "hsr-chrysos-heir" || question.id === "hsr-amphoreus");
 }
 
 export function getAnswerLabel(answer: AnswerValue) {
