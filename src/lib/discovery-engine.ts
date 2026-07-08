@@ -24,6 +24,7 @@ const MIN_QUESTIONS_BEFORE_GUESS = 8;
 const MAX_QUESTIONS = 18;
 const CONFIDENT_ANSWERS = new Set<AnswerValue>(["yes", "probably", "probably_not", "no"]);
 const POSITIVE_ANSWERS = new Set<AnswerValue>(["yes", "probably"]);
+const NEGATIVE_ANSWERS = new Set<AnswerValue>(["no", "probably_not"]);
 
 const QUESTION_GROUPS: Record<string, string> = {
   "global-playable": "playability",
@@ -151,6 +152,114 @@ const QUESTION_GROUPS: Record<string, string> = {
 };
 
 const QUESTION_GROUP_COOLDOWN = 2;
+const AMBIGUITY_TOP_CANDIDATE_COUNT = 5;
+const AMBIGUITY_CONFIDENCE_GAP_THRESHOLD = 0.32;
+const NORMAL_GUESS_CONFIDENCE_THRESHOLD = 0.85;
+const NORMAL_GUESS_GAP_THRESHOLD = 0.45;
+
+const SEPARATOR_TRAIT_PRIORITY = [
+  "hsr.faction",
+  "hsr.worldOrRegion",
+  "hsr.storyRole",
+  "hsr.path",
+  "hsr.combatType",
+  "global.primaryHairColor",
+  "global.weaponType",
+  "global.primaryOutfitColor",
+  "global.personality"
+];
+
+const MEANINGFUL_BRANCH_QUESTION_IDS = new Set([
+  "global-playable",
+  "global-npc",
+  "hsr-non-playable-combat",
+  "hsr-aeon",
+  "hsr-lord-ravager",
+  "hsr-chrysos-heir",
+  "hsr-amphoreus",
+  "hsr-penacony",
+  "hsr-xianzhou",
+  "hsr-belobog",
+  "hsr-stellaron-hunter",
+  "hsr-astral-express",
+  "hsr-ipc",
+  "hsr-genius",
+  "hsr-genius-society",
+  "hsr-genius-society-member"
+]);
+
+const EXCLUSIVE_QUESTION_GROUPS = new Set([
+  "gender",
+  "playability",
+  "rarity",
+  "combat-type",
+  "hsr-path",
+  "broad-role"
+]);
+
+const PLAYABLE_YES_SUPPRESSED_IDS = new Set([
+  "global-npc",
+  "hsr-non-playable-combat",
+  "hsr-aeon",
+  "hsr-cosmic-entity",
+  "hsr-lord-ravager",
+  "hsr-incubated-lord-ravager"
+]);
+
+const NPC_YES_SUPPRESSED_IDS = new Set(["global-playable", "hsr-character-trailer", "hsr-animated-short"]);
+
+const NORMAL_PLAYABLE_COMBAT_IDS = new Set([
+  "hsr-lightning",
+  "hsr-quantum",
+  "hsr-imaginary",
+  "hsr-fire",
+  "hsr-ice",
+  "hsr-wind",
+  "hsr-physical"
+]);
+
+const AEON_YES_SUPPRESSED_TRAIT_PATHS = new Set([
+  "global.genderPresentation",
+  "global.brightHair",
+  "global.primaryHairColor",
+  "global.primaryOutfitColor",
+  "global.usesWeapon",
+  "global.weaponType",
+  "hsr.rarity",
+  "hsr.combatType"
+]);
+
+const AEON_YES_SUPPRESSED_IDS = new Set(["global-playable", "global-npc"]);
+
+const LORD_RAVAGER_ALLOWED_IDS = new Set([
+  "hsr-lord-ravager",
+  "hsr-incubated-lord-ravager",
+  "hsr-antimatter-legion"
+]);
+
+const LORE_PRIORITY_IDS = new Set([
+  "global-npc",
+  "hsr-non-playable-combat",
+  "hsr-aeon",
+  "hsr-cosmic-entity",
+  "hsr-lord-ravager",
+  "hsr-antimatter-legion",
+  "hsr-emanator",
+  "hsr-lore-character",
+  "hsr-major-story-character",
+  "hsr-antagonist",
+  "hsr-ipc-full",
+  "hsr-ten-stonehearts",
+  "hsr-genius",
+  "hsr-genius-society-member",
+  "hsr-ipc-executive",
+  "hsr-ten-stoneheart-role",
+  "hsr-penacony",
+  "hsr-penacony-faction",
+  "hsr-memory-story-character",
+  "hsr-watchmaker-legacy",
+  "hsr-incubated-lord-ravager"
+]);
 
 // These fields can only have one primary answer for a character.
 const EXCLUSIVE_TRAIT_PATHS = new Set([
@@ -265,31 +374,12 @@ export function getNextQuestion(
   answers: AnswerRecord[],
   scores: CharacterScore[]
 ) {
-  const answeredIds = new Set(answers.map((answer) => answer.questionId));
-  const questionMap = new Map(questions.map((question) => [question.id, question]));
-  const globalAnswerCount = answers.filter((answer) => {
-    const question = questionMap.get(answer.questionId);
-    return question?.scope === "global";
-  }).length;
-  const likelyGameId = getLikelyGameId(scores);
-  const allowGameQuestions = likelyGameId !== null && globalAnswerCount >= MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE;
   const topWindow = scores.slice(0, Math.min(16, scores.length));
   const lastTopScore = topWindow[topWindow.length - 1];
   const confidenceSpread = topWindow[0] && lastTopScore ? topWindow[0].confidence - lastTopScore.confidence : 0;
   const candidatePool = answers.length < 2 || confidenceSpread < 0.01 ? characters : topWindow.map((score) => score.character);
-
-  const eligibleQuestions = questions.filter((question) => {
-    if (answeredIds.has(question.id)) {
-      return false;
-    }
-    if (isQuestionRedundant(question, answers, questionMap)) {
-      return false;
-    }
-    if (question.scope === "global") {
-      return true;
-    }
-    return allowGameQuestions && question.scope === `game:${likelyGameId}`;
-  });
+  const eligibleQuestions = getEligibleQuestions(questions, answers, scores);
+  const questionMap = new Map(questions.map((question) => [question.id, question]));
 
   if (eligibleQuestions.length === 0) {
     return null;
@@ -301,9 +391,372 @@ export function getNextQuestion(
       usefulness: getQuestionUsefulness(candidatePool, question) * getQuestionContextMultiplier(question, answers, questionMap)
     }))
     .filter((item) => item.usefulness > 0)
-    .sort((a, b) => b.usefulness - a.usefulness);
+  const phaseQuestions = getHighestPriorityPhaseQuestions(rankedQuestions, answers, questionMap);
 
-  return rankedQuestions[0]?.question ?? null;
+  return phaseQuestions.sort((a, b) => b.usefulness - a.usefulness)[0]?.question ?? null;
+}
+
+function getHighestPriorityPhaseQuestions(
+  questionItems: { question: DiscoveryQuestion; usefulness: number }[],
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  if (questionItems.length === 0) {
+    return questionItems;
+  }
+
+  const rankedByPhase = questionItems.map((item) => ({
+    ...item,
+    phase: getQuestionPhase(item.question, answers, questionMap)
+  }));
+  const earliestPhase = Math.min(...rankedByPhase.map((item) => item.phase));
+
+  return rankedByPhase.filter((item) => item.phase === earliestPhase);
+}
+
+function getQuestionPhase(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+  const chrysosHeirLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Chrysos Heirs", true);
+
+  if (aeonLikely && question.traitPath === "hsr.path") {
+    return 2;
+  }
+
+  if (
+    lordRavagerLikely &&
+    (question.traitPath === "hsr.storyRole" || question.traitPath === "hsr.faction" || question.traitPath === "hsr.path")
+  ) {
+    return 2;
+  }
+
+  if (
+    chrysosHeirLikely &&
+    (question.traitPath === "hsr.worldOrRegion" ||
+      question.traitPath === "hsr.faction" ||
+      question.traitPath === "hsr.path" ||
+      question.traitPath === "hsr.combatType")
+  ) {
+    return 2;
+  }
+
+  if (isScopeBranchQuestion(question)) {
+    return 1;
+  }
+
+  if (isBroadAffiliationQuestion(question)) {
+    return 2;
+  }
+
+  if (isGameplayOrRoleQuestion(question)) {
+    return 3;
+  }
+
+  if (isFinalLayerQuestion(question)) {
+    return 4;
+  }
+
+  return 3;
+}
+
+function isScopeBranchQuestion(question: DiscoveryQuestion) {
+  return (
+    question.id === "global-hsr" ||
+    question.id === "global-playable" ||
+    question.id === "global-npc" ||
+    question.id === "hsr-non-playable-combat" ||
+    question.id === "hsr-aeon" ||
+    question.id === "hsr-lord-ravager"
+  );
+}
+
+function isBroadAffiliationQuestion(question: DiscoveryQuestion) {
+  return (
+    MEANINGFUL_BRANCH_QUESTION_IDS.has(question.id) ||
+    question.traitPath === "hsr.faction" ||
+    question.traitPath === "hsr.worldOrRegion"
+  );
+}
+
+function isGameplayOrRoleQuestion(question: DiscoveryQuestion) {
+  return question.traitPath === "hsr.path" || question.traitPath === "hsr.combatType" || question.traitPath === "hsr.rarity" || question.traitPath === "hsr.storyRole";
+}
+
+function isFinalLayerQuestion(question: DiscoveryQuestion) {
+  return (
+    question.traitPath === "global.primaryHairColor" ||
+    question.traitPath === "global.hairColor" ||
+    question.traitPath === "global.brightHair" ||
+    question.traitPath === "global.primaryOutfitColor" ||
+    question.traitPath === "global.outfitColors" ||
+    question.traitPath === "global.weaponType" ||
+    question.traitPath === "global.usesWeapon" ||
+    question.traitPath === "global.personality"
+  );
+}
+
+function getEligibleQuestions(
+  questions: DiscoveryQuestion[],
+  answers: AnswerRecord[],
+  scores: CharacterScore[]
+) {
+  const answeredIds = new Set(answers.map((answer) => answer.questionId));
+  const questionMap = new Map(questions.map((question) => [question.id, question]));
+  const globalAnswerCount = answers.filter((answer) => {
+    const question = questionMap.get(answer.questionId);
+    return question?.scope === "global";
+  }).length;
+  const likelyGameId = getLikelyGameId(scores);
+  const allowGameQuestions = likelyGameId !== null && globalAnswerCount >= MIN_GLOBAL_ANSWERS_BEFORE_GAME_SCOPE;
+
+  return questions.filter((question) => {
+    if (answeredIds.has(question.id)) {
+      return false;
+    }
+    if (isQuestionHardSuppressed(question, answers, questionMap)) {
+      return false;
+    }
+    if (isQuestionRedundant(question, answers, questionMap)) {
+      return false;
+    }
+    if (question.scope === "global") {
+      return true;
+    }
+    return allowGameQuestions && question.scope === `game:${likelyGameId}`;
+  });
+}
+
+function getViableCandidates(
+  characters: DiscoveryCharacter[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  answers: AnswerRecord[]
+) {
+  const strongAnswers = answers.filter((answer) => CONFIDENT_ANSWERS.has(answer.answer));
+  if (strongAnswers.length === 0) {
+    return characters;
+  }
+
+  return characters.filter((character) =>
+    strongAnswers.every((answer) => {
+      const question = questionMap.get(answer.questionId);
+      if (!question) {
+        return true;
+      }
+
+      const matches = traitMatches(character, question);
+      return POSITIVE_ANSWERS.has(answer.answer) ? matches : !matches;
+    })
+  );
+}
+
+function prioritizeResolvedCandidate(scores: CharacterScore[], candidate: DiscoveryCharacter) {
+  const candidateScore = scores.find((score) => score.character.id === candidate.id);
+  if (!candidateScore) {
+    return scores;
+  }
+
+  return [candidateScore, ...scores.filter((score) => score.character.id !== candidate.id)];
+}
+
+function getAmbiguitySeparatorQuestion(
+  questions: DiscoveryQuestion[],
+  answers: AnswerRecord[],
+  scores: CharacterScore[]
+) {
+  const top = scores[0];
+  const runnerUp = scores[1];
+  if (!top || !runnerUp) {
+    return null;
+  }
+
+  const topCandidates = scores
+    .slice(0, Math.min(AMBIGUITY_TOP_CANDIDATE_COUNT, scores.length))
+    .map((score) => score.character);
+  const eligibleQuestions = getEligibleQuestions(questions, answers, scores);
+  const questionMap = new Map(questions.map((question) => [question.id, question]));
+
+  const separatorQuestions = eligibleQuestions
+    .map((question) => {
+      const priority = getSeparatorTraitPriority(question, answers, questionMap);
+      if (priority === -1) {
+        return null;
+      }
+
+      const matchCount = topCandidates.filter((character) => traitMatches(character, question)).length;
+      if (matchCount === 0 || matchCount === topCandidates.length) {
+        return null;
+      }
+
+      const separatesTopPair = traitMatches(top.character, question) !== traitMatches(runnerUp.character, question);
+      const splitScore = 1 - Math.abs(0.5 - matchCount / topCandidates.length) * 2;
+      return {
+        question,
+        priority,
+        separatesTopPair,
+        splitScore
+      };
+    })
+    .filter((item): item is {
+      question: DiscoveryQuestion;
+      priority: number;
+      separatesTopPair: boolean;
+      splitScore: number;
+    } => item !== null)
+    .sort((a, b) => {
+      if (a.separatesTopPair !== b.separatesTopPair) {
+        return a.separatesTopPair ? -1 : 1;
+      }
+      if (a.priority !== b.priority) {
+        return a.priority - b.priority;
+      }
+      if (a.splitScore !== b.splitScore) {
+        return b.splitScore - a.splitScore;
+      }
+      return b.question.weight - a.question.weight;
+    });
+
+  return separatorQuestions[0]?.question ?? null;
+}
+
+function getSeparatorTraitPriority(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+  const chrysosHeirLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Chrysos Heirs", true);
+  const priority = aeonLikely
+    ? ["hsr.path", "hsr.faction", "hsr.storyRole", "hsr.worldOrRegion", "global.personality"]
+    : lordRavagerLikely
+      ? ["hsr.storyRole", "hsr.faction", "hsr.path", "hsr.worldOrRegion", "hsr.combatType"]
+      : chrysosHeirLikely
+        ? ["hsr.worldOrRegion", "hsr.faction", "hsr.path", "hsr.combatType", "global.primaryHairColor", "global.weaponType", "global.primaryOutfitColor", "global.personality"]
+        : SEPARATOR_TRAIT_PRIORITY;
+
+  return priority.indexOf(question.traitPath);
+}
+
+function shouldRunAmbiguityGuard(
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  top: CharacterScore,
+  runnerUp: CharacterScore,
+  wouldGuessNormally: boolean
+) {
+  if (wouldGuessNormally || answers.length >= MIN_QUESTIONS_BEFORE_GUESS || top.confidence >= GUESS_CONFIDENCE_THRESHOLD) {
+    return true;
+  }
+
+  const confidenceGap = top.confidence - runnerUp.confidence;
+  return confidenceGap < AMBIGUITY_CONFIDENCE_GAP_THRESHOLD && hasMeaningfulBranchContext(answers, questionMap);
+}
+
+function hasMeaningfulBranchContext(answers: AnswerRecord[], questionMap: Map<string, DiscoveryQuestion>) {
+  return answers.some((answer) => {
+    if (!CONFIDENT_ANSWERS.has(answer.answer)) {
+      return false;
+    }
+
+    const question = questionMap.get(answer.questionId);
+    return question ? MEANINGFUL_BRANCH_QUESTION_IDS.has(question.id) : false;
+  });
+}
+
+function isQuestionHardSuppressed(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  if (isExclusiveQuestionGroupSatisfied(question, answers, questionMap)) {
+    return true;
+  }
+
+  const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
+  const playableUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", false);
+  const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
+  const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
+  const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
+  const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
+
+  if (playableLikely && PLAYABLE_YES_SUPPRESSED_IDS.has(question.id)) {
+    return true;
+  }
+
+  if (npcLikely && isNpcSuppressedQuestion(question)) {
+    return true;
+  }
+
+  if (nonPlayableLikely && isNormalPlayableCombatQuestion(question)) {
+    return true;
+  }
+
+  if (aeonLikely && isAeonSuppressedQuestion(question)) {
+    return true;
+  }
+
+  if (lordRavagerLikely && isLordRavagerSuppressedQuestion(question)) {
+    return true;
+  }
+
+  if (playableUnlikely && (question.traitPath === "hsr.rarity" || isNormalPlayableCombatQuestion(question))) {
+    return true;
+  }
+
+  return false;
+}
+
+function isExclusiveQuestionGroupSatisfied(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const group = QUESTION_GROUPS[question.id];
+  if (!group || !EXCLUSIVE_QUESTION_GROUPS.has(group)) {
+    return false;
+  }
+
+  return answers.some((answer) => {
+    if (!POSITIVE_ANSWERS.has(answer.answer)) {
+      return false;
+    }
+
+    const previousQuestion = questionMap.get(answer.questionId);
+    return previousQuestion ? QUESTION_GROUPS[previousQuestion.id] === group : false;
+  });
+}
+
+function isNpcSuppressedQuestion(question: DiscoveryQuestion) {
+  return (
+    NPC_YES_SUPPRESSED_IDS.has(question.id) ||
+    question.traitPath === "hsr.rarity" ||
+    isNormalPlayableCombatQuestion(question)
+  );
+}
+
+function isNormalPlayableCombatQuestion(question: DiscoveryQuestion) {
+  return NORMAL_PLAYABLE_COMBAT_IDS.has(question.id);
+}
+
+function isAeonSuppressedQuestion(question: DiscoveryQuestion) {
+  return AEON_YES_SUPPRESSED_IDS.has(question.id) || AEON_YES_SUPPRESSED_TRAIT_PATHS.has(question.traitPath);
+}
+
+function isLordRavagerSuppressedQuestion(question: DiscoveryQuestion) {
+  if (LORD_RAVAGER_ALLOWED_IDS.has(question.id)) {
+    return false;
+  }
+
+  return (
+    question.id === "global-playable" ||
+    question.traitPath === "hsr.rarity" ||
+    question.traitPath === "global.genderPresentation" ||
+    QUESTION_GROUPS[question.id] === "broad-role"
+  );
 }
 
 function isQuestionRedundant(
@@ -315,7 +768,7 @@ function isQuestionRedundant(
     return true;
   }
 
-  if (isQuestionGroupRecentlyAsked(question, answers, questionMap)) {
+  if (isQuestionGroupRecentlyAsked(question, answers, questionMap) && !shouldBypassRecentGroupCooldown(question, answers, questionMap)) {
     return true;
   }
 
@@ -335,6 +788,15 @@ function isQuestionRedundant(
 
     return POSITIVE_ANSWERS.has(answer.answer);
   });
+}
+
+function shouldBypassRecentGroupCooldown(
+  question: DiscoveryQuestion,
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>
+) {
+  const playableUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", false);
+  return playableUnlikely && isLorePriorityQuestion(question);
 }
 
 function isQuestionGroupRecentlyAsked(
@@ -401,6 +863,7 @@ function getQuestionContextMultiplier(
       .filter(Boolean)
   );
   const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);
+  const playableUnlikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", false);
   const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);
   const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);
   const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
@@ -428,6 +891,24 @@ function getQuestionContextMultiplier(
     multiplier *= 1.5;
   }
 
+  if (!hasMeaningfulBranchContext(answers, questionMap) && answers.length < MIN_QUESTIONS_BEFORE_GUESS) {
+    if (MEANINGFUL_BRANCH_QUESTION_IDS.has(question.id)) {
+      return multiplier * 4.5;
+    }
+
+    if (question.category === "visual" || question.category === "fanbase") {
+      return multiplier * 0.12;
+    }
+
+    if (question.category === "gameplay" || SEPARATOR_TRAIT_PRIORITY.includes(question.traitPath)) {
+      return multiplier * 0.3;
+    }
+
+    if (question.category === "identity" || question.category === "story") {
+      return multiplier * 1.4;
+    }
+  }
+
   if (
     playableLikely &&
     !loreMode &&
@@ -441,33 +922,32 @@ function getQuestionContextMultiplier(
     return 0.12;
   }
 
-  if (!loreMode) {
-    return multiplier;
-  }
-
   if (aeonLikely) {
     if (question.traitPath === "hsr.path") {
       return multiplier * 4;
     }
 
-    if (
-      question.traitPath === "global.characterType" ||
-      question.traitPath === "global.genderPresentation" ||
-      question.traitPath === "hsr.rarity" ||
-      question.traitPath === "hsr.worldOrRegion"
-    ) {
+    if (isAeonSuppressedQuestion(question)) {
       return 0;
     }
   }
 
   if (lordRavagerLikely) {
-    if (question.traitPath === "hsr.storyRole" || question.traitPath === "hsr.worldOrRegion") {
-      return multiplier * 2.1;
+    if (question.traitPath === "hsr.storyRole" || question.id === "hsr-antimatter-legion") {
+      return multiplier * 2.4;
     }
 
-    if (question.traitPath === "global.characterType" || question.traitPath === "hsr.rarity") {
+    if (isLordRavagerSuppressedQuestion(question)) {
       return 0;
     }
+  }
+
+  if (playableUnlikely && isLorePriorityQuestion(question)) {
+    multiplier *= 2.4;
+  }
+
+  if (!loreMode) {
+    return multiplier;
   }
 
   if (
@@ -529,6 +1009,10 @@ function getQuestionContextMultiplier(
     return multiplier * 2.1;
   }
 
+  if (isLorePriorityQuestion(question)) {
+    return multiplier * 1.8;
+  }
+
   if (
     question.traitPath === "global.characterType" ||
     question.traitPath === "hsr.faction" ||
@@ -545,6 +1029,16 @@ function getQuestionContextMultiplier(
   return multiplier;
 }
 
+function isLorePriorityQuestion(question: DiscoveryQuestion) {
+  return (
+    LORE_PRIORITY_IDS.has(question.id) ||
+    question.traitPath === "hsr.storyRole" ||
+    question.traitPath === "hsr.faction" ||
+    question.traitPath === "hsr.worldOrRegion" ||
+    question.traitPath === "hsr.path"
+  );
+}
+
 function hasAnswerForExpectedValue(
   answers: AnswerRecord[],
   questionMap: Map<string, DiscoveryQuestion>,
@@ -558,7 +1052,7 @@ function hasAnswerForExpectedValue(
       return false;
     }
 
-    return positive ? POSITIVE_ANSWERS.has(answer.answer) : answer.answer === "no" || answer.answer === "probably_not";
+    return positive ? POSITIVE_ANSWERS.has(answer.answer) : NEGATIVE_ANSWERS.has(answer.answer);
   });
 }
 
@@ -567,16 +1061,21 @@ export function getDiscoveryState(
   questions: DiscoveryQuestion[],
   answers: AnswerRecord[]
 ): DiscoveryState {
-  const scores = scoreCharacters(characters, questions, answers);
-  const nextQuestion = getNextQuestion(characters, questions, answers, scores);
+  const questionMap = new Map(questions.map((question) => [question.id, question]));
+  const viableCandidates = getViableCandidates(characters, questionMap, answers);
+  const deterministicCandidate = viableCandidates.length === 1 ? viableCandidates[0] : null;
+  const scoredCandidates = scoreCharacters(characters, questions, answers);
+  const scores = deterministicCandidate
+    ? prioritizeResolvedCandidate(scoredCandidates, deterministicCandidate)
+    : scoredCandidates;
   const likelyGameId = getLikelyGameId(scores);
   const top = scores[0];
   const runnerUp = scores[1];
   const confidenceGap = top && runnerUp ? top.confidence - runnerUp.confidence : 1;
-  const answeredQuestionMap = new Map(questions.map((question) => [question.id, question]));
   const answeredCategories = new Set(
     answers
-      .map((answer) => answeredQuestionMap.get(answer.questionId)?.category)
+      .filter((answer) => answer.answer !== "not_sure")
+      .map((answer) => questionMap.get(answer.questionId)?.category)
       .filter(Boolean)
   );
   const hasEnoughQuestionDepth =
@@ -584,9 +1083,20 @@ export function getDiscoveryState(
     answeredCategories.has("identity") &&
     answeredCategories.has("story") &&
     answeredCategories.has("visual");
-  const shouldGuess =
+  const hasConfidentNormalGuess =
     hasEnoughQuestionDepth &&
-    (top.confidence >= GUESS_CONFIDENCE_THRESHOLD || confidenceGap >= 0.32 || answers.length >= MAX_QUESTIONS);
+    top.confidence >= NORMAL_GUESS_CONFIDENCE_THRESHOLD &&
+    confidenceGap >= NORMAL_GUESS_GAP_THRESHOLD;
+  const usefulSeparator =
+    deterministicCandidate || !top || !runnerUp ? null : getAmbiguitySeparatorQuestion(questions, answers, scores);
+  const ambiguitySeparator =
+    !usefulSeparator || !top || !runnerUp || !shouldRunAmbiguityGuard(answers, questionMap, top, runnerUp, hasConfidentNormalGuess)
+      ? null
+      : usefulSeparator;
+  const nextQuestion = deterministicCandidate
+    ? null
+    : ambiguitySeparator ?? getNextQuestion(characters, questions, answers, scores);
+  const shouldGuess = deterministicCandidate !== null || (usefulSeparator === null && hasConfidentNormalGuess);
 
   return {
     scores,

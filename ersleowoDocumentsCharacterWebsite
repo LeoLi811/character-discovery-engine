@@ -1,0 +1,799 @@
+warning: in the working copy of 'src/lib/discovery-engine.ts', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/lib/discovery-engine.ts b/src/lib/discovery-engine.ts[m
+[1mindex 10f6c27..cfaa0f7 100644[m
+[1m--- a/src/lib/discovery-engine.ts[m
+[1m+++ b/src/lib/discovery-engine.ts[m
+[36m@@ -6,6 +6,9 @@[m [mimport type {[m
+   DiscoveryQuestion,[m
+   DiscoveryState,[m
+   MatchedTrait,[m
+[32m+[m[32m  QuestionBranch,[m
+[32m+[m[32m  QuestionPriority,[m
+[32m+[m[32m  QuestionStage,[m
+   TraitValue[m
+ } from "@/lib/discovery-types";[m
+ [m
+[36m@@ -152,6 +155,195 @@[m [mconst QUESTION_GROUPS: Record<string, string> = {[m
+ [m
+ const QUESTION_GROUP_COOLDOWN = 2;[m
+ [m
+[32m+[m[32mtype ResolvedQuestionMetadata = {[m
+[32m+[m[32m  stage: QuestionStage;[m
+[32m+[m[32m  branch: QuestionBranch;[m
+[32m+[m[32m  priority: QuestionPriority;[m
+[32m+[m[32m  canonicalId: string;[m
+[32m+[m[32m  questionGroup: string;[m
+[32m+[m[32m  requiresAny: string[];[m
+[32m+[m[32m  suppressWhen: string[];[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mconst IDENTITY_QUESTIONS = new Set([[m
+[32m+[m[32m  "global-gacha",[m
+[32m+[m[32m  "global-hsr",[m
+[32m+[m[32m  "global-anime",[m
+[32m+[m[32m  "global-playable",[m
+[32m+[m[32m  "global-npc",[m
+[32m+[m[32m  "hsr-non-playable-combat",[m
+[32m+[m[32m  "global-female",[m
+[32m+[m[32m  "global-male",[m
+[32m+[m[32m  "global-variable-gender"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst PLAYABLE_GAMEPLAY_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-nihility",[m
+[32m+[m[32m  "hsr-harmony",[m
+[32m+[m[32m  "hsr-destruction",[m
+[32m+[m[32m  "hsr-hunt",[m
+[32m+[m[32m  "hsr-preservation",[m
+[32m+[m[32m  "hsr-erudition",[m
+[32m+[m[32m  "hsr-abundance",[m
+[32m+[m[32m  "hsr-remembrance",[m
+[32m+[m[32m  "hsr-elation",[m
+[32m+[m[32m  "hsr-lightning",[m
+[32m+[m[32m  "hsr-quantum",[m
+[32m+[m[32m  "hsr-imaginary",[m
+[32m+[m[32m  "hsr-fire",[m
+[32m+[m[32m  "hsr-ice",[m
+[32m+[m[32m  "hsr-wind",[m
+[32m+[m[32m  "hsr-physical",[m
+[32m+[m[32m  "hsr-five-star",[m
+[32m+[m[32m  "hsr-four-star"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst PLAYABLE_ROLE_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-healer",[m
+[32m+[m[32m  "hsr-singer",[m
+[32m+[m[32m  "hsr-hacker",[m
+[32m+[m[32m  "hsr-gambler",[m
+[32m+[m[32m  "hsr-researcher",[m
+[32m+[m[32m  "hsr-mentor",[m
+[32m+[m[32m  "hsr-foxian",[m
+[32m+[m[32m  "hsr-thief",[m
+[32m+[m[32m  "hsr-animal-companion",[m
+[32m+[m[32m  "hsr-alt-form"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst LORE_COSMIC_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-aeon",[m
+[32m+[m[32m  "hsr-cosmic-entity",[m
+[32m+[m[32m  "hsr-lord-ravager",[m
+[32m+[m[32m  "hsr-emanator",[m
+[32m+[m[32m  "hsr-genius-society-member",[m
+[32m+[m[32m  "hsr-ipc-executive",[m
+[32m+[m[32m  "hsr-ten-stoneheart-role",[m
+[32m+[m[32m  "hsr-memory-story-character",[m
+[32m+[m[32m  "hsr-watchmaker-legacy",[m
+[32m+[m[32m  "hsr-heliobus",[m
+[32m+[m[32m  "hsr-incubated-lord-ravager",[m
+[32m+[m[32m  "hsr-trailblaze-path",[m
+[32m+[m[32m  "hsr-voracity-path",[m
+[32m+[m[32m  "hsr-permanence-path",[m
+[32m+[m[32m  "hsr-finality-path",[m
+[32m+[m[32m  "hsr-propagation-path",[m
+[32m+[m[32m  "hsr-beauty-path",[m
+[32m+[m[32m  "hsr-enigmata-path",[m
+[32m+[m[32m  "hsr-equilibrium-path"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst BROAD_REGION_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-xianzhou",[m
+[32m+[m[32m  "hsr-penacony",[m
+[32m+[m[32m  "hsr-belobog",[m
+[32m+[m[32m  "hsr-herta-space-station",[m
+[32m+[m[32m  "hsr-amphoreus",[m
+[32m+[m[32m  "hsr-cosmos-region"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst XIANZHOU_FACTION_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-yaoqing",[m
+[32m+[m[32m  "hsr-xianzhou-alliance",[m
+[32m+[m[32m  "hsr-cloud-knights",[m
+[32m+[m[32m  "hsr-ten-lords",[m
+[32m+[m[32m  "hsr-alchemy",[m
+[32m+[m[32m  "hsr-high-cloud-quintet"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst PENACONY_FACTION_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-family",[m
+[32m+[m[32m  "hsr-penacony-faction",[m
+[32m+[m[32m  "hsr-memory-story-character",[m
+[32m+[m[32m  "hsr-watchmaker-legacy"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst IPC_FACTION_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-ipc",[m
+[32m+[m[32m  "hsr-ipc-full",[m
+[32m+[m[32m  "hsr-ten-stonehearts",[m
+[32m+[m[32m  "hsr-ten-stoneheart-role",[m
+[32m+[m[32m  "hsr-ipc-executive"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst ANTIMATTER_FACTION_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-antimatter-legion",[m
+[32m+[m[32m  "hsr-lord-ravager",[m
+[32m+[m[32m  "hsr-incubated-lord-ravager"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst APPEARANCE_QUESTIONS = new Set([[m
+[32m+[m[32m  "global-bright-hair",[m
+[32m+[m[32m  "global-purple-hair",[m
+[32m+[m[32m  "global-pink-hair",[m
+[32m+[m[32m  "global-blue-hair",[m
+[32m+[m[32m  "global-teal-hair",[m
+[32m+[m[32m  "global-white-hair",[m
+[32m+[m[32m  "global-black-hair",[m
+[32m+[m[32m  "global-blond-hair",[m
+[32m+[m[32m  "global-red-hair",[m
+[32m+[m[32m  "global-purple-outfit",[m
+[32m+[m[32m  "global-red-outfit",[m
+[32m+[m[32m  "global-green-outfit",[m
+[32m+[m[32m  "global-teal-outfit",[m
+[32m+[m[32m  "global-white-outfit",[m
+[32m+[m[32m  "global-uses-weapon",[m
+[32m+[m[32m  "global-gun",[m
+[32m+[m[32m  "global-sword",[m
+[32m+[m[32m  "global-magic-tool",[m
+[32m+[m[32m  "hsr-mech",[m
+[32m+[m[32m  "hsr-dragon",[m
+[32m+[m[32m  "hsr-robot-companion",[m
+[32m+[m[32m  "hsr-coffin",[m
+[32m+[m[32m  "hsr-mechanical-arm",[m
+[32m+[m[32m  "hsr-summon"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst MEDIA_FAN_QUESTIONS = new Set([[m
+[32m+[m[32m  "hsr-animated-short",[m
+[32m+[m[32m  "hsr-character-trailer",[m
+[32m+[m[32m  "hsr-meme",[m
+[32m+[m[32m  "hsr-high-fan-art",[m
+[32m+[m[32m  "hsr-shipping",[m
+[32m+[m[32m  "hsr-meta"[m
+[32m+[m[32m]);[m
+[32m+[m
+[32m+[m[32mconst CANONICAL_QUESTION_IDS: Record<string, string> = {[m
+[32m+[m[32m  "hsr-non-playable-combat": "global-npc",[m
+[32m+[m[32m  "hsr-ipc-full": "hsr-ipc",[m
+[32m+[m[32m  "hsr-galaxy-rangers": "hsr-galaxy-ranger",[m
+[32m+[m[32m  "hsr-genius-society-member": "hsr-genius",[m
+[32m+[m[32m  "hsr-incubated-lord-ravager": "hsr-lord-ravager"[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mconst QUESTION_DEPENDENCIES: Record<string, Partial<Pick<ResolvedQuestionMetadata, "requiresAny" | "suppressWhen">>> = {[m
+[32m+[m[32m  "hsr-non-playable-combat": { requiresAny: ["global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-aeon": { requiresAny: ["global-npc", "hsr-non-playable-combat"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-cosmic-entity": { requiresAny: ["global-npc", "hsr-non-playable-combat"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-lord-ravager": { requiresAny: ["global-npc", "hsr-antimatter-legion"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-incubated-lord-ravager": { requiresAny: ["hsr-lord-ravager"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-voracity-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-permanence-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-finality-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-propagation-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-beauty-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-enigmata-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-equilibrium-path": { requiresAny: ["hsr-cosmic-entity", "hsr-aeon", "global-npc"], suppressWhen: ["global-playable"] },[m
+[32m+[m[32m  "hsr-yaoqing": { requiresAny: ["hsr-xianzhou"] },[m
+[32m+[m[32m  "hsr-xianzhou-alliance": { requiresAny: ["hsr-xianzhou"] },[m
+[32m+[m[32m  "hsr-cloud-knights": { requiresAny: ["hsr-xianzhou"] },[m
+[32m+[m[32m  "hsr-ten-lords": { requiresAny: ["hsr-xianzhou"] },[m
+[32m+[m[32m  "hsr-alchemy": { requiresAny: ["hsr-xianzhou"] },[m
+[32m+[m[32m  "hsr-high-cloud-quintet": { requiresAny: ["hsr-xianzhou"] },[m
+[32m+[m[32m  "hsr-family": { requiresAny: ["hsr-penacony"] },[m
+[32m+[m[32m  "hsr-penacony-faction": { requiresAny: ["hsr-penacony"] },[m
+[32m+[m[32m  "hsr-watchmaker-legacy": { requiresAny: ["hsr-penacony", "hsr-memory-story-character"] },[m
+[32m+[m[32m  "hsr-ipc-full": { requiresAny: ["hsr-ipc"] },[m
+[32m+[m[32m  "hsr-ten-stonehearts": { requiresAny: ["hsr-ipc"] },[m
+[32m+[m[32m  "hsr-ten-stoneheart-role": { requiresAny: ["hsr-ipc", "hsr-ten-stonehearts"] },[m
+[32m+[m[32m  "hsr-ipc-executive": { requiresAny: ["hsr-ipc"] }[m
+[32m+[m[32m};[m
+[32m+[m
+ // These fields can only have one primary answer for a character.[m
+ const EXCLUSIVE_TRAIT_PATHS = new Set([[m
+   "global.game",[m
+[36m@@ -188,6 +380,127 @@[m [mexport function traitMatches(character: DiscoveryCharacter, question: DiscoveryQ[m
+   return value === question.expectedValue;[m
+ }[m
+ [m
+[32m+[m[32mexport function getQuestionDebugMetadata(question: DiscoveryQuestion): ResolvedQuestionMetadata {[m
+[32m+[m[32m  return getQuestionMetadata(question);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction getQuestionMetadata(question: DiscoveryQuestion): ResolvedQuestionMetadata {[m
+[32m+[m[32m  const stage = question.stage ?? inferQuestionStage(question);[m
+[32m+[m[32m  const branch = question.branch ?? inferQuestionBranch(question, stage);[m
+[32m+[m[32m  const priority = question.priority ?? inferQuestionPriority(question, stage);[m
+[32m+[m[32m  const canonicalId = question.canonicalId ?? CANONICAL_QUESTION_IDS[question.id] ?? question.id;[m
+[32m+[m[32m  const questionGroup = question.questionGroup ?? QUESTION_GROUPS[question.id] ?? canonicalId;[m
+[32m+[m[32m  const dependencies = QUESTION_DEPENDENCIES[question.id] ?? {};[m
+[32m+[m
+[32m+[m[32m  return {[m
+[32m+[m[32m    stage,[m
+[32m+[m[32m    branch,[m
+[32m+[m[32m    priority,[m
+[32m+[m[32m    canonicalId,[m
+[32m+[m[32m    questionGroup,[m
+[32m+[m[32m    requiresAny: question.requiresAny ?? dependencies.requiresAny ?? [],[m
+[32m+[m[32m    suppressWhen: question.suppressWhen ?? dependencies.suppressWhen ?? [][m
+[32m+[m[32m  };[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction inferQuestionStage(question: DiscoveryQuestion): QuestionStage {[m
+[32m+[m[32m  if (IDENTITY_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "identity";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (PLAYABLE_GAMEPLAY_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "playable_gameplay";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (LORE_COSMIC_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "lore_cosmic";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (BROAD_REGION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "region";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if ([m
+[32m+[m[32m    XIANZHOU_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    PENACONY_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    IPC_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    ANTIMATTER_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    question.traitPath === "hsr.faction"[m
+[32m+[m[32m  ) {[m
+[32m+[m[32m    return "faction";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (APPEARANCE_QUESTIONS.has(question.id) || question.category === "visual") {[m
+[32m+[m[32m    return "appearance";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (MEDIA_FAN_QUESTIONS.has(question.id) || question.category === "media" || question.category === "fanbase") {[m
+[32m+[m[32m    return "media_fan";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (PLAYABLE_ROLE_QUESTIONS.has(question.id) || question.category === "story") {[m
+[32m+[m[32m    return "role";[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  return "tie_breaker";[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction inferQuestionBranch(question: DiscoveryQuestion, stage: QuestionStage): QuestionBranch {[m
+[32m+[m[32m  if (question.scope === "global" && stage !== "appearance") {[m
+[32m+[m[32m    return "global";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (stage === "appearance") {[m
+[32m+[m[32m    return "hsr_appearance";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (PLAYABLE_GAMEPLAY_QUESTIONS.has(question.id) || PLAYABLE_ROLE_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "hsr_playable";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (LORE_COSMIC_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return question.id.includes("path") || question.id === "hsr-aeon" || question.id === "hsr-cosmic-entity"[m
+[32m+[m[32m      ? "hsr_cosmic"[m
+[32m+[m[32m      : "hsr_lore";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (XIANZHOU_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "hsr_xianzhou";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (PENACONY_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "hsr_penacony";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (IPC_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "hsr_ipc";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (ANTIMATTER_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "hsr_lore";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return "hsr";[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction inferQuestionPriority(question: DiscoveryQuestion, stage: QuestionStage): QuestionPriority {[m
+[32m+[m[32m  if ([m
+[32m+[m[32m    IDENTITY_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    PLAYABLE_GAMEPLAY_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    BROAD_REGION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    question.id === "hsr-aeon" ||[m
+[32m+[m[32m    question.id === "hsr-cosmic-entity" ||[m
+[32m+[m[32m    question.id === "hsr-lord-ravager" ||[m
+[32m+[m[32m    question.id === "hsr-emanator"[m
+[32m+[m[32m  ) {[m
+[32m+[m[32m    return "core";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (MEDIA_FAN_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return "late";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if ([m
+[32m+[m[32m    question.id === "hsr-incubated-lord-ravager" ||[m
+[32m+[m[32m    question.id === "hsr-voracity-path" ||[m
+[32m+[m[32m    question.id === "hsr-permanence-path" ||[m
+[32m+[m[32m    question.id === "hsr-finality-path" ||[m
+[32m+[m[32m    question.id === "hsr-propagation-path" ||[m
+[32m+[m[32m    question.id === "hsr-beauty-path" ||[m
+[32m+[m[32m    question.id === "hsr-enigmata-path" ||[m
+[32m+[m[32m    question.id === "hsr-equilibrium-path"[m
+[32m+[m[32m  ) {[m
+[32m+[m[32m    return "rare";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (stage === "appearance" || stage === "faction" || stage === "role") {[m
+[32m+[m[32m    return "normal";[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return "normal";[m
+[32m+[m[32m}[m
+[32m+[m
+ export function scoreCharacters([m
+   characters: DiscoveryCharacter[],[m
+   questions: DiscoveryQuestion[],[m
+[36m@@ -277,6 +590,7 @@[m [mexport function getNextQuestion([m
+   const lastTopScore = topWindow[topWindow.length - 1];[m
+   const confidenceSpread = topWindow[0] && lastTopScore ? topWindow[0].confidence - lastTopScore.confidence : 0;[m
+   const candidatePool = answers.length < 2 || confidenceSpread < 0.01 ? characters : topWindow.map((score) => score.character);[m
+[32m+[m[32m  const branchSignals = getBranchSignals(answers, questionMap, scores);[m
+ [m
+   const eligibleQuestions = questions.filter((question) => {[m
+     if (answeredIds.has(question.id)) {[m
+[36m@@ -286,9 +600,13 @@[m [mexport function getNextQuestion([m
+       return false;[m
+     }[m
+     if (question.scope === "global") {[m
+[31m-      return true;[m
+[32m+[m[32m      return isQuestionAllowedByStage(question, answers, questionMap, branchSignals, candidatePool);[m
+     }[m
+[31m-    return allowGameQuestions && question.scope === `game:${likelyGameId}`;[m
+[32m+[m[32m    return ([m
+[32m+[m[32m      allowGameQuestions &&[m
+[32m+[m[32m      question.scope === `game:${likelyGameId}` &&[m
+[32m+[m[32m      isQuestionAllowedByStage(question, answers, questionMap, branchSignals, candidatePool)[m
+[32m+[m[32m    );[m
+   });[m
+ [m
+   if (eligibleQuestions.length === 0) {[m
+[36m@@ -298,7 +616,9 @@[m [mexport function getNextQuestion([m
+   const rankedQuestions = eligibleQuestions[m
+     .map((question) => ({[m
+       question,[m
+[31m-      usefulness: getQuestionUsefulness(candidatePool, question) * getQuestionContextMultiplier(question, answers, questionMap)[m
+[32m+[m[32m      usefulness:[m
+[32m+[m[32m        getQuestionUsefulness(candidatePool, question) *[m
+[32m+[m[32m        getQuestionContextMultiplier(question, answers, questionMap, branchSignals, candidatePool)[m
+     }))[m
+     .filter((item) => item.usefulness > 0)[m
+     .sort((a, b) => b.usefulness - a.usefulness);[m
+[36m@@ -306,6 +626,162 @@[m [mexport function getNextQuestion([m
+   return rankedQuestions[0]?.question ?? null;[m
+ }[m
+ [m
+[32m+[m[32mtype BranchSignals = {[m
+[32m+[m[32m  playableLikely: boolean;[m
+[32m+[m[32m  loreLikely: boolean;[m
+[32m+[m[32m  npcLikely: boolean;[m
+[32m+[m[32m  nonPlayableLikely: boolean;[m
+[32m+[m[32m  hsrLikely: boolean;[m
+[32m+[m[32m  playableShare: number;[m
+[32m+[m[32m  loreShare: number;[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mfunction getBranchSignals([m
+[32m+[m[32m  answers: AnswerRecord[],[m
+[32m+[m[32m  questionMap: Map<string, DiscoveryQuestion>,[m
+[32m+[m[32m  scores: CharacterScore[][m
+[32m+[m[32m): BranchSignals {[m
+[32m+[m[32m  const playableAnsweredYes = hasPositiveAnswerForQuestion(answers, "global-playable");[m
+[32m+[m[32m  const playableAnsweredNo = hasNegativeAnswerForQuestion(answers, "global-playable");[m
+[32m+[m[32m  const npcAnsweredYes = hasPositiveAnswerForQuestion(answers, "global-npc");[m
+[32m+[m[32m  const nonPlayableAnsweredYes = hasPositiveAnswerForQuestion(answers, "hsr-non-playable-combat");[m
+[32m+[m[32m  const hsrAnsweredYes = hasPositiveAnswerForQuestion(answers, "global-hsr");[m
+[32m+[m[32m  const topWindow = scores.slice(0, Math.min(16, scores.length));[m
+[32m+[m[32m  const totalConfidence = topWindow.reduce((sum, score) => sum + score.confidence, 0) || 1;[m
+[32m+[m[32m  const playableShare =[m
+[32m+[m[32m    topWindow.reduce((sum, score) => {[m
+[32m+[m[32m      return sum + (traitValueIncludes(score.character.global.characterType, "playable") ? score.confidence : 0);[m
+[32m+[m[32m    }, 0) / totalConfidence;[m
+[32m+[m[32m  const loreShare =[m
+[32m+[m[32m    topWindow.reduce((sum, score) => {[m
+[32m+[m[32m      const types = score.character.global.characterType;[m
+[32m+[m[32m      const hsr = score.character.hsr;[m
+[32m+[m[32m      const isLore =[m
+[32m+[m[32m        traitValueIncludes(types, "npc") ||[m
+[32m+[m[32m        traitValueIncludes(types, "lore-character") ||[m
+[32m+[m[32m        traitValueIncludes(types, "aeon") ||[m
+[32m+[m[32m        traitValueIncludes(types, "cosmic-entity") ||[m
+[32m+[m[32m        hsr.combatType === "Non-playable";[m
+[32m+[m[32m      return sum + (isLore ? score.confidence : 0);[m
+[32m+[m[32m    }, 0) / totalConfidence;[m
+[32m+[m[32m  const npcLikely = npcAnsweredYes || nonPlayableAnsweredYes || (!playableAnsweredYes && loreShare >= 0.56);[m
+[32m+[m[32m  const playableLikely = playableAnsweredYes || (!playableAnsweredNo && playableShare >= 0.62 && !npcLikely);[m
+[32m+[m
+[32m+[m[32m  return {[m
+[32m+[m[32m    playableLikely,[m
+[32m+[m[32m    loreLikely: npcLikely || loreShare >= 0.62,[m
+[32m+[m[32m    npcLikely,[m
+[32m+[m[32m    nonPlayableLikely: nonPlayableAnsweredYes,[m
+[32m+[m[32m    hsrLikely: hsrAnsweredYes || getLikelyGameId(scores) === "hsr",[m
+[32m+[m[32m    playableShare,[m
+[32m+[m[32m    loreShare[m
+[32m+[m[32m  };[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction traitValueIncludes(value: TraitValue | undefined, expected: string) {[m
+[32m+[m[32m  if (Array.isArray(value)) {[m
+[32m+[m[32m    return (value as unknown[]).includes(expected);[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return value === expected;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction isQuestionAllowedByStage([m
+[32m+[m[32m  question: DiscoveryQuestion,[m
+[32m+[m[32m  answers: AnswerRecord[],[m
+[32m+[m[32m  questionMap: Map<string, DiscoveryQuestion>,[m
+[32m+[m[32m  branchSignals: BranchSignals,[m
+[32m+[m[32m  candidatePool: DiscoveryCharacter[][m
+[32m+[m[32m) {[m
+[32m+[m[32m  const metadata = getQuestionMetadata(question);[m
+[32m+[m[32m  const answeredCount = answers.length;[m
+[32m+[m
+[32m+[m[32m  if (metadata.suppressWhen.some((questionId) => hasPositiveAnswerForQuestion(answers, questionId))) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if ([m
+[32m+[m[32m    metadata.requiresAny.length > 0 &&[m
+[32m+[m[32m    !metadata.requiresAny.some((questionId) => hasPositiveAnswerForQuestion(answers, questionId)) &&[m
+[32m+[m[32m    !isCandidatePoolNarrow(candidatePool)[m
+[32m+[m[32m  ) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "identity") {[m
+[32m+[m[32m    return true;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (answeredCount < 2) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "media_fan" && answeredCount < 8) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "lore_cosmic" && branchSignals.playableLikely && !branchSignals.loreLikely) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if ([m
+[32m+[m[32m    metadata.stage === "lore_cosmic" &&[m
+[32m+[m[32m    !branchSignals.loreLikely &&[m
+[32m+[m[32m    !isCandidatePoolNarrow(candidatePool) &&[m
+[32m+[m[32m    answeredCount < 7[m
+[32m+[m[32m  ) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "playable_gameplay" && branchSignals.loreLikely && !branchSignals.playableLikely) {[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "faction" && isNarrowFactionQuestion(question) && !hasBroadParentEstablished(question, answers)) {[m
+[32m+[m[32m    return isCandidatePoolNarrow(candidatePool);[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  return true;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction isCandidatePoolNarrow(candidatePool: DiscoveryCharacter[]) {[m
+[32m+[m[32m  return candidatePool.length <= 5;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction isNarrowFactionQuestion(question: DiscoveryQuestion) {[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    XIANZHOU_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    PENACONY_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    IPC_FACTION_QUESTIONS.has(question.id) ||[m
+[32m+[m[32m    ANTIMATTER_FACTION_QUESTIONS.has(question.id)[m
+[32m+[m[32m  );[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction hasBroadParentEstablished(question: DiscoveryQuestion, answers: AnswerRecord[]) {[m
+[32m+[m[32m  if (XIANZHOU_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return hasPositiveAnswerForQuestion(answers, "hsr-xianzhou");[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (PENACONY_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return hasPositiveAnswerForQuestion(answers, "hsr-penacony");[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (IPC_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return hasPositiveAnswerForQuestion(answers, "hsr-ipc");[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (ANTIMATTER_FACTION_QUESTIONS.has(question.id)) {[m
+[32m+[m[32m    return hasPositiveAnswerForQuestion(answers, "hsr-antimatter-legion") || hasPositiveAnswerForQuestion(answers, "global-npc");[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return true;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction hasPositiveAnswerForQuestion(answers: AnswerRecord[], questionId: string) {[m
+[32m+[m[32m  return answers.some((answer) => answer.questionId === questionId && POSITIVE_ANSWERS.has(answer.answer));[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction hasNegativeAnswerForQuestion(answers: AnswerRecord[], questionId: string) {[m
+[32m+[m[32m  return answers.some([m
+[32m+[m[32m    (answer) => answer.questionId === questionId && (answer.answer === "no" || answer.answer === "probably_not")[m
+[32m+[m[32m  );[m
+[32m+[m[32m}[m
+[32m+[m
+ function isQuestionRedundant([m
+   question: DiscoveryQuestion,[m
+   answers: AnswerRecord[],[m
+[36m@@ -342,14 +818,11 @@[m [mfunction isQuestionGroupRecentlyAsked([m
+   answers: AnswerRecord[],[m
+   questionMap: Map<string, DiscoveryQuestion>[m
+ ) {[m
+[31m-  const group = QUESTION_GROUPS[question.id];[m
+[31m-  if (!group) {[m
+[31m-    return false;[m
+[31m-  }[m
+[32m+[m[32m  const group = getQuestionMetadata(question).questionGroup;[m
+ [m
+   return answers.slice(-QUESTION_GROUP_COOLDOWN).some((answer) => {[m
+     const previousQuestion = questionMap.get(answer.questionId);[m
+[31m-    return previousQuestion ? QUESTION_GROUPS[previousQuestion.id] === group : false;[m
+[32m+[m[32m    return previousQuestion ? getQuestionMetadata(previousQuestion).questionGroup === group : false;[m
+   });[m
+ }[m
+ [m
+[36m@@ -358,10 +831,7 @@[m [mfunction isQuestionGroupSatisfied([m
+   answers: AnswerRecord[],[m
+   questionMap: Map<string, DiscoveryQuestion>[m
+ ) {[m
+[31m-  const group = QUESTION_GROUPS[question.id];[m
+[31m-  if (!group) {[m
+[31m-    return false;[m
+[31m-  }[m
+[32m+[m[32m  const metadata = getQuestionMetadata(question);[m
+ [m
+   return answers.some((answer) => {[m
+     if (!POSITIVE_ANSWERS.has(answer.answer)) {[m
+[36m@@ -369,7 +839,15 @@[m [mfunction isQuestionGroupSatisfied([m
+     }[m
+ [m
+     const previousQuestion = questionMap.get(answer.questionId);[m
+[31m-    return previousQuestion ? QUESTION_GROUPS[previousQuestion.id] === group : false;[m
+[32m+[m[32m    if (!previousQuestion) {[m
+[32m+[m[32m      return false;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    const previousMetadata = getQuestionMetadata(previousQuestion);[m
+[32m+[m[32m    return ([m
+[32m+[m[32m      previousMetadata.questionGroup === metadata.questionGroup ||[m
+[32m+[m[32m      previousMetadata.canonicalId === metadata.canonicalId[m
+[32m+[m[32m    );[m
+   });[m
+ }[m
+ [m
+[36m@@ -393,13 +871,24 @@[m [mfunction getQuestionUsefulness(characters: DiscoveryCharacter[], question: Disco[m
+ function getQuestionContextMultiplier([m
+   question: DiscoveryQuestion,[m
+   answers: AnswerRecord[],[m
+[31m-  questionMap: Map<string, DiscoveryQuestion>[m
+[32m+[m[32m  questionMap: Map<string, DiscoveryQuestion>,[m
+[32m+[m[32m  branchSignals: BranchSignals,[m
+[32m+[m[32m  candidatePool: DiscoveryCharacter[][m
+ ) {[m
+[32m+[m[32m  const metadata = getQuestionMetadata(question);[m
+   const answeredCategories = new Set([m
+     answers[m
+       .map((answer) => questionMap.get(answer.questionId)?.category)[m
+       .filter(Boolean)[m
+   );[m
+[32m+[m[32m  const answeredStages = new Set([m
+[32m+[m[32m    answers[m
+[32m+[m[32m      .map((answer) => {[m
+[32m+[m[32m        const answeredQuestion = questionMap.get(answer.questionId);[m
+[32m+[m[32m        return answeredQuestion ? getQuestionMetadata(answeredQuestion).stage : null;[m
+[32m+[m[32m      })[m
+[32m+[m[32m      .filter(Boolean)[m
+[32m+[m[32m  );[m
+   const playableLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "playable", true);[m
+   const npcLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "npc", true);[m
+   const nonPlayableLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.combatType", "Non-playable", true);[m
+[36m@@ -416,6 +905,12 @@[m [mfunction getQuestionContextMultiplier([m
+   const loreMode = npcLikely || nonPlayableLikely;[m
+   let multiplier = 1;[m
+ [m
+[32m+[m[32m  multiplier *= getStageWeight(metadata, answers.length, answeredStages);[m
+[32m+[m[32m  multiplier *= getBranchWeight(metadata, branchSignals);[m
+[32m+[m[32m  multiplier *= getPriorityWeight(metadata.priority, answers.length);[m
+[32m+[m[32m  multiplier *= getDuplicatePenalty(question, answers, questionMap);[m
+[32m+[m[32m  multiplier *= getRegionHierarchyWeight(question, answers, candidatePool);[m
+[32m+[m
+   if (answers.length >= 3 && !answeredCategories.has("visual") && question.category === "visual") {[m
+     multiplier *= 2.2;[m
+   }[m
+[36m@@ -436,7 +931,8 @@[m [mfunction getQuestionContextMultiplier([m
+       question.id === "hsr-lord-ravager" ||[m
+       question.id === "hsr-antimatter-legion" ||[m
+       question.id === "hsr-incubated-lord-ravager" ||[m
+[31m-      question.id === "hsr-lore-character")[m
+[32m+[m[32m      question.id === "hsr-lore-character" ||[m
+[32m+[m[32m      metadata.stage === "lore_cosmic")[m
+   ) {[m
+     return 0.12;[m
+   }[m
+[36m@@ -545,6 +1041,128 @@[m [mfunction getQuestionContextMultiplier([m
+   return multiplier;[m
+ }[m
+ [m
+[32m+[m[32mfunction getStageWeight([m
+[32m+[m[32m  metadata: ResolvedQuestionMetadata,[m
+[32m+[m[32m  answerCount: number,[m
+[32m+[m[32m  answeredStages: Set<QuestionStage | null>[m
+[32m+[m[32m) {[m
+[32m+[m[32m  if (metadata.stage === "identity") {[m
+[32m+[m[32m    return answerCount < 4 ? 3.2 : 0.62;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "role") {[m
+[32m+[m[32m    return answerCount < 2 ? 0.5 : 1.15;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "playable_gameplay") {[m
+[32m+[m[32m    return answerCount < 3 ? 0.75 : answeredStages.has("playable_gameplay") ? 0.82 : 1.75;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "lore_cosmic") {[m
+[32m+[m[32m    return answerCount < 5 ? 0.22 : answeredStages.has("lore_cosmic") ? 0.95 : 1.65;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "region") {[m
+[32m+[m[32m    return answerCount < 3 ? 0.85 : answeredStages.has("region") ? 0.9 : 1.7;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "faction") {[m
+[32m+[m[32m    return answerCount < 4 ? 0.45 : answeredStages.has("region") ? 1.25 : 0.68;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "appearance") {[m
+[32m+[m[32m    if (answerCount < 3) {[m
+[32m+[m[32m      return 0.72;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return answeredStages.has("appearance") ? 0.78 : 2.35;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.stage === "media_fan") {[m
+[32m+[m[32m    return answerCount < 10 ? 0.28 : 0.86;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  return 0.9;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction getBranchWeight(metadata: ResolvedQuestionMetadata, branchSignals: BranchSignals) {[m
+[32m+[m[32m  if (metadata.branch === "global") {[m
+[32m+[m[32m    return 1;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.branch === "hsr_playable") {[m
+[32m+[m[32m    if (branchSignals.playableLikely) {[m
+[32m+[m[32m      return 1.7;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    if (branchSignals.loreLikely) {[m
+[32m+[m[32m      return 0.18;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return 0.95;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.branch === "hsr_lore" || metadata.branch === "hsr_cosmic") {[m
+[32m+[m[32m    if (branchSignals.playableLikely && !branchSignals.loreLikely) {[m
+[32m+[m[32m      return 0.12;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return branchSignals.loreLikely ? 1.9 : 0.5;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (metadata.branch === "hsr_appearance") {[m
+[32m+[m[32m    return 1.08;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  return branchSignals.hsrLikely ? 1.18 : 0.9;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction getPriorityWeight(priority: QuestionPriority, answerCount: number) {[m
+[32m+[m[32m  if (priority === "core") {[m
+[32m+[m[32m    return answerCount < 8 ? 1.35 : 0.98;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (priority === "late") {[m
+[32m+[m[32m    return answerCount < 10 ? 0.42 : 1.05;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (priority === "rare") {[m
+[32m+[m[32m    return answerCount < 10 ? 0.28 : 0.72;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return 1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction getDuplicatePenalty([m
+[32m+[m[32m  question: DiscoveryQuestion,[m
+[32m+[m[32m  answers: AnswerRecord[],[m
+[32m+[m[32m  questionMap: Map<string, DiscoveryQuestion>[m
+[32m+[m[32m) {[m
+[32m+[m[32m  const metadata = getQuestionMetadata(question);[m
+[32m+[m[32m  const hasAskedSibling = answers.some((answer) => {[m
+[32m+[m[32m    const previousQuestion = questionMap.get(answer.questionId);[m
+[32m+[m[32m    if (!previousQuestion) {[m
+[32m+[m[32m      return false;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    const previousMetadata = getQuestionMetadata(previousQuestion);[m
+[32m+[m[32m    return ([m
+[32m+[m[32m      previousMetadata.questionGroup === metadata.questionGroup ||[m
+[32m+[m[32m      previousMetadata.canonicalId === metadata.canonicalId[m
+[32m+[m[32m    );[m
+[32m+[m[32m  });[m
+[32m+[m
+[32m+[m[32m  return hasAskedSibling ? 0.18 : 1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction getRegionHierarchyWeight([m
+[32m+[m[32m  question: DiscoveryQuestion,[m
+[32m+[m[32m  answers: AnswerRecord[],[m
+[32m+[m[32m  candidatePool: DiscoveryCharacter[][m
+[32m+[m[32m) {[m
+[32m+[m[32m  if (!isNarrowFactionQuestion(question)) {[m
+[32m+[m[32m    return 1;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  if (hasBroadParentEstablished(question, answers)) {[m
+[32m+[m[32m    return 1.3;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  return isCandidatePoolNarrow(candidatePool) ? 0.72 : 0.2;[m
+[32m+[m[32m}[m
+[32m+[m
+ function hasAnswerForExpectedValue([m
+   answers: AnswerRecord[],[m
+   questionMap: Map<string, DiscoveryQuestion>,[m
+[36m@@ -579,13 +1197,34 @@[m [mexport function getDiscoveryState([m
+       .map((answer) => answeredQuestionMap.get(answer.questionId)?.category)[m
+       .filter(Boolean)[m
+   );[m
+[32m+[m[32m  const answeredStages = new Set([m
+[32m+[m[32m    answers[m
+[32m+[m[32m      .map((answer) => {[m
+[32m+[m[32m        const question = answeredQuestionMap.get(answer.questionId);[m
+[32m+[m[32m        return question ? getQuestionMetadata(question).stage : null;[m
+[32m+[m[32m      })[m
+[32m+[m[32m      .filter(Boolean)[m
+[32m+[m[32m  );[m
+[32m+[m[32m  const hasBranchQuestion = answeredStages.has("role") || answeredStages.has("playable_gameplay") || answeredStages.has("lore_cosmic");[m
+[32m+[m[32m  const hasNarrowingQuestion =[m
+[32m+[m[32m    answeredStages.has("playable_gameplay") ||[m
+[32m+[m[32m    answeredStages.has("lore_cosmic") ||[m
+[32m+[m[32m    answeredStages.has("region") ||[m
+[32m+[m[32m    answeredStages.has("faction");[m
+   const hasEnoughQuestionDepth =[m
+     answers.length >= MIN_QUESTIONS_BEFORE_GUESS &&[m
+     answeredCategories.has("identity") &&[m
+[31m-    answeredCategories.has("story") &&[m
+[31m-    answeredCategories.has("visual");[m
+[32m+[m[32m    hasBranchQuestion &&[m
+[32m+[m[32m    hasNarrowingQuestion &&[m
+[32m+[m[32m    answeredStages.has("appearance");[m
+[32m+[m[32m  const hasHighConfidenceOverride =[m
+[32m+[m[32m    answers.length >= MIN_QUESTIONS_BEFORE_GUESS + 2 &&[m
+[32m+[m[32m    top.confidence >= 0.9 &&[m
+[32m+[m[32m    answeredCategories.has("identity") &&[m
+[32m+[m[32m    hasBranchQuestion &&[m
+[32m+[m[32m    hasNarrowingQuestion;[m
+   const shouldGuess =[m
+[31m-    hasEnoughQuestionDepth &&[m
+[32m+[m[32m    (hasEnoughQuestionDepth || hasHighConfidenceOverride || answers.length >= MAX_QUESTIONS) &&[m
+     (top.confidence >= GUESS_CONFIDENCE_THRESHOLD || confidenceGap >= 0.32 || answers.length >= MAX_QUESTIONS);[m
+ [m
+   return {[m

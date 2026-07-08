@@ -829,7 +829,7 @@
   },
   {
     "id": "global-npc",
-    "text": "Are they an NPC or lore-only character rather than a playable unit?",
+    "text": "Are they an NPC？",
     "scope": "global",
     "traitPath": "global.characterType",
     "expectedValue": "npc",
@@ -856,7 +856,7 @@
   },
   {
     "id": "hsr-cosmic-entity",
-    "text": "Are they a cosmic entity rather than a regular person?",
+    "text": "Are they a cosmic entity？",
     "scope": "game:hsr",
     "traitPath": "global.characterType",
     "expectedValue": "cosmic-entity",
