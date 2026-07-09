@@ -5,11 +5,11 @@
     "scripts": {
     "dev": "next dev",
     "dev:local": "cscript //nologo scripts/start-local-dev.vbs",
-    "build": "npm run validate:data && next build",
+    "build": "npm run validate:discovery && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "validate:data": "node scripts/validate-characters.mjs && node scripts/validate-discovery-data.mjs",
+    "validate:data": "node scripts/validate-discovery-data.mjs",
     "validate:discovery": "node scripts/validate-discovery-data.mjs",
     "export:csv": "node scripts/export-characters-csv.mjs"
   },

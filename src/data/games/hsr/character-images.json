@@ -1091,5 +1091,102 @@
     "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Zephyro",
     "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/a6/NPC_Zephyro.png/revision/latest?cb=20260207175833",
     "licenseNote": "Source located from the Honkai: Star Rail community wiki/Fandom. Place the approved local image at public/character-images/hsr/zephyro.png before publishing."
+  },
+  "janus-titan": {
+    "imageUrl": "/character-images/hsr/janus-titan.webp",
+    "alt": "Janus Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Janus",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/janus-titan.png before publishing."
+  },
+  "talanton-titan": {
+    "imageUrl": "/character-images/hsr/talanton-titan.webp",
+    "alt": "Talanton Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Talanton",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/talanton-titan.png before publishing."
+  },
+  "oronyx-titan": {
+    "imageUrl": "/character-images/hsr/oronyx-titan.webp",
+    "alt": "Oronyx Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Oronyx",
+    "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/73/NPC_Oronyx.png/revision/latest?cb=20250119005019",
+    "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
+  },
+  "georios-titan": {
+    "imageUrl": "/character-images/hsr/georios-titan.webp",
+    "alt": "Georios Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Georios",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/georios-titan.png before publishing."
+  },
+  "phagousa-titan": {
+    "imageUrl": "/character-images/hsr/phagousa-titan.webp",
+    "alt": "Phagousa Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Phagousa",
+    "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/2/2d/NPC_Phagousa.png/revision/latest?cb=20250906151626",
+    "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
+  },
+  "aquila-titan": {
+    "imageUrl": "/character-images/hsr/aquila-titan.webp",
+    "alt": "Aquila Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Aquila",
+    "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/e5/NPC_Aquila.png/revision/latest?cb=20241231121116",
+    "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
+  },
+  "kephale-titan": {
+    "imageUrl": "/character-images/hsr/kephale-titan.webp",
+    "alt": "Kephale Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Kephale",
+    "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d2/NPC_Kephale.png/revision/latest?cb=20241231090409",
+    "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
+  },
+  "cerces-titan": {
+    "imageUrl": "/character-images/hsr/cerces-titan.webp",
+    "alt": "Cerces Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Cerces",
+    "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/f/f8/NPC_Cerces.png/revision/latest?cb=20250209220456",
+    "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
+  },
+  "mnestia-titan": {
+    "imageUrl": "/character-images/hsr/mnestia-titan.webp",
+    "alt": "Mnestia Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Mnestia",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/mnestia-titan.png before publishing."
+  },
+  "nikador-titan": {
+    "imageUrl": "/character-images/hsr/nikador-titan.webp",
+    "alt": "Nikador Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Nikador",
+    "sourceUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/4f/NPC_Nikador.png/revision/latest?cb=20241231090219",
+    "licenseNote": "Downloaded from the Honkai: Star Rail community wiki/Fandom. Rights and license should be verified before portfolio or commercial use."
+  },
+  "thanatos-titan": {
+    "imageUrl": "/character-images/hsr/thanatos-titan.webp",
+    "alt": "Thanatos Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Thanatos",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/thanatos-titan.png before publishing."
+  },
+  "zagreus-titan": {
+    "imageUrl": "/character-images/hsr/zagreus-titan.webp",
+    "alt": "Zagreus Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Zagreus",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/zagreus-titan.png before publishing."
+  },
+  "demiurge-titan": {
+    "imageUrl": "/character-images/hsr/demiurge-titan.webp",
+    "alt": "Demiurge Titan character artwork",
+    "source": "Honkai: Star Rail Wiki / Fandom",
+    "sourcePage": "https://honkai-star-rail.fandom.com/wiki/Demiurge",
+    "licenseNote": "Source page verified on the Honkai: Star Rail community wiki/Fandom. Place an approved local image at public/character-images/hsr/demiurge-titan.png before publishing."
   }
 }

@@ -8566,88 +8566,153 @@
       }
     ]
   },
-  {
-    "id": "lygus-lycurgus",
-    "name": "Lygus / Lycurgus",
-    "aliases": [
-      "Lycurgus",
-      "Lygus"
+
+    {
+  "id": "lygus-lycurgus",
+  "name": "Lygus / Lycurgus",
+  "aliases": [
+    "Lygus",
+    "Lycurgus",
+    "Zandar",
+    "Zandar One Kuwabara",
+    "Genius Society #1",
+    "Founder of the Genius Society"
+  ],
+  "gameId": "hsr",
+  "franchise": "Honkai",
+  "summary": "The true administrator of Amphoreus and main antagonist of the Amphoreus chapter, revealed to be Lycurgus, one of the nine vessels of Zandar One Kuwabara.",
+  "color": "#7f3b43",
+  "global": {
+    "game": "Honkai: Star Rail",
+    "genre": [
+      "turn-based-rpg",
+      "gacha",
+      "live-service"
     ],
-    "gameId": "hsr",
-    "franchise": "Honkai",
-    "summary": "Apparent administrator of Amphoreus and a vessel tied to Zandar One Kuwabara.",
-    "color": "#7f3b43",
-    "global": {
-      "game": "Honkai: Star Rail",
-      "genre": [
-        "turn-based-rpg",
-        "gacha",
-        "live-service"
-      ],
-      "sourceType": "game",
-      "visualStyle": [
-        "anime",
-        "sci-fi"
-      ],
-      "characterType": [
-        "npc",
-        "lore-character",
-        "antagonist",
-        "leader"
-      ],
-      "genderPresentation": "male",
-      "hairColor": [
-        "needs_research"
-      ],
-      "primaryHairColor": "needs_research",
-      "brightHair": false,
-      "usesWeapon": true,
-      "weaponType": [
-        "story-threat"
-      ],
-      "outfitColors": [
-        "needs_research"
-      ],
-      "primaryOutfitColor": "needs_research",
-      "personality": [
-        "needs_research"
-      ]
-    },
-    "hsr": {
-      "path": "Non-playable",
-      "combatType": "Non-playable",
-      "faction": [
-        "Amphoreus",
-        "Genius Society"
-      ],
-      "worldOrRegion": [
-        "Amphoreus"
-      ],
-      "rarity": null,
-      "releaseVersion": null,
-      "hasAnimatedShort": false,
-      "hasCharacterTrailer": false,
-      "associatedArc": [
-        "Amphoreus",
-        "Exomyth"
-      ],
-      "fanSignals": [
-        "lore-discussion"
-      ],
-      "storyRole": [
-        "amphoreus-administrator",
-        "zandar-vessel"
-      ]
-    },
-    "evidence": [
-      {
-        "field": "identity",
-        "source": "HSR character/lore reference",
-        "confidence": "medium",
-        "notes": "HSR character/lore reference; verify detailed traits before production analysis."
-      }
+    "sourceType": "game",
+    "visualStyle": [
+      "anime",
+      "sci-fi",
+      "cosmic-horror",
+      "greco-roman-fantasy"
+    ],
+    "characterType": [
+      "npc",
+      "lore-character",
+      "antagonist",
+      "leader",
+      "major-story-character",
+      "genius",
+      "administrator",
+      "vessel",
+      "robot",
+      "cosmic-entity"
+    ],
+    "genderPresentation": "male",
+    "hairColor": [
+      "needs_research"
+    ],
+    "primaryHairColor": "needs_research",
+    "brightHair": false,
+    "usesWeapon": true,
+    "weaponType": [
+      "story-threat",
+      "simulation-control",
+      "scepter",
+      "exomyth",
+      "knowledge-manipulation"
+    ],
+    "outfitColors": [
+      "needs_research"
+    ],
+    "primaryOutfitColor": "needs_research",
+    "personality": [
+      "manipulative",
+      "calculating",
+      "secretive",
+      "ruthless",
+      "disillusioned"
     ]
   },
+  "hsr": {
+    "path": "Non-playable",
+    "combatType": "Non-playable",
+    "faction": [
+      "Amphoreus",
+      "Genius Society",
+      "Zandar One Kuwabara",
+      "Scepter"
+    ],
+    "worldOrRegion": [
+      "Amphoreus",
+      "Exomyth",
+      "Vortex of Genesis"
+    ],
+    "rarity": null,
+    "releaseVersion": null,
+    "hasAnimatedShort": false,
+    "hasCharacterTrailer": false,
+    "associatedArc": [
+      "Amphoreus",
+      "Exomyth",
+      "Era Nova",
+      "Vortex of Genesis",
+      "Scepter",
+      "Irontomb",
+      "Nous",
+      "Erudition",
+      "Genius Society",
+      "Zandar One Kuwabara",
+      "Chrysos Heirs",
+      "Law Coreflame",
+      "Flame-Chase Journey"
+    ],
+    "fanSignals": [
+      "lore-discussion",
+      "main-antagonist-discussion",
+      "amphoreus-lore-discussion"
+    ],
+    "storyRole": [
+      "amphoreus-administrator",
+      "true-administrator",
+      "amphoreus-antagonist",
+      "main-antagonist",
+      "zandar-vessel",
+      "lycurgus-vessel",
+      "zandar-one-kuwabara",
+      "genius-society-founder",
+      "genius-society-member-1",
+      "nous-creator",
+      "creator-of-nous",
+      "anti-nous",
+      "anti-erudition",
+      "irontomb-release-plot",
+      "scepter-conspiracy",
+      "simulation-overseer",
+      "recursive-loop-overseer",
+      "era-nova-manipulator",
+      "exomyth-jailer",
+      "vortex-of-genesis-antagonist",
+      "law-coreflame-control",
+      "chrysos-heirs-opponent",
+      "amphoreus-mastermind"
+    ]
+  },
+  "evidence": [
+    {
+      "field": "identity",
+      "source": "Honkai: Star Rail character/lore reference",
+      "confidence": "high",
+      "notes": "Lygus is identified as the true administrator of Amphoreus and main antagonist of the Amphoreus chapter; Lycurgus is one of the vessels of Zandar One Kuwabara."
+    },
+    {
+      "field": "hsr.storyRole",
+      "source": "Honkai: Star Rail Amphoreus story reference",
+      "confidence": "medium",
+      "notes": "Discovery tags normalize Lygus' ties to Amphoreus, Zandar, the Scepter, Irontomb, Nous, Exomyth, Era Nova, and the Vortex of Genesis."
+    }
+  ]
+},
   {
     "id": "zandar-one-kuwabara",
     "name": "Zandar One Kuwabara",
@@ -12343,6 +12408,1272 @@
         "source": "HSR Aeon and Path lore reference",
         "confidence": "medium",
         "notes": "Aeon and Path lore reference; verify detailed cosmology traits before production analysis."
+      }
+    ]
+  },
+  {
+    "id": "janus-titan",
+    "name": "Janus",
+    "aliases": [
+      "Gate of Infinity",
+      "Passage Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Gate of Infinity, tied to the Passage Coreflame and Tribios.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "fate-titan",
+        "passage-titan",
+        "coreflame-passage",
+        "gate-of-infinity",
+        "tribios-associated",
+        "simulated-path-harmony"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Janus as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "talanton-titan",
+    "name": "Talanton",
+    "aliases": [
+      "Scale of Justice",
+      "Law Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Scale of Justice, tied to the Law Coreflame and Cerydra.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "fate-titan",
+        "law-titan",
+        "coreflame-law",
+        "scale-of-justice",
+        "cerydra-associated",
+        "simulated-path-order"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Talanton as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "oronyx-titan",
+    "name": "Oronyx",
+    "aliases": [
+      "Veil of Evernight",
+      "Time Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Veil of Evernight, tied to the Time Coreflame and Trailblazer, Cyrene, Evernight, and March 7th.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "fate-titan",
+        "time-titan",
+        "coreflame-time",
+        "veil-of-evernight",
+        "trailblazer-associated",
+        "cyrene-associated",
+        "evernight-associated",
+        "march-7th-associated",
+        "simulated-path-remembrance"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Oronyx as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "georios-titan",
+    "name": "Georios",
+    "aliases": [
+      "Pillar of Stone",
+      "Earth Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Pillar of Stone, tied to the Earth Coreflame and Terravox and Dan Heng.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "foundation-titan",
+        "earth-titan",
+        "coreflame-earth",
+        "pillar-of-stone",
+        "terravox-associated",
+        "dan-heng-associated",
+        "simulated-path-permanence"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Georios as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "phagousa-titan",
+    "name": "Phagousa",
+    "aliases": [
+      "Chalice of Plenty",
+      "Ocean Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Chalice of Plenty, tied to the Ocean Coreflame and Helektra.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "foundation-titan",
+        "ocean-titan",
+        "coreflame-ocean",
+        "chalice-of-plenty",
+        "helektra-associated",
+        "simulated-path-nihility"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Phagousa as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "aquila-titan",
+    "name": "Aquila",
+    "aliases": [
+      "Eye of Twilight",
+      "Sky Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Eye of Twilight, tied to the Sky Coreflame and Hyacinthia / Hyacine.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "foundation-titan",
+        "sky-titan",
+        "coreflame-sky",
+        "eye-of-twilight",
+        "hyacine-associated",
+        "hyacinthia-associated",
+        "sky-castrum",
+        "simulated-path-preservation"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Aquila as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "kephale-titan",
+    "name": "Kephale",
+    "aliases": [
+      "Throne of Worlds",
+      "Worldbearing Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Throne of Worlds, tied to the Worldbearing Coreflame and Khaslana and Trailblazer.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "creation-titan",
+        "worldbearing-titan",
+        "coreflame-worldbearing",
+        "throne-of-worlds",
+        "khaslana-associated",
+        "phainon-associated",
+        "trailblazer-associated",
+        "simulated-path-destruction"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Kephale as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "cerces-titan",
+    "name": "Cerces",
+    "aliases": [
+      "Bough of Rift",
+      "Reason Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Bough of Rift, tied to the Reason Coreflame and Anaxagoras / Anaxa.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "creation-titan",
+        "reason-titan",
+        "coreflame-reason",
+        "bough-of-rift",
+        "anaxa-associated",
+        "anaxagoras-associated",
+        "simulated-path-erudition"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Cerces as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "mnestia-titan",
+    "name": "Mnestia",
+    "aliases": [
+      "Chrysalis of Gold",
+      "Romance Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Chrysalis of Gold, tied to the Romance Coreflame and Aglaea.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "creation-titan",
+        "romance-titan",
+        "coreflame-romance",
+        "chrysalis-of-gold",
+        "aglaea-associated",
+        "simulated-path-beauty"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Mnestia as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "nikador-titan",
+    "name": "Nikador",
+    "aliases": [
+      "Lance of Fury",
+      "Strife Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Lance of Fury, tied to the Strife Coreflame and Mydeimos / Mydei.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "calamity-titan",
+        "strife-titan",
+        "coreflame-strife",
+        "lance-of-fury",
+        "savage-god",
+        "mad-king",
+        "mydei-associated",
+        "mydeimos-associated",
+        "simulated-path-hunt"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Nikador as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "thanatos-titan",
+    "name": "Thanatos",
+    "aliases": [
+      "Hand of Shadow",
+      "Death Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Hand of Shadow, tied to the Death Coreflame and Castorice.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "calamity-titan",
+        "death-titan",
+        "coreflame-death",
+        "hand-of-shadow",
+        "reaper",
+        "castorice-associated",
+        "river-of-souls",
+        "simulated-path-equilibrium"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Thanatos as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "zagreus-titan",
+    "name": "Zagreus",
+    "aliases": [
+      "Coin of Whimsy",
+      "Trickery Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "An Amphoreus Titan known as the Coin of Whimsy, tied to the Trickery Coreflame and Cifera.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "calamity-titan",
+        "trickery-titan",
+        "coreflame-trickery",
+        "coin-of-whimsy",
+        "cifera-associated",
+        "spirithief-bartholos",
+        "simulated-path-elation"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Zagreus as an Amphoreus Titan and divine embodiment, not an Aeon."
+      }
+    ]
+  },
+  {
+    "id": "demiurge-titan",
+    "name": "Demiurge",
+    "aliases": [
+      "The First Nouspore",
+      "Genesis Titan",
+      "Thirteenth Titan"
+    ],
+    "gameId": "hsr",
+    "franchise": "Honkai",
+    "summary": "The thirteenth Amphoreus Titan known as The First Nouspore, tied to the Genesis Coreflame and Cyrene.",
+    "color": "#8f7bb8",
+    "global": {
+      "game": "Honkai: Star Rail",
+      "genre": [
+        "turn-based-rpg",
+        "gacha",
+        "live-service"
+      ],
+      "sourceType": "game",
+      "visualStyle": [
+        "anime",
+        "sci-fi",
+        "greco-roman-fantasy"
+      ],
+      "characterType": [
+        "npc",
+        "lore-character",
+        "titan",
+        "divine-embodiment",
+        "amphoreus-god",
+        "major-story-character"
+      ],
+      "genderPresentation": "divine-embodiment",
+      "hairColor": [
+        "needs_research"
+      ],
+      "primaryHairColor": "needs_research",
+      "brightHair": false,
+      "usesWeapon": false,
+      "weaponType": [
+        "none"
+      ],
+      "outfitColors": [
+        "needs_research"
+      ],
+      "primaryOutfitColor": "needs_research",
+      "personality": [
+        "needs_research"
+      ]
+    },
+    "hsr": {
+      "path": "Non-playable",
+      "combatType": "Non-playable",
+      "faction": [
+        "Amphoreus",
+        "Titans"
+      ],
+      "worldOrRegion": [
+        "Amphoreus"
+      ],
+      "rarity": null,
+      "releaseVersion": null,
+      "hasAnimatedShort": false,
+      "hasCharacterTrailer": false,
+      "associatedArc": [
+        "Amphoreus",
+        "Titans",
+        "Coreflames",
+        "Flame-Chase Journey"
+      ],
+      "fanSignals": [
+        "lore-discussion",
+        "amphoreus-lore-discussion"
+      ],
+      "storyRole": [
+        "amphoreus-titan",
+        "divine-embodiment",
+        "coreflame-source",
+        "flame-chase-target",
+        "genesis-titan",
+        "thirteenth-titan",
+        "coreflame-genesis",
+        "first-nouspore",
+        "cyrene-associated",
+        "heart-of-amphoreus",
+        "causal-loop",
+        "irontomb-birth-prevention"
+      ]
+    },
+    "evidence": [
+      {
+        "field": "identity",
+        "source": "HSR Amphoreus Titan lore reference",
+        "confidence": "medium",
+        "notes": "Discovery record models Demiurge as an Amphoreus Titan and divine embodiment, not an Aeon."
       }
     ]
   }

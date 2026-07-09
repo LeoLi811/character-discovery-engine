@@ -335,6 +335,30 @@ const NPC_LORE_STRUCTURAL_IDS = new Set([
   "hsr-galaxy-rangers"
 ]);
 
+const NPC_LORE_BROAD_REGION_IDS = [
+  "hsr-amphoreus",
+  "hsr-xianzhou",
+  "hsr-xianzhou-luofu",
+  "hsr-penacony",
+  "hsr-belobog",
+  "hsr-herta-space-station",
+  "hsr-cosmos-region"
+];
+
+const NPC_LORE_AMPHOREUS_STRUCTURAL_IDS = [
+  "hsr-amphoreus-titan",
+  "hsr-coreflame-source",
+  "hsr-genesis-titan",
+  "hsr-intellitron",
+  "hsr-zandar-vessel",
+  "hsr-scepter-conspiracy",
+  "hsr-amphoreus-mastermind",
+  "hsr-irontomb-release-plot",
+  "hsr-chrysos-heir"
+];
+
+const TITAN_ASSOCIATED_HEIR_QUESTION_PREFIX = "hsr-titan-associated-";
+
 // These fields can only have one primary answer for a character.
 const EXCLUSIVE_TRAIT_PATHS = new Set([
   "global.game",
@@ -824,14 +848,11 @@ function getQuestionPhaseRank(
       "hsr-lord-ravager",
       "hsr-antimatter-legion",
       "hsr-emanator",
+      ...NPC_LORE_BROAD_REGION_IDS,
+      ...NPC_LORE_AMPHOREUS_STRUCTURAL_IDS,
       "hsr-robot-character",
       "hsr-mascot",
       "hsr-lore-character",
-      "hsr-belobog",
-      "hsr-penacony",
-      "hsr-xianzhou",
-      "hsr-amphoreus",
-      "hsr-herta-space-station",
       "hsr-ipc",
       "hsr-ipc-full",
       "hsr-ten-stonehearts",
@@ -856,8 +877,11 @@ function getQuestionPhaseRank(
     if (orderIndex !== -1) {
       return orderIndex;
     }
-    if (isStructuralNpcLoreQuestion(question)) {
+    if (isTitanAssociatedHeirQuestion(question)) {
       return loreBranchOrder.length;
+    }
+    if (isStructuralNpcLoreQuestion(question)) {
+      return loreBranchOrder.length + 1;
     }
   }
 
@@ -945,8 +969,13 @@ function applyNpcLoreQuestionGate(
     (question) => isStructuralNpcLoreQuestion(question) && getQuestionUsefulness(candidatePool, question) > 0
   );
   const lateTiebreakerStage = isLateTiebreakerStage(answers, candidatePool);
+  const titanContextEstablished = hasTitanContext(answers, questionMap, candidatePool);
 
   return questions.filter((question) => {
+    if (isTitanAssociatedHeirQuestion(question) && !titanContextEstablished) {
+      return false;
+    }
+
     if (!isNpcLoreLateOnlyQuestion(question)) {
       return true;
     }
@@ -957,6 +986,29 @@ function applyNpcLoreQuestionGate(
 
     return lateTiebreakerStage && getQuestionUsefulness(candidatePool, question) > 0;
   });
+}
+
+function isTitanAssociatedHeirQuestion(question: DiscoveryQuestion) {
+  return question.id.startsWith(TITAN_ASSOCIATED_HEIR_QUESTION_PREFIX);
+}
+
+function hasTitanContext(
+  answers: AnswerRecord[],
+  questionMap: Map<string, DiscoveryQuestion>,
+  candidatePool: DiscoveryCharacter[]
+) {
+  if (hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "amphoreus-titan", true)) {
+    return true;
+  }
+
+  if (candidatePool.length === 0) {
+    return false;
+  }
+
+  const titanCount = candidatePool.filter((character) =>
+    characterHasTraitValue(character, "hsr.storyRole", "amphoreus-titan")
+  ).length;
+  return titanCount / candidatePool.length >= 0.65;
 }
 
 function isNpcLoreQuestionBranch(
@@ -1616,7 +1668,10 @@ function shouldUseAmbiguitySeparator(
     return true;
   }
 
-  if (getQuestionPhase(rankedQuestion, answers, questionMap) <= 1) {
+  const rankedQuestionPhase = getQuestionPhase(rankedQuestion, answers, questionMap);
+  const ambiguitySeparatorPhase = getQuestionPhase(ambiguitySeparator, answers, questionMap);
+
+  if (rankedQuestionPhase <= 1) {
     return false;
   }
 
@@ -1624,7 +1679,14 @@ function shouldUseAmbiguitySeparator(
     return false;
   }
 
-  return getQuestionPhase(ambiguitySeparator, answers, questionMap) <= getQuestionPhase(rankedQuestion, answers, questionMap);
+  if (ambiguitySeparatorPhase !== rankedQuestionPhase) {
+    return ambiguitySeparatorPhase < rankedQuestionPhase;
+  }
+
+  return (
+    getQuestionPhaseRank(ambiguitySeparator, answers, questionMap) <=
+    getQuestionPhaseRank(rankedQuestion, answers, questionMap)
+  );
 }
 
 function isCoreBranchQuestion(

@@ -580,9 +580,14 @@ function CharacterReveal({
           padding: "0 24px 22px"
         }}
       >
-        {[path, combatType, `${hairColor} ${text.hair}`, `${outfitColor} ${text.outfit}`].map((trait) => (
+        {[
+          { label: "path", value: path },
+          { label: "combatType", value: combatType },
+          { label: "hair", value: `${hairColor} ${text.hair}` },
+          { label: "outfit", value: `${outfitColor} ${text.outfit}` }
+        ].map((trait) => (
           <span
-            key={trait}
+            key={trait.label}
             style={{
               minHeight: 30,
               border: "1px solid rgba(255,255,255,0.2)",
@@ -593,7 +598,7 @@ function CharacterReveal({
               fontSize: 12
             }}
           >
-            {trait}
+            {trait.value}
           </span>
         ))}
       </div>

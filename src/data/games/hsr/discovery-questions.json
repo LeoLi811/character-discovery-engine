@@ -1098,6 +1098,186 @@
     "weight": 1.4
   },
   {
+    "id": "hsr-amphoreus-titan",
+    "text": "Are they one of Amphoreus' Titans or divine embodiments?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "amphoreus-titan",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-divine-embodiment",
+    "text": "Are they treated as a divine embodiment in Amphoreus lore?",
+    "scope": "game:hsr",
+    "traitPath": "global.characterType",
+    "expectedValue": "divine-embodiment",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-coreflame-source",
+    "text": "Are they connected to a Coreflame inherited by the Chrysos Heirs?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "coreflame-source",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-genesis-titan",
+    "text": "Are they the Genesis Titan or tied to the First Nouspore?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "genesis-titan",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-titan-associated-tribios",
+    "text": "Is this Titan associated with Tribios or the Passage Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "tribios-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-cerydra",
+    "text": "Is this Titan associated with Cerydra or the Law Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "cerydra-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-cyrene",
+    "text": "Is this Titan associated with Cyrene?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "cyrene-associated",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-titan-associated-trailblazer",
+    "text": "Is this Titan associated with the Trailblazer?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "trailblazer-associated",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-titan-associated-evernight",
+    "text": "Is this Titan associated with Evernight or March 7th?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "evernight-associated",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-titan-associated-terravox",
+    "text": "Is this Titan associated with Terravox or the Earth Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "terravox-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-dan-heng",
+    "text": "Is this Titan associated with Dan Heng?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "dan-heng-associated",
+    "category": "story",
+    "weight": 1.5
+  },
+  {
+    "id": "hsr-titan-associated-helektra",
+    "text": "Is this Titan associated with Helektra or the Ocean Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "helektra-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-hyacine",
+    "text": "Is this Titan associated with Hyacine or the Sky Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "hyacine-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-khaslana",
+    "text": "Is this Titan associated with Khaslana or Phainon?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "khaslana-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-anaxa",
+    "text": "Is this Titan associated with Anaxa or Anaxagoras?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "anaxa-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-aglaea",
+    "text": "Is this Titan associated with Aglaea or the Romance Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "aglaea-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-mydei",
+    "text": "Is this Titan associated with Mydei or Mydeimos?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "mydei-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-castorice",
+    "text": "Is this Titan associated with Castorice or the Death Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "castorice-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-cifera",
+    "text": "Is this Titan associated with Cifera or the Trickery Coreflame?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "cifera-associated",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-titan-associated-demiurge-cyrene",
+    "text": "Is this Titan specifically the Genesis Titan associated with Cyrene?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "genesis-titan",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
     "id": "hsr-genius-society-member",
     "text": "Are they a Genius Society member?",
     "scope": "game:hsr",
@@ -1105,6 +1285,69 @@
     "expectedValue": "genius-society-member",
     "category": "story",
     "weight": 1.5
+  },
+  {
+    "id": "hsr-zandar-vessel",
+    "text": "Are they a vessel or identity of Zandar One Kuwabara?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "zandar-vessel",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-exomyth-jailer",
+    "text": "Are they connected to the Exomyth or trapping someone outside Amphoreus?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "exomyth-jailer",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-amphoreus-mastermind",
+    "text": "Are they the mastermind behind Amphoreus' hidden conflict?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "amphoreus-mastermind",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-scepter-conspiracy",
+    "text": "Are they connected to the Scepter conspiracy in Amphoreus?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "scepter-conspiracy",
+    "category": "story",
+    "weight": 1.6
+  },
+  {
+    "id": "hsr-irontomb-release-plot",
+    "text": "Are they connected to the plan to release Irontomb against Nous or Erudition?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "irontomb-release-plot",
+    "category": "story",
+    "weight": 1.7
+  },
+  {
+    "id": "hsr-creator-of-nous",
+    "text": "Are they connected to creating Nous or being Zandar One Kuwabara?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "creator-of-nous",
+    "category": "story",
+    "weight": 1.8
+  },
+  {
+    "id": "hsr-simulation-overseer",
+    "text": "Are they connected to overseeing Amphoreus' simulation or recursive loop?",
+    "scope": "game:hsr",
+    "traitPath": "hsr.storyRole",
+    "expectedValue": "simulation-overseer",
+    "category": "story",
+    "weight": 1.6
   },
   {
     "id": "hsr-ipc-executive",
