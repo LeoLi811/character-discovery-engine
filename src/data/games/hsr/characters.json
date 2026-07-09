@@ -247,150 +247,73 @@
     ]
   },
   {
-  "id": "imbibitor-lunae",
-  "name": "Dan Heng - Imbibitor Lunae",
-  "aliases": [
-    "Imbibitor Lunae",
-    "Dan Heng IL",
-    "DHIL",
-    "Dan Feng",
-    "High Elder"
-  ],
-  "gameId": "hsr",
-  "franchise": "Honkai",
-  "summary": "Dan Heng's five-star Vidyadhara High Elder form, tied to the Xianzhou Luofu, Dan Feng, dragon imagery, and major Xianzhou lore reveals.",
-  "color": "#55d6d2",
-  "global": {
-    "game": "Honkai: Star Rail",
-    "genre": [
-      "turn-based-rpg",
-      "gacha",
-      "live-service"
-    ],
-    "sourceType": "game",
-    "visualStyle": [
-      "anime",
-      "fantasy",
-      "sci-fi",
-      "xianxia"
-    ],
-    "characterType": [
-      "playable",
-      "main-cast",
-      "alternate-form",
-      "major-story-character",
-      "vidyadhara",
-      "dragon-character"
-    ],
-    "genderPresentation": "male",
-    "hairColor": [
-      "black",
-      "teal"
-    ],
-    "primaryHairColor": "black",
-    "brightHair": true,
-    "usesWeapon": true,
-    "weaponType": [
-      "dragon",
-      "water",
-      "imaginary-power",
-      "cloudhymn-magic"
-    ],
-    "outfitColors": [
-      "teal",
-      "white",
-      "black",
-      "gold"
-    ],
-    "primaryOutfitColor": "teal",
-    "personality": [
-      "serious",
-      "burdened",
-      "reserved",
-      "protective",
-      "solemn"
-    ]
-  },
-  "hsr": {
-    "path": "Destruction",
-    "combatType": "Imaginary",
-    "faction": [
-      "Astral Express",
-      "Vidyadhara",
-      "Xianzhou Alliance"
-    ],
-    "worldOrRegion": [
-      "Astral Express",
-      "Xianzhou",
-      "Xianzhou Luofu"
-    ],
-    "rarity": 5,
-    "releaseVersion": "1.3",
-    "hasAnimatedShort": true,
-    "hasCharacterTrailer": true,
-    "associatedArc": [
-      "Astral Express",
-      "Xianzhou",
-      "Xianzhou Luofu",
-      "Vidyadhara",
-      "Dan Feng",
-      "High-Cloud Quintet",
+    "name": "Dan Heng - Imbibitor Lunae",
+    "slug": "imbibitor-lunae",
+    "aliases": [
       "Imbibitor Lunae",
-      "Scalegorge Waterscape"
+      "Dan Heng IL",
+      "DHIL",
+      "Dan Feng"
     ],
-    "fanSignals": [
-      "lore-discussion",
-      "fan-art",
-      "alternate-form-popularity",
-      "main-cast-popularity"
+    "franchise": "Honkai",
+    "games": [
+      "Honkai: Star Rail"
     ],
-    "storyRole": [
-      "main-companion",
-      "alternate-form",
-      "lore-reveal",
-      "vidyadhara",
-      "vidyadhara-high-elder",
-      "high-elder",
-      "imbibitor-lunae",
-      "dan-heng-form",
-      "dan-feng-reincarnation",
-      "dan-feng-past-life",
-      "dragon-form",
-      "dragon-imagery",
-      "cloudhymn-magic",
-      "xianzhou-lore",
-      "xianzhou-luofu-lore",
-      "high-cloud-quintet",
-      "scalegorge-waterscape"
+    "publisher": "HoYoverse",
+    "developer": "HoYoverse",
+    "role": "Playable character",
+    "popularityTier": "Mainstream",
+    "summary": "Dan Heng's five-star Vidyadhara High Elder form, tied to the Xianzhou Luofu, Dan Feng, dragon imagery, and major Xianzhou lore reveals.",
+    "popularitySignals": [
+      {
+        "source": "Curated V1 popularity proxy",
+        "metricType": "structured-trait prominence",
+        "value": 70,
+        "maxValue": 100,
+        "collectedAt": "2026-07-02",
+        "confidence": "medium",
+        "notes": "Transparent placeholder score based on rarity, main-story relevance, alternate-form status, and manually coded fan/community signals."
+      }
+    ],
+    "visualTags": {
+      "clothing": [
+        "teal",
+        "white",
+        "black",
+        "gold"
+      ],
+      "colors": [
+        "#55d6d2",
+        "#101828"
+      ],
+      "accessories": [
+        "dragon",
+        "water"
+      ],
+      "silhouette": "Destruction / Imaginary"
+    },
+    "analysisNotes": [
+      "Guessing traits: Destruction, Imaginary, five-star, alternate form.",
+      "Primary lore traits: Vidyadhara High Elder, Dan Feng reincarnation, Xianzhou Luofu, dragon imagery.",
+      "Primary visual traits: black hair, teal/white/black outfit, water and dragon motifs."
+    ],
+    "citations": [
+      {
+        "title": "Prydwen Honkai: Star Rail character database",
+        "url": "https://www.prydwen.gg/star-rail/characters/imbibitor-lunae",
+        "sourceType": "database",
+        "retrievedAt": "2026-07-02",
+        "notes": "Used for gameplay profile cross-checks such as rarity, path, and combat type where available."
+      },
+      {
+        "title": "Honkai: Star Rail official character page",
+        "url": "https://hsr.hoyoverse.com/en-us/character",
+        "sourceType": "official",
+        "retrievedAt": "2026-07-02",
+        "notes": "Official character/source reference for identity and franchise context."
+      }
     ]
   },
-  "evidence": [
-    {
-      "field": "hsr.path",
-      "source": "HSR gameplay profile",
-      "confidence": "high",
-      "notes": "Playable five-star Destruction character with Imaginary combat type."
-    },
-    {
-      "field": "hsr.worldOrRegion",
-      "source": "HSR Xianzhou Luofu story materials",
-      "confidence": "high",
-      "notes": "Imbibitor Lunae is strongly tied to the Xianzhou Luofu, Vidyadhara lore, Dan Feng, and Scalegorge Waterscape."
-    },
-    {
-      "field": "hsr.storyRole",
-      "source": "HSR story materials",
-      "confidence": "medium",
-      "notes": "Tags are normalized for discovery-engine matching: alternate form, Vidyadhara High Elder, Dan Feng reincarnation, dragon form, and Xianzhou lore."
-    },
-    {
-      "field": "global.weaponType",
-      "source": "Official art/manual coding",
-      "confidence": "medium",
-      "notes": "Visual/combat motifs coded as dragon, water, Imaginary power, and Cloudhymn-style magic rather than a normal weapon."
-    }
-  ]
-},
   {
     "name": "Trailblazer",
     "slug": "trailblazer",
