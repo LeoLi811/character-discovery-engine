@@ -65,7 +65,7 @@ const QUESTION_GROUPS: Record<string, string> = {
   "global-avatar": "broad-role",
   "global-leader": "broad-role",
   "global-antihero": "broad-role",
-  "hsr-alt-form": "broad-role",
+  "hsr-alt-form": "alternate-form",
   "hsr-mascot": "broad-role",
   "hsr-robot-character": "broad-role",
   "hsr-lore-character": "broad-role",
@@ -1129,6 +1129,11 @@ function getAmbiguitySeparatorQuestion(
       splitScore: number;
     } => item !== null)
     .sort((a, b) => {
+      const aIsAlternateFormSeparator = isAlternateFormSeparator(a.question);
+      const bIsAlternateFormSeparator = isAlternateFormSeparator(b.question);
+      if (aIsAlternateFormSeparator !== bIsAlternateFormSeparator) {
+        return aIsAlternateFormSeparator ? -1 : 1;
+      }
       if (a.separatesTopPair !== b.separatesTopPair) {
         return a.separatesTopPair ? -1 : 1;
       }
@@ -1149,6 +1154,10 @@ function getSeparatorTraitPriority(
   answers: AnswerRecord[],
   questionMap: Map<string, DiscoveryQuestion>
 ) {
+  if (isAlternateFormSeparator(question)) {
+    return 0;
+  }
+
   const aeonLikely = hasAnswerForExpectedValue(answers, questionMap, "global.characterType", "aeon", true);
   const lordRavagerLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.storyRole", "lord-ravager", true);
   const chrysosHeirLikely = hasAnswerForExpectedValue(answers, questionMap, "hsr.faction", "Chrysos Heirs", true);
@@ -1165,6 +1174,10 @@ function getSeparatorTraitPriority(
           : SEPARATOR_TRAIT_PRIORITY;
 
   return priority.indexOf(question.traitPath);
+}
+
+function isAlternateFormSeparator(question: DiscoveryQuestion) {
+  return question.id === "hsr-alt-form";
 }
 
 function shouldRunAmbiguityGuard(
@@ -1665,6 +1678,10 @@ function shouldUseAmbiguitySeparator(
   questionMap: Map<string, DiscoveryQuestion>
 ) {
   if (!rankedQuestion) {
+    return true;
+  }
+
+  if (isAlternateFormSeparator(ambiguitySeparator)) {
     return true;
   }
 

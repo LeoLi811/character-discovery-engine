@@ -568,7 +568,7 @@
   },
   {
     "id": "hsr-alt-form",
-    "text": "Is the character an alternate form of another character?",
+    "text": "Is the character an sp form of another character?",
     "scope": "game:hsr",
     "traitPath": "global.characterType",
     "expectedValue": "alternate-form",
